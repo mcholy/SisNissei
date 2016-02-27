@@ -20,5 +20,24 @@ namespace SisNissei
         {
 
         }
+//        //egreso
+// //detalle egreso
+// //tipo egreso
+//caja chica
+
+//ingreso
+//alquiler
+//matricula
+
+//socio
+
+
+//detalle ingreso
+//curso
+//empleado
+//tipo empleado
+
+//cliente
+//
     }
 }
