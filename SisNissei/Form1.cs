@@ -28,7 +28,7 @@ namespace SisNissei
 //ingreso
 //alquiler
 //matricula
-
+        
 //socio
 
 
