@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    class Class1
+    public class RolEntity : BaseEntity
     {
     }
 }

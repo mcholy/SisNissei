@@ -41,7 +41,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="InscripcionEntity.cs" />
+    <Compile Include="UsuarioEntity.cs" />
+    <Compile Include="IngresoEntity.cs" />
+    <Compile Include="EgresoEntity.cs" />
+    <Compile Include="HorarioEntity.cs" />
+    <Compile Include="CursoEntity.cs" />
+    <Compile Include="TipoEmpleadoEntity.cs" />
+    <Compile Include="TipoEgresoEntity.cs" />
+    <Compile Include="RolEntity.cs" />
+    <Compile Include="PeriodoEntity.cs" />
     <Compile Include="ClienteEntity.cs" />
     <Compile Include="DistritoEntity.cs" />
     <Compile Include="EmpleadoEntity.cs" />
