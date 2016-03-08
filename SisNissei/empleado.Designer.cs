@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class empleado
+    partial class Empleado
     {
         /// <summary>
         /// Required designer variable.
