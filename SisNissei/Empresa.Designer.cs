@@ -75,16 +75,16 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 92);
+            this.groupBox2.Size = new System.Drawing.Size(222, 92);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(148, 43);
+            this.txtDescuento.Location = new System.Drawing.Point(111, 44);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(81, 20);
+            this.txtDescuento.Size = new System.Drawing.Size(105, 20);
             this.txtDescuento.TabIndex = 4;
             // 
             // label3
@@ -92,15 +92,15 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 13);
+            this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Porcentaje de Descuento";
+            this.label3.Text = "Descuento (%) :";
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(68, 17);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(161, 20);
+            this.txtNombre.Size = new System.Drawing.Size(148, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // label1
