@@ -7,12 +7,13 @@ namespace Entities
 {
     public class ClienteEntity : BaseEntity
     {
-        private string apellido;
+        
+        private string apellidopaterno;
 
-        public string Apellido
+        public string Apellidopaterno
         {
-            get { return apellido; }
-            set { apellido = value; }
+            get { return apellidopaterno; }
+            set { apellidopaterno = value; }
         }
         private int dni;
 
@@ -21,6 +22,14 @@ namespace Entities
             get { return dni; }
             set { dni = value; }
         }
+        private string apellidomaterno;
+
+        public string Apellidomaterno
+        {
+            get { return apellidomaterno; }
+            set { apellidomaterno = value; }
+        }
+
         private bool sexo;
 
         public bool Sexo
