@@ -481,6 +481,7 @@
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "Cliente";
+            this.ShowIcon = false;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
