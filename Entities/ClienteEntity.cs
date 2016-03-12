@@ -49,16 +49,16 @@ namespace Entities
             get { return fechanacimiento; }
             set { fechanacimiento = value; }
         }
-        private int telefono;
+        private string telefono;
 
-        public int Telefono
+        public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
-        private int celular;
+        private string celular;
 
-        public int Celular
+        public string Celular
         {
             get { return celular; }
             set { celular = value; }
