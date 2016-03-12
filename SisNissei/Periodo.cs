@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace SisNissei
 {
-    public partial class Empleado : Form
+    public partial class Periodo : Form
     {
-        public Empleado()
+        public Periodo()
         {
             InitializeComponent();
         }
