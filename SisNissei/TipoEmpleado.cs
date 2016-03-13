@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SisNissei.Template;
 
 namespace SisNissei
 {
@@ -14,6 +15,7 @@ namespace SisNissei
         public TipoEmpleado()
         {
             InitializeComponent();
+            Skin.AplicarSkin(this);
         }
     }
 }

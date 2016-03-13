@@ -355,7 +355,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 36);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -483,6 +482,7 @@
             this.KeyPreview = true;
             this.Name = "Cliente";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.Cliente_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

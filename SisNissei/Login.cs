@@ -8,15 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using SisNissei.Template;
 
-
 namespace SisNissei
 {
-    public partial class TipoEgreso : Form
+    public partial class Login : Form
     {
-        public TipoEgreso()
+        public Login()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
