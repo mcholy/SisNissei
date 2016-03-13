@@ -76,11 +76,15 @@
     <Compile Include="Curso.Designer.cs">
       <DependentUpon>Curso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Login.cs" />
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
@@ -133,6 +137,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,13 +184,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cancel.png" />
-    <None Include="Resources\Check-02.png" />
+    <Content Include="Resources\Check-02.png" />
     <Content Include="Resources\clean.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
-    <None Include="Resources\Login-Door.png" />
+    <Content Include="Resources\Key-Access.png" />
+    <Content Include="Resources\Login-Door.png" />
+    <Content Include="Resources\login.png" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\save.png" />
+    <Content Include="Resources\SCCM.png" />
     <Content Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
