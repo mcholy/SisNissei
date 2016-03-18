@@ -16,10 +16,10 @@ namespace SisNissei.Global_Variables
             switch (strTipoConexionDB.Trim().ToLower())
             {
                 case "pro":
-                    strCon = ConfigurationManager.ConnectionStrings["BURO_CRM"].ConnectionString;
+                    strCon = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
                     break;
                 case "pru":
-                    strCon = ConfigurationManager.ConnectionStrings["TEST_BURO_CRM"].ConnectionString;
+                    strCon = ConfigurationManager.ConnectionStrings["conn2"].ConnectionString;
                     break;
             }
             Crypto decrypt = new Crypto();
