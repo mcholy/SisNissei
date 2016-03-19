@@ -8,7 +8,7 @@ namespace SisNissei
 {
     class Validacion
     {
-        public void sololetras(KeyPressEventArgs e)
+        public void SoloLetras(KeyPressEventArgs e)
         {
             try
             {
@@ -30,12 +30,12 @@ namespace SisNissei
                 }
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
                     
         }
-        public void solonumeros(KeyPressEventArgs e)
+        public void SoloNumeros(KeyPressEventArgs e)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace SisNissei
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
 
         }

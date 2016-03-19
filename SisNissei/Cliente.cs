@@ -12,6 +12,7 @@ namespace SisNissei
 {
     public partial class Cliente : Form
     {
+        Validacion itemValidacion= new Validacion();
         public Cliente()
         {
             InitializeComponent();
@@ -29,6 +30,11 @@ namespace SisNissei
         private void Cliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
 
     }

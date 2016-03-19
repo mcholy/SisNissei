@@ -12,6 +12,7 @@ namespace SisNissei
 {
     public partial class Login : Form
     {
+        Validacion itemValidacion = new Validacion();
         public Login()
         {
             InitializeComponent();
@@ -21,6 +22,11 @@ namespace SisNissei
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
     }
 }

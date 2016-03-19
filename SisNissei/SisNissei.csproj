@@ -34,9 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Pecas.ConfigurationManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Pecas.ConfigurationManager.dll</HintPath>
+    <Reference Include="Pecas.ConfigurationManager">
+      <HintPath>.\Pecas.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -51,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Validacion.cs" />
     <Compile Include="Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +187,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pecas.ConfigurationManager.dll" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\Check-02.png" />
     <Content Include="Resources\clean.png" />
@@ -205,6 +206,9 @@
       <Project>{C7EC41BF-6899-4EFF-BD23-9A1C4604A8C8}</Project>
       <Name>Models %28Models\Models%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
