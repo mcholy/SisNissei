@@ -138,6 +138,7 @@
             // txtAlergia
             // 
             this.txtAlergia.Location = new System.Drawing.Point(17, 264);
+            this.txtAlergia.MaxLength = 300;
             this.txtAlergia.Multiline = true;
             this.txtAlergia.Name = "txtAlergia";
             this.txtAlergia.ReadOnly = true;
@@ -167,6 +168,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(71, 215);
+            this.txtDireccion.MaxLength = 80;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(220, 20);
             this.txtDireccion.TabIndex = 12;
@@ -183,6 +185,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(205, 183);
+            this.txtTelefono.MaxLength = 7;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(86, 20);
             this.txtTelefono.TabIndex = 11;
@@ -199,6 +202,7 @@
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(65, 183);
+            this.txtCelular.MaxLength = 9;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(81, 20);
             this.txtCelular.TabIndex = 10;
@@ -233,7 +237,9 @@
             // txtApoderado
             // 
             this.txtApoderado.Location = new System.Drawing.Point(91, 124);
+            this.txtApoderado.MaxLength = 200;
             this.txtApoderado.Name = "txtApoderado";
+            this.txtApoderado.ReadOnly = true;
             this.txtApoderado.Size = new System.Drawing.Size(153, 20);
             this.txtApoderado.TabIndex = 7;
             // 
@@ -285,6 +291,7 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(54, 98);
+            this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(81, 20);
             this.txtDNI.TabIndex = 5;
@@ -301,6 +308,7 @@
             // txtApellidoPaterno
             // 
             this.txtApellidoPaterno.Location = new System.Drawing.Point(91, 71);
+            this.txtApellidoPaterno.MaxLength = 50;
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(200, 20);
             this.txtApellidoPaterno.TabIndex = 4;
@@ -317,6 +325,7 @@
             // txtApellidoMaterno
             // 
             this.txtApellidoMaterno.Location = new System.Drawing.Point(91, 45);
+            this.txtApellidoMaterno.MaxLength = 50;
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(200, 20);
             this.txtApellidoMaterno.TabIndex = 3;
@@ -333,6 +342,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(91, 19);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 2;

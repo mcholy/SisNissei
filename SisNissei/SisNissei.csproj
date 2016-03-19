@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Pecas.ConfigurationManager">
-      <HintPath>.\Pecas.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -57,7 +54,6 @@
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connection.cs" />
     <Compile Include="Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,7 +183,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Pecas.ConfigurationManager.dll" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\Check-02.png" />
     <Content Include="Resources\clean.png" />
@@ -202,6 +197,10 @@
     <Content Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{302C5AAC-DFEC-4963-AFCC-A21329B1A1EB}</Project>
+      <Name>Entities %28Entities\Entities%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{C7EC41BF-6899-4EFF-BD23-9A1C4604A8C8}</Project>
       <Name>Models %28Models\Models%29</Name>

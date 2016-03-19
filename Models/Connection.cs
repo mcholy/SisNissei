@@ -5,7 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 using Pecas.ConfigurationManager.Cryptography;
-namespace SisNissei.Global_Variables
+namespace Models.Global_Variables
 {
     public static class Connection
     {
@@ -16,15 +16,15 @@ namespace SisNissei.Global_Variables
             switch (strTipoConexionDB.Trim().ToLower())
             {
                 case "pro":
-                    strCon = ConfigurationManager.ConnectionStrings["BURO_CRM"].ConnectionString;
+                    strCon = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
                     break;
                 case "pru":
-                    strCon = ConfigurationManager.ConnectionStrings["TEST_BURO_CRM"].ConnectionString;
+                    strCon = ConfigurationManager.ConnectionStrings["conn2"].ConnectionString;
                     break;
             }
-            Crypto decrypt = new Crypto();
-            decrypt.Pasword = "0B1U2R3O4M5V6C7";
-            String strconx = decrypt.Decrypt(strCon);
+            //Crypto decrypt = new Crypto();
+            //decrypt.Pasword = "0B1U2R3O4M5V6C7";
+            //String strconx = decrypt.Decrypt(strCon);
             //strconx = "Server=192.168.1.4; Uid=sa;Pwd=123456; Database=SisNisei";
             //String strconx_tmp = decrypt.Encrypt(strconx);
             //strconx_tmp = "";
@@ -35,10 +35,10 @@ namespace SisNissei.Global_Variables
 
             //String PasswordEnc = decrypt.Encrypt("Data Source=.\SQLEXPRESS;Initial Catalog=SisNisei;Integrated Security=true");
             //string strconx = "Data Source=.\SQLEXPRESS;Initial Catalog=SisNisei;User ID=sa;Password=123456;";
-            if (strconx == String.Empty)
+            if (strCon == String.Empty)
                 return string.Empty;
             else
-                return strconx;
+                return strCon;
         }
 
         public static string getPasswordUserEncrypt(string strPws)
