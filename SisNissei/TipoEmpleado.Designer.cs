@@ -38,7 +38,7 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.txtPorcentajeMensualidad = new System.Windows.Forms.TextBox();
+            this.txtPorcentajeMensual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -152,6 +152,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -163,14 +164,14 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
-            // txtPorcentajeMensualidad
+            // txtPorcentajeMensual
             // 
-            this.txtPorcentajeMensualidad.Location = new System.Drawing.Point(121, 43);
-            this.txtPorcentajeMensualidad.MaxLength = 2;
-            this.txtPorcentajeMensualidad.Name = "txtPorcentajeMensualidad";
-            this.txtPorcentajeMensualidad.Size = new System.Drawing.Size(108, 20);
-            this.txtPorcentajeMensualidad.TabIndex = 4;
-            this.txtPorcentajeMensualidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMensualidad_KeyPress);
+            this.txtPorcentajeMensual.Location = new System.Drawing.Point(121, 43);
+            this.txtPorcentajeMensual.MaxLength = 2;
+            this.txtPorcentajeMensual.Name = "txtPorcentajeMensual";
+            this.txtPorcentajeMensual.Size = new System.Drawing.Size(108, 20);
+            this.txtPorcentajeMensual.TabIndex = 3;
+            this.txtPorcentajeMensual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMensualidad_KeyPress);
             // 
             // label2
             // 
@@ -197,7 +198,7 @@
             // 
             this.groupBox2.Controls.Add(this.txtPorcentajeMatricula);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtPorcentajeMensualidad);
+            this.groupBox2.Controls.Add(this.txtPorcentajeMensual);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
@@ -211,10 +212,10 @@
             // txtPorcentajeMatricula
             // 
             this.txtPorcentajeMatricula.Location = new System.Drawing.Point(121, 69);
-            this.txtPorcentajeMatricula.MaxLength = 2;
+            this.txtPorcentajeMatricula.MaxLength = 3;
             this.txtPorcentajeMatricula.Name = "txtPorcentajeMatricula";
             this.txtPorcentajeMatricula.Size = new System.Drawing.Size(108, 20);
-            this.txtPorcentajeMatricula.TabIndex = 6;
+            this.txtPorcentajeMatricula.TabIndex = 4;
             this.txtPorcentajeMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMatricula_KeyPress);
             // 
             // label4
@@ -314,7 +315,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.TextBox txtPorcentajeMensualidad;
+        private System.Windows.Forms.TextBox txtPorcentajeMensual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
