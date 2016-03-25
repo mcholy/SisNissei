@@ -186,6 +186,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -194,7 +195,7 @@
             this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(36, 36);
             this.btnEliminar.Text = "Eliminar";
             // 
             // groupBox2

@@ -51,8 +51,16 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EmpresaRepository.cs" />
+    <Compile Include="Repositories\TipoEgresoRepository.cs" />
+    <Compile Include="Repositories\PeriodoRepository.cs" />
+    <Compile Include="Repositories\RolRepository.cs" />
     <Compile Include="Repositories\DistritoRepository.cs" />
+    <Compile Include="Services\EmpresaService.cs" />
+    <Compile Include="Services\PeriodoService.cs" />
+    <Compile Include="Services\RolService.cs" />
     <Compile Include="Services\DistritoService.cs" />
+    <Compile Include="Services\TipoEgresoService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

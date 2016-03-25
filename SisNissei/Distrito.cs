@@ -14,6 +14,7 @@ namespace SisNissei
 {
     public partial class Distrito : Form
     {
+        Validacion itemValidacion = new Validacion();
         DistritoEntity item = new DistritoEntity();
         public Distrito()
         {
@@ -42,6 +43,10 @@ namespace SisNissei
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
+        }
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
 
     }
