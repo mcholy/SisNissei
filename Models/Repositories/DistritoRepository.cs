@@ -18,9 +18,8 @@ namespace Models.Repositories
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                item.Nombre = item.Nombre.TrimEnd('.');
-                item.Nombre = item.Nombre.TrimStart('.');
+                //item.Nombre = item.Nombre.TrimEnd('.');
+                //item.Nombre = item.Nombre.TrimStart('.'); codigo para limpiar el inicio y fin de una cadena dependiendo de caracter
                 cmd.CommandText = "sis_distrito_Guardar";
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 string respuesta = "";

@@ -18,13 +18,9 @@ namespace Models.Repositories
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                item.Nombre = item.Nombre.TrimEnd('.');
-                item.Nombre = item.Nombre.TrimStart('.');
                 cmd.CommandText = "sis_Empresa_Guardar";
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
-                item.Descuento = item.Descuento;
-                cmd.CommandText = "sis_Empresa_Guardar";
-                cmd.Parameters.AddWithValue("@descuento", item.Descuento);
+                cmd.Parameters.AddWithValue("@descuento", item.Descuento.ToString());
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
                 // ResultModels r_obj = null;
