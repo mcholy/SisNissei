@@ -104,6 +104,7 @@
             // 
             this.txtValidarContrasenia.Location = new System.Drawing.Point(122, 131);
             this.txtValidarContrasenia.Name = "txtValidarContrasenia";
+            this.txtValidarContrasenia.PasswordChar = '*';
             this.txtValidarContrasenia.Size = new System.Drawing.Size(169, 20);
             this.txtValidarContrasenia.TabIndex = 13;
             // 
@@ -148,6 +149,7 @@
             // 
             this.txtContrasenia.Location = new System.Drawing.Point(122, 106);
             this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(169, 20);
             this.txtContrasenia.TabIndex = 5;
             // 
@@ -163,9 +165,11 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(91, 19);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 

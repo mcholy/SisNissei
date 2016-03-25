@@ -31,23 +31,23 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.txtPorcentajeMensualidad = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtPorcentajeMensualidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPorcentajeMatricula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -85,6 +85,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
@@ -102,98 +113,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(266, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
-            // 
-            // txtPorcentajeMensualidad
-            // 
-            this.txtPorcentajeMensualidad.Location = new System.Drawing.Point(121, 43);
-            this.txtPorcentajeMensualidad.Name = "txtPorcentajeMensualidad";
-            this.txtPorcentajeMensualidad.Size = new System.Drawing.Size(108, 20);
-            this.txtPorcentajeMensualidad.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "TIPO DE EMPLEADO";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Porcentaje Mensual";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtPorcentajeMatricula);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtPorcentajeMensualidad);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(11, 42);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 137);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(68, 17);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(161, 20);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre :";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 36);
-            this.panel1.TabIndex = 3;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.panel1);
-            this.splitContainer1.Panel1.Controls.Add(this.toolStrip1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(575, 231);
-            this.splitContainer1.SplitterDistance = 268;
-            this.splitContainer1.TabIndex = 6;
             // 
             // btnNuevo
             // 
@@ -244,23 +163,59 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
-            // btnBuscar
+            // txtPorcentajeMensualidad
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.txtPorcentajeMensualidad.Location = new System.Drawing.Point(121, 43);
+            this.txtPorcentajeMensualidad.MaxLength = 2;
+            this.txtPorcentajeMensualidad.Name = "txtPorcentajeMensualidad";
+            this.txtPorcentajeMensualidad.Size = new System.Drawing.Size(108, 20);
+            this.txtPorcentajeMensualidad.TabIndex = 4;
+            this.txtPorcentajeMensualidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMensualidad_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(202, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "TIPO DE EMPLEADO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Porcentaje Mensual";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPorcentajeMatricula);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtPorcentajeMensualidad);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtNombre);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(11, 42);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(235, 137);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos";
             // 
             // txtPorcentajeMatricula
             // 
             this.txtPorcentajeMatricula.Location = new System.Drawing.Point(121, 69);
+            this.txtPorcentajeMatricula.MaxLength = 2;
             this.txtPorcentajeMatricula.Name = "txtPorcentajeMatricula";
             this.txtPorcentajeMatricula.Size = new System.Drawing.Size(108, 20);
             this.txtPorcentajeMatricula.TabIndex = 6;
+            this.txtPorcentajeMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMatricula_KeyPress);
             // 
             // label4
             // 
@@ -271,13 +226,64 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Porcentaje Matricula";
             // 
-            // Form1
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(68, 17);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(161, 20);
+            this.txtNombre.TabIndex = 2;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre :";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 36);
+            this.panel1.TabIndex = 3;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.panel1);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStrip1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(575, 231);
+            this.splitContainer1.SplitterDistance = 268;
+            this.splitContainer1.TabIndex = 6;
+            // 
+            // TipoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 231);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form1";
+            this.Name = "TipoEmpleado";
             this.Text = "Tipo de Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);

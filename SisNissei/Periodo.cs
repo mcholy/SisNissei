@@ -14,6 +14,7 @@ namespace SisNissei
 {
     public partial class Periodo : Form
     {
+        Validacion itemValidacion = new Validacion();
         PeriodoEntity item = new PeriodoEntity();
         public Periodo()
         {
@@ -39,6 +40,11 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
     }
 }

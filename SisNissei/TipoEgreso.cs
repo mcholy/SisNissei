@@ -15,6 +15,7 @@ namespace SisNissei
 {
     public partial class TipoEgreso : Form
     {
+        Validacion itemValidacion = new Validacion();
         TipoEgresoEntity item = new TipoEgresoEntity();
         public TipoEgreso()
         {
@@ -42,6 +43,11 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
     }
 }

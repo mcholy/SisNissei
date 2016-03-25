@@ -12,10 +12,16 @@ namespace SisNissei
 {
     public partial class Usuario : Form
     {
+        Validacion itemValidacion = new Validacion();
         public Usuario()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
     }
 }

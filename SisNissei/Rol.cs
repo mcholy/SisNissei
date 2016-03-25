@@ -14,6 +14,7 @@ namespace SisNissei
 {
     public partial class Rol : Form
     {
+        Validacion itemValidacion = new Validacion();
         RolEntity item = new RolEntity();
         public Rol()
         {
@@ -41,6 +42,11 @@ namespace SisNissei
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace SisNissei
 {
     public partial class Cliente : Form
     {
-        Validacion itemValidacion= new Validacion();
+        Validacion itemValidacion = new Validacion();
         public Cliente()
         {
             InitializeComponent();
@@ -36,6 +36,32 @@ namespace SisNissei
         {
             itemValidacion.SoloLetras(e);
         }
+
+        private void txtApellidoMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
+        }
+
+        private void txtApellidoPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
+        }
+
 
     }
 }
