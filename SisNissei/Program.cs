@@ -15,7 +15,7 @@ namespace SisNissei
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empleado());
+            Application.Run(new Distrito());
         }
     }
 }

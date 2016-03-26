@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvDistrito = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistrito)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -55,13 +55,15 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvCliente
+            // dgvDistrito
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(194, 151);
-            this.dgvCliente.TabIndex = 1;
+            this.dgvDistrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDistrito.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDistrito.Location = new System.Drawing.Point(18, 61);
+            this.dgvDistrito.Name = "dgvDistrito";
+            this.dgvDistrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDistrito.Size = new System.Drawing.Size(241, 151);
+            this.dgvDistrito.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -69,7 +71,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 47);
+            this.groupBox1.Size = new System.Drawing.Size(251, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -78,7 +80,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(6, 19);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(137, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(200, 20);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
@@ -86,7 +88,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(149, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(212, 17);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
@@ -99,7 +101,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 36);
+            this.panel1.Size = new System.Drawing.Size(242, 36);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -131,10 +133,10 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvDistrito);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(419, 219);
-            this.splitContainer1.SplitterDistance = 197;
+            this.splitContainer1.Size = new System.Drawing.Size(520, 219);
+            this.splitContainer1.SplitterDistance = 244;
             this.splitContainer1.TabIndex = 3;
             // 
             // groupBox2
@@ -180,7 +182,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 186);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(195, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(242, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -238,11 +240,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 219);
+            this.ClientSize = new System.Drawing.Size(520, 219);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Distrito";
             this.Text = "Distrito";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistrito)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -261,7 +263,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvDistrito;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;

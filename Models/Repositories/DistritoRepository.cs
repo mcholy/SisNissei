@@ -41,5 +41,38 @@ namespace Models.Repositories
             return base.Listar("sis_Distrito_Listar");
         }
 
+
+        public List<DistritoEntity> Detalle() {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_distrito_Detalle";
+                //cmd.Parameters.AddWithValue("@valor",valor);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<DistritoEntity> lista = new List<DistritoEntity>();
+
+                    while (reader.Read())
+                    {
+                        DistritoEntity item = new DistritoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["Nombre"].ToString();
+                        item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
+                        item.Estado = Boolean.Parse(reader["estado"].ToString());
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+        
+        }
+
     }
 }
+
+
+

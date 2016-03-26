@@ -16,22 +16,24 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         DistritoEntity item = new DistritoEntity();
+        DistritoService servicio = new DistritoService();
         public Distrito()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
 
 
         private void Guardar()
         {
             item.Nombre = txtNombre.Text;
-            DistritoService servicio = new DistritoService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
-            { Limpiar();
+            {
+                Limpiar();
 
-            MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
             }
         }
 
@@ -47,6 +49,16 @@ namespace SisNissei
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+
+        private void CargarDetalle()
+        {
+            dgvDistrito.DataSource = servicio.Detalle();
+            if (dgvDistrito.RowCount > 0)
+            {
+                dgvDistrito.Columns["id"].Visible = false;
+                dgvDistrito.Columns["estado"].Visible = false;
+            }
         }
 
     }

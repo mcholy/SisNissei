@@ -19,5 +19,10 @@ namespace Models.Services
         public List<DistritoEntity> Listar() {
             return new DistritoRepository().Listar();
         }
+
+        public List<DistritoEntity> Detalle() {
+
+            return new DistritoRepository().Detalle();
+        }
     }
 }
