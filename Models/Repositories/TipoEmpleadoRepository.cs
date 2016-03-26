@@ -10,7 +10,7 @@ using Entities;
 
 namespace Models.Repositories
 {
-    class TipoEmpleadoRepository : DbContext
+    class TipoEmpleadoRepository : BaseRepository<TipoEmpleadoEntity>
     {
         public string Guardar(TipoEmpleadoEntity item)
         {
@@ -31,6 +31,10 @@ namespace Models.Repositories
                 }
                 return respuesta;
             }
+        }
+        public List<TipoEmpleadoEntity> Listar()
+        {
+            return base.Listar("sis_TipoEmpleado_Listar");
         }
     }
 }

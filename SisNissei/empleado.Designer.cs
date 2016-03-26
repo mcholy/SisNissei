@@ -51,11 +51,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtMaterno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtPaterno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -134,6 +134,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -235,11 +236,11 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtCelular);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtDNI);
+            this.groupBox2.Controls.Add(this.txtDni);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox2.Controls.Add(this.txtMaterno);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtApellidoMaterno);
+            this.groupBox2.Controls.Add(this.txtPaterno);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
@@ -312,14 +313,14 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tipo de Empleado :";
             // 
-            // txtDNI
+            // txtDni
             // 
-            this.txtDNI.Location = new System.Drawing.Point(52, 97);
-            this.txtDNI.MaxLength = 8;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(81, 20);
-            this.txtDNI.TabIndex = 5;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
+            this.txtDni.Location = new System.Drawing.Point(52, 97);
+            this.txtDni.MaxLength = 8;
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(81, 20);
+            this.txtDni.TabIndex = 5;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label5
             // 
@@ -330,14 +331,14 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "DNI :";
             // 
-            // txtApellidoPaterno
+            // txtMaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(91, 71);
-            this.txtApellidoPaterno.MaxLength = 50;
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtApellidoPaterno.TabIndex = 4;
-            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
+            this.txtMaterno.Location = new System.Drawing.Point(91, 71);
+            this.txtMaterno.MaxLength = 50;
+            this.txtMaterno.Name = "txtMaterno";
+            this.txtMaterno.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterno.TabIndex = 4;
+            this.txtMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaterno_KeyPress);
             // 
             // label4
             // 
@@ -348,14 +349,14 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Ap. Materno :";
             // 
-            // txtApellidoMaterno
+            // txtPaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(91, 45);
-            this.txtApellidoMaterno.MaxLength = 50;
-            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtApellidoMaterno.TabIndex = 3;
-            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
+            this.txtPaterno.Location = new System.Drawing.Point(91, 45);
+            this.txtPaterno.MaxLength = 50;
+            this.txtPaterno.Name = "txtPaterno";
+            this.txtPaterno.Size = new System.Drawing.Size(200, 20);
+            this.txtPaterno.TabIndex = 3;
+            this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // label3
             // 
@@ -415,6 +416,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Empleado";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Empleado_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -450,11 +452,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtApellidoPaterno;
+        private System.Windows.Forms.TextBox txtMaterno;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtApellidoMaterno;
+        private System.Windows.Forms.TextBox txtPaterno;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;

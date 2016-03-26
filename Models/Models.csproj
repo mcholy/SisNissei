@@ -53,21 +53,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\EmpleadoRepository.cs" />
     <Compile Include="Repositories\EmpresaRepository.cs" />
     <Compile Include="Repositories\TipoEgresoRepository.cs" />
     <Compile Include="Repositories\PeriodoRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
     <Compile Include="Repositories\DistritoRepository.cs" />
     <Compile Include="Repositories\TipoEmpleadoRepository.cs" />
-    <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\EmpleadoService.cs" />
     <Compile Include="Services\EmpresaService.cs" />
     <Compile Include="Services\PeriodoService.cs" />
     <Compile Include="Services\RolService.cs" />
     <Compile Include="Services\DistritoService.cs" />
     <Compile Include="Services\TipoEgresoService.cs" />
     <Compile Include="Services\TipoEmpleadoService.cs" />
-    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="EntityFramework.dll" />

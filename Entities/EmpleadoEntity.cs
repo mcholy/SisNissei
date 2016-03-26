@@ -8,19 +8,66 @@ namespace Entities
     public class EmpleadoEntity : BaseEntity
     {
         private string paterno;
-        private string materno;
-        private string dni;
-        private int idempleado;
 
-        public int Idempleado
+        public string Paterno
         {
-            get { return idempleado; }
-            set { idempleado = value; }
+            get { return paterno; }
+            set { paterno = value; }
+        }
+        private string materno;
+
+        public string Materno
+        {
+            get { return materno; }
+            set { materno = value; }
+        }
+        private string dni;
+
+        public string Dni
+        {
+            get { return dni; }
+            set { dni = value; }
+        }
+
+        private double sueldobase;
+
+        public double Sueldobase
+        {
+            get { return sueldobase; }
+            set { sueldobase = value; }
+        }
+        private int idtipoempleado;
+
+        public int Idtipoempleado
+        {
+            get { return idtipoempleado; }
+            set { idtipoempleado = value; }
+        }
+
+        private string celular;
+
+
+        public string Celular
+        {
+            get { return celular; }
+            set { celular = value; }
         }
         private string telefono;
-        private string celular;
+
+        public string Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+       
         private string direccion;
-        private double sueldobase;
+
+        public string Direccion
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
+       
         
     }
 }

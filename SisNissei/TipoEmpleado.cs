@@ -36,6 +36,7 @@ namespace SisNissei
             item.Porcentajematricula = item.Porcentajematricula / 100;
             item.Porcentajemensual = Double.Parse(txtPorcentajeMensual.Text);
             item.Porcentajemensual = item.Porcentajemensual / 100;
+            //item.idtipoemeplado = icbsexo.selectedvalue;
             TipoEmpleadoService servicio = new TipoEmpleadoService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)

@@ -7,18 +7,15 @@ using Models.Repositories;
 
 namespace Models.Services
 {
-    public class TipoEmpleadoService
+    public class EmpleadoService
     {
         string respuesta;
-        public int Guardar(TipoEmpleadoEntity item)
+        public int Guardar(EmpleadoEntity item)
         {
-            TipoEmpleadoRepository repositorio = new TipoEmpleadoRepository();
+            EmpleadoRepository repositorio = new EmpleadoRepository();
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
-        public List<TipoEmpleadoEntity> Listar()
-        {
-            return new TipoEmpleadoRepository().Listar();
-        }
+        
     }
 }
