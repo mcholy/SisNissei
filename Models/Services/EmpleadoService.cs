@@ -16,6 +16,11 @@ namespace Models.Services
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
+
+        public List<EmpleadoEntity> Detalle()
+        {
+            return new EmpleadoRepository().Detalle();
+        }
         
     }
 }

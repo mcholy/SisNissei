@@ -15,6 +15,8 @@ namespace SisNissei
     public partial class Usuario : Form
     {
         Validacion itemValidacion = new Validacion();
+        private int idEmpleado = 0;
+        private string nombreEmpleado = "";
         public Usuario()
         {
             InitializeComponent();
@@ -35,6 +37,20 @@ namespace SisNissei
             cbRol.DisplayMember = "Nombre";
             cbRol.ValueMember = "Id";
             cbRol.DataSource = new RolService().Listar();
+        }
+
+        private void btnBuscarEmpleado_Click(object sender, EventArgs e)
+        {
+            
+            DialogEmpleado dialogEmpleado = new DialogEmpleado();
+            DialogResult resultado = dialogEmpleado.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                nombreEmpleado = dialogEmpleado.CargarNombre();
+                idEmpleado = dialogEmpleado.CargarId();
+            }
+            txtEmpleado.Text = nombreEmpleado;
         }
     }
 }

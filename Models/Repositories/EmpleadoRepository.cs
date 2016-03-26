@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Models.Repositories
 {
-    class EmpleadoRepository:BaseRepository<EmpleadoEntity>
+    class EmpleadoRepository : BaseRepository<EmpleadoEntity>
     {
         public string Guardar(EmpleadoEntity item)
         {
@@ -34,8 +34,46 @@ namespace Models.Repositories
                     respuesta = reader["respuesta"].ToString();
                 }
                 return respuesta;
-                
+
             }
+        }
+
+
+        public List<EmpleadoEntity> Detalle()
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_empleado_Detalle";
+                //cmd.Parameters.AddWithValue("@valor",valor);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<EmpleadoEntity> lista = new List<EmpleadoEntity>();
+
+                    while (reader.Read())
+                    {
+                        EmpleadoEntity item = new EmpleadoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["Nombre"].ToString();
+                        item.Paterno = reader["paterno"].ToString();
+                        item.Materno = reader["materno"].ToString();
+                        item.Dni = reader["dni"].ToString();
+                        item.Celular = reader["direccion"].ToString();
+                        item.Telefono = reader["telefono"].ToString();
+                        item.Sueldobase = Double.Parse(reader["sueldobase"].ToString());
+                        item.Idtipoempleado = Int32.Parse(reader["idtipoempleado"].ToString());
+                        item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
+                        item.Estado = Boolean.Parse(reader["estado"].ToString());
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+
         }
     }
 }
