@@ -9,6 +9,7 @@ namespace Models.Services
 {
     public class ClienteService
     {
+        string respuesta;
         public int Guardar(ClienteEntity item)
         {
             ClienteRepository repositorio = new ClienteRepository();

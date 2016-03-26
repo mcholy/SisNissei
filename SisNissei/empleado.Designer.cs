@@ -102,7 +102,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 273);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(348, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(343, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -164,13 +164,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 36);
+            this.panel1.Size = new System.Drawing.Size(343, 36);
             this.panel1.TabIndex = 3;
             // 
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
+            this.dgvCliente.Location = new System.Drawing.Point(15, 61);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(351, 236);
             this.dgvCliente.TabIndex = 1;
@@ -179,9 +179,9 @@
             // 
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(16, 4);
+            this.groupBox1.Location = new System.Drawing.Point(15, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 47);
+            this.groupBox1.Size = new System.Drawing.Size(351, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -402,15 +402,15 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(737, 306);
-            this.splitContainer1.SplitterDistance = 350;
+            this.splitContainer1.Size = new System.Drawing.Size(728, 306);
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 2;
             // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 306);
+            this.ClientSize = new System.Drawing.Size(728, 306);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Empleado";
             this.Text = "Form1";
