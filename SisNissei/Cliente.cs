@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using SisNissei.Template;
 using Models.Services;
-using SisNissei.Helper;
 using Entities;
 
 namespace SisNissei

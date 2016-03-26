@@ -18,5 +18,9 @@ namespace Models.Services
             return Int32.Parse(respuesta); 
             
         }
+        public List<RolEntity> Listar()
+        {
+            return new RolRepository().Listar();
+        }
     }
 }

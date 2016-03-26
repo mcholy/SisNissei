@@ -269,6 +269,7 @@
             // 
             // cbTipoEmpleado
             // 
+            this.cbTipoEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoEmpleado.FormattingEnabled = true;
             this.cbTipoEmpleado.Location = new System.Drawing.Point(119, 124);
             this.cbTipoEmpleado.Name = "cbTipoEmpleado";

@@ -107,6 +107,7 @@
             // 
             // cbRol
             // 
+            this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRol.FormattingEnabled = true;
             this.cbRol.Location = new System.Drawing.Point(91, 78);
             this.cbRol.Name = "cbRol";
@@ -316,6 +317,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Usuario";
             this.Text = "Usuario";
+            this.Load += new System.EventHandler(this.Usuario_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);

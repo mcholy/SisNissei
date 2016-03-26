@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Models.Repositories
 {
-    public class RolRepository : DbContext
+    public class RolRepository : BaseRepository<RolEntity>
     {
         public string Guardar(RolEntity item)
         {
@@ -35,6 +35,10 @@ namespace Models.Repositories
                 return respuesta;
 
             }
+        }
+        public List<RolEntity> Listar()
+        {
+            return base.Listar("sis_Rol_Listar");
         }
     }
 }
