@@ -31,8 +31,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtValidarContrasenia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbRol = new System.Windows.Forms.ComboBox();
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
@@ -82,8 +80,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtValidarContrasenia);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbRol);
             this.groupBox2.Controls.Add(this.label8);
@@ -93,29 +89,12 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 42);
+            this.groupBox2.Location = new System.Drawing.Point(10, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 169);
+            this.groupBox2.Size = new System.Drawing.Size(300, 142);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
-            // 
-            // txtValidarContrasenia
-            // 
-            this.txtValidarContrasenia.Location = new System.Drawing.Point(122, 131);
-            this.txtValidarContrasenia.Name = "txtValidarContrasenia";
-            this.txtValidarContrasenia.PasswordChar = '*';
-            this.txtValidarContrasenia.Size = new System.Drawing.Size(169, 20);
-            this.txtValidarContrasenia.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Validar Contraseña :";
             // 
             // label7
             // 
@@ -147,10 +126,10 @@
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(122, 106);
+            this.txtContrasenia.Location = new System.Drawing.Point(91, 106);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
-            this.txtContrasenia.Size = new System.Drawing.Size(169, 20);
+            this.txtContrasenia.Size = new System.Drawing.Size(200, 20);
             this.txtContrasenia.TabIndex = 5;
             // 
             // label5
@@ -251,7 +230,7 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 219);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 214);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(319, 31);
             this.toolStrip1.TabIndex = 0;
@@ -325,7 +304,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(639, 252);
+            this.splitContainer1.Size = new System.Drawing.Size(639, 247);
             this.splitContainer1.SplitterDistance = 321;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -333,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 252);
+            this.ClientSize = new System.Drawing.Size(639, 247);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Usuario";
             this.Text = "Usuario";
@@ -379,7 +358,5 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.TextBox txtValidarContrasenia;
-        private System.Windows.Forms.Label label3;
     }
 }

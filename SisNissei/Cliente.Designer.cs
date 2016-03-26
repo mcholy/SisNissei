@@ -267,6 +267,7 @@
             // 
             // cbDistrito
             // 
+            this.cbDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDistrito.FormattingEnabled = true;
             this.cbDistrito.Location = new System.Drawing.Point(205, 151);
             this.cbDistrito.Name = "cbDistrito";
@@ -284,6 +285,7 @@
             // 
             // cbSexo
             // 
+            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Location = new System.Drawing.Point(196, 97);
             this.cbSexo.Name = "cbSexo";
@@ -440,6 +442,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 

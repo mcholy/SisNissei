@@ -31,7 +31,6 @@ namespace Models.Repositories
                 }
                 //  return r_obj;
                 return respuesta;
-
             }
         }
     }

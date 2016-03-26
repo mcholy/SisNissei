@@ -2,26 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Entity;
-using Entities;
 using System.Data.SqlClient;
 using System.Data;
+using Entities;
 
 namespace Models.Repositories
 {
-    public class DistritoRepository :  BaseRepository<DistritoEntity>
+    public class ClienteRepository
     {
-        public string Guardar(DistritoEntity item)
+        public string Guardar(ClienteEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                //item.Nombre = item.Nombre.TrimEnd('.');
-                //item.Nombre = item.Nombre.TrimStart('.'); codigo para limpiar el inicio y fin de una cadena dependiendo de caracter
-                cmd.CommandText = "sis_distrito_Guardar";
+                cmd.CommandText = "sis_Empresa_Guardar";
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@apellidomaterno", item.Apellidomaterno.ToString());
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
                 // ResultModels r_obj = null;
@@ -35,11 +33,5 @@ namespace Models.Repositories
 
             }
         }
-
-        public List<DistritoEntity> Listar()
-        {
-            return base.Listar("sis_Distrito_Listar");
-        }
-
     }
 }

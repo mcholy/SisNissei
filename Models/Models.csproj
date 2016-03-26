@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\EmpresaRepository.cs" />
     <Compile Include="Repositories\TipoEgresoRepository.cs" />
     <Compile Include="Repositories\PeriodoRepository.cs" />
@@ -64,7 +65,10 @@
     <Compile Include="Services\TipoEgresoService.cs" />
     <Compile Include="Services\TipoEmpleadoService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EntityFramework.dll" />
+    <Content Include="Pecas.ConfigurationManager.dll" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{302C5AAC-DFEC-4963-AFCC-A21329B1A1EB}</Project>
