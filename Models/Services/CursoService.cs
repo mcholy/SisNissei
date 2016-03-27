@@ -9,16 +9,25 @@ namespace Models.Services
 {
     public class CursoService
     {
-        string respuesta;
+        #region Propiedades
+        private string respuesta;
+        private CursoRepository repositorio = new CursoRepository();
+        #endregion
+
         public int Guardar(CursoEntity item)
         {
-            CursoRepository repositorio = new CursoRepository();
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
         public List<CursoEntity> Detalle()
         {
             return new CursoRepository().Detalle();
+        }
+
+        public int Eliminar(CursoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
         }
     }
 }

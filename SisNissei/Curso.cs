@@ -13,11 +13,16 @@ namespace SisNissei
 {
     public partial class Curso : Form
     {
-        Validacion itemValidacion = new Validacion();
+        #region Propiedades
+        private Validacion itemValidacion = new Validacion();
         private int idEmpleado = 0;
+        private int idActual = 0;
         private string nombreEmpleado = "";
-        CursoEntity item = new CursoEntity();
-        CursoService servicio = new CursoService();
+        private int regmod = 0;
+        private CursoEntity item = new CursoEntity();
+        private CursoService servicio = new CursoService();
+        #endregion
+
         public Curso()
         {
             InitializeComponent();
@@ -25,16 +30,11 @@ namespace SisNissei
             CargarDetalle();
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
         }
-        
+
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
@@ -44,16 +44,33 @@ namespace SisNissei
         }
         private void Guardar()
         {
+            item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Idempleado = idEmpleado;
             item.Inicial = Double.Parse(txtInicial.Text);
             item.Mensualidad = Double.Parse(txtMensualidad.Text);
-            //item.idtipoemeplado = icbsexo.selectedvalue;
+            item.Regmod = regmod;
             CursoService servicio = new CursoService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
             {
-                Limpiar();
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+            }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
+        }
+
+        private void Eliminar()
+        {
+            item.Id = Int32.Parse(dgvCurso.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = servicio.Eliminar(item);
+            if (respuesta == 1)
+            {
+                //Limpiar();
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
                 CargarDetalle();
             }
@@ -61,12 +78,15 @@ namespace SisNissei
         private void CargarDetalle()
         {
             dgvCurso.DataSource = servicio.Detalle();
+
             if (dgvCurso.RowCount > 0)
             {
                 dgvCurso.Columns["id"].Visible = false;
                 dgvCurso.Columns["estado"].Visible = false;
                 dgvCurso.Columns["idempleado"].Visible = false;
-                
+                dgvCurso.Columns["regmod"].Visible = false;
+                dgvCurso.Columns["nombre"].DisplayIndex = 1;
+                dgvCurso.ClearSelection();
             }
         }
 
@@ -87,6 +107,58 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvCurso.RowCount > 0)
+            {
+                if (dgvCurso.CurrentRow.Selected == true)
+                {
+                    LlenarControles();
+                    regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
+            }
+        }
+
+        private void Curso_Load(object sender, EventArgs e)
+        {
+            dgvCurso.ClearSelection();
+            dgvCurso.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+        }
+
+        private void LlenarControles()
+        {
+            idActual = Int32.Parse(dgvCurso.CurrentRow.Cells["id"].Value.ToString());
+            idEmpleado = Int32.Parse(dgvCurso.CurrentRow.Cells["idempleado"].Value.ToString());
+            txtNombre.Text = dgvCurso.CurrentRow.Cells["nombre"].Value.ToString();
+            txtEmpleado.Text = dgvCurso.CurrentRow.Cells["nombreempleado"].Value.ToString();
+            txtInicial.Text = dgvCurso.CurrentRow.Cells["inicial"].Value.ToString();
+            txtMensualidad.Text = dgvCurso.CurrentRow.Cells["mensualidad"].Value.ToString();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvCurso.RowCount > 0)
+            {
+                if (dgvCurso.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Eliminar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
+            }
         }
     }
 }

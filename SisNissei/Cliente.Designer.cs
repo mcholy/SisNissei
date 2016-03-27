@@ -97,8 +97,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(718, 404);
-            this.splitContainer1.SplitterDistance = 342;
+            this.splitContainer1.Size = new System.Drawing.Size(896, 404);
+            this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox2
@@ -371,7 +371,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 36);
+            this.panel1.Size = new System.Drawing.Size(335, 36);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -400,7 +400,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 371);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(340, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -459,7 +459,7 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(9, 59);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(351, 334);
+            this.dgvCliente.Size = new System.Drawing.Size(533, 334);
             this.dgvCliente.TabIndex = 1;
             // 
             // groupBox1
@@ -468,7 +468,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 47);
+            this.groupBox1.Size = new System.Drawing.Size(526, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -477,7 +477,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(6, 19);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(278, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
@@ -485,7 +485,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(300, 17);
+            this.btnBuscar.Location = new System.Drawing.Point(489, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
@@ -496,7 +496,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(718, 404);
+            this.ClientSize = new System.Drawing.Size(896, 404);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "Cliente";

@@ -65,10 +65,12 @@
             // dgvCurso
             // 
             this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCurso.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCurso.Location = new System.Drawing.Point(9, 59);
             this.dgvCurso.Name = "dgvCurso";
-            this.dgvCurso.Size = new System.Drawing.Size(351, 130);
-            this.dgvCurso.TabIndex = 1;
+            this.dgvCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCurso.Size = new System.Drawing.Size(498, 130);
+            this.dgvCurso.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -76,16 +78,16 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 47);
+            this.groupBox1.Size = new System.Drawing.Size(491, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
+            this.txtBuscar.Location = new System.Drawing.Point(23, 19);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(278, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(415, 20);
             this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
@@ -93,7 +95,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(300, 17);
+            this.btnBuscar.Location = new System.Drawing.Point(454, 17);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
@@ -113,7 +115,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 169);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(334, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(327, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -135,6 +137,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -166,6 +169,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label2
             // 
@@ -186,7 +190,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(334, 36);
+            this.panel1.Size = new System.Drawing.Size(327, 36);
             this.panel1.TabIndex = 3;
             // 
             // label8
@@ -204,7 +208,7 @@
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.ReadOnly = true;
             this.txtEmpleado.Size = new System.Drawing.Size(153, 20);
-            this.txtEmpleado.TabIndex = 7;
+            this.txtEmpleado.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -239,7 +243,7 @@
             this.txtMensualidad.MaxLength = 7;
             this.txtMensualidad.Name = "txtMensualidad";
             this.txtMensualidad.Size = new System.Drawing.Size(71, 20);
-            this.txtMensualidad.TabIndex = 11;
+            this.txtMensualidad.TabIndex = 5;
             // 
             // btnBuscarEmpleado
             // 
@@ -249,7 +253,7 @@
             this.btnBuscarEmpleado.Location = new System.Drawing.Point(260, 47);
             this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarEmpleado.TabIndex = 2;
+            this.btnBuscarEmpleado.TabIndex = 3;
             this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
             this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
@@ -259,7 +263,7 @@
             this.txtInicial.MaxLength = 7;
             this.txtInicial.Name = "txtInicial";
             this.txtInicial.Size = new System.Drawing.Size(62, 20);
-            this.txtInicial.TabIndex = 5;
+            this.txtInicial.TabIndex = 4;
             // 
             // label5
             // 
@@ -307,19 +311,20 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvCurso);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(707, 202);
-            this.splitContainer1.SplitterDistance = 336;
+            this.splitContainer1.Size = new System.Drawing.Size(853, 202);
+            this.splitContainer1.SplitterDistance = 329;
             this.splitContainer1.TabIndex = 2;
             // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 202);
+            this.ClientSize = new System.Drawing.Size(853, 202);
             this.Controls.Add(this.splitContainer1);
+            this.KeyPreview = true;
             this.Name = "Curso";
             this.Text = "Curso";
+            this.Load += new System.EventHandler(this.Curso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

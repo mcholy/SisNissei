@@ -35,5 +35,13 @@ namespace Entities
             get { return nombreempleado; }
             set { nombreempleado = value; }
         }
+
+        private int regmod;
+
+        public int Regmod
+        {
+            get { return regmod; }
+            set { regmod = value; }
+        }
     }
 }
