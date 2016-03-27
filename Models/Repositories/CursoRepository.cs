@@ -2,65 +2,60 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Entity;
 using Entities;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace Models.Repositories
 {
-    public class RolRepository : BaseRepository<RolEntity>
+    public class CursoRepository:BaseRepository<CursoEntity>
     {
-        public string Guardar(RolEntity item)
+        public string Guardar(CursoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                item.Nombre = item.Nombre.TrimEnd('.');
-                item.Nombre = item.Nombre.TrimStart('.');
-                cmd.CommandText = "sis_rol_Guardar";
+                cmd.CommandText = "sis_Curso_Guardar";
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@idempleado", item.Idempleado);
+                cmd.Parameters.AddWithValue("@inicial", item.Inicial);
+                cmd.Parameters.AddWithValue("@mensualidad", item.Mensualidad);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
-                // ResultModels r_obj = null;
                 while (reader.Read())
                 {
                     respuesta = reader["respuesta"].ToString();
-                    //    r_obj = new ResultModels { Message = reader["msj"].ToString(), Result = reader["Indica"].ToString(), data = reader["data"].ToString() };
                 }
-                //  return r_obj;
                 return respuesta;
-
             }
         }
-        public List<RolEntity> Listar()
-        {
-            return base.Listar("sis_Rol_Listar");
-        }
-        public List<RolEntity> Detalle()
+        public List<CursoEntity> Detalle()
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_Rol_Detalle";
+                cmd.CommandText = "sis_Curso_Detalle";
                 //cmd.Parameters.AddWithValue("@valor",valor);
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    List<RolEntity> lista = new List<RolEntity>();
+                    List<CursoEntity> lista = new List<CursoEntity>();
 
                     while (reader.Read())
                     {
-                        RolEntity item = new RolEntity();
+                        CursoEntity item = new CursoEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["Nombre"].ToString();
+                        item.Idempleado = Int32.Parse(reader["idempleado"].ToString());
+                        item.Nombreempleado = reader["nombreempleado"].ToString();
+                        item.Inicial = Double.Parse(reader["inicial"].ToString());
+                        item.Mensualidad = Double.Parse(reader["mensualidad"].ToString());
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
-                        item.Estado = Boolean.Parse(reader["estado"].ToString());
                         lista.Add(item);
                     }
                     return lista;

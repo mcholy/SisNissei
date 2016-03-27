@@ -19,5 +19,9 @@ namespace Models.Services
             return Int32.Parse(respuesta);
 
         }
+         public List<TipoEgresoEntity> Detalle() {
+
+            return new TipoEgresoRepository().Detalle();
+        }
     }
 }

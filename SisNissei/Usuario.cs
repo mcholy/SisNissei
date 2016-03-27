@@ -75,6 +75,7 @@ namespace SisNissei
             {
                 Limpiar();
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                CargarDetalle();
             }
         }
 

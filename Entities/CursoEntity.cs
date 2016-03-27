@@ -28,5 +28,12 @@ namespace Entities
             get { return mensualidad; }
             set { mensualidad = value; }
         }
+        private string nombreempleado;
+
+        public string Nombreempleado
+        {
+            get { return nombreempleado; }
+            set { nombreempleado = value; }
+        }
     }
 }

@@ -17,15 +17,18 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         TipoEgresoEntity item = new TipoEgresoEntity();
+        TipoEgresoService servicio = new TipoEgresoService();
         public TipoEgreso()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
         private void Guardar()
         {
             item.Nombre = txtNombre.Text;
             TipoEgresoService servicio = new TipoEgresoService();
+
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
             {
@@ -48,6 +51,15 @@ namespace SisNissei
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+        private void CargarDetalle()
+        {
+            dgvTipoEgreso.DataSource = servicio.Detalle();
+            if (dgvTipoEgreso.RowCount > 0)
+            {
+                dgvTipoEgreso.Columns["id"].Visible = false;
+                dgvTipoEgreso.Columns["estado"].Visible = false;
+            }
         }
     }
 }

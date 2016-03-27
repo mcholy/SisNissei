@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvCurso = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -44,14 +44,14 @@
             this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtMensualidad = new System.Windows.Forms.TextBox();
             this.btnBuscarEmpleado = new System.Windows.Forms.Button();
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtInicial = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,13 +62,13 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvCliente
+            // dgvCurso
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(351, 130);
-            this.dgvCliente.TabIndex = 1;
+            this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCurso.Location = new System.Drawing.Point(9, 59);
+            this.dgvCurso.Name = "dgvCurso";
+            this.dgvCurso.Size = new System.Drawing.Size(351, 130);
+            this.dgvCurso.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -155,6 +155,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -208,11 +209,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtTelefono);
+            this.groupBox2.Controls.Add(this.txtMensualidad);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtEmpleado);
             this.groupBox2.Controls.Add(this.btnBuscarEmpleado);
-            this.groupBox2.Controls.Add(this.txtDNI);
+            this.groupBox2.Controls.Add(this.txtInicial);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
@@ -232,13 +233,13 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Mensualidad :";
             // 
-            // txtTelefono
+            // txtMensualidad
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(220, 83);
-            this.txtTelefono.MaxLength = 7;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(71, 20);
-            this.txtTelefono.TabIndex = 11;
+            this.txtMensualidad.Location = new System.Drawing.Point(220, 83);
+            this.txtMensualidad.MaxLength = 7;
+            this.txtMensualidad.Name = "txtMensualidad";
+            this.txtMensualidad.Size = new System.Drawing.Size(71, 20);
+            this.txtMensualidad.TabIndex = 11;
             // 
             // btnBuscarEmpleado
             // 
@@ -250,14 +251,15 @@
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(31, 23);
             this.btnBuscarEmpleado.TabIndex = 2;
             this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
-            // txtDNI
+            // txtInicial
             // 
-            this.txtDNI.Location = new System.Drawing.Point(54, 83);
-            this.txtDNI.MaxLength = 7;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(62, 20);
-            this.txtDNI.TabIndex = 5;
+            this.txtInicial.Location = new System.Drawing.Point(54, 83);
+            this.txtInicial.MaxLength = 7;
+            this.txtInicial.Name = "txtInicial";
+            this.txtInicial.Size = new System.Drawing.Size(62, 20);
+            this.txtInicial.TabIndex = 5;
             // 
             // label5
             // 
@@ -303,7 +305,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvCurso);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(707, 202);
@@ -318,7 +320,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Curso";
             this.Text = "Curso";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -338,7 +340,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvCurso;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
@@ -353,9 +355,9 @@
         private System.Windows.Forms.TextBox txtEmpleado;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtMensualidad;
         private System.Windows.Forms.Button btnBuscarEmpleado;
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtInicial;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;

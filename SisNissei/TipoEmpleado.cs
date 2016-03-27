@@ -18,10 +18,12 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         TipoEmpleadoEntity item = new TipoEmpleadoEntity();
+        TipoEmpleadoService servicio = new TipoEmpleadoService();
         public TipoEmpleado()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
         private void Limpiar()
         {
@@ -63,6 +65,15 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+        }
+        private void CargarDetalle()
+        {
+            dgvTipoEmpleado.DataSource = servicio.Detalle();
+            if (dgvTipoEmpleado.RowCount > 0)
+            {
+                dgvTipoEmpleado.Columns["id"].Visible = false;
+                dgvTipoEmpleado.Columns["estado"].Visible = false;
+            }
         }
     }
 }

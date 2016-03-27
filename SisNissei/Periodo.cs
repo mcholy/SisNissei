@@ -16,10 +16,12 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         PeriodoEntity item = new PeriodoEntity();
+        PeriodoService servicio = new PeriodoService();
         public Periodo()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
         private void Guardar()
         {
@@ -45,6 +47,15 @@ namespace SisNissei
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+        private void CargarDetalle()
+        {
+            dgvPeriodo.DataSource = servicio.Detalle();
+            if (dgvPeriodo.RowCount > 0)
+            {
+                dgvPeriodo.Columns["id"].Visible = false;
+                dgvPeriodo.Columns["estado"].Visible = false;
+            }
         }
     }
 }

@@ -36,5 +36,38 @@ namespace Models.Repositories
         {
             return base.Listar("sis_TipoEmpleado_Listar");
         }
+        public List<TipoEmpleadoEntity> Detalle()
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_TipoEmpleado_Detalle";
+                //cmd.Parameters.AddWithValue("@valor",valor);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<TipoEmpleadoEntity> lista = new List<TipoEmpleadoEntity>();
+
+                    while (reader.Read())
+                    {
+                        TipoEmpleadoEntity item = new TipoEmpleadoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["Nombre"].ToString();
+                        item.Porcentajematricula = Double.Parse(reader["porcentajematricula"].ToString());
+                        item.Porcentajematricula = item.Porcentajematricula * 100;
+                        item.Porcentajemensual = Double.Parse(reader["porcentajemensual"].ToString());
+                        item.Porcentajemensual = item.Porcentajemensual * 100;
+                        item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
+                        item.Estado = Boolean.Parse(reader["estado"].ToString());
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+
+        }
     }
 }

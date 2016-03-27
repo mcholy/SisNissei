@@ -7,19 +7,18 @@ using Models.Repositories;
 
 namespace Models.Services
 {
-    public class PeriodoService
+    public class CursoService
     {
         string respuesta;
-        public int Guardar(PeriodoEntity item)
+        public int Guardar(CursoEntity item)
         {
-            PeriodoRepository repositorio = new PeriodoRepository();
+            CursoRepository repositorio = new CursoRepository();
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
-        public List<PeriodoEntity> Detalle()
+        public List<CursoEntity> Detalle()
         {
-
-            return new PeriodoRepository().Detalle();
+            return new CursoRepository().Detalle();
         }
     }
 }

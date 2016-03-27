@@ -16,10 +16,12 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         EmpresaEntity item = new EmpresaEntity();
+        EmpresaService servicio = new EmpresaService();
         public Empresa()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
         private void Limpiar()
         {
@@ -63,6 +65,15 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+        }
+        private void CargarDetalle()
+        {
+            dgvEmpresa.DataSource = servicio.Detalle();
+            if (dgvEmpresa.RowCount > 0)
+            {
+                dgvEmpresa.Columns["id"].Visible = false;
+                dgvEmpresa.Columns["estado"].Visible = false;
+            }
         }
     }
 }

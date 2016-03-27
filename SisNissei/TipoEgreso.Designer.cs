@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvTipoEgreso = new System.Windows.Forms.DataGridView();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoEgreso)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -55,13 +55,13 @@
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvCliente
+            // dgvTipoEgreso
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(194, 151);
-            this.dgvCliente.TabIndex = 1;
+            this.dgvTipoEgreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipoEgreso.Location = new System.Drawing.Point(9, 59);
+            this.dgvTipoEgreso.Name = "dgvTipoEgreso";
+            this.dgvTipoEgreso.Size = new System.Drawing.Size(194, 151);
+            this.dgvTipoEgreso.TabIndex = 1;
             // 
             // txtNombre
             // 
@@ -197,7 +197,7 @@
             this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(36, 36);
+            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
             // groupBox2
@@ -228,7 +228,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvTipoEgreso);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(418, 221);
             this.splitContainer1.SplitterDistance = 197;
@@ -242,7 +242,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "TipoEgreso";
             this.Text = "Tipo de Egreso";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoEgreso)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -262,7 +262,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvTipoEgreso;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.TextBox txtNombre;

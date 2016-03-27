@@ -20,5 +20,9 @@ namespace Models.Services
         {
             return new TipoEmpleadoRepository().Listar();
         }
+        public List<TipoEmpleadoEntity> Detalle()
+        {
+            return new TipoEmpleadoRepository().Detalle();
+        }
     }
 }

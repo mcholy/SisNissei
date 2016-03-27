@@ -42,7 +42,7 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvEmpresa = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,7 +134,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvEmpresa);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(537, 232);
             this.splitContainer1.SplitterDistance = 251;
@@ -220,13 +220,13 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
-            // dgvCliente
+            // dgvEmpresa
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(260, 151);
-            this.dgvCliente.TabIndex = 1;
+            this.dgvEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpresa.Location = new System.Drawing.Point(9, 59);
+            this.dgvEmpresa.Name = "dgvEmpresa";
+            this.dgvEmpresa.Size = new System.Drawing.Size(260, 151);
+            this.dgvEmpresa.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -275,7 +275,7 @@
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -296,7 +296,7 @@
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvEmpresa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;

@@ -67,7 +67,20 @@ namespace Entities
             get { return direccion; }
             set { direccion = value; }
         }
-       
+        private string nombreTipoEmpleado;
+
+        public string NombreTipoEmpleado
+        {
+            get { return nombreTipoEmpleado; }
+            set { nombreTipoEmpleado = value; }
+        }
+        private string nombreempleado;
+
+        public string Nombreempleado
+        {
+            get { return nombreempleado; }
+            set { nombreempleado = value; }
+        }
         
     }
 }

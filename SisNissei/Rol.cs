@@ -16,10 +16,12 @@ namespace SisNissei
     {
         Validacion itemValidacion = new Validacion();
         RolEntity item = new RolEntity();
+        RolService servicio = new RolService();
         public Rol()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            CargarDetalle();
         }
         private void Guardar()
         {
@@ -47,6 +49,15 @@ namespace SisNissei
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+        private void CargarDetalle()
+        {
+            dgvRol.DataSource = servicio.Detalle();
+            if (dgvRol.RowCount > 0)
+            {
+                dgvRol.Columns["id"].Visible = false;
+                dgvRol.Columns["estado"].Visible = false;
+            }
         }
     }
 }

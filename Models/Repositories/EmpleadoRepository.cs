@@ -60,11 +60,14 @@ namespace Models.Repositories
                         item.Nombre = reader["Nombre"].ToString();
                         item.Paterno = reader["paterno"].ToString();
                         item.Materno = reader["materno"].ToString();
+                        item.Nombreempleado = reader["nombreempleado"].ToString();
                         item.Dni = reader["dni"].ToString();
-                        item.Celular = reader["direccion"].ToString();
-                        item.Telefono = reader["telefono"].ToString();
                         item.Sueldobase = Double.Parse(reader["sueldobase"].ToString());
                         item.Idtipoempleado = Int32.Parse(reader["idtipoempleado"].ToString());
+                        item.NombreTipoEmpleado = reader["nombreTipoEmpleado"].ToString();
+                        item.Celular = reader["celular"].ToString();
+                        item.Telefono = reader["telefono"].ToString();
+                        item.Direccion = reader["direccion"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         item.Estado = Boolean.Parse(reader["estado"].ToString());
                         lista.Add(item);
@@ -75,5 +78,6 @@ namespace Models.Repositories
             }
 
         }
+        
     }
 }

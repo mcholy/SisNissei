@@ -29,9 +29,15 @@
         private void InitializeComponent()
         {
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvTipoEmpleado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.txtPorcentajeMensual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,13 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoEmpleado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,13 +66,13 @@
             this.txtBuscar.Size = new System.Drawing.Size(204, 20);
             this.txtBuscar.TabIndex = 1;
             // 
-            // dgvCliente
+            // dgvTipoEmpleado
             // 
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(9, 59);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(260, 151);
-            this.dgvCliente.TabIndex = 1;
+            this.dgvTipoEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipoEmpleado.Location = new System.Drawing.Point(9, 59);
+            this.dgvTipoEmpleado.Name = "dgvTipoEmpleado";
+            this.dgvTipoEmpleado.Size = new System.Drawing.Size(260, 151);
+            this.dgvTipoEmpleado.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -84,6 +84,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // toolStrip1
             // 
@@ -102,6 +113,56 @@
             this.toolStrip1.Size = new System.Drawing.Size(266, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNuevo.Image = global::SisNissei.Properties.Resources._new;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(36, 28);
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::SisNissei.Properties.Resources.edit;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(36, 28);
+            this.btnModificar.Text = "Editar";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(36, 28);
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(36, 28);
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
+            this.btnEliminar.Text = "Eliminar";
             // 
             // txtPorcentajeMensual
             // 
@@ -211,72 +272,11 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvCliente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvTipoEmpleado);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(575, 231);
             this.splitContainer1.SplitterDistance = 268;
             this.splitContainer1.TabIndex = 6;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = global::SisNissei.Properties.Resources._new;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(36, 28);
-            this.btnNuevo.Text = "Nuevo";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnModificar.Image = global::SisNissei.Properties.Resources.edit;
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(36, 28);
-            this.btnModificar.Text = "Editar";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(36, 28);
-            this.btnCancelar.Text = "Cancelar";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(36, 28);
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
-            this.btnEliminar.Text = "Eliminar";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // TipoEmpleado
             // 
@@ -286,7 +286,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "TipoEmpleado";
             this.Text = "Tipo de Empleado";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoEmpleado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -311,7 +311,7 @@
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvTipoEmpleado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ToolStrip toolStrip1;

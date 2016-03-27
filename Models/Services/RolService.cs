@@ -22,5 +22,10 @@ namespace Models.Services
         {
             return new RolRepository().Listar();
         }
+        public List<RolEntity> Detalle()
+        {
+
+            return new RolRepository().Detalle();
+        }
     }
 }
