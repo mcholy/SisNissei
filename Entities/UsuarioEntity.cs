@@ -28,5 +28,19 @@ namespace Entities
             get { return contrasenia; }
             set { contrasenia = value; }
         }
+        private string nombreRol;
+
+        public string NombreRol
+        {
+            get { return nombreRol; }
+            set { nombreRol = value; }
+        }
+        private string nombreEmpleado;
+
+        public string Nombreempleado
+        {
+            get { return nombreEmpleado; }
+            set { nombreEmpleado = value; }
+        }
     }
 }
