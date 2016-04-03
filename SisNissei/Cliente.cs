@@ -130,7 +130,7 @@ namespace SisNissei
             {
                 dgvCliente.Columns["id"].Visible = false;
                 dgvCliente.Columns["estado"].Visible = false;
-                dgvCliente.Columns["idditrito"].Visible = false;
+                dgvCliente.Columns["iddistrito"].Visible = false;
                 dgvCliente.Columns["regmod"].Visible = false;
                 dgvCliente.Columns["fecharegistro"].Visible = false;
                 dgvCliente.Columns["estado"].Visible = false;
