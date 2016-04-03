@@ -74,6 +74,7 @@ namespace Models.Repositories
                         item.Telefono = Int32.Parse(reader["telefono"].ToString());
                         item.Direccion = reader["direccion"].ToString();
                         item.Alergia = reader["alergia"].ToString();
+                        lista.Add(item);
                                               
                     }
                     return lista;

@@ -75,6 +75,7 @@
             // 
             this.txtEmpleado.Location = new System.Drawing.Point(91, 49);
             this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.ReadOnly = true;
             this.txtEmpleado.Size = new System.Drawing.Size(153, 20);
             this.txtEmpleado.TabIndex = 7;
             // 
