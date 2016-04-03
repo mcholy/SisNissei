@@ -16,9 +16,11 @@ namespace SisNissei
 
     public partial class TipoEmpleado : Form
     {
-        Validacion itemValidacion = new Validacion();
-        TipoEmpleadoEntity item = new TipoEmpleadoEntity();
-        TipoEmpleadoService servicio = new TipoEmpleadoService();
+        private Validacion itemValidacion = new Validacion();
+        private TipoEmpleadoEntity item = new TipoEmpleadoEntity();
+        private TipoEmpleadoService servicio = new TipoEmpleadoService();
+        private int regmod = 0;
+        private int idActual = 0;
         public TipoEmpleado()
         {
             InitializeComponent();
@@ -33,19 +35,26 @@ namespace SisNissei
         }
         private void Guardar()
         {
+            item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Porcentajematricula = Double.Parse(txtPorcentajeMatricula.Text);
             item.Porcentajematricula = item.Porcentajematricula / 100;
             item.Porcentajemensual = Double.Parse(txtPorcentajeMensual.Text);
             item.Porcentajemensual = item.Porcentajemensual / 100;
+            item.Regmod = regmod;
             //item.idtipoemeplado = icbsexo.selectedvalue;
             TipoEmpleadoService servicio = new TipoEmpleadoService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
             {
-                Limpiar();
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
             }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -73,7 +82,69 @@ namespace SisNissei
             {
                 dgvTipoEmpleado.Columns["id"].Visible = false;
                 dgvTipoEmpleado.Columns["estado"].Visible = false;
+                dgvTipoEmpleado.Columns["regmod"].Visible = false;
+                dgvTipoEmpleado.Columns["fecharegistro"].Visible = false;
             }
         }
+        private void Eliminar()
+        {
+            item.Id = Int32.Parse(dgvTipoEmpleado.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = servicio.Eliminar(item);
+            if (respuesta == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se elimino satisfactoriamente.");
+                CargarDetalle();
+            }
+        }
+        private void LlenarControles()
+        {
+            idActual = Int32.Parse(dgvTipoEmpleado.CurrentRow.Cells["id"].Value.ToString());
+            txtNombre.Text = dgvTipoEmpleado.CurrentRow.Cells["nombre"].Value.ToString();
+            txtPorcentajeMensual.Text = dgvTipoEmpleado.CurrentRow.Cells["porcentajemensual"].Value.ToString();
+            txtPorcentajeMatricula.Text = dgvTipoEmpleado.CurrentRow.Cells["porcentajematricula"].Value.ToString();
+        }
+        private void TipoEmpleado_Load(object sender, EventArgs e)
+        {
+            dgvTipoEmpleado.ClearSelection();
+            dgvTipoEmpleado.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvTipoEmpleado.RowCount > 0)
+            {
+                if (dgvTipoEmpleado.CurrentRow.Selected == true)
+                {
+                    LlenarControles();
+                    regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvTipoEmpleado.RowCount > 0)
+            {
+                if (dgvTipoEmpleado.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Eliminar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
+            }
+        }
+
     }
 }

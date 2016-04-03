@@ -101,7 +101,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 36);
+            this.panel1.Size = new System.Drawing.Size(241, 36);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -136,7 +136,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvDistrito);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(520, 219);
-            this.splitContainer1.SplitterDistance = 244;
+            this.splitContainer1.SplitterDistance = 243;
             this.splitContainer1.TabIndex = 3;
             // 
             // groupBox2
@@ -182,7 +182,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 186);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(242, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(241, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -204,6 +204,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -235,6 +236,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Distrito
             // 

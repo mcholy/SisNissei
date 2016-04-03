@@ -10,16 +10,22 @@ namespace Models.Services
     public class PeriodoService
     {
         string respuesta;
+        private PeriodoRepository repositorio = new PeriodoRepository();
         public int Guardar(PeriodoEntity item)
         {
-            PeriodoRepository repositorio = new PeriodoRepository();
             respuesta = repositorio.Guardar(item);
+
             return Int32.Parse(respuesta);
+
         }
-        public List<PeriodoEntity> Detalle()
-        {
+        public List<PeriodoEntity> Detalle() {
 
             return new PeriodoRepository().Detalle();
+        }
+        public int Eliminar(PeriodoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
         }
     }
 }

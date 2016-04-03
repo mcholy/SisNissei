@@ -7,14 +7,15 @@ namespace Entities
 {
     public class ClienteEntity : BaseEntity
     {
-        
-        private string apellidopaterno;
 
-        public string Apellidopaterno
+        private string paterno;
+
+        public string Paterno
         {
-            get { return apellidopaterno; }
-            set { apellidopaterno = value; }
+            get { return paterno; }
+            set { paterno = value; }
         }
+
         private int dni;
 
         public int Dni
@@ -22,12 +23,20 @@ namespace Entities
             get { return dni; }
             set { dni = value; }
         }
-        private string apellidomaterno;
+        private string materno;
 
-        public string Apellidomaterno
+        public string Materno
         {
-            get { return apellidomaterno; }
-            set { apellidomaterno = value; }
+            get { return materno; }
+            set { materno = value; }
+        }
+
+        private string nombrecliente;
+
+        public string Nombrecliente
+        {
+            get { return nombrecliente; }
+            set { nombrecliente = value; }
         }
 
         private bool sexo;
@@ -37,7 +46,23 @@ namespace Entities
             get { return sexo; }
             set { sexo = value; }
         }
+
+        private string nombreapoderado;
+
+        public string Nombreapoderado
+        {
+            get { return nombreapoderado; }
+            set { nombreapoderado = value; }
+        }
+        private string nombredistrito;
+
+        public string Nombredistrito
+        {
+            get { return nombredistrito; }
+            set { nombredistrito = value; }
+        }
         private int idapoderado;
+        
 
         public int Idapoderado
         {
@@ -58,20 +83,22 @@ namespace Entities
             get { return fechanacimiento; }
             set { fechanacimiento = value; }
         }
-        private string telefono;
+        private int telefono;
 
-        public string Telefono
+        public int Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
-        private string celular;
 
-        public string Celular
+        private int celular;
+
+        public int Celular
         {
             get { return celular; }
             set { celular = value; }
         }
+
         private string direccion;
 
         public string Direccion
@@ -85,6 +112,13 @@ namespace Entities
         {
             get { return alergia; }
             set { alergia = value; }
+        }
+        private int regmod;
+
+        public int Regmod
+        {
+            get { return regmod; }
+            set { regmod = value; }
         }
     }
 }

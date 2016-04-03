@@ -9,11 +9,24 @@ namespace Models.Services
 {
     public class ClienteService
     {
-        string respuesta;
+        #region Propiedades
+        private string respuesta;
+        private ClienteRepository repositorio = new ClienteRepository();
+        #endregion
+
         public int Guardar(ClienteEntity item)
         {
-            ClienteRepository repositorio = new ClienteRepository();
             respuesta = repositorio.Guardar(item);
+            return Int32.Parse(respuesta);
+        }
+        public List<ClienteEntity> Detalle()
+        {
+            return new ClienteRepository().Detalle();
+        }
+
+        public int Eliminar(ClienteEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
         }
     }

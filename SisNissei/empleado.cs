@@ -14,9 +14,14 @@ namespace SisNissei
 {
     public partial class Empleado : Form
     {
-        Validacion itemValidacion = new Validacion();
-        EmpleadoEntity item = new EmpleadoEntity();
-        EmpleadoService servicio = new EmpleadoService();
+        #region Propiedades
+        private Validacion itemValidacion = new Validacion();
+        private EmpleadoEntity item = new EmpleadoEntity();
+        private EmpleadoService servicio = new EmpleadoService();
+        private int regmod = 0;
+        private int idActual = 0;
+        private int idtipoempleado = 0;
+         #endregion
         public Empleado()
         {
             InitializeComponent();
@@ -40,6 +45,7 @@ namespace SisNissei
         
         private void Guardar()
         {
+            item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Paterno = txtPaterno.Text;
             item.Materno = txtMaterno.Text;
@@ -49,15 +55,20 @@ namespace SisNissei
             item.Celular = txtCelular.Text;
             item.Telefono = txtTelefono.Text;
             item.Direccion = txtDireccion.Text;
+            item.Regmod = regmod;
             //item.idtipoemeplado = icbsexo.selectedvalue;
             EmpleadoService servicio = new EmpleadoService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
-                
             {
-                Limpiar();
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
             }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
         }
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -79,10 +90,6 @@ namespace SisNissei
             itemValidacion.SoloNumeros(e);
         }
 
-        private void Empleado_Load(object sender, EventArgs e)
-        {
-            ListarTipoEmpleados();
-        }
         private void txtPaterno_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
@@ -116,6 +123,72 @@ namespace SisNissei
                 dgvEmpleado.Columns["materno"].Visible = false;
                 dgvEmpleado.Columns["idtipoempleado"].Visible = false;
             }
+        }
+        private void Eliminar()
+        {
+            item.Id = Int32.Parse(dgvEmpleado.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = servicio.Eliminar(item);
+            if (respuesta == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                CargarDetalle();
+            }
+        }
+        private void Empleado_Load(object sender, EventArgs e)
+        {
+            dgvEmpleado.ClearSelection();
+            dgvEmpleado.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+            ListarTipoEmpleados();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpleado.RowCount > 0)
+            {
+                if (dgvEmpleado.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Eliminar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpleado.RowCount > 0)
+            {
+                if (dgvEmpleado.CurrentRow.Selected == true)
+                {
+                    LlenarControles();
+                    regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
+            }
+        }
+        private void LlenarControles()
+        {
+            idActual = Int32.Parse(dgvEmpleado.CurrentRow.Cells["id"].Value.ToString());
+            idtipoempleado = Int32.Parse(dgvEmpleado.CurrentRow.Cells["idtipoempleado"].Value.ToString());
+            txtNombre.Text = dgvEmpleado.CurrentRow.Cells["nombre"].Value.ToString();
+            txtPaterno.Text = dgvEmpleado.CurrentRow.Cells["paterno"].Value.ToString();
+            txtMaterno.Text = dgvEmpleado.CurrentRow.Cells["materno"].Value.ToString();
+            txtDni.Text = dgvEmpleado.CurrentRow.Cells["dni"].Value.ToString();
+            txtSueldoBase.Text = dgvEmpleado.CurrentRow.Cells["sueldobase"].Value.ToString();
+            txtCelular.Text = dgvEmpleado.CurrentRow.Cells["celular"].Value.ToString();
+            txtTelefono.Text = dgvEmpleado.CurrentRow.Cells["telefono"].Value.ToString();
+            txtDireccion.Text = dgvEmpleado.CurrentRow.Cells["direccion"].Value.ToString();
         }
     }
 }

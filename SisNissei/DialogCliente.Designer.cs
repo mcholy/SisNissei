@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class DialogEmpleado
+    partial class DialogCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.dgvEmpleado = new System.Windows.Forms.DataGridView();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,17 +44,15 @@
             this.txtBuscar.Size = new System.Drawing.Size(263, 20);
             this.txtBuscar.TabIndex = 1;
             // 
-            // dgvEmpleado
+            // dgvCliente
             // 
-            this.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleado.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvEmpleado.Location = new System.Drawing.Point(5, 67);
-            this.dgvEmpleado.Name = "dgvEmpleado";
-            this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleado.Size = new System.Drawing.Size(414, 163);
-            this.dgvEmpleado.TabIndex = 3;
-            this.dgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellContentClick);
-            this.dgvEmpleado.DoubleClick += new System.EventHandler(this.dgvEmpleado_DoubleClick);
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvCliente.Location = new System.Drawing.Point(5, 67);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCliente.Size = new System.Drawing.Size(414, 163);
+            this.dgvCliente.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -88,15 +86,15 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // DialogEmpleado
+            // DialogCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 242);
-            this.Controls.Add(this.dgvEmpleado);
+            this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.groupBox1);
-            this.Name = "DialogEmpleado";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
+            this.Name = "DialogCliente";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -106,7 +104,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.DataGridView dgvEmpleado;
+        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;

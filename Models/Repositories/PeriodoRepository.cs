@@ -18,22 +18,17 @@ namespace Models.Repositories
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                item.Nombre = item.Nombre.TrimEnd('.');
-                item.Nombre = item.Nombre.TrimStart('.');
                 cmd.CommandText = "sis_Periodo_Guardar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
-                // ResultModels r_obj = null;
                 while (reader.Read())
                 {
                     respuesta = reader["respuesta"].ToString();
-                    //    r_obj = new ResultModels { Message = reader["msj"].ToString(), Result = reader["Indica"].ToString(), data = reader["data"].ToString() };
                 }
-                //  return r_obj;
                 return respuesta;
-
             }
         }
         public List<PeriodoEntity> Detalle()
@@ -64,6 +59,24 @@ namespace Models.Repositories
 
             }
 
+        }
+        public string Eliminar(PeriodoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Periodo_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                string respuesta = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    respuesta = reader["respuesta"].ToString();
+                }
+                return respuesta;
+            }
         }
     }
 }

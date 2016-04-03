@@ -95,7 +95,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 36);
+            this.panel1.Size = new System.Drawing.Size(245, 36);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -144,9 +144,9 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 188);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 204);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(201, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(245, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -168,6 +168,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -199,6 +200,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox2
             // 
@@ -230,15 +232,15 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvRol);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(430, 221);
-            this.splitContainer1.SplitterDistance = 203;
+            this.splitContainer1.Size = new System.Drawing.Size(524, 237);
+            this.splitContainer1.SplitterDistance = 247;
             this.splitContainer1.TabIndex = 4;
             // 
             // Rol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 221);
+            this.ClientSize = new System.Drawing.Size(524, 237);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Rol";
             this.Text = "Rol";

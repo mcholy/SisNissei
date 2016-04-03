@@ -20,9 +20,11 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_TipoEmpleado_Guardar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@porcentajemensual", item.Porcentajemensual);
                 cmd.Parameters.AddWithValue("@porcentajematricula", item.Porcentajematricula);
+                cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -68,6 +70,24 @@ namespace Models.Repositories
 
             }
 
+        }
+        public string Eliminar(TipoEmpleadoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_TipoEmpleado_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                string respuesta = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    respuesta = reader["respuesta"].ToString();
+                }
+                return respuesta;
+            }
         }
     }
 }

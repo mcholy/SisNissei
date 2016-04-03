@@ -11,9 +11,9 @@ namespace Models.Services
     public class TipoEgresoService
     {
         string respuesta;
+        private TipoEgresoRepository repositorio = new TipoEgresoRepository();
         public int Guardar(TipoEgresoEntity item)
         {
-            TipoEgresoRepository repositorio = new TipoEgresoRepository();
             respuesta = repositorio.Guardar(item);
 
             return Int32.Parse(respuesta);
@@ -23,5 +23,10 @@ namespace Models.Services
 
             return new TipoEgresoRepository().Detalle();
         }
+         public int Eliminar(TipoEgresoEntity item)
+         {
+             respuesta = repositorio.Eliminar(item);
+             return Int32.Parse(respuesta);
+         }
     }
 }

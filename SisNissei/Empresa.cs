@@ -14,9 +14,13 @@ namespace SisNissei
 {
     public partial class Empresa : Form
     {
-        Validacion itemValidacion = new Validacion();
-        EmpresaEntity item = new EmpresaEntity();
-        EmpresaService servicio = new EmpresaService();
+        #region Propiedades
+        private Validacion itemValidacion = new Validacion();
+        private EmpresaEntity item = new EmpresaEntity();
+        private EmpresaService servicio = new EmpresaService();
+        private int regmod = 0;
+        private int idActual = 0;
+        #endregion
         public Empresa()
         {
             InitializeComponent();
@@ -30,26 +34,37 @@ namespace SisNissei
         }
         private void Guardar()
         {
+            item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Descuento = Double.Parse(txtDescuento.Text);
             item.Descuento = item.Descuento / 100;
+            item.Regmod = regmod;
             EmpresaService servicio = new EmpresaService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
             {
-                Limpiar();
-
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
             }
-         }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
+        }
         //int miVariable = Int32 conversion a variable
         //    double var2 = Double.parse
-               
 
-
-        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        private void CargarDetalle()
         {
-        
+            dgvEmpresa.DataSource = servicio.Detalle();
+            if (dgvEmpresa.RowCount > 0)
+            {
+                dgvEmpresa.Columns["id"].Visible = false;
+                dgvEmpresa.Columns["estado"].Visible = false;
+                dgvEmpresa.Columns["regmod"].Visible = false;
+                dgvEmpresa.Columns["fecharegistro"].Visible = false;
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -66,13 +81,62 @@ namespace SisNissei
         {
             Guardar();
         }
-        private void CargarDetalle()
+        private void Eliminar()
         {
-            dgvEmpresa.DataSource = servicio.Detalle();
+            item.Id = Int32.Parse(dgvEmpresa.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = servicio.Eliminar(item);
+            if (respuesta == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se elimino satisfactoriamente.");
+                CargarDetalle();
+            }
+        }
+        private void LlenarControles()
+        {
+            idActual = Int32.Parse(dgvEmpresa.CurrentRow.Cells["id"].Value.ToString());
+            txtNombre.Text = dgvEmpresa.CurrentRow.Cells["nombre"].Value.ToString();
+            txtDescuento.Text = dgvEmpresa.CurrentRow.Cells["descuento"].Value.ToString();
+
+        }
+        private void Empresa_Load(object sender, EventArgs e)
+        {
+            dgvEmpresa.ClearSelection();
+            dgvEmpresa.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
             if (dgvEmpresa.RowCount > 0)
             {
-                dgvEmpresa.Columns["id"].Visible = false;
-                dgvEmpresa.Columns["estado"].Visible = false;
+                if (dgvEmpresa.CurrentRow.Selected == true)
+                {
+                    LlenarControles();
+                    regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpresa.RowCount > 0)
+            {
+                if (dgvEmpresa.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Eliminar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
             }
         }
     }

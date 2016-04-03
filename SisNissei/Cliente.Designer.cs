@@ -49,9 +49,9 @@
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtMaterno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtPaterno = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,9 +122,9 @@
             this.groupBox2.Controls.Add(this.cbSexo);
             this.groupBox2.Controls.Add(this.txtDNI);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox2.Controls.Add(this.txtMaterno);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtApellidoMaterno);
+            this.groupBox2.Controls.Add(this.txtPaterno);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
@@ -154,7 +154,6 @@
             this.chkAlergia.TabIndex = 13;
             this.chkAlergia.Text = "Alergía";
             this.chkAlergia.UseVisualStyleBackColor = true;
-            this.chkAlergia.CheckStateChanged += new System.EventHandler(this.chkAlergia_CheckStateChanged);
             // 
             // label12
             // 
@@ -189,7 +188,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(86, 20);
             this.txtTelefono.TabIndex = 11;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label10
             // 
@@ -207,7 +205,6 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(81, 20);
             this.txtCelular.TabIndex = 10;
-            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtFechaNacimiento
             // 
@@ -255,6 +252,7 @@
             this.btnBuscarApoderado.Size = new System.Drawing.Size(31, 23);
             this.btnBuscarApoderado.TabIndex = 2;
             this.btnBuscarApoderado.UseVisualStyleBackColor = false;
+            this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
             // 
             // label7
             // 
@@ -299,7 +297,6 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(81, 20);
             this.txtDNI.TabIndex = 5;
-            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label5
             // 
@@ -310,14 +307,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "DNI :";
             // 
-            // txtApellidoPaterno
+            // txtMaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(91, 71);
-            this.txtApellidoPaterno.MaxLength = 50;
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtApellidoPaterno.TabIndex = 4;
-            this.txtApellidoPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoPaterno_KeyPress);
+            this.txtMaterno.Location = new System.Drawing.Point(91, 71);
+            this.txtMaterno.MaxLength = 50;
+            this.txtMaterno.Name = "txtMaterno";
+            this.txtMaterno.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterno.TabIndex = 4;
             // 
             // label4
             // 
@@ -328,14 +324,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Ap. Materno :";
             // 
-            // txtApellidoMaterno
+            // txtPaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(91, 45);
-            this.txtApellidoMaterno.MaxLength = 50;
-            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtApellidoMaterno.TabIndex = 3;
-            this.txtApellidoMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMaterno_KeyPress);
+            this.txtPaterno.Location = new System.Drawing.Point(91, 45);
+            this.txtPaterno.MaxLength = 50;
+            this.txtPaterno.Name = "txtPaterno";
+            this.txtPaterno.Size = new System.Drawing.Size(200, 20);
+            this.txtPaterno.TabIndex = 3;
             // 
             // label3
             // 
@@ -353,7 +348,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 2;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
@@ -422,6 +416,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -453,6 +448,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvCliente
             // 
@@ -527,9 +523,9 @@
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtApellidoPaterno;
+        private System.Windows.Forms.TextBox txtMaterno;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtApellidoMaterno;
+        private System.Windows.Forms.TextBox txtPaterno;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;

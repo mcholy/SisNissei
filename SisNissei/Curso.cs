@@ -28,6 +28,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)

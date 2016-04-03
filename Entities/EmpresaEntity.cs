@@ -22,5 +22,12 @@ namespace Entities
             get { return descuento; }
             set { descuento = value; }
         }
+        private int regmod;
+
+        public int Regmod
+        {
+            get { return regmod; }
+            set { regmod = value; }
+        }
     }
 }

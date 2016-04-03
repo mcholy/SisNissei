@@ -19,10 +19,12 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Usuario_Guardar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@idempleado", item.Idempleado);
                 cmd.Parameters.AddWithValue("@idrol", item.Idrol);
                 cmd.Parameters.AddWithValue("@contrasenia",item.Contrasenia);
+                cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -64,6 +66,24 @@ namespace Models.Repositories
 
             }
 
+        }
+        public string Eliminar(UsuarioEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Usuario_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                string respuesta = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    respuesta = reader["respuesta"].ToString();
+                }
+                return respuesta;
+            }
         }
     }
 }

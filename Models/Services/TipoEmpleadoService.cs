@@ -9,20 +9,29 @@ namespace Models.Services
 {
     public class TipoEmpleadoService
     {
-        string respuesta;
+        #region Propiedades
+        private string respuesta;
+        private TipoEmpleadoRepository repositorio = new TipoEmpleadoRepository();
+        #endregion
+
         public int Guardar(TipoEmpleadoEntity item)
         {
-            TipoEmpleadoRepository repositorio = new TipoEmpleadoRepository();
             respuesta = repositorio.Guardar(item);
+            return Int32.Parse(respuesta);
+        }
+        public List<TipoEmpleadoEntity> Detalle()
+        {
+            return new TipoEmpleadoRepository().Detalle();
+        }
+
+        public int Eliminar(TipoEmpleadoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
         }
         public List<TipoEmpleadoEntity> Listar()
         {
             return new TipoEmpleadoRepository().Listar();
-        }
-        public List<TipoEmpleadoEntity> Detalle()
-        {
-            return new TipoEmpleadoRepository().Detalle();
         }
     }
 }

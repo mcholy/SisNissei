@@ -10,22 +10,27 @@ namespace Models.Services
     public class RolService
     {
         string respuesta;
+        private RolRepository repositorio = new RolRepository();
         public int Guardar(RolEntity item)
         {
-            RolRepository repositorio = new RolRepository();
             respuesta = repositorio.Guardar(item);
 
-            return Int32.Parse(respuesta); 
-            
-        }
-        public List<RolEntity> Listar()
-        {
-            return new RolRepository().Listar();
+            return Int32.Parse(respuesta);
+
         }
         public List<RolEntity> Detalle()
         {
 
             return new RolRepository().Detalle();
+        }
+        public List<RolEntity> Listar()
+        {
+            return new RolRepository().Listar();
+        }
+        public int Eliminar(RolEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
         }
     }
 }

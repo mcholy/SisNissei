@@ -18,7 +18,10 @@ namespace SisNissei
         UsuarioEntity item = new UsuarioEntity();
         UsuarioService servicio = new UsuarioService();
         private int idEmpleado = 0;
+        private int idRol = 0;
         private string nombreEmpleado = "";
+        private int idActual = 0;
+        private int regmod = 0;
         public Usuario()
         {
             InitializeComponent();
@@ -31,10 +34,6 @@ namespace SisNissei
             itemValidacion.SoloLetras(e);
         }
 
-        private void Usuario_Load(object sender, EventArgs e)
-        {
-            ListarRoles();
-        }
         private void ListarRoles()
         {
             cbRol.DisplayMember = "Nombre";
@@ -64,19 +63,25 @@ namespace SisNissei
         }
         private void Guardar()
         {
+            item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Idempleado = idEmpleado;
             item.Idrol = Int32.Parse(cbRol.SelectedValue.ToString());
             item.Contrasenia = txtContrasenia.Text;
+            item.Regmod = regmod;
             //item.idtipoemeplado = icbsexo.selectedvalue;
             UsuarioService servicio = new UsuarioService();
             int respuesta = servicio.Guardar(item);
             if (respuesta == 1)
             {
-                Limpiar();
                 MessageBox.Show("El registro se ingreso satisfactoriamente.");
-                CargarDetalle();
             }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -93,6 +98,69 @@ namespace SisNissei
                 dgvUsuario.Columns["contrasenia"].Visible = false;
                 dgvUsuario.Columns["idrol"].Visible = false;
                 dgvUsuario.Columns["idempleado"].Visible = false;
+            }
+        }
+        private void Eliminar()
+        {
+            item.Id = Int32.Parse(dgvUsuario.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = servicio.Eliminar(item);
+            if (respuesta == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                CargarDetalle();
+            }
+        }
+        private void Usuario_Load(object sender, EventArgs e)
+        {
+            dgvUsuario.ClearSelection();
+            dgvUsuario.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+            ListarRoles();
+        }
+        private void LlenarControles()
+        {
+            idActual = Int32.Parse(dgvUsuario.CurrentRow.Cells["id"].Value.ToString());
+            idEmpleado = Int32.Parse(dgvUsuario.CurrentRow.Cells["idempleado"].Value.ToString());
+            txtNombre.Text = dgvUsuario.CurrentRow.Cells["nombre"].Value.ToString();
+            txtEmpleado.Text = dgvUsuario.CurrentRow.Cells["nombreempleado"].Value.ToString();
+            idRol = Int32.Parse(dgvUsuario.CurrentRow.Cells["idrol"].Value.ToString());
+            txtContrasenia.Text = dgvUsuario.CurrentRow.Cells["contrasenia"].Value.ToString();
+           
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuario.RowCount > 0)
+            {
+                if (dgvUsuario.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        Eliminar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuario.RowCount > 0)
+            {
+                if (dgvUsuario.CurrentRow.Selected == true)
+                {
+                    LlenarControles();
+                    regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
             }
         }
     }

@@ -61,5 +61,10 @@ namespace SisNissei
                 dgvEmpleado.Columns["materno"].DisplayIndex = 2;
             }
         }
+
+        private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

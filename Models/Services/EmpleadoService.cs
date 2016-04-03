@@ -9,7 +9,8 @@ namespace Models.Services
 {
     public class EmpleadoService
     {
-        string respuesta;
+        private string respuesta;
+        private EmpleadoRepository repositorio = new EmpleadoRepository();
         public int Guardar(EmpleadoEntity item)
         {
             EmpleadoRepository repositorio = new EmpleadoRepository();
@@ -21,6 +22,10 @@ namespace Models.Services
         {
             return new EmpleadoRepository().Detalle();
         }
-        
+        public int Eliminar(EmpleadoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
+        }
     }
 }

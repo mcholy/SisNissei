@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Models.Repositories
 {
-    class EmpresaRepository : DbContext
+    class EmpresaRepository : BaseRepository<EmpresaEntity>
     {
         public string Guardar(EmpresaEntity item)
         { 
@@ -19,17 +19,16 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Empresa_Guardar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
-                cmd.Parameters.AddWithValue("@descuento", item.Descuento.ToString());
+                cmd.Parameters.AddWithValue("@descuento", item.Descuento);
+                cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
-                // ResultModels r_obj = null;
                 while (reader.Read())
                 {
                     respuesta = reader["respuesta"].ToString();
-                    //    r_obj = new ResultModels { Message = reader["msj"].ToString(), Result = reader["Indica"].ToString(), data = reader["data"].ToString() };
                 }
-                //  return r_obj;
                 return respuesta;
             }
         }
@@ -63,6 +62,24 @@ namespace Models.Repositories
 
             }
 
+        }
+        public string Eliminar(EmpresaEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Empresa_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                string respuesta = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    respuesta = reader["respuesta"].ToString();
+                }
+                return respuesta;
+            }
         }
     }
 }

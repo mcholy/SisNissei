@@ -10,19 +10,28 @@ namespace Models.Services
     public class DistritoService
     {
         string respuesta;
+        private DistritoRepository repositorio = new DistritoRepository();
         public int Guardar(DistritoEntity item)
         {
-            DistritoRepository repositorio = new DistritoRepository();
             respuesta = repositorio.Guardar(item);
-            return Int32.Parse(respuesta); 
-        }
-        public List<DistritoEntity> Listar() {
-            return new DistritoRepository().Listar();
-        }
 
-        public List<DistritoEntity> Detalle() {
+            return Int32.Parse(respuesta);
+
+        }
+        public List<DistritoEntity> Detalle()
+        {
 
             return new DistritoRepository().Detalle();
         }
+        public int Eliminar(DistritoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
+        }
+        public List<DistritoEntity> Listar()
+        {
+            return new DistritoRepository().Listar();
+        }
+        
     }
 }
