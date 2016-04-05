@@ -221,5 +221,21 @@ namespace SisNissei
         {
             Guardar();
         }
+        #region Singleton
+        private static Cliente m_FormDefInstance;
+        public static Cliente DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Cliente();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

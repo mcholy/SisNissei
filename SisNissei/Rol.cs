@@ -121,5 +121,21 @@ namespace SisNissei
                 }
             }
         }
+        #region Singleton
+        private static Rol m_FormDefInstance;
+        public static Rol DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Rol();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

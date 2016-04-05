@@ -16,6 +16,7 @@ namespace SisNissei
         public Principal()
         {
             InitializeComponent();
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFFFF");
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -98,33 +99,74 @@ namespace SisNissei
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+           
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Cliente.DefInstance.MdiParent = this;
+            Cliente.DefInstance.Show();
         }
 
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empresa.DefInstance.MdiParent = this;
+            Empresa.DefInstance.Show();
+        }
+
+        private void periodoDeMatriculaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Periodo.DefInstance.MdiParent = this;
+            Periodo.DefInstance.Show();
+        }
+
+        private void distritoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Distrito.DefInstance.MdiParent = this;
+            Distrito.DefInstance.Show();
+        }
+
+        
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Usuario.DefInstance.MdiParent = this;
             Usuario.DefInstance.Show();
         }
 
-        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rolEnSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Empleado emp = new Empleado();
-            emp.Show();
+            Rol.DefInstance.MdiParent = this;
+            Rol.DefInstance.Show();
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cliente cli = new Cliente();
-            cli.Show();
+            Close();
         }
 
-        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Empresa empr = new Empresa();
-            empr.Show();
+            Curso.DefInstance.MdiParent = this;
+            Curso.DefInstance.Show();
         }
+
+        private void empleadoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Empleado.DefInstance.MdiParent = this;
+            Empleado.DefInstance.Show();
+        }
+
+        private void tipoDeEmpleadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            TipoEmpleado.DefInstance.MdiParent = this;
+            TipoEmpleado.DefInstance.Show();
+        }
+
+        private void horarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        
     }
 }

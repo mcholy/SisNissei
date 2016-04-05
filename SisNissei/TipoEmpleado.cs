@@ -145,6 +145,21 @@ namespace SisNissei
                 }
             }
         }
-
+        #region Singleton
+        private static TipoEmpleado m_FormDefInstance;
+        public static TipoEmpleado DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new TipoEmpleado();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

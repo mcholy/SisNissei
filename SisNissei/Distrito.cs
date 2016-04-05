@@ -127,5 +127,21 @@ namespace SisNissei
                 }
             }
         }
+        #region Singleton
+        private static Distrito m_FormDefInstance;
+        public static Distrito DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Distrito();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

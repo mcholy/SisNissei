@@ -139,5 +139,21 @@ namespace SisNissei
                 }
             }
         }
+        #region Singleton
+        private static Empresa m_FormDefInstance;
+        public static Empresa DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Empresa();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }
