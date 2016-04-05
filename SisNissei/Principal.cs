@@ -65,16 +65,6 @@ namespace SisNissei
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -115,8 +105,8 @@ namespace SisNissei
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuario usu = new Usuario();
-            usu.Show();
+            Usuario.DefInstance.MdiParent = this;
+            Usuario.DefInstance.Show();
         }
 
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)

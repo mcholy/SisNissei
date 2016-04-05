@@ -14,9 +14,9 @@ namespace SisNissei
 {
     public partial class Usuario : Form
     {
-        Validacion itemValidacion = new Validacion();
-        UsuarioEntity item = new UsuarioEntity();
-        UsuarioService servicio = new UsuarioService();
+        private Validacion itemValidacion = new Validacion();
+        private UsuarioEntity item = new UsuarioEntity();
+        private UsuarioService servicio = new UsuarioService();
         private int idEmpleado = 0;
         private int idRol = 0;
         private string nombreEmpleado = "";
@@ -28,6 +28,24 @@ namespace SisNissei
             Skin.AplicarSkin(this);
             CargarDetalle();
         }
+
+        #region Singleton
+        private static Usuario m_FormDefInstance;
+        public static Usuario DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Usuario();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
+
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
