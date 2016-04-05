@@ -72,7 +72,7 @@
             this.dgvTipoEmpleado.Location = new System.Drawing.Point(9, 59);
             this.dgvTipoEmpleado.Name = "dgvTipoEmpleado";
             this.dgvTipoEmpleado.Size = new System.Drawing.Size(260, 151);
-            this.dgvTipoEmpleado.TabIndex = 1;
+            this.dgvTipoEmpleado.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -93,7 +93,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(216, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // toolStrip1
@@ -172,7 +172,7 @@
             this.txtPorcentajeMensual.MaxLength = 2;
             this.txtPorcentajeMensual.Name = "txtPorcentajeMensual";
             this.txtPorcentajeMensual.Size = new System.Drawing.Size(108, 20);
-            this.txtPorcentajeMensual.TabIndex = 3;
+            this.txtPorcentajeMensual.TabIndex = 4;
             this.txtPorcentajeMensual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMensualidad_KeyPress);
             // 
             // label2
@@ -217,7 +217,7 @@
             this.txtPorcentajeMatricula.MaxLength = 3;
             this.txtPorcentajeMatricula.Name = "txtPorcentajeMatricula";
             this.txtPorcentajeMatricula.Size = new System.Drawing.Size(108, 20);
-            this.txtPorcentajeMatricula.TabIndex = 4;
+            this.txtPorcentajeMatricula.TabIndex = 5;
             this.txtPorcentajeMatricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentajeMatricula_KeyPress);
             // 
             // label4
@@ -235,7 +235,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(161, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1

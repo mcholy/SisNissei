@@ -102,5 +102,21 @@ namespace SisNissei
                 childForm.Close();
             }
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuario usu = new Usuario();
+            usu.Show();
+        }
     }
 }

@@ -61,7 +61,7 @@
             this.dgvTipoEgreso.Location = new System.Drawing.Point(9, 59);
             this.dgvTipoEgreso.Name = "dgvTipoEgreso";
             this.dgvTipoEgreso.Size = new System.Drawing.Size(194, 151);
-            this.dgvTipoEgreso.TabIndex = 1;
+            this.dgvTipoEgreso.TabIndex = 0;
             // 
             // txtNombre
             // 
@@ -69,7 +69,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(105, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
@@ -95,7 +95,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 36);
+            this.panel1.Size = new System.Drawing.Size(237, 36);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -129,7 +129,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(149, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // toolStrip1
@@ -146,7 +146,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 188);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(238, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(237, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -233,7 +233,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgvTipoEgreso);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(511, 221);
-            this.splitContainer1.SplitterDistance = 240;
+            this.splitContainer1.SplitterDistance = 239;
             this.splitContainer1.TabIndex = 4;
             // 
             // TipoEgreso

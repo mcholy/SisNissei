@@ -113,7 +113,7 @@
             this.cbRol.Location = new System.Drawing.Point(91, 78);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(200, 21);
-            this.cbRol.TabIndex = 11;
+            this.cbRol.TabIndex = 5;
             // 
             // btnBuscarEmpleado
             // 
@@ -123,7 +123,7 @@
             this.btnBuscarEmpleado.Location = new System.Drawing.Point(260, 47);
             this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
             this.btnBuscarEmpleado.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarEmpleado.TabIndex = 2;
+            this.btnBuscarEmpleado.TabIndex = 4;
             this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
             this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
             // 
@@ -133,7 +133,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(200, 20);
-            this.txtContrasenia.TabIndex = 5;
+            this.txtContrasenia.TabIndex = 6;
             // 
             // label5
             // 
@@ -150,7 +150,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
@@ -190,7 +190,7 @@
             this.dgvUsuario.Location = new System.Drawing.Point(9, 59);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(291, 180);
-            this.dgvUsuario.TabIndex = 1;
+            this.dgvUsuario.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -218,7 +218,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(247, 17);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // toolStrip1

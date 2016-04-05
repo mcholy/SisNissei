@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Models.Repositories
 {
-    class PeriodoRepository : DbContext
+    class PeriodoRepository : BaseRepository<PeriodoEntity>
     {
         public string Guardar(PeriodoEntity item)
         {

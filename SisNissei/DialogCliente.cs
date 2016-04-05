@@ -34,6 +34,21 @@ namespace SisNissei
             return _id;
         }
 
+        
+
+        private void CargarDetalle()
+        {
+            dgvCliente.DataSource = servicio.Detalle();
+            if (dgvCliente.RowCount > 0)
+            {
+                dgvCliente.Columns["id"].Visible = false;
+                dgvCliente.Columns["estado"].Visible = false;
+                dgvCliente.Columns["nombre"].DisplayIndex = 0;
+                dgvCliente.Columns["paterno"].DisplayIndex = 1;
+                dgvCliente.Columns["materno"].DisplayIndex = 2;
+            }
+        }
+
         private void dgvCliente_DoubleClick(object sender, EventArgs e)
         {
             if (dgvCliente.RowCount > 0)
@@ -48,17 +63,6 @@ namespace SisNissei
             this.Close();
         }
 
-        private void CargarDetalle()
-        {
-            dgvCliente.DataSource = servicio.Detalle();
-            if (dgvCliente.RowCount > 0)
-            {
-                dgvCliente.Columns["id"].Visible = false;
-                dgvCliente.Columns["estado"].Visible = false;
-                dgvCliente.Columns["nombre"].DisplayIndex = 0;
-                dgvCliente.Columns["paterno"].DisplayIndex = 1;
-                dgvCliente.Columns["materno"].DisplayIndex = 2;
-            }
-        }
+        
     }
 }
