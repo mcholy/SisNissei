@@ -21,12 +21,13 @@ namespace Entities
             get { return hora; }
             set { hora = value; }
         }
-        private int edad;
+        private int idedad;
 
-        public int Edad
+        public int Idedad
         {
-            get { return edad; }
-            set { edad = value; }
+            get { return idedad; }
+            set { idedad = value; }
         }
+
     }
 }
