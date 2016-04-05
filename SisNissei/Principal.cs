@@ -118,5 +118,23 @@ namespace SisNissei
             Usuario usu = new Usuario();
             usu.Show();
         }
+
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empleado emp = new Empleado();
+            emp.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cliente cli = new Cliente();
+            cli.Show();
+        }
+
+        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Empresa empr = new Empresa();
+            empr.Show();
+        }
     }
 }
