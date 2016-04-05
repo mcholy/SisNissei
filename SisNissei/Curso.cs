@@ -161,5 +161,21 @@ namespace SisNissei
                 }
             }
         }
+        #region Singleton
+        private static Curso m_FormDefInstance;
+        public static Curso DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Curso();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

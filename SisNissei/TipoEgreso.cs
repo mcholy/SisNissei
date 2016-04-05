@@ -120,6 +120,21 @@ namespace SisNissei
                 }
             }
         }
-                       
+        #region Singleton
+        private static TipoEgreso m_FormDefInstance;
+        public static TipoEgreso DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new TipoEgreso();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

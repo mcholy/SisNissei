@@ -190,5 +190,21 @@ namespace SisNissei
             txtTelefono.Text = dgvEmpleado.CurrentRow.Cells["telefono"].Value.ToString();
             txtDireccion.Text = dgvEmpleado.CurrentRow.Cells["direccion"].Value.ToString();
         }
+        #region Singleton
+        private static Empleado m_FormDefInstance;
+        public static Empleado DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Empleado();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

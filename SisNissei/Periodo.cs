@@ -122,5 +122,21 @@ namespace SisNissei
             txtNombre.Text = dgvPeriodo.CurrentRow.Cells["nombre"].Value.ToString();
 
         }
+        #region Singleton
+        private static Periodo m_FormDefInstance;
+        public static Periodo DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Periodo();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }
