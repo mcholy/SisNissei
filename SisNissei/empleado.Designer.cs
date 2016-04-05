@@ -417,7 +417,7 @@
             this.ClientSize = new System.Drawing.Size(728, 306);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Empleado";
-            this.Text = "Form1";
+            this.Text = "Empleado";
             this.Load += new System.EventHandler(this.Empleado_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

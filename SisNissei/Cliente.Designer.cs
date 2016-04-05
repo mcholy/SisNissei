@@ -497,6 +497,7 @@
             this.KeyPreview = true;
             this.Name = "Cliente";
             this.ShowIcon = false;
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Cliente_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

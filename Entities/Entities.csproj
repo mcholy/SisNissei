@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="GrupoEtarioEntity.cs" />
     <Compile Include="InscripcionEntity.cs" />
     <Compile Include="UsuarioEntity.cs" />
     <Compile Include="IngresoEntity.cs" />

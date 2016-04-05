@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GrupoEtario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GrupoEtario.Designer.cs">
+      <DependentUpon>GrupoEtario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     <Compile Include="Template\Skin.cs" />
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GrupoEtario.resx">
+      <DependentUpon>GrupoEtario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogCliente.resx">
       <DependentUpon>DialogCliente.cs</DependentUpon>
