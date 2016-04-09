@@ -60,6 +60,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.rangoDeEdadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -93,21 +95,21 @@
             // usuarioToolStripMenuItem1
             // 
             this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
-            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
             this.usuarioToolStripMenuItem1.Text = "Usuario";
             this.usuarioToolStripMenuItem1.Click += new System.EventHandler(this.usuarioToolStripMenuItem1_Click);
             // 
             // rolEnSistemaToolStripMenuItem1
             // 
             this.rolEnSistemaToolStripMenuItem1.Name = "rolEnSistemaToolStripMenuItem1";
-            this.rolEnSistemaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.rolEnSistemaToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
             this.rolEnSistemaToolStripMenuItem1.Text = "Rol en Sistema";
             this.rolEnSistemaToolStripMenuItem1.Click += new System.EventHandler(this.rolEnSistemaToolStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -166,10 +168,13 @@
             // 
             // horarioToolStripMenuItem
             // 
+            this.horarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.horarioToolStripMenuItem1,
+            this.rangoDeEdadesToolStripMenuItem});
             this.horarioToolStripMenuItem.Name = "horarioToolStripMenuItem";
             this.horarioToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.horarioToolStripMenuItem.Text = "Horario";
-            this.horarioToolStripMenuItem.Click += new System.EventHandler(this.horarioToolStripMenuItem_Click);
+            
             // 
             // movimientosToolStripMenuItem
             // 
@@ -209,21 +214,21 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.empresaToolStripMenuItem.Text = "Empresa";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
             // inscripciónToolStripMenuItem
             // 
             this.inscripciónToolStripMenuItem.Name = "inscripciónToolStripMenuItem";
-            this.inscripciónToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.inscripciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inscripciónToolStripMenuItem.Text = "Inscripción";
             // 
             // movimientoToolStripMenuItem
@@ -232,7 +237,7 @@
             this.egresoToolStripMenuItem,
             this.ingresoToolStripMenuItem});
             this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
-            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.movimientoToolStripMenuItem.Text = "Movimiento";
             // 
             // egresoToolStripMenuItem
@@ -301,6 +306,20 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // rangoDeEdadesToolStripMenuItem
+            // 
+            this.rangoDeEdadesToolStripMenuItem.Name = "rangoDeEdadesToolStripMenuItem";
+            this.rangoDeEdadesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.rangoDeEdadesToolStripMenuItem.Text = "Rango de Edades";
+            this.rangoDeEdadesToolStripMenuItem.Click += new System.EventHandler(this.rangoDeEdadesToolStripMenuItem_Click);
+            // 
+            // horarioToolStripMenuItem1
+            // 
+            this.horarioToolStripMenuItem1.Name = "horarioToolStripMenuItem1";
+            this.horarioToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.horarioToolStripMenuItem1.Text = "Horario";
+            this.horarioToolStripMenuItem1.Click += new System.EventHandler(this.horarioToolStripMenuItem1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +371,8 @@
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem horarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rangoDeEdadesToolStripMenuItem;
     }
 }
 

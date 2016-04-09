@@ -44,7 +44,7 @@ namespace SisNissei
             if (respuesta == 1)
             {
                 MessageBox.Show("El registro se elimino satisfactoriamente");
-                CargarDetalle();
+                //CargarDetalle();
             }
         }
         private void LlenarControles()
@@ -73,7 +73,7 @@ namespace SisNissei
                 MessageBox.Show("El registro se actualizó satisfactoriamente.");
             }
 
-            CargarDetalle();
+            //CargarDetalle();
             Limpiar();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -81,10 +81,7 @@ namespace SisNissei
             Guardar();
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            itemValidacion.SoloLetras(e);
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -120,6 +117,7 @@ namespace SisNissei
                 }
             }
         }
+
         #region Singleton
         private static GrupoEtario m_FormDefInstance;
         public static GrupoEtario DefInstance

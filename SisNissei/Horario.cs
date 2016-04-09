@@ -20,6 +20,21 @@ namespace SisNissei
         {
 
         }
-
+        #region Singleton
+        private static Horario m_FormDefInstance;
+        public static Horario DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Horario();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

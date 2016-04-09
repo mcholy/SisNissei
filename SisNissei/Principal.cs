@@ -160,13 +160,18 @@ namespace SisNissei
             TipoEmpleado.DefInstance.Show();
         }
 
-        private void horarioToolStripMenuItem_Click(object sender, EventArgs e)
+      
+        private void horarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            Horario.DefInstance.MdiParent = this;
+            Horario.DefInstance.Show();
         }
 
-        
-
-        
+        private void rangoDeEdadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrupoEtario.DefInstance.MdiParent = this;
+            GrupoEtario.DefInstance.Show();
+        }
+               
     }
 }
