@@ -17,6 +17,7 @@ namespace SisNissei
         public Horario()
         {
             InitializeComponent();
+            Skin.AplicarSkin(this);
         }
 
         private void Horario_Load(object sender, EventArgs e)
@@ -94,12 +95,12 @@ namespace SisNissei
         {
             string cadena = String.Empty;
             cadena += chkLunes.Checked ? "Lun " : "";
-            cadena += chkMartes.Checked ? "Mar" : "";
-            cadena += chkMiercoles.Checked ? "Mie" : "";
-            cadena += chkJueves.Checked ? "Jue" : "";
-            cadena += chkViernes.Checked ? "Vie" : "";
-            cadena += chkSabado.Checked ? "Sab" : "";
-            cadena += chkDomingo.Checked ? "Dom" : "";
+            cadena += chkMartes.Checked ? "Mar " : "";
+            cadena += chkMiercoles.Checked ? "Mie " : "";
+            cadena += chkJueves.Checked ? "Jue " : "";
+            cadena += chkViernes.Checked ? "Vie " : "";
+            cadena += chkSabado.Checked ? "Sab " : "";
+            cadena += chkDomingo.Checked ? "Dom " : "";
             cadena = cadena.Trim();
             return cadena;
         }
