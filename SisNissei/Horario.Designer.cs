@@ -43,24 +43,23 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDetalleHorario = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtHorario = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbGrupoEtario = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.chkDomingo = new System.Windows.Forms.CheckBox();
+            this.chkViernes = new System.Windows.Forms.CheckBox();
+            this.chkSabado = new System.Windows.Forms.CheckBox();
+            this.chkJueves = new System.Windows.Forms.CheckBox();
+            this.chkMiercoles = new System.Windows.Forms.CheckBox();
+            this.chkMartes = new System.Windows.Forms.CheckBox();
+            this.chkLunes = new System.Windows.Forms.CheckBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHora = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -88,7 +87,7 @@
             // dgvHorario
             // 
             this.dgvHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHorario.Location = new System.Drawing.Point(15, 60);
+            this.dgvHorario.Location = new System.Drawing.Point(14, 60);
             this.dgvHorario.Name = "dgvHorario";
             this.dgvHorario.Size = new System.Drawing.Size(321, 348);
             this.dgvHorario.TabIndex = 1;
@@ -97,7 +96,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtBuscar);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(9, 9);
+            this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(333, 48);
             this.groupBox1.TabIndex = 0;
@@ -164,7 +163,7 @@
             this.btnEliminar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 383);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(331, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(352, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -197,7 +196,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 36);
+            this.panel1.Size = new System.Drawing.Size(352, 36);
             this.panel1.TabIndex = 3;
             // 
             // splitContainer1
@@ -220,42 +219,51 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvHorario);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(694, 416);
-            this.splitContainer1.SplitterDistance = 333;
+            this.splitContainer1.Size = new System.Drawing.Size(706, 416);
+            this.splitContainer1.SplitterDistance = 354;
             this.splitContainer1.TabIndex = 6;
             // 
             // dgvDetalleHorario
             // 
             this.dgvDetalleHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleHorario.Location = new System.Drawing.Point(16, 285);
+            this.dgvDetalleHorario.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDetalleHorario.Location = new System.Drawing.Point(16, 269);
             this.dgvDetalleHorario.Name = "dgvDetalleHorario";
-            this.dgvDetalleHorario.Size = new System.Drawing.Size(305, 84);
+            this.dgvDetalleHorario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetalleHorario.Size = new System.Drawing.Size(323, 110);
             this.dgvDetalleHorario.TabIndex = 2;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnHora);
+            this.groupBox2.Controls.Add(this.txtHorario);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbCurso);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbGrupoEtario);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(310, 237);
+            this.groupBox2.Size = new System.Drawing.Size(328, 222);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // txtHorario
+            // 
+            this.txtHorario.Location = new System.Drawing.Point(89, 46);
+            this.txtHorario.Mask = "90:00 - 90:00";
+            this.txtHorario.Name = "txtHorario";
+            this.txtHorario.Size = new System.Drawing.Size(73, 20);
+            this.txtHorario.TabIndex = 2;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(166, 92);
+            this.label5.Location = new System.Drawing.Point(180, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 14;
@@ -265,15 +273,15 @@
             // 
             this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(17, 108);
+            this.cbCurso.Location = new System.Drawing.Point(17, 90);
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(127, 21);
-            this.cbCurso.TabIndex = 13;
+            this.cbCurso.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 92);
+            this.label7.Location = new System.Drawing.Point(14, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 12;
@@ -283,138 +291,113 @@
             // 
             this.cbGrupoEtario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupoEtario.FormattingEnabled = true;
-            this.cbGrupoEtario.Location = new System.Drawing.Point(169, 108);
+            this.cbGrupoEtario.Location = new System.Drawing.Point(183, 90);
             this.cbGrupoEtario.Name = "cbGrupoEtario";
             this.cbGrupoEtario.Size = new System.Drawing.Size(127, 21);
-            this.cbGrupoEtario.TabIndex = 11;
+            this.cbGrupoEtario.TabIndex = 4;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox7);
-            this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Controls.Add(this.checkBox5);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
-            this.groupBox3.Location = new System.Drawing.Point(15, 138);
+            this.groupBox3.Controls.Add(this.chkDomingo);
+            this.groupBox3.Controls.Add(this.chkViernes);
+            this.groupBox3.Controls.Add(this.chkSabado);
+            this.groupBox3.Controls.Add(this.chkJueves);
+            this.groupBox3.Controls.Add(this.chkMiercoles);
+            this.groupBox3.Controls.Add(this.chkMartes);
+            this.groupBox3.Controls.Add(this.chkLunes);
+            this.groupBox3.Location = new System.Drawing.Point(15, 120);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(281, 92);
+            this.groupBox3.Size = new System.Drawing.Size(295, 92);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Días";
             // 
-            // checkBox7
+            // chkDomingo
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(14, 68);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(68, 17);
-            this.checkBox7.TabIndex = 22;
-            this.checkBox7.Text = "Domingo";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkDomingo.AutoSize = true;
+            this.chkDomingo.Location = new System.Drawing.Point(14, 68);
+            this.chkDomingo.Name = "chkDomingo";
+            this.chkDomingo.Size = new System.Drawing.Size(68, 17);
+            this.chkDomingo.TabIndex = 11;
+            this.chkDomingo.Text = "Domingo";
+            this.chkDomingo.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkViernes
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(100, 45);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(61, 17);
-            this.checkBox6.TabIndex = 21;
-            this.checkBox6.Text = "Viernes";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkViernes.AutoSize = true;
+            this.chkViernes.Location = new System.Drawing.Point(108, 45);
+            this.chkViernes.Name = "chkViernes";
+            this.chkViernes.Size = new System.Drawing.Size(61, 17);
+            this.chkViernes.TabIndex = 9;
+            this.chkViernes.Text = "Viernes";
+            this.chkViernes.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkSabado
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(186, 45);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(63, 17);
-            this.checkBox5.TabIndex = 20;
-            this.checkBox5.Text = "Sábado";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkSabado.AutoSize = true;
+            this.chkSabado.Location = new System.Drawing.Point(203, 45);
+            this.chkSabado.Name = "chkSabado";
+            this.chkSabado.Size = new System.Drawing.Size(63, 17);
+            this.chkSabado.TabIndex = 10;
+            this.chkSabado.Text = "Sábado";
+            this.chkSabado.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkJueves
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(14, 45);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(60, 17);
-            this.checkBox4.TabIndex = 19;
-            this.checkBox4.Text = "Jueves";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkJueves.AutoSize = true;
+            this.chkJueves.Location = new System.Drawing.Point(14, 45);
+            this.chkJueves.Name = "chkJueves";
+            this.chkJueves.Size = new System.Drawing.Size(60, 17);
+            this.chkJueves.TabIndex = 8;
+            this.chkJueves.Text = "Jueves";
+            this.chkJueves.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkMiercoles
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(186, 22);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(71, 17);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "Miércoles";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkMiercoles.AutoSize = true;
+            this.chkMiercoles.Location = new System.Drawing.Point(203, 22);
+            this.chkMiercoles.Name = "chkMiercoles";
+            this.chkMiercoles.Size = new System.Drawing.Size(71, 17);
+            this.chkMiercoles.TabIndex = 7;
+            this.chkMiercoles.Text = "Miércoles";
+            this.chkMiercoles.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkMartes
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(100, 22);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 17);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Martes";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkMartes.AutoSize = true;
+            this.chkMartes.Location = new System.Drawing.Point(108, 22);
+            this.chkMartes.Name = "chkMartes";
+            this.chkMartes.Size = new System.Drawing.Size(58, 17);
+            this.chkMartes.TabIndex = 6;
+            this.chkMartes.Text = "Martes";
+            this.chkMartes.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkLunes
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(55, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Lunes";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(177, 62);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(119, 20);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Hora Fin";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(17, 62);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.chkLunes.AutoSize = true;
+            this.chkLunes.Location = new System.Drawing.Point(14, 22);
+            this.chkLunes.Name = "chkLunes";
+            this.chkLunes.Size = new System.Drawing.Size(55, 17);
+            this.chkLunes.TabIndex = 5;
+            this.chkLunes.Text = "Lunes";
+            this.chkLunes.UseVisualStyleBackColor = true;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(89, 18);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(207, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.Size = new System.Drawing.Size(221, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 46);
+            this.label3.Location = new System.Drawing.Point(14, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Hora Inicio";
+            this.label3.Text = "Horario: ";
             // 
             // label1
             // 
@@ -425,12 +408,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Descripción :";
             // 
+            // btnHora
+            // 
+            this.btnHora.Location = new System.Drawing.Point(235, 44);
+            this.btnHora.Name = "btnHora";
+            this.btnHora.Size = new System.Drawing.Size(75, 23);
+            this.btnHora.TabIndex = 15;
+            this.btnHora.Text = "+ Horas";
+            this.btnHora.UseVisualStyleBackColor = true;
+            this.btnHora.Click += new System.EventHandler(this.btnHora_Click);
+            // 
             // Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(694, 416);
+            this.ClientSize = new System.Drawing.Size(706, 416);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Horario";
             this.Load += new System.EventHandler(this.Horario_Load);
@@ -474,20 +467,19 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDetalleHorario;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkDomingo;
+        private System.Windows.Forms.CheckBox chkViernes;
+        private System.Windows.Forms.CheckBox chkSabado;
+        private System.Windows.Forms.CheckBox chkJueves;
+        private System.Windows.Forms.CheckBox chkMiercoles;
+        private System.Windows.Forms.CheckBox chkMartes;
+        private System.Windows.Forms.CheckBox chkLunes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbCurso;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox txtHorario;
         private System.Windows.Forms.ComboBox cbGrupoEtario;
+        private System.Windows.Forms.Button btnHora;
     }
 }

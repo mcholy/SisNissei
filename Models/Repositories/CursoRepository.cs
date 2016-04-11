@@ -86,5 +86,10 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
+
+        public List<CursoEntity> Listar()
+        {
+            return base.Listar("sis_Curso_Listar");
+        }
     }
 }
