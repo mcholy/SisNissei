@@ -78,8 +78,8 @@ namespace SisNissei
 
         private void ListarSexo()
         {
-            cbCurso.Items.Add("MASCULINO");
-            cbCurso.Items.Add("FEMENINO");
+            cbSexo.Items.Add("MASCULINO");
+            cbSexo.Items.Add("FEMENINO");
         }
 
         private void Guardar()
@@ -89,13 +89,13 @@ namespace SisNissei
             item.Paterno = txtPaterno.Text;
             item.Materno = txtMaterno.Text;
             item.Dni = Int32.Parse(txtDNI.Text);
-            item.Sexo = cbCurso.Text == "MASCULINO" ? false : true;
+            item.Sexo = cbSexo.Text == "MASCULINO" ? false : true;
             item.Idapoderado = idApoderado;
             item.Fechanacimiento = DateTime.Parse(txtFechaNacimiento.Text);
             item.Iddistrito = Int32.Parse(cbDistrito.SelectedValue.ToString());
-            item.Celular = Int32.Parse(txtPeriodo.Text);
+            item.Celular = Int32.Parse(txtCelular.Text);
             item.Telefono = Int32.Parse(txtTelefono.Text);
-            item.Direccion = txtTrabajo.Text;
+            item.Direccion = txtDireccion.Text;
             item.Alergia = txtAlergia.Text;
             item.Regmod = regmod;
             ClienteService servicio = new ClienteService();
@@ -188,9 +188,9 @@ namespace SisNissei
             txtMaterno.Text = dgvCliente.CurrentRow.Cells["materno"].Value.ToString();
             txtDNI.Text = dgvCliente.CurrentRow.Cells["dni"].Value.ToString();
             idDistrito = Int32.Parse(dgvCliente.CurrentRow.Cells["iddistrito"].Value.ToString());
-            txtPeriodo.Text = dgvCliente.CurrentRow.Cells["celular"].Value.ToString();
+            txtCelular.Text = dgvCliente.CurrentRow.Cells["celular"].Value.ToString();
             txtTelefono.Text = dgvCliente.CurrentRow.Cells["telefono"].Value.ToString();
-            txtTrabajo.Text = dgvCliente.CurrentRow.Cells["direccion"].Value.ToString();
+            txtDireccion.Text = dgvCliente.CurrentRow.Cells["direccion"].Value.ToString();
             txtAlergia.Text = dgvCliente.CurrentRow.Cells["alergia"].Value.ToString();
         }
 

@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.txtAlergia = new System.Windows.Forms.TextBox();
             this.chkAlergia = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -44,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbDistrito = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-          
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaterno = new System.Windows.Forms.TextBox();
@@ -101,13 +103,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.txtCelular);
+            this.groupBox2.Controls.Add(this.cbSexo);
             this.groupBox2.Controls.Add(this.txtAlergia);
             this.groupBox2.Controls.Add(this.chkAlergia);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label10);
-            
             this.groupBox2.Controls.Add(this.txtFechaNacimiento);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -116,7 +120,6 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbDistrito);
             this.groupBox2.Controls.Add(this.label6);
-            
             this.groupBox2.Controls.Add(this.txtDNI);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtMaterno);
@@ -131,6 +134,30 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(71, 215);
+            this.txtDireccion.MaxLength = 7;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(220, 20);
+            this.txtDireccion.TabIndex = 17;
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(57, 183);
+            this.txtCelular.MaxLength = 7;
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(86, 20);
+            this.txtCelular.TabIndex = 16;
+            // 
+            // cbSexo
+            // 
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Location = new System.Drawing.Point(191, 97);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(100, 21);
+            this.cbSexo.TabIndex = 15;
             // 
             // txtAlergia
             // 
@@ -161,8 +188,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Dirección :";
             // 
-            // txtDireccion
-
             // label11
             // 
             this.label11.AutoSize = true;
@@ -188,10 +213,6 @@
             this.label10.Size = new System.Drawing.Size(45, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Celular :";
-            // 
-            // txtCelular
-            // 
-
             // 
             // txtFechaNacimiento
             // 
@@ -267,10 +288,6 @@
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Sexo :";
-            // 
-            // cbSexo
-            // 
-
             // 
             // txtDNI
             // 
@@ -503,7 +520,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMaterno;
@@ -534,11 +550,12 @@
         private System.Windows.Forms.TextBox txtAlergia;
         private System.Windows.Forms.CheckBox chkAlergia;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtDireccion;
 
     }
 }
