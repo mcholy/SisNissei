@@ -172,6 +172,11 @@ namespace SisNissei
             GrupoEtario.DefInstance.MdiParent = this;
             GrupoEtario.DefInstance.Show();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
                
     }
 }

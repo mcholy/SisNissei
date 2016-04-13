@@ -42,6 +42,8 @@
             this.empleadoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rangoDeEdadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoEgresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.periodoDeMatriculaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +51,8 @@
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionSocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,8 +64,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.rangoDeEdadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.horarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -174,7 +176,20 @@
             this.horarioToolStripMenuItem.Name = "horarioToolStripMenuItem";
             this.horarioToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.horarioToolStripMenuItem.Text = "Horario";
-            
+            // 
+            // horarioToolStripMenuItem1
+            // 
+            this.horarioToolStripMenuItem1.Name = "horarioToolStripMenuItem1";
+            this.horarioToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.horarioToolStripMenuItem1.Text = "Horario";
+            this.horarioToolStripMenuItem1.Click += new System.EventHandler(this.horarioToolStripMenuItem1_Click);
+            // 
+            // rangoDeEdadesToolStripMenuItem
+            // 
+            this.rangoDeEdadesToolStripMenuItem.Name = "rangoDeEdadesToolStripMenuItem";
+            this.rangoDeEdadesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.rangoDeEdadesToolStripMenuItem.Text = "Rango de Edades";
+            this.rangoDeEdadesToolStripMenuItem.Click += new System.EventHandler(this.rangoDeEdadesToolStripMenuItem_Click);
             // 
             // movimientosToolStripMenuItem
             // 
@@ -210,6 +225,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(63, 22);
             this.btnNuevo.Text = "Registro";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // clienteToolStripMenuItem
             // 
@@ -227,9 +243,24 @@
             // 
             // inscripciónToolStripMenuItem
             // 
+            this.inscripciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscripcionSocioToolStripMenuItem,
+            this.inscripcionAlumnoToolStripMenuItem});
             this.inscripciónToolStripMenuItem.Name = "inscripciónToolStripMenuItem";
             this.inscripciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inscripciónToolStripMenuItem.Text = "Inscripción";
+            // 
+            // inscripcionSocioToolStripMenuItem
+            // 
+            this.inscripcionSocioToolStripMenuItem.Name = "inscripcionSocioToolStripMenuItem";
+            this.inscripcionSocioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.inscripcionSocioToolStripMenuItem.Text = "Inscripcion Socio";
+            // 
+            // inscripcionAlumnoToolStripMenuItem
+            // 
+            this.inscripcionAlumnoToolStripMenuItem.Name = "inscripcionAlumnoToolStripMenuItem";
+            this.inscripcionAlumnoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.inscripcionAlumnoToolStripMenuItem.Text = "Inscripcion Alumno";
             // 
             // movimientoToolStripMenuItem
             // 
@@ -306,20 +337,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // rangoDeEdadesToolStripMenuItem
-            // 
-            this.rangoDeEdadesToolStripMenuItem.Name = "rangoDeEdadesToolStripMenuItem";
-            this.rangoDeEdadesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.rangoDeEdadesToolStripMenuItem.Text = "Rango de Edades";
-            this.rangoDeEdadesToolStripMenuItem.Click += new System.EventHandler(this.rangoDeEdadesToolStripMenuItem_Click);
-            // 
-            // horarioToolStripMenuItem1
-            // 
-            this.horarioToolStripMenuItem1.Name = "horarioToolStripMenuItem1";
-            this.horarioToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
-            this.horarioToolStripMenuItem1.Text = "Horario";
-            this.horarioToolStripMenuItem1.Click += new System.EventHandler(this.horarioToolStripMenuItem1_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +390,8 @@
         private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem horarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem rangoDeEdadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionSocioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionAlumnoToolStripMenuItem;
     }
 }
 

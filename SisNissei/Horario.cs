@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Models.Services;
+using SisNissei.Template;
 
 namespace SisNissei
 {
     public partial class Horario : Form
     {
-        private DataTable dtDetalle;
         private string[] rowDetalle;
         public Horario()
         {
@@ -70,13 +70,6 @@ namespace SisNissei
             dgvDetalleHorario.Columns[2].Name = "HORARIO";
         }
 
-        private void btnHora_Click(object sender, EventArgs e)
-        {
-            if (txtHorario.Text.Trim() != String.Empty)
-            {
-                PasarDatosDGV();
-            }
-        }
 
         private string BuildingStringDays()
         {
@@ -103,6 +96,14 @@ namespace SisNissei
             cadena += chkDomingo.Checked ? "Dom " : "";
             cadena = cadena.Trim();
             return cadena;
+        }
+
+        private void btnHora_Click(object sender, EventArgs e)
+        {
+            if (txtHorario.Text.Trim() != String.Empty)
+            {
+                PasarDatosDGV();
+            }
         }
 
     }
