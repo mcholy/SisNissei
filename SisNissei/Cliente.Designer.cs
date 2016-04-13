@@ -149,7 +149,7 @@
             this.txtCelular.MaxLength = 7;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(86, 20);
-            this.txtCelular.TabIndex = 16;
+            this.txtCelular.TabIndex = 16; 
             // 
             // cbSexo
             // 
