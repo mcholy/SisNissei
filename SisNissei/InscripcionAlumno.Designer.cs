@@ -419,7 +419,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPeriodo;
         private System.Windows.Forms.Label label12;

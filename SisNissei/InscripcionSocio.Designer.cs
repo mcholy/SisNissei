@@ -597,7 +597,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.TextBox textBox1;
