@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class Cliente
+    partial class InscripcionSocio
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPeriodo = new System.Windows.Forms.TextBox();
+           
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -135,7 +135,6 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtPeriodo);
             this.groupBox2.Controls.Add(this.txtDNI);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtNombre);
@@ -190,13 +189,7 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Resolución :";
             // 
-            // txtCelular
-            // 
-            this.txtPeriodo.Location = new System.Drawing.Point(91, 259);
-            this.txtPeriodo.MaxLength = 9;
-            this.txtPeriodo.Name = "txtCelular";
-            this.txtPeriodo.Size = new System.Drawing.Size(204, 20);
-            this.txtPeriodo.TabIndex = 10;
+       
             // 
             // txtDNI
             // 
@@ -290,7 +283,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+
             // 
             // btnCancelar
             // 
@@ -311,7 +304,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+
             // 
             // btnEliminar
             // 
@@ -322,7 +315,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+
             // 
             // dgvCliente
             // 
@@ -561,7 +554,7 @@
             this.Name = "Cliente";
             this.ShowIcon = false;
             this.Text = "Inscripción de Socio";
-            this.Load += new System.EventHandler(this.Cliente_Load);
+
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

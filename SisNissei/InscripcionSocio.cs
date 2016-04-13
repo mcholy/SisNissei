@@ -12,9 +12,9 @@ using Entities;
 
 namespace SisNissei
 {
-    public partial class Cliente : Form
+    public partial class InscripcionSocio : Form
     {
-        public Cliente()
+        public InscripcionSocio()
         {
         }
     }

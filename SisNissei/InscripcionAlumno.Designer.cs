@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class Cliente
+    partial class InscripcionAlumno
     {
         /// <summary>
         /// Required designer variable.
@@ -223,7 +223,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+
             // 
             // btnCancelar
             // 
@@ -244,7 +244,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+
             // 
             // btnEliminar
             // 
@@ -255,7 +255,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+
             // 
             // dgvCliente
             // 
@@ -381,7 +381,7 @@
             this.Name = "Cliente";
             this.ShowIcon = false;
             this.Text = "Inscripcion Alumno";
-            this.Load += new System.EventHandler(this.Cliente_Load);
+
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

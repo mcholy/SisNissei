@@ -36,7 +36,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPeriodo = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbDistrito = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbCurso = new System.Windows.Forms.ComboBox();
+          
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaterno = new System.Windows.Forms.TextBox();
@@ -108,7 +107,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtTelefono);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtPeriodo);
+            
             this.groupBox2.Controls.Add(this.txtFechaNacimiento);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -117,7 +116,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cbDistrito);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cbCurso);
+            
             this.groupBox2.Controls.Add(this.txtDNI);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtMaterno);
@@ -163,13 +162,7 @@
             this.label12.Text = "Dirección :";
             // 
             // txtDireccion
-            // 
-            this.txtTrabajo.Location = new System.Drawing.Point(71, 215);
-            this.txtTrabajo.MaxLength = 80;
-            this.txtTrabajo.Name = "txtDireccion";
-            this.txtTrabajo.Size = new System.Drawing.Size(220, 20);
-            this.txtTrabajo.TabIndex = 12;
-            // 
+
             // label11
             // 
             this.label11.AutoSize = true;
@@ -198,11 +191,7 @@
             // 
             // txtCelular
             // 
-            this.txtPeriodo.Location = new System.Drawing.Point(65, 183);
-            this.txtPeriodo.MaxLength = 9;
-            this.txtPeriodo.Name = "txtCelular";
-            this.txtPeriodo.Size = new System.Drawing.Size(81, 20);
-            this.txtPeriodo.TabIndex = 10;
+
             // 
             // txtFechaNacimiento
             // 
@@ -281,12 +270,7 @@
             // 
             // cbSexo
             // 
-            this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(196, 97);
-            this.cbCurso.Name = "cbSexo";
-            this.cbCurso.Size = new System.Drawing.Size(95, 21);
-            this.cbCurso.TabIndex = 6;
+
             // 
             // txtDNI
             // 
