@@ -16,7 +16,6 @@ namespace SisNissei
     {
         public Cliente()
         {
-
         }
     }
 }
