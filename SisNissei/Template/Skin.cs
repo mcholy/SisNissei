@@ -46,5 +46,46 @@ namespace SisNissei.Template
             e.Graphics.DrawRectangle(p, 0, 0, frm.Width - 1, frm.Height - 1);
 
         }
+
+        public static void AplicarSkinDGV(DataGridView datagridview)
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+
+
+            datagridview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            //datagridview.ColumnHeadersHeight = 28;
+            datagridview.AllowUserToAddRows = false;
+            //datagridview.AllowUserToDeleteRows = false;
+            datagridview.AllowUserToResizeRows = false;
+            datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            //datagridview.AutoGenerateColumns = false;
+            datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            datagridview.BackgroundColor = System.Drawing.Color.White;
+            datagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            datagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
+            datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+
+
+
+            datagridview.EnableHeadersVisualStyles = false;
+            //datagridview.Location = new System.Drawing.Point(12, 70);
+            datagridview.MultiSelect = false;
+            datagridview.ReadOnly = true;
+            datagridview.RowHeadersVisible = false;
+            datagridview.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(223, 223, 223);
+            //dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            datagridview.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            //datagridview.Size = new System.Drawing.Size(100, 100);
+        }
     }
 }
