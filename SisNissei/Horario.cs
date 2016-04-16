@@ -18,6 +18,7 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            
         }
 
         private void Horario_Load(object sender, EventArgs e)

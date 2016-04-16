@@ -42,7 +42,8 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="GrupoEtarioEntity.cs" />
-    <Compile Include="InscripcionEntity.cs" />
+    <Compile Include="InscripcionAlumnoEntity.cs" />
+    <Compile Include="InscripcionSocioEntity.cs" />
     <Compile Include="UsuarioEntity.cs" />
     <Compile Include="IngresoEntity.cs" />
     <Compile Include="EgresoEntity.cs" />
