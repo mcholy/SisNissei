@@ -160,7 +160,7 @@ namespace SisNissei
                 idCliente = dialogCliente.CargarId();
 
             }
-            txtCliente.Text = nombreCliente;
+            txtConyugue.Text = nombreCliente;
         }
 
         private void btnBuscarPatrocinador_Click(object sender, EventArgs e)
