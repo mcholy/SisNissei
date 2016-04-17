@@ -271,6 +271,7 @@
             this.inscripcionSocioToolStripMenuItem.Name = "inscripcionSocioToolStripMenuItem";
             this.inscripcionSocioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.inscripcionSocioToolStripMenuItem.Text = "Inscripcion Socio";
+            this.inscripcionSocioToolStripMenuItem.Click += new System.EventHandler(this.inscripcionSocioToolStripMenuItem_Click);
             // 
             // inscripcionAlumnoToolStripMenuItem
             // 

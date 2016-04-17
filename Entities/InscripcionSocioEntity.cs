@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    class InscripcionSocioEntity:BaseEntity
+    public class InscripcionSocioEntity:BaseEntity
     {
         private int idcliente;
 
