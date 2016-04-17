@@ -71,5 +71,19 @@ namespace Entities
             get { return regmod; }
             set { regmod = value; }
         }
+        private int idhorario;
+
+        public int Idhorario
+        {
+            get { return idhorario; }
+            set { idhorario = value; }
+        }
+        private string nombrehorario;
+
+        public string Nombrehorario
+        {
+            get { return nombrehorario; }
+            set { nombrehorario = value; }
+        }
     }
 }

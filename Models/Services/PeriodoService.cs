@@ -27,5 +27,9 @@ namespace Models.Services
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
         }
+        public List<PeriodoEntity> Listar()
+        {
+            return new PeriodoRepository().Listar();
+        }
     }
 }

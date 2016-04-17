@@ -78,5 +78,9 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
+        public List<PeriodoEntity> Listar()
+        {
+            return base.Listar("sis_Periodo_Listar");
+        }
     }
 }

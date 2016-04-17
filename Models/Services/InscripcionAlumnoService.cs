@@ -6,7 +6,7 @@ using Entities;
 using Models.Repositories;
 namespace Models.Services
 {
-    class InscripcionAlumnoService
+    public class InscripcionAlumnoService
     {
         string respuesta;
         private InscripcionAlumnoRepository repositorio = new InscripcionAlumnoRepository();
