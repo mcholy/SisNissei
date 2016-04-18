@@ -84,6 +84,7 @@ namespace SisNissei
 
         private void Guardar()
         {
+            item = new ClienteEntity();
             item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Paterno = txtPaterno.Text;

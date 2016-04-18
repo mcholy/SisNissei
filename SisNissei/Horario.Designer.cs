@@ -43,9 +43,14 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDetalleHorario = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.btnHora = new System.Windows.Forms.Button();
+            this.txtHorario = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbGrupoEtario = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkDomingo = new System.Windows.Forms.CheckBox();
@@ -55,13 +60,6 @@
             this.chkMiercoles = new System.Windows.Forms.CheckBox();
             this.chkMartes = new System.Windows.Forms.CheckBox();
             this.chkLunes = new System.Windows.Forms.CheckBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnHora = new System.Windows.Forms.Button();
-            this.txtHorario = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -121,6 +119,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnGuardar
             // 
@@ -131,6 +130,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -150,6 +150,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // toolStrip1
             // 
@@ -247,8 +248,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cbGrupoEtario);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(328, 222);
@@ -256,10 +255,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Fecha de Inicio :";
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(98, 63);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(121, 20);
+            this.dtpFechaInicio.TabIndex = 12;
+            // 
+            // btnHora
+            // 
+            this.btnHora.Location = new System.Drawing.Point(245, 60);
+            this.btnHora.Name = "btnHora";
+            this.btnHora.Size = new System.Drawing.Size(75, 23);
+            this.btnHora.TabIndex = 18;
+            this.btnHora.Text = "+ Horas";
+            this.btnHora.UseVisualStyleBackColor = true;
+            this.btnHora.Click += new System.EventHandler(this.btnHora_Click);
+            // 
+            // txtHorario
+            // 
+            this.txtHorario.Location = new System.Drawing.Point(118, 89);
+            this.txtHorario.Mask = "90:00 - 90:00";
+            this.txtHorario.Name = "txtHorario";
+            this.txtHorario.Size = new System.Drawing.Size(74, 20);
+            this.txtHorario.TabIndex = 16;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(195, 18);
+            this.label5.Location = new System.Drawing.Point(193, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 14;
@@ -283,11 +317,20 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Curso :";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Rango de Horario :";
+            // 
             // cbGrupoEtario
             // 
             this.cbGrupoEtario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupoEtario.FormattingEnabled = true;
-            this.cbGrupoEtario.Location = new System.Drawing.Point(195, 33);
+            this.cbGrupoEtario.Location = new System.Drawing.Point(193, 33);
             this.cbGrupoEtario.Name = "cbGrupoEtario";
             this.cbGrupoEtario.Size = new System.Drawing.Size(127, 21);
             this.cbGrupoEtario.TabIndex = 4;
@@ -378,67 +421,6 @@
             this.chkLunes.Text = "Lunes";
             this.chkLunes.UseVisualStyleBackColor = true;
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(89, 65);
-            this.txtNombre.MaxLength = 50;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(92, 20);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descripción :";
-            // 
-            // btnHora
-            // 
-            this.btnHora.Location = new System.Drawing.Point(247, 95);
-            this.btnHora.Name = "btnHora";
-            this.btnHora.Size = new System.Drawing.Size(75, 23);
-            this.btnHora.TabIndex = 18;
-            this.btnHora.Text = "+ Horas";
-            this.btnHora.UseVisualStyleBackColor = true;
-            this.btnHora.Click += new System.EventHandler(this.btnHora_Click);
-            // 
-            // txtHorario
-            // 
-            this.txtHorario.Location = new System.Drawing.Point(247, 65);
-            this.txtHorario.Mask = "90:00 - 90:00";
-            this.txtHorario.Name = "txtHorario";
-            this.txtHorario.Size = new System.Drawing.Size(73, 20);
-            this.txtHorario.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(195, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Horario: ";
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(101, 95);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(121, 20);
-            this.dtpFechaInicio.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Fecha de Inicio";
-            // 
             // Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,8 +466,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDetalleHorario;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chkDomingo;

@@ -27,6 +27,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+            ListarTipoEmpleados();
         }
 
         private void Limpiar()

@@ -60,7 +60,7 @@
             this.txtNombre.Location = new System.Drawing.Point(68, 17);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(105, 20);
+            this.txtNombre.Size = new System.Drawing.Size(127, 20);
             this.txtNombre.TabIndex = 3;
             // 
             // label1
@@ -76,7 +76,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(6, 19);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(137, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(166, 20);
             this.txtBuscar.TabIndex = 1;
             // 
             // panel1
@@ -107,7 +107,7 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(16, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(187, 47);
+            this.groupBox1.Size = new System.Drawing.Size(227, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
@@ -117,11 +117,12 @@
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(149, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(190, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // toolStrip1
             // 
@@ -199,7 +200,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(178, 59);
+            this.groupBox2.Size = new System.Drawing.Size(203, 59);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -232,7 +233,7 @@
             this.dgvGrupoEtario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrupoEtario.Location = new System.Drawing.Point(16, 59);
             this.dgvGrupoEtario.Name = "dgvGrupoEtario";
-            this.dgvGrupoEtario.Size = new System.Drawing.Size(194, 151);
+            this.dgvGrupoEtario.Size = new System.Drawing.Size(227, 151);
             this.dgvGrupoEtario.TabIndex = 1;
             // 
             // GrupoEtario

@@ -21,13 +21,5 @@ namespace Entities
             get { return porcentajematricula; }
             set { porcentajematricula = value; }
         }
-        private int regmod;
-
-        public int Regmod
-        {
-            get { return regmod; }
-            set { regmod = value; }
-        }
-
     }
 }

@@ -113,12 +113,6 @@ namespace Entities
             get { return alergia; }
             set { alergia = value; }
         }
-        private int regmod;
 
-        public int Regmod
-        {
-            get { return regmod; }
-            set { regmod = value; }
-        }
     }
 }

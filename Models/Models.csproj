@@ -57,6 +57,7 @@
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\EmpleadoRepository.cs" />
     <Compile Include="Repositories\EmpresaRepository.cs" />
+    <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\TipoEgresoRepository.cs" />
     <Compile Include="Repositories\PeriodoRepository.cs" />
     <Compile Include="Repositories\RolRepository.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Services\CursoService.cs" />
     <Compile Include="Services\EmpleadoService.cs" />
     <Compile Include="Services\EmpresaService.cs" />
+    <Compile Include="Services\HorarioService.cs" />
     <Compile Include="Services\PeriodoService.cs" />
     <Compile Include="Services\RolService.cs" />
     <Compile Include="Services\DistritoService.cs" />

@@ -11,6 +11,7 @@ namespace Entities
         private bool estado;
         private string nombre;
         private DateTime fecharegistro;
+        private int regmod;
 
         public int Id
         {
@@ -36,6 +37,12 @@ namespace Entities
         {
             get { return estado; }
             set { estado = value; }
+        }
+
+        public int Regmod
+        {
+            get { return regmod; }
+            set { regmod = value; }
         }
 
     }

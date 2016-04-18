@@ -7,9 +7,9 @@ namespace Entities
 {
     public class HorarioEntity : BaseEntity
     {
-        private char dia;
+        private string dia;
 
-        public char Dia
+        public string Dia
         {
             get { return dia; }
             set { dia = value; }
@@ -21,12 +21,52 @@ namespace Entities
             get { return hora; }
             set { hora = value; }
         }
-        private int idedad;
 
-        public int Idedad
+        private DateTime fechainicio;
+
+        public DateTime Fechainicio
         {
-            get { return idedad; }
-            set { idedad = value; }
+            get { return fechainicio; }
+            set { fechainicio = value; }
+        }
+
+        private int idgrupoetario;
+
+        public int Idgrupoetario
+        {
+            get { return idgrupoetario; }
+            set { idgrupoetario = value; }
+        }
+
+        private int idcurso;
+
+        public int Idcurso
+        {
+            get { return idcurso; }
+            set { idcurso = value; }
+        }
+
+        private int idHorario;
+
+        public int IdHorario
+        {
+            get { return idHorario; }
+            set { idHorario = value; }
+        }
+
+        private string nombregrupoetario;
+
+        public string Nombregrupoetario
+        {
+            get { return nombregrupoetario; }
+            set { nombregrupoetario = value; }
+        }
+        private string nombrecurso;
+
+        public string Nombrecurso
+        {
+            get { return nombrecurso; }
+            set { nombrecurso = value; }
         }
 
     }

@@ -7,12 +7,6 @@ namespace Entities
 {
     public class RolEntity : BaseEntity
     {
-        private int regmod;
 
-        public int Regmod
-        {
-            get { return regmod; }
-            set { regmod = value; }
-        }
     }
 }
