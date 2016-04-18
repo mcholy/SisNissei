@@ -197,13 +197,13 @@ namespace SisNissei
 
         private void btnBuscarApoderado_Click(object sender, EventArgs e)
         {
-            DialogCliente dialogEmpleado = new DialogCliente();
-            DialogResult resultado = dialogEmpleado.ShowDialog();
+            DialogCliente dialogCliente = new DialogCliente();
+            DialogResult resultado = dialogCliente.ShowDialog();
 
             if (resultado == DialogResult.OK)
             {
-                nombreApoderado = dialogEmpleado.CargarNombre();
-                idApoderado = dialogEmpleado.CargarId();
+                nombreApoderado = dialogCliente.CargarNombre();
+                idApoderado = dialogCliente.CargarId();
 
             }
             txtApoderado.Text = nombreApoderado;

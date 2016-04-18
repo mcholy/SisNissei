@@ -4,32 +4,28 @@ using System.Linq;
 using System.Text;
 using Entities;
 using Models.Repositories;
-
 namespace Models.Services
 {
-    public class PeriodoService
+    public class InscripcionAlumnoService
     {
         string respuesta;
-        private PeriodoRepository repositorio = new PeriodoRepository();
-        public int Guardar(PeriodoEntity item)
+        private InscripcionAlumnoRepository repositorio = new InscripcionAlumnoRepository();
+        public int Guardar(InscripcionAlumnoEntity item)
         {
             respuesta = repositorio.Guardar(item);
 
             return Int32.Parse(respuesta);
 
         }
-        public List<PeriodoEntity> Detalle() {
+        public List<InscripcionAlumnoEntity> Detalle()
+        {
 
-            return new PeriodoRepository().Detalle();
+            return new InscripcionAlumnoRepository().Detalle();
         }
-        public int Eliminar(PeriodoEntity item)
+        public int Eliminar(InscripcionAlumnoEntity item)
         {
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
-        }
-        public List<PeriodoEntity> Listar()
-        {
-            return new PeriodoRepository().Listar();
         }
     }
 }

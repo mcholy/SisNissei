@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogEmpresa.Designer.cs">
+      <DependentUpon>DialogEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogPatrocinador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPatrocinador.Designer.cs">
+      <DependentUpon>DialogPatrocinador.cs</DependentUpon>
+    </Compile>
     <Compile Include="InscripcionAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     <Compile Include="Template\Skin.cs" />
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogEmpresa.resx">
+      <DependentUpon>DialogEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogPatrocinador.resx">
+      <DependentUpon>DialogPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InscripcionAlumno.resx">
       <DependentUpon>InscripcionAlumno.cs</DependentUpon>

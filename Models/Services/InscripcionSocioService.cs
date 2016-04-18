@@ -7,29 +7,26 @@ using Models.Repositories;
 
 namespace Models.Services
 {
-    public class PeriodoService
+    public class InscripcionSocioService
     {
         string respuesta;
-        private PeriodoRepository repositorio = new PeriodoRepository();
-        public int Guardar(PeriodoEntity item)
+        private InscripcionSocioRepository repositorio = new InscripcionSocioRepository();
+        public int Guardar(InscripcionSocioEntity item)
         {
             respuesta = repositorio.Guardar(item);
 
             return Int32.Parse(respuesta);
 
         }
-        public List<PeriodoEntity> Detalle() {
+        public List<InscripcionSocioEntity> Detalle()
+        {
 
-            return new PeriodoRepository().Detalle();
+            return new InscripcionSocioRepository().Detalle();
         }
-        public int Eliminar(PeriodoEntity item)
+        public int Eliminar(InscripcionSocioEntity item)
         {
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
-        }
-        public List<PeriodoEntity> Listar()
-        {
-            return new PeriodoRepository().Listar();
         }
     }
 }

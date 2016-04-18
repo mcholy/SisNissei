@@ -62,9 +62,6 @@ namespace SisNissei
             }
         }
 
-        private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
     }
 }

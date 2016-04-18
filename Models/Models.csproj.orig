@@ -57,8 +57,8 @@
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\EmpleadoRepository.cs" />
     <Compile Include="Repositories\EmpresaRepository.cs" />
-    <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\InscripcionAlumnoRepository.cs" />
+    <Compile Include="Repositories\HorarioRepository.cs" />
     <Compile Include="Repositories\InscripcionSocioRepository.cs" />
     <Compile Include="Repositories\TipoEgresoRepository.cs" />
     <Compile Include="Repositories\PeriodoRepository.cs" />

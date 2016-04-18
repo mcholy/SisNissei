@@ -53,7 +53,6 @@
             this.dgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleado.Size = new System.Drawing.Size(414, 163);
             this.dgvEmpleado.TabIndex = 3;
-            this.dgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellContentClick);
             this.dgvEmpleado.DoubleClick += new System.EventHandler(this.dgvEmpleado_DoubleClick);
             // 
             // groupBox1
@@ -96,6 +95,7 @@
             this.Controls.Add(this.dgvEmpleado);
             this.Controls.Add(this.groupBox1);
             this.Name = "DialogEmpleado";
+            this.Text = "Empleados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

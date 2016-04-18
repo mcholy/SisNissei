@@ -28,7 +28,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
-
+            Skin.AplicarSkinDGV(dgvCurso);
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
