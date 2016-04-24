@@ -28,7 +28,7 @@ namespace Models.Repositories
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    resultado.Id = Int32.Parse(reader["id"].ToString());
+                    resultado.Id = Int32.Parse(reader["Id"].ToString());
                     resultado.Respuesta = reader["respuesta"].ToString();
 
 

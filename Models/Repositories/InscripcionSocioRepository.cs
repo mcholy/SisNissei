@@ -21,6 +21,7 @@ namespace Models.Repositories
                 cmd.CommandText = "sis_InscripcionSocio_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
                 cmd.Parameters.AddWithValue("@idconyugue", item.Idconyugue);
                 cmd.Parameters.AddWithValue("@idpatrocinador", item.Idpatrocinador);
                 cmd.Parameters.AddWithValue("@trabajo", item.Trabajo);
