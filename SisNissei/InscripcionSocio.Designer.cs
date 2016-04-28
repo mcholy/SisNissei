@@ -44,10 +44,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPatrocinador = new System.Windows.Forms.TextBox();
+            this.btnBuscarPatrocinador = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConyugue = new System.Windows.Forms.TextBox();
+            this.btnBuscarConyugue = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTrabajo = new System.Windows.Forms.TextBox();
             this.txtHijosMayores = new System.Windows.Forms.TextBox();
@@ -57,17 +60,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgvInscripcionSocio = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscarPatrocinador = new System.Windows.Forms.Button();
-            this.btnBuscarConyugue = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.dgvInscripcionSocio = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -259,6 +259,18 @@
             this.txtPatrocinador.Size = new System.Drawing.Size(153, 20);
             this.txtPatrocinador.TabIndex = 23;
             // 
+            // btnBuscarPatrocinador
+            // 
+            this.btnBuscarPatrocinador.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarPatrocinador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarPatrocinador.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarPatrocinador.Location = new System.Drawing.Point(260, 97);
+            this.btnBuscarPatrocinador.Name = "btnBuscarPatrocinador";
+            this.btnBuscarPatrocinador.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarPatrocinador.TabIndex = 22;
+            this.btnBuscarPatrocinador.UseVisualStyleBackColor = false;
+            this.btnBuscarPatrocinador.Click += new System.EventHandler(this.btnBuscarPatrocinador_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -277,6 +289,18 @@
             this.txtConyugue.Size = new System.Drawing.Size(153, 20);
             this.txtConyugue.TabIndex = 20;
             // 
+            // btnBuscarConyugue
+            // 
+            this.btnBuscarConyugue.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarConyugue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarConyugue.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarConyugue.Location = new System.Drawing.Point(260, 71);
+            this.btnBuscarConyugue.Name = "btnBuscarConyugue";
+            this.btnBuscarConyugue.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarConyugue.TabIndex = 19;
+            this.btnBuscarConyugue.UseVisualStyleBackColor = false;
+            this.btnBuscarConyugue.Click += new System.EventHandler(this.btnBuscarConyugue_Click);
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -294,6 +318,18 @@
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(153, 20);
             this.txtCliente.TabIndex = 17;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 45);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarCliente.TabIndex = 16;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // label12
             // 
@@ -386,68 +422,6 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
-            // dgvInscripcionSocio
-            // 
-            this.dgvInscripcionSocio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionSocio.Location = new System.Drawing.Point(9, 59);
-            this.dgvInscripcionSocio.Name = "dgvInscripcionSocio";
-            this.dgvInscripcionSocio.Size = new System.Drawing.Size(533, 334);
-            this.dgvInscripcionSocio.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtBuscar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 47);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscador";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
-            // btnBuscarPatrocinador
-            // 
-            this.btnBuscarPatrocinador.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarPatrocinador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarPatrocinador.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarPatrocinador.Location = new System.Drawing.Point(260, 97);
-            this.btnBuscarPatrocinador.Name = "btnBuscarPatrocinador";
-            this.btnBuscarPatrocinador.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarPatrocinador.TabIndex = 22;
-            this.btnBuscarPatrocinador.UseVisualStyleBackColor = false;
-            this.btnBuscarPatrocinador.Click += new System.EventHandler(this.btnBuscarPatrocinador_Click);
-            // 
-            // btnBuscarConyugue
-            // 
-            this.btnBuscarConyugue.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarConyugue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarConyugue.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarConyugue.Location = new System.Drawing.Point(260, 71);
-            this.btnBuscarConyugue.Name = "btnBuscarConyugue";
-            this.btnBuscarConyugue.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarConyugue.TabIndex = 19;
-            this.btnBuscarConyugue.UseVisualStyleBackColor = false;
-            this.btnBuscarConyugue.Click += new System.EventHandler(this.btnBuscarConyugue_Click);
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 45);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarCliente.TabIndex = 16;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
@@ -499,6 +473,32 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // dgvInscripcionSocio
+            // 
+            this.dgvInscripcionSocio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionSocio.Location = new System.Drawing.Point(9, 57);
+            this.dgvInscripcionSocio.Name = "dgvInscripcionSocio";
+            this.dgvInscripcionSocio.Size = new System.Drawing.Size(533, 284);
+            this.dgvInscripcionSocio.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtBuscar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Location = new System.Drawing.Point(16, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(526, 47);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscador";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
+            this.txtBuscar.TabIndex = 1;
             // 
             // btnBuscar
             // 
