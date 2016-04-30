@@ -30,12 +30,15 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbPeriodo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.cbHorario = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
@@ -44,18 +47,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.cbPeriodo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -113,6 +113,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // cbPeriodo
+            // 
+            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodo.FormattingEnabled = true;
+            this.cbPeriodo.Location = new System.Drawing.Point(74, 124);
+            this.cbPeriodo.Name = "cbPeriodo";
+            this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
+            this.cbPeriodo.TabIndex = 20;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -130,6 +139,18 @@
             this.txtEmpresa.ReadOnly = true;
             this.txtEmpresa.Size = new System.Drawing.Size(170, 20);
             this.txtEmpresa.TabIndex = 19;
+            // 
+            // btnBuscarEmpresa
+            // 
+            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarEmpresa.Location = new System.Drawing.Point(260, 96);
+            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
+            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarEmpresa.TabIndex = 18;
+            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
+            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
             // 
             // label13
             // 
@@ -167,6 +188,18 @@
             this.txtCliente.Size = new System.Drawing.Size(159, 20);
             this.txtCliente.TabIndex = 14;
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 43);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarCliente.TabIndex = 13;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -193,6 +226,8 @@
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(90, 21);
             this.cbCurso.TabIndex = 6;
+            this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged);
+     
             // 
             // txtNombre
             // 
@@ -251,56 +286,6 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
-            // dgvInscripcionAlumno
-            // 
-            this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
-            this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
-            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 181);
-            this.dgvInscripcionAlumno.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtBuscar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 47);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscador";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
-            // btnBuscarEmpresa
-            // 
-            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpresa.Location = new System.Drawing.Point(260, 96);
-            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
-            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarEmpresa.TabIndex = 18;
-            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
-            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 43);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarCliente.TabIndex = 13;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
@@ -352,6 +337,32 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // dgvInscripcionAlumno
+            // 
+            this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
+            this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
+            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 181);
+            this.dgvInscripcionAlumno.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtBuscar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Location = new System.Drawing.Point(16, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(526, 47);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscador";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
+            this.txtBuscar.TabIndex = 1;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
@@ -362,15 +373,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // cbPeriodo
-            // 
-            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Location = new System.Drawing.Point(74, 124);
-            this.cbPeriodo.Name = "cbPeriodo";
-            this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
-            this.cbPeriodo.TabIndex = 20;
             // 
             // InscripcionAlumno
             // 

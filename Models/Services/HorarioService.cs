@@ -42,9 +42,9 @@ namespace Models.Services
             resultado = repositorio.Eliminar(item);
             return resultado;
         }
-        public List<HorarioEntity> Listar()
+        public List<HorarioEntity> Listar(int idcurso)
         {
-            return new HorarioRepository().Listar();
+            return new HorarioRepository().Listar(idcurso);
         }
     }
 }

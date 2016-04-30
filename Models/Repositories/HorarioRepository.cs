@@ -100,7 +100,7 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleHorario_Detalle";
-                cmd.Parameters.AddWithValue("@id",id);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -141,9 +141,33 @@ namespace Models.Repositories
                 return resultado;
             }
         }
-        public List<HorarioEntity> Listar()
+        public List<HorarioEntity> Listar(int idcurso)
         {
-            return base.Listar("sis_Horario_Listar");
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_HorarioEtario_Listar";
+                cmd.Parameters.AddWithValue("@idcurso",idcurso);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<HorarioEntity> lista = new List<HorarioEntity>();
+
+                    while (reader.Read())
+                    {
+                        HorarioEntity item = new HorarioEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+
         }
+
     }
 }

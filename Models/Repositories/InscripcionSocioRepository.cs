@@ -20,10 +20,10 @@ namespace Models.Repositories
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_InscripcionSocio_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
-                cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
                 cmd.Parameters.AddWithValue("@idconyugue", item.Idconyugue);
                 cmd.Parameters.AddWithValue("@idpatrocinador", item.Idpatrocinador);
+                cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@trabajo", item.Trabajo);
                 cmd.Parameters.AddWithValue("@cargo", item.Cargo);
                 cmd.Parameters.AddWithValue("@hijosmayores", item.Hijosmayores);

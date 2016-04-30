@@ -105,12 +105,5 @@ namespace Entities
             get { return familiarotros; }
             set { familiarotros = value; }
         }
-        private int regmod;
-
-        public int Regmod
-        {
-            get { return regmod; }
-            set { regmod = value; }
-        }
     }
 }

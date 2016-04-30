@@ -188,6 +188,20 @@ namespace SisNissei
         {
             Guardar();
         }
+        private void ListarHorarioEtario(int idcurso)
+        {
+            cbHorario.DisplayMember = "Nombre";
+            cbHorario.ValueMember = "Id";
+            cbHorario.DataSource = new HorarioService().Listar(idcurso);
+        }
+
+        private void cbCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+            ListarHorarioEtario(idCurso);
+            }
+     
+        }
+
 
     }
-}

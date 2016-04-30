@@ -174,7 +174,7 @@ namespace SisNissei
                 idPatrocinador = dialogPatrocinador.CargarId();
 
             }
-            txtCliente.Text = nombreCliente;
+            txtPatrocinador.Text = nombrePatrocinador;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
