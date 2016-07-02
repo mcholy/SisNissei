@@ -75,6 +75,7 @@ namespace SisNissei
         {
             dgvDetalleHorario.ColumnCount = 3;
             dgvDetalleHorario.Columns[0].Name = "CODIGO";
+            dgvDetalleHorario.Columns[0].Visible = false;
             dgvDetalleHorario.Columns[1].Name = "HORARIO";
             dgvDetalleHorario.Columns[2].Name = "DIA";
         }
@@ -123,6 +124,7 @@ namespace SisNissei
         private void Limpiar()
         {
             txtHorario.Text = string.Empty;
+            dgvDetalleHorario.Rows.Remove(dgvDetalleHorario.CurrentRow);
         }
 
         private void CargarDetalle()
@@ -236,6 +238,8 @@ namespace SisNissei
             {
                 if (dgvHorario.CurrentRow.Selected == true)
                 {
+                    dgvDetalleHorario.DataSource = null;
+                    dgvDetalleHorario.Rows.Clear();
                     LlenarControles();
                     regmod = 1;
                 }
@@ -261,6 +265,7 @@ namespace SisNissei
 
             foreach (HorarioEntity valor in lista)
             {
+                
                 rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia) };
                 dgvDetalleHorario.Rows.Add(rowDetalle);
                 dgvDetalleHorario.ClearSelection();

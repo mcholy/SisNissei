@@ -84,6 +84,12 @@ namespace SisNissei
                 dgvTipoEmpleado.Columns["estado"].Visible = false;
                 dgvTipoEmpleado.Columns["regmod"].Visible = false;
                 dgvTipoEmpleado.Columns["fecharegistro"].Visible = false;
+                dgvTipoEmpleado.Columns["nombre"].DisplayIndex = 0;
+                dgvTipoEmpleado.Columns["nombre"].HeaderText = "Nombre";
+                dgvTipoEmpleado.Columns["porcentajemensual"].DisplayIndex = 1;
+                dgvTipoEmpleado.Columns["porcentajemensual"].HeaderText = "Porcentaje Mensual";
+                dgvTipoEmpleado.Columns["porcentajematricula"].DisplayIndex = 2;
+                dgvTipoEmpleado.Columns["porcentajematricula"].HeaderText = "Porcentaje Matricula";
             }
         }
         private void Eliminar()

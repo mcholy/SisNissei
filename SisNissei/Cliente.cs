@@ -135,7 +135,30 @@ namespace SisNissei
                 dgvCliente.Columns["regmod"].Visible = false;
                 dgvCliente.Columns["fecharegistro"].Visible = false;
                 dgvCliente.Columns["estado"].Visible = false;
-                dgvCliente.Columns["nombre"].DisplayIndex = 1;
+                dgvCliente.Columns["nombre"].Visible = false;
+                dgvCliente.Columns["paterno"].Visible = false;
+                dgvCliente.Columns["materno"].Visible = false;
+                dgvCliente.Columns["Idapoderado"].Visible = false;
+                dgvCliente.Columns["nombrecliente"].DisplayIndex = 0;
+                dgvCliente.Columns["nombrecliente"].HeaderText = "Nombre";
+                dgvCliente.Columns["dni"].DisplayIndex = 1;
+                dgvCliente.Columns["dni"].HeaderText = "DNI";
+                dgvCliente.Columns["nombreapoderado"].DisplayIndex = 2;
+                dgvCliente.Columns["nombreapoderado"].HeaderText = "Apoderado";
+                dgvCliente.Columns["sexo"].DisplayIndex = 3;
+                dgvCliente.Columns["sexo"].HeaderText = "Sexo";
+                dgvCliente.Columns["direccion"].DisplayIndex = 4;
+                dgvCliente.Columns["direccion"].HeaderText = "Direccion";
+                dgvCliente.Columns["nombredistrito"].DisplayIndex = 5;
+                dgvCliente.Columns["nombredistrito"].HeaderText = "Distrito";
+                dgvCliente.Columns["fechanacimiento"].DisplayIndex = 6;
+                dgvCliente.Columns["fechanacimiento"].HeaderText = "Fecha de nacimiento";
+                dgvCliente.Columns["telefono"].DisplayIndex = 7;
+                dgvCliente.Columns["telefono"].HeaderText = "Telefono";
+                dgvCliente.Columns["celular"].DisplayIndex = 8;
+                dgvCliente.Columns["celular"].HeaderText = "Celular";
+                dgvCliente.Columns["Alergia"].DisplayIndex = 9;
+                dgvCliente.Columns["alergia"].HeaderText = "Alergia";
                 dgvCliente.ClearSelection();
             }
         }

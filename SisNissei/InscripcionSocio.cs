@@ -156,8 +156,8 @@ namespace SisNissei
 
             if (resultado == DialogResult.OK)
             {
-                nombreCliente = dialogCliente.CargarNombre();
-                idCliente = dialogCliente.CargarId();
+                nombreConyugue = dialogCliente.CargarNombre();
+                idConyugue = dialogCliente.CargarId();
 
             }
             txtConyugue.Text = nombreCliente;

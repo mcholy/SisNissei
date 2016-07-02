@@ -64,6 +64,7 @@ namespace SisNissei
                 dgvEmpresa.Columns["estado"].Visible = false;
                 dgvEmpresa.Columns["regmod"].Visible = false;
                 dgvEmpresa.Columns["fecharegistro"].Visible = false;
+                dgvEmpresa.Columns["nombre"].DisplayIndex = 0;
             }
         }
 

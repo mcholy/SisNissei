@@ -27,5 +27,10 @@ namespace Models.Services
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
         }
+        public string Codigo(InscripcionAlumnoEntity item)
+        {
+
+            return new InscripcionAlumnoRepository().Codigo(item);
+        }
     }
 }

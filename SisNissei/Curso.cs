@@ -86,7 +86,14 @@ namespace SisNissei
                 dgvCurso.Columns["estado"].Visible = false;
                 dgvCurso.Columns["idempleado"].Visible = false;
                 dgvCurso.Columns["regmod"].Visible = false;
+                dgvCurso.Columns["idempleado"].Visible=false;
                 dgvCurso.Columns["nombre"].DisplayIndex = 1;
+                dgvCurso.Columns["nombre"].HeaderText = "Curso";
+                dgvCurso.Columns["nombreempleado"].DisplayIndex = 2;
+                dgvCurso.Columns["nombreempleado"].HeaderText = "Profeso";
+                dgvCurso.Columns["inicial"].DisplayIndex = 3;
+                dgvCurso.Columns["mensualidad"].DisplayIndex = 4;
+                dgvCurso.Columns["fecharegistro"].DisplayIndex = 5;
                 dgvCurso.ClearSelection();
             }
         }

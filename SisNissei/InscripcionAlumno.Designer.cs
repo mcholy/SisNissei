@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtApoderado = new System.Windows.Forms.TextBox();
+            this.btnBuscarApoderado = new System.Windows.Forms.Button();
             this.cbPeriodo = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
@@ -86,12 +89,15 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlumno);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(896, 253);
+            this.splitContainer1.Size = new System.Drawing.Size(896, 281);
             this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtApoderado);
+            this.groupBox2.Controls.Add(this.btnBuscarApoderado);
             this.groupBox2.Controls.Add(this.cbPeriodo);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.txtEmpresa);
@@ -108,24 +114,55 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 162);
+            this.groupBox2.Size = new System.Drawing.Size(312, 203);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Apoderado :";
+            // 
+            // txtApoderado
+            // 
+            this.txtApoderado.Location = new System.Drawing.Point(85, 71);
+            this.txtApoderado.MaxLength = 200;
+            this.txtApoderado.Name = "txtApoderado";
+            this.txtApoderado.ReadOnly = true;
+            this.txtApoderado.Size = new System.Drawing.Size(159, 20);
+            this.txtApoderado.TabIndex = 23;
+            // 
+            // btnBuscarApoderado
+            // 
+            this.btnBuscarApoderado.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarApoderado.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarApoderado.Location = new System.Drawing.Point(260, 69);
+            this.btnBuscarApoderado.Name = "btnBuscarApoderado";
+            this.btnBuscarApoderado.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarApoderado.TabIndex = 22;
+            this.btnBuscarApoderado.UseVisualStyleBackColor = false;
+            this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
             // 
             // cbPeriodo
             // 
             this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Location = new System.Drawing.Point(74, 124);
+            this.cbPeriodo.Location = new System.Drawing.Point(74, 152);
             this.cbPeriodo.Name = "cbPeriodo";
             this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
             this.cbPeriodo.TabIndex = 20;
+            this.cbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbPeriodo_SelectedIndexChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 101);
+            this.label14.Location = new System.Drawing.Point(14, 129);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 13);
             this.label14.TabIndex = 17;
@@ -133,7 +170,7 @@
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(74, 98);
+            this.txtEmpresa.Location = new System.Drawing.Point(74, 126);
             this.txtEmpresa.MaxLength = 200;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.ReadOnly = true;
@@ -145,7 +182,7 @@
             this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpresa.Location = new System.Drawing.Point(260, 96);
+            this.btnBuscarEmpresa.Location = new System.Drawing.Point(260, 124);
             this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
             this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 23);
             this.btnBuscarEmpresa.TabIndex = 18;
@@ -155,7 +192,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(149, 75);
+            this.label13.Location = new System.Drawing.Point(149, 103);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 13);
             this.label13.TabIndex = 15;
@@ -165,19 +202,20 @@
             // 
             this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(196, 71);
+            this.cbHorario.Location = new System.Drawing.Point(196, 99);
             this.cbHorario.Name = "cbHorario";
             this.cbHorario.Size = new System.Drawing.Size(95, 21);
             this.cbHorario.TabIndex = 16;
+            this.cbHorario.SelectedIndexChanged += new System.EventHandler(this.cbHorario_SelectedIndexChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(14, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 13);
+            this.label12.Size = new System.Drawing.Size(45, 13);
             this.label12.TabIndex = 12;
-            this.label12.Text = "Apoderado :";
+            this.label12.Text = "Cliente :";
             // 
             // txtCliente
             // 
@@ -203,7 +241,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 127);
+            this.label10.Location = new System.Drawing.Point(14, 155);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 0;
@@ -212,7 +250,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 75);
+            this.label6.Location = new System.Drawing.Point(13, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 0;
@@ -222,18 +260,18 @@
             // 
             this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(59, 71);
+            this.cbCurso.Location = new System.Drawing.Point(59, 99);
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(90, 21);
             this.cbCurso.TabIndex = 6;
             this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged);
-     
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(135, 19);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(156, 20);
             this.txtNombre.TabIndex = 2;
             // 
@@ -280,7 +318,7 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 220);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 248);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
@@ -342,7 +380,7 @@
             this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
             this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
-            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 181);
+            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 209);
             this.dgvInscripcionAlumno.TabIndex = 1;
             // 
             // groupBox1
@@ -379,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(896, 253);
+            this.ClientSize = new System.Drawing.Size(896, 281);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "InscripcionAlumno";
@@ -433,6 +471,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbHorario;
         private System.Windows.Forms.ComboBox cbPeriodo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtApoderado;
+        private System.Windows.Forms.Button btnBuscarApoderado;
 
     }
 }

@@ -137,5 +137,15 @@ namespace SisNissei
             }
         }
         #endregion
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

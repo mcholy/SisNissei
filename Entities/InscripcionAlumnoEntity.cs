@@ -21,6 +21,20 @@ namespace Entities
             get { return nombrecliente; }
             set { nombrecliente = value; }
         }
+        private int idapoderado;
+
+        public int Idapoderado
+        {
+            get { return idapoderado; }
+            set { idapoderado = value; }
+        }
+        private string nombreapoderado;
+
+        public string Nombreapoderado
+        {
+            get { return nombreapoderado; }
+            set { nombreapoderado = value; }
+        }
         private string nombrecurso;
 
         public string Nombrecurso
@@ -42,7 +56,15 @@ namespace Entities
             get { return nombreperiodo; }
             set { nombreperiodo = value; }
         }
+        private string codigos;
 
+        public string Codigos
+        {
+            get { return codigos; }
+            set { codigos = value; }
+        }
+
+      
         private int idcurso;
 
         public int Idcurso
@@ -64,13 +86,7 @@ namespace Entities
             get { return idperiodo; }
             set { idperiodo = value; }
         }
-        private int regmod;
 
-        public int Regmod
-        {
-            get { return regmod; }
-            set { regmod = value; }
-        }
         private int idhorario;
 
         public int Idhorario

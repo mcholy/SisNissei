@@ -18,7 +18,9 @@ namespace SisNissei
         private InscripcionAlumnoEntity item = new InscripcionAlumnoEntity();
         private InscripcionAlumnoService servicio = new InscripcionAlumnoService();
         private int idCliente = 0;
+        private int idApoderado = 0;
         private string nombreCliente = "";
+        private string nombreApoderado = "";
         private int idCurso = 0;
         private int idHorario= 0;
         private int idEmpresa = 0;
@@ -32,6 +34,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+            InsertarCodigo();
         }
         private void ListarCursos()
         {
@@ -39,7 +42,11 @@ namespace SisNissei
             cbCurso.ValueMember = "Id";
             cbCurso.DataSource = new CursoService().Listar();
         }
-
+        private void InsertarCodigo()
+        {
+            txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
+  
+        }
 
         #region Singleton
         private static InscripcionAlumno m_FormDefInstance;
@@ -96,8 +103,7 @@ namespace SisNissei
             item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Idcliente = idCliente;
-            item.Idcurso = idCurso;
-            item.Idhorario = idHorario;
+            item.Idapoderado = idApoderado;
             item.Idempresa = idEmpresa;
             item.Idperiodo = idPeriodo;
             item.Regmod = regmod;
@@ -159,7 +165,6 @@ namespace SisNissei
         {
             ListarCursos();
             ListarPeriodos();
-
             dgvInscripcionAlumno.ClearSelection();
             dgvInscripcionAlumno.CurrentRow.Selected = false;
             txtBuscar.Focus();
@@ -200,6 +205,30 @@ namespace SisNissei
             idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             ListarHorarioEtario(idCurso);
             }
+
+        private void btnBuscarApoderado_Click(object sender, EventArgs e)
+        {
+            DialogCliente dialogCliente = new DialogCliente();
+            DialogResult resultado = dialogCliente.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                nombreApoderado = dialogCliente.CargarNombre();
+                idApoderado = dialogCliente.CargarId();
+
+            }
+            txtApoderado.Text = nombreApoderado;
+        }
+
+        private void cbPeriodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idPeriodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
+        }
+
+        private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idHorario = Int32.Parse(cbHorario.SelectedValue.ToString());
+        }
      
         }
 

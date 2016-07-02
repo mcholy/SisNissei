@@ -123,6 +123,24 @@ namespace SisNissei
                 dgvEmpleado.Columns["paterno"].Visible = false;
                 dgvEmpleado.Columns["materno"].Visible = false;
                 dgvEmpleado.Columns["idtipoempleado"].Visible = false;
+                dgvEmpleado.Columns["regmod"].Visible = false;
+                dgvEmpleado.Columns["dni"].DisplayIndex = 0;
+                dgvEmpleado.Columns["dni"].HeaderText = "DNI";
+                dgvEmpleado.Columns["nombreempleado"].DisplayIndex = 1;
+                dgvEmpleado.Columns["nombreempleado"].HeaderText = "Empleado";
+                dgvEmpleado.Columns["direccion"].DisplayIndex = 2;
+                dgvEmpleado.Columns["direccion"].HeaderText = "Direccion";
+                dgvEmpleado.Columns["nombretipoempleado"].DisplayIndex = 3;
+                dgvEmpleado.Columns["nombretipoempleado"].HeaderText = "Cargo";
+                dgvEmpleado.Columns["telefono"].DisplayIndex = 4;
+                dgvEmpleado.Columns["telefono"].HeaderText = "telefono";
+                dgvEmpleado.Columns["celular"].DisplayIndex = 5;
+                dgvEmpleado.Columns["celular"].HeaderText = "Celular";                
+                dgvEmpleado.Columns["sueldobase"].DisplayIndex = 6;
+                dgvEmpleado.Columns["sueldobase"].HeaderText = "Sueldo Base";
+                dgvEmpleado.Columns["fecharegistro"].DisplayIndex = 7;
+                dgvEmpleado.Columns["fecharegistro"].HeaderText = "Fecha Registro";
+               
             }
         }
         private void Eliminar()

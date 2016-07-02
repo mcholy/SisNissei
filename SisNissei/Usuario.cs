@@ -116,6 +116,13 @@ namespace SisNissei
                 dgvUsuario.Columns["contrasenia"].Visible = false;
                 dgvUsuario.Columns["idrol"].Visible = false;
                 dgvUsuario.Columns["idempleado"].Visible = false;
+                dgvUsuario.Columns["regmod"].Visible = false;
+                dgvUsuario.Columns["nombreEmpleado"].DisplayIndex = 0;
+                dgvUsuario.Columns["nombreEmpleado"].HeaderText = "Nombre y Apellidos";
+                dgvUsuario.Columns["nombre"].DisplayIndex = 1;
+                dgvUsuario.Columns["nombre"].HeaderText = "Usuario";
+                dgvUsuario.Columns["nombrerol"].DisplayIndex = 2;
+                dgvUsuario.Columns["nombrerol"].HeaderText = "Rol";
             }
         }
         private void Eliminar()

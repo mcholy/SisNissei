@@ -22,6 +22,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
+                cmd.Parameters.AddWithValue("@idapoderado", item.Idapoderado);
                 cmd.Parameters.AddWithValue("@idcurso", item.Idcurso);
                 cmd.Parameters.AddWithValue("@idhorario", item.Idhorario);
                 cmd.Parameters.AddWithValue("@idempresa", item.Idempresa);
@@ -54,6 +55,24 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
+        public string Codigo(InscripcionAlumnoEntity item)
+        { using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_InscripcionAlumno_Codigo";
+                
+                string codigo = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    codigo = reader["Codigo"].ToString();
+                }
+                return codigo;
+            }
+        }
+
         public List<InscripcionAlumnoEntity> Detalle()
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -75,10 +94,8 @@ namespace Models.Repositories
                         item.Nombre = reader["Nombre"].ToString();
                         item.Idcliente = Int32.Parse(reader["idcliente"].ToString());
                         item.Nombrecliente=reader["nombrecliente"].ToString();
-                        item.Idcurso = Int32.Parse(reader["idcurso"].ToString());
-                        item.Nombrecurso = reader["nombrecurso"].ToString();
-                        item.Idhorario = Int32.Parse(reader["idhorario"].ToString());
-                        item.Nombrehorario = reader["nombrehorario"].ToString();
+                        item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
+                        item.Nombreapoderado = reader["nombreapoderado"].ToString();
                         item.Idempresa = Int32.Parse(reader["idempresa"].ToString());
                         item.Nombreempresa = reader["nombreempresa"].ToString();
                         item.Idperiodo = Int32.Parse(reader["idperiodo"].ToString());
@@ -91,5 +108,6 @@ namespace Models.Repositories
 
             }
         }
+
     }
 }
