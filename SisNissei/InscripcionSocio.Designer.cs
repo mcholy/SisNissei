@@ -65,10 +65,13 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnFicha = new System.Windows.Forms.ToolStripButton();
             this.dgvInscripcionSocio = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbTipoInscripcionSocio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,12 +102,14 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionSocio);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(896, 354);
+            this.splitContainer1.Size = new System.Drawing.Size(896, 371);
             this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbTipoInscripcionSocio);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtFamiliarOtros);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtFamiliarItalia);
@@ -134,7 +139,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 270);
+            this.groupBox2.Size = new System.Drawing.Size(312, 283);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -221,7 +226,7 @@
             this.txtCargo.Location = new System.Drawing.Point(61, 152);
             this.txtCargo.MaxLength = 80;
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(230, 20);
+            this.txtCargo.Size = new System.Drawing.Size(88, 20);
             this.txtCargo.TabIndex = 27;
             // 
             // txtHijosMenores
@@ -415,8 +420,9 @@
             this.btnModificar,
             this.btnCancelar,
             this.btnGuardar,
-            this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 321);
+            this.btnEliminar,
+            this.btnFicha});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 338);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
@@ -474,6 +480,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnFicha
+            // 
+            this.btnFicha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFicha.Image = global::SisNissei.Properties.Resources.imprimir;
+            this.btnFicha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFicha.Name = "btnFicha";
+            this.btnFicha.Size = new System.Drawing.Size(36, 28);
+            this.btnFicha.Text = "Imprimir Ficha";
+            this.btnFicha.Click += new System.EventHandler(this.btnFicha_Click);
+            // 
             // dgvInscripcionSocio
             // 
             this.dgvInscripcionSocio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -511,12 +527,30 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 256);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Tipo de Inscripcion :";
+            // 
+            // cbTipoInscripcionSocio
+            // 
+            this.cbTipoInscripcionSocio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoInscripcionSocio.FormattingEnabled = true;
+            this.cbTipoInscripcionSocio.Location = new System.Drawing.Point(158, 253);
+            this.cbTipoInscripcionSocio.Name = "cbTipoInscripcionSocio";
+            this.cbTipoInscripcionSocio.Size = new System.Drawing.Size(133, 21);
+            this.cbTipoInscripcionSocio.TabIndex = 7;
+            // 
             // InscripcionSocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(896, 354);
+            this.ClientSize = new System.Drawing.Size(896, 371);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "InscripcionSocio";
@@ -583,6 +617,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtFamiliarJapon;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStripButton btnFicha;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbTipoInscripcionSocio;
 
     }
 }

@@ -64,6 +64,8 @@
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.socioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeInscripcionDeSocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -140,7 +142,8 @@
             this.empleadoToolStripMenuItem1,
             this.horarioToolStripMenuItem,
             this.movimientosToolStripMenuItem,
-            this.periodoDeMatriculaToolStripMenuItem});
+            this.periodoDeMatriculaToolStripMenuItem,
+            this.socioToolStripMenuItem});
             this.btnMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimiento.Image")));
             this.btnMantenimiento.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnMantenimiento.Name = "btnMantenimiento";
@@ -339,6 +342,21 @@
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.sociosToolStripMenuItem.Text = "Socios";
             // 
+            // socioToolStripMenuItem
+            // 
+            this.socioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoDeInscripcionDeSocioToolStripMenuItem});
+            this.socioToolStripMenuItem.Name = "socioToolStripMenuItem";
+            this.socioToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.socioToolStripMenuItem.Text = "Socio";
+            // 
+            // tipoDeInscripcionDeSocioToolStripMenuItem
+            // 
+            this.tipoDeInscripcionDeSocioToolStripMenuItem.Name = "tipoDeInscripcionDeSocioToolStripMenuItem";
+            this.tipoDeInscripcionDeSocioToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.tipoDeInscripcionDeSocioToolStripMenuItem.Text = "Tipo de Inscripcion de Socio";
+            this.tipoDeInscripcionDeSocioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeInscripcionDeSocioToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +412,8 @@
         private System.Windows.Forms.ToolStripMenuItem rangoDeEdadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionSocioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionAlumnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem socioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeInscripcionDeSocioToolStripMenuItem;
     }
 }
 

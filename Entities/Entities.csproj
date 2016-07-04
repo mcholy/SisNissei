@@ -46,6 +46,7 @@
     <Compile Include="InscripcionAlumnoEntity.cs" />
     <Compile Include="ResultadoEntity.cs" />
     <Compile Include="InscripcionSocioEntity.cs" />
+    <Compile Include="TipoInscripcionSocioEntity.cs" />
     <Compile Include="UsuarioEntity.cs" />
     <Compile Include="IngresoEntity.cs" />
     <Compile Include="EgresoEntity.cs" />

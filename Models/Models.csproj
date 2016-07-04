@@ -66,6 +66,7 @@
     <Compile Include="Repositories\RolRepository.cs" />
     <Compile Include="Repositories\DistritoRepository.cs" />
     <Compile Include="Repositories\TipoEmpleadoRepository.cs" />
+    <Compile Include="Repositories\TipoInscripcionSocioRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
     <Compile Include="Services\AmbienteService.cs" />
     <Compile Include="Services\ClienteService.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Services\DistritoService.cs" />
     <Compile Include="Services\TipoEgresoService.cs" />
     <Compile Include="Services\TipoEmpleadoService.cs" />
+    <Compile Include="Services\TipoInscripcionSocioService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>

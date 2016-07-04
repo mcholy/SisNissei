@@ -189,6 +189,12 @@ namespace SisNissei
             InscripcionSocio.DefInstance.MdiParent = this;
             InscripcionSocio.DefInstance.Show();
         }
+
+        private void tipoDeInscripcionDeSocioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoInscripcionSocio.DefInstance.MdiParent = this;
+            TipoInscripcionSocio.DefInstance.Show();
+        }
                
     }
 }

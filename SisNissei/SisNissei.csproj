@@ -11,7 +11,8 @@
     <RootNamespace>SisNissei</RootNamespace>
     <AssemblyName>SisNissei</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -55,9 +56,15 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -115,6 +122,24 @@
     </Compile>
     <Compile Include="Horario.Designer.cs">
       <DependentUpon>Horario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SocioReporteFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SocioReporteFormulario.Designer.cs">
+      <DependentUpon>SocioReporteFormulario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SocioReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocioReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TipoInscripcionSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoInscripcionSocio.Designer.cs">
+      <DependentUpon>TipoInscripcionSocio.cs</DependentUpon>
     </Compile>
     <Compile Include="Validacion.cs" />
     <Compile Include="Cliente.cs">
@@ -237,6 +262,16 @@
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SocioReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SocioReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SocioReporteFormulario.resx">
+      <DependentUpon>SocioReporteFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoInscripcionSocio.resx">
+      <DependentUpon>TipoInscripcionSocio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +316,7 @@
     <Content Include="Resources\clean.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
+    <None Include="Resources\imprimir.png" />
     <Content Include="Resources\Key-Access.png" />
     <Content Include="Resources\Login-Door.png" />
     <Content Include="Resources\login.png" />

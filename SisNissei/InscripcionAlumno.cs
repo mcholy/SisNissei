@@ -45,7 +45,6 @@ namespace SisNissei
         private void InsertarCodigo()
         {
             txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
-  
         }
 
         #region Singleton

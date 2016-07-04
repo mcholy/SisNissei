@@ -162,7 +162,12 @@ namespace SisNissei
             }
             txtConyugue.Text = nombreCliente;
         }
-
+        private void ListarTipoInscripcionSocio()
+        {
+            cbTipoInscripcionSocio.DisplayMember = "Nombre";
+            cbTipoInscripcionSocio.ValueMember = "Id";
+            cbTipoInscripcionSocio.DataSource = new TipoInscripcionSocioService().Listar();
+        }
         private void btnBuscarPatrocinador_Click(object sender, EventArgs e)
         {
             DialogPatrocinador dialogPatrocinador = new DialogPatrocinador();
@@ -187,6 +192,7 @@ namespace SisNissei
             dgvInscripcionSocio.ClearSelection();
             dgvInscripcionSocio.CurrentRow.Selected = false;
             txtBuscar.Focus();
+            ListarTipoInscripcionSocio();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -235,6 +241,25 @@ namespace SisNissei
                 {
                     LlenarControles();
                     regmod = 1;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
+            }
+        }
+
+        private void btnFicha_Click(object sender, EventArgs e)
+        {
+            
+            if (dgvInscripcionSocio.RowCount > 0)
+            {
+                if (dgvInscripcionSocio.CurrentRow.Selected == true)
+                {
+                    SocioReporteFormulario objreporte = new SocioReporteFormulario();
+                    idActual = Int32.Parse(dgvInscripcionSocio.CurrentRow.Cells["id"].Value.ToString());
+                    objreporte.id = idActual;
+                    objreporte.ShowDialog();
                 }
                 else
                 {
