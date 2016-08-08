@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Models.Repositories
 {
-    class InscripcionAlumnoRepository : BaseRepository<InscripcionAlumnoEntity>
+    public class InscripcionAlumnoRepository : BaseRepository<InscripcionAlumnoEntity>
     {
         public string Guardar(InscripcionAlumnoEntity item)
         {
@@ -23,10 +23,6 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
                 cmd.Parameters.AddWithValue("@idapoderado", item.Idapoderado);
-                cmd.Parameters.AddWithValue("@idcurso", item.Idcurso);
-                cmd.Parameters.AddWithValue("@idhorario", item.Idhorario);
-                cmd.Parameters.AddWithValue("@idempresa", item.Idempresa);
-                cmd.Parameters.AddWithValue("@idperiodo", item.Idperiodo);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -96,10 +92,6 @@ namespace Models.Repositories
                         item.Nombrecliente=reader["nombrecliente"].ToString();
                         item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
-                        item.Idempresa = Int32.Parse(reader["idempresa"].ToString());
-                        item.Nombreempresa = reader["nombreempresa"].ToString();
-                        item.Idperiodo = Int32.Parse(reader["idperiodo"].ToString());
-                        item.Nombreperiodo = reader["nombreperiodo"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
                     }

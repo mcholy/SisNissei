@@ -115,6 +115,7 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

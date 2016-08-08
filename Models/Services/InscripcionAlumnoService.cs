@@ -19,7 +19,6 @@ namespace Models.Services
         }
         public List<InscripcionAlumnoEntity> Detalle()
         {
-
             return new InscripcionAlumnoRepository().Detalle();
         }
         public int Eliminar(InscripcionAlumnoEntity item)

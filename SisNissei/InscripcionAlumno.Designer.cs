@@ -29,22 +29,28 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnEliminarDetalle = new System.Windows.Forms.Button();
+            this.btnGuardarDetalle = new System.Windows.Forms.Button();
+            this.NuevoDetalle = new System.Windows.Forms.Button();
+            this.EditarDetalle = new System.Windows.Forms.Button();
+            this.dgvInscripcionAlumnoDetalle = new System.Windows.Forms.DataGridView();
+            this.cbPeriodo = new System.Windows.Forms.ComboBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
+            this.cbCurso = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApoderado = new System.Windows.Forms.TextBox();
             this.btnBuscarApoderado = new System.Windows.Forms.Button();
-            this.cbPeriodo = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbCurso = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,6 +69,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumnoDetalle)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -81,6 +89,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.panel1);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip1);
@@ -89,32 +98,192 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlumno);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(896, 281);
+            this.splitContainer1.Size = new System.Drawing.Size(896, 419);
             this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnEliminarDetalle);
+            this.groupBox3.Controls.Add(this.btnGuardarDetalle);
+            this.groupBox3.Controls.Add(this.NuevoDetalle);
+            this.groupBox3.Controls.Add(this.EditarDetalle);
+            this.groupBox3.Controls.Add(this.dgvInscripcionAlumnoDetalle);
+            this.groupBox3.Controls.Add(this.cbPeriodo);
+            this.groupBox3.Controls.Add(this.txtEmpresa);
+            this.groupBox3.Controls.Add(this.btnBuscarEmpresa);
+            this.groupBox3.Controls.Add(this.cbCurso);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.cbHorario);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(16, 153);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(312, 230);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Curso";
+            // 
+            // btnEliminarDetalle
+            // 
+            this.btnEliminarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDetalle.Image = global::SisNissei.Properties.Resources.delete;
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(208, 75);
+            this.btnEliminarDetalle.Name = "btnEliminarDetalle";
+            this.btnEliminarDetalle.Size = new System.Drawing.Size(27, 23);
+            this.btnEliminarDetalle.TabIndex = 26;
+            this.btnEliminarDetalle.UseVisualStyleBackColor = false;
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
+            // 
+            // btnGuardarDetalle
+            // 
+            this.btnGuardarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGuardarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarDetalle.Image = global::SisNissei.Properties.Resources.save;
+            this.btnGuardarDetalle.Location = new System.Drawing.Point(175, 75);
+            this.btnGuardarDetalle.Name = "btnGuardarDetalle";
+            this.btnGuardarDetalle.Size = new System.Drawing.Size(27, 23);
+            this.btnGuardarDetalle.TabIndex = 25;
+            this.btnGuardarDetalle.UseVisualStyleBackColor = false;
+            this.btnGuardarDetalle.Click += new System.EventHandler(this.btnGuardarDetalle_Click);
+            // 
+            // NuevoDetalle
+            // 
+            this.NuevoDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.NuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoDetalle.Image = global::SisNissei.Properties.Resources._new;
+            this.NuevoDetalle.Location = new System.Drawing.Point(275, 75);
+            this.NuevoDetalle.Name = "NuevoDetalle";
+            this.NuevoDetalle.Size = new System.Drawing.Size(31, 23);
+            this.NuevoDetalle.TabIndex = 24;
+            this.NuevoDetalle.UseVisualStyleBackColor = false;
+            this.NuevoDetalle.Click += new System.EventHandler(this.NuevoDetalle_Click);
+            // 
+            // EditarDetalle
+            // 
+            this.EditarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.EditarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditarDetalle.Image = global::SisNissei.Properties.Resources.edit;
+            this.EditarDetalle.Location = new System.Drawing.Point(241, 75);
+            this.EditarDetalle.Name = "EditarDetalle";
+            this.EditarDetalle.Size = new System.Drawing.Size(29, 23);
+            this.EditarDetalle.TabIndex = 23;
+            this.EditarDetalle.UseVisualStyleBackColor = false;
+            this.EditarDetalle.Click += new System.EventHandler(this.EditarDetalle_Click);
+            // 
+            // dgvInscripcionAlumnoDetalle
+            // 
+            this.dgvInscripcionAlumnoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionAlumnoDetalle.Location = new System.Drawing.Point(6, 102);
+            this.dgvInscripcionAlumnoDetalle.Name = "dgvInscripcionAlumnoDetalle";
+            this.dgvInscripcionAlumnoDetalle.Size = new System.Drawing.Size(300, 115);
+            this.dgvInscripcionAlumnoDetalle.TabIndex = 2;
+            // 
+            // cbPeriodo
+            // 
+            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPeriodo.FormattingEnabled = true;
+            this.cbPeriodo.Location = new System.Drawing.Point(74, 75);
+            this.cbPeriodo.Name = "cbPeriodo";
+            this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
+            this.cbPeriodo.TabIndex = 20;
+            this.cbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbPeriodo_SelectedIndexChanged);
+            // 
+            // txtEmpresa
+            // 
+            this.txtEmpresa.Location = new System.Drawing.Point(74, 49);
+            this.txtEmpresa.MaxLength = 200;
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.ReadOnly = true;
+            this.txtEmpresa.Size = new System.Drawing.Size(191, 20);
+            this.txtEmpresa.TabIndex = 19;
+            // 
+            // btnBuscarEmpresa
+            // 
+            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarEmpresa.Location = new System.Drawing.Point(275, 49);
+            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
+            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 20);
+            this.btnBuscarEmpresa.TabIndex = 18;
+            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
+            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
+            // 
+            // cbCurso
+            // 
+            this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCurso.FormattingEnabled = true;
+            this.cbCurso.Location = new System.Drawing.Point(59, 22);
+            this.cbCurso.Name = "cbCurso";
+            this.cbCurso.Size = new System.Drawing.Size(90, 21);
+            this.cbCurso.TabIndex = 6;
+            this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(149, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Horario :";
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(196, 22);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(110, 21);
+            this.cbHorario.TabIndex = 16;
+            this.cbHorario.SelectedIndexChanged += new System.EventHandler(this.cbHorario_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Curso :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 52);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(54, 13);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Empresa :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 78);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Periodo :";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtApoderado);
             this.groupBox2.Controls.Add(this.btnBuscarApoderado);
-            this.groupBox2.Controls.Add(this.cbPeriodo);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txtEmpresa);
-            this.groupBox2.Controls.Add(this.btnBuscarEmpresa);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.cbHorario);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtCliente);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.cbCurso);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 203);
+            this.groupBox2.Size = new System.Drawing.Size(312, 105);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -149,65 +318,6 @@
             this.btnBuscarApoderado.UseVisualStyleBackColor = false;
             this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
             // 
-            // cbPeriodo
-            // 
-            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Location = new System.Drawing.Point(74, 152);
-            this.cbPeriodo.Name = "cbPeriodo";
-            this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
-            this.cbPeriodo.TabIndex = 20;
-            this.cbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbPeriodo_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 129);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 13);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Empresa :";
-            // 
-            // txtEmpresa
-            // 
-            this.txtEmpresa.Location = new System.Drawing.Point(74, 126);
-            this.txtEmpresa.MaxLength = 200;
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.ReadOnly = true;
-            this.txtEmpresa.Size = new System.Drawing.Size(170, 20);
-            this.txtEmpresa.TabIndex = 19;
-            // 
-            // btnBuscarEmpresa
-            // 
-            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpresa.Location = new System.Drawing.Point(260, 124);
-            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
-            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarEmpresa.TabIndex = 18;
-            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
-            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(149, 103);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Horario :";
-            // 
-            // cbHorario
-            // 
-            this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(196, 99);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(95, 21);
-            this.cbHorario.TabIndex = 16;
-            this.cbHorario.SelectedIndexChanged += new System.EventHandler(this.cbHorario_SelectedIndexChanged);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -237,34 +347,6 @@
             this.btnBuscarCliente.TabIndex = 13;
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 155);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Periodo :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Curso :";
-            // 
-            // cbCurso
-            // 
-            this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(59, 99);
-            this.cbCurso.Name = "cbCurso";
-            this.cbCurso.Size = new System.Drawing.Size(90, 21);
-            this.cbCurso.TabIndex = 6;
-            this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged);
             // 
             // txtNombre
             // 
@@ -318,7 +400,7 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 248);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 386);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
@@ -333,6 +415,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(36, 28);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -342,6 +425,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -380,7 +464,7 @@
             this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
             this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
-            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 209);
+            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 339);
             this.dgvInscripcionAlumno.TabIndex = 1;
             // 
             // groupBox1
@@ -417,7 +501,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(896, 281);
+            this.ClientSize = new System.Drawing.Size(896, 419);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "InscripcionAlumno";
@@ -428,6 +512,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumnoDetalle)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -474,6 +561,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtApoderado;
         private System.Windows.Forms.Button btnBuscarApoderado;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button NuevoDetalle;
+        private System.Windows.Forms.Button EditarDetalle;
+        private System.Windows.Forms.DataGridView dgvInscripcionAlumnoDetalle;
+        private System.Windows.Forms.Button btnEliminarDetalle;
+        private System.Windows.Forms.Button btnGuardarDetalle;
 
     }
 }

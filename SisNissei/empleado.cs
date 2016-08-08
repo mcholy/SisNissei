@@ -40,6 +40,7 @@ namespace SisNissei
             txtCelular.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtDireccion.Text = string.Empty;
+            cbTipoEmpleado.DataSource = new TipoEmpleadoService().Listar();
         }
 
 
@@ -199,7 +200,7 @@ namespace SisNissei
         private void LlenarControles()
         {
             idActual = Int32.Parse(dgvEmpleado.CurrentRow.Cells["id"].Value.ToString());
-            idtipoempleado = Int32.Parse(dgvEmpleado.CurrentRow.Cells["idtipoempleado"].Value.ToString());
+            cbTipoEmpleado.SelectedValue = Int32.Parse(dgvEmpleado.CurrentRow.Cells["idtipoempleado"].Value.ToString());      
             txtNombre.Text = dgvEmpleado.CurrentRow.Cells["nombre"].Value.ToString();
             txtPaterno.Text = dgvEmpleado.CurrentRow.Cells["paterno"].Value.ToString();
             txtMaterno.Text = dgvEmpleado.CurrentRow.Cells["materno"].Value.ToString();

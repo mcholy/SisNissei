@@ -44,7 +44,7 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleHorario_Guardar";
-                cmd.Parameters.AddWithValue("@id", item.Id);
+                cmd.Parameters.AddWithValue("@id", item.IdHorario);
                 cmd.Parameters.AddWithValue("@idhorario", item.IdHorario);
                 cmd.Parameters.AddWithValue("@hora", item.Hora);
                 cmd.Parameters.AddWithValue("@dia", item.Dia);

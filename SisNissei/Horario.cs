@@ -164,9 +164,11 @@ namespace SisNissei
             item = new HorarioEntity();
             if (dgvDetalleHorario.RowCount > 0)
             {
+                item.Id = idActual;
                 item.Idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
                 item.Idgrupoetario = Int32.Parse(cbGrupoEtario.SelectedIndex.ToString());
                 item.Fechainicio = DateTime.Parse(dtpFechaInicio.Text);
+                item.Regmod = regmod;
                 resultado = servicio.Guardar(item);
                 item = new HorarioEntity();
                 item.IdHorario = resultado.Id;

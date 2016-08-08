@@ -84,7 +84,24 @@ namespace Models.Repositories
             }
 
         }
+        public string Codigo(InscripcionSocioEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_InscripcionSocio_Codigo";
 
+                string codigo = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    codigo = reader["Codigo"].ToString();
+                }
+                return codigo;
+            }
+        }
 
         public string Eliminar(InscripcionSocioEntity item)
         {

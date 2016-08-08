@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmbienteEntity.cs" />
+    <Compile Include="BaseDetalleEntity.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="DetalleInscripcionAlumnoEntity.cs" />
     <Compile Include="GrupoEtarioEntity.cs" />
     <Compile Include="InscripcionAlumnoEntity.cs" />
     <Compile Include="ResultadoEntity.cs" />
