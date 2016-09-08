@@ -124,6 +124,7 @@ namespace SisNissei
         private void Limpiar()
         {
             txtHorario.Text = string.Empty;
+            txtduracion.Text = string.Empty;
             dgvDetalleHorario.Rows.Remove(dgvDetalleHorario.CurrentRow);
         }
 
@@ -139,7 +140,7 @@ namespace SisNissei
                 dgvHorario.Columns["idgrupoetario"].Visible = false;
                 dgvHorario.Columns["idhorario"].Visible = false;
                 dgvHorario.Columns["dia"].Visible = false;
-                dgvHorario.Columns["fechainicio"].Visible = false;
+                
                 dgvHorario.Columns["hora"].Visible = false;
                 dgvHorario.Columns["regmod"].Visible = false;
                 dgvHorario.Columns["fecharegistro"].Visible = false;
@@ -168,6 +169,7 @@ namespace SisNissei
                 item.Idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
                 item.Idgrupoetario = Int32.Parse(cbGrupoEtario.SelectedIndex.ToString());
                 item.Fechainicio = DateTime.Parse(dtpFechaInicio.Text);
+                item.Duracion = Int32.Parse(txtduracion.Text);
                 item.Regmod = regmod;
                 resultado = servicio.Guardar(item);
                 item = new HorarioEntity();
@@ -258,6 +260,7 @@ namespace SisNissei
             cbCurso.SelectedValue = Int32.Parse(dgvHorario.CurrentRow.Cells["idcurso"].Value.ToString());
             cbGrupoEtario.SelectedValue = Int32.Parse(dgvHorario.CurrentRow.Cells["idgrupoetario"].Value.ToString());
             dtpFechaInicio.Value = DateTime.Parse(dgvHorario.CurrentRow.Cells["fechainicio"].Value.ToString());
+            txtduracion.Text=dgvHorario.CurrentRow.Cells["duracion"].Value.ToString();
             CargarDetalleHorario_Detalle(idActual);
         }
 

@@ -10,24 +10,22 @@ using System.Resources;
 using SisNissei.Template;
 using System.Data.SqlClient;
 
+
 namespace SisNissei
 {
-    public partial class SocioReporteFormulario : Form
+    public partial class AlumnoReporteFormulariocs : Form
     {
-        public SocioReporteFormulario()
+        public AlumnoReporteFormulariocs()
         {
-
             InitializeComponent();
         }
         public int id;
-        private void SocioReporteFormulario_Load(object sender, EventArgs e)
+
+        private void AlumnoReporteFormulariocs_Load(object sender, EventArgs e)
         {
-
-            SocioReporte objReporte = new SocioReporte();
-
+            AlumnoReporte objReporte = new AlumnoReporte();
             objReporte.SetParameterValue("@id", id);
-            rp_socio.ReportSource = objReporte;
-          
+            rp_alumno.ReportSource = objReporte;
         }
     }
 }

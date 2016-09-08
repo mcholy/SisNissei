@@ -26,6 +26,8 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+
+            Skin.AplicarSkinDGV(dgvTipoEmpleado);
         }
         private void Limpiar()
         {

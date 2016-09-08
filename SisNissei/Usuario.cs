@@ -27,6 +27,8 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+
+            Skin.AplicarSkinDGV(dgvUsuario);
         }
 
         #region Singleton

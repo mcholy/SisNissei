@@ -60,6 +60,8 @@
             this.chkMiercoles = new System.Windows.Forms.CheckBox();
             this.chkMartes = new System.Windows.Forms.CheckBox();
             this.chkLunes = new System.Windows.Forms.CheckBox();
+            this.txtduracion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -238,6 +240,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtduracion);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dtpFechaInicio);
             this.groupBox2.Controls.Add(this.btnHora);
@@ -284,7 +288,7 @@
             // 
             // txtHorario
             // 
-            this.txtHorario.Location = new System.Drawing.Point(118, 89);
+            this.txtHorario.Location = new System.Drawing.Point(109, 89);
             this.txtHorario.Mask = "90:00 - 90:00";
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.Size = new System.Drawing.Size(74, 20);
@@ -421,6 +425,22 @@
             this.chkLunes.Text = "Lunes";
             this.chkLunes.UseVisualStyleBackColor = true;
             // 
+            // txtduracion
+            // 
+            this.txtduracion.Location = new System.Drawing.Point(276, 88);
+            this.txtduracion.Name = "txtduracion";
+            this.txtduracion.Size = new System.Drawing.Size(43, 20);
+            this.txtduracion.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Duración (Meses)";
+            // 
             // Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,5 +504,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtduracion;
     }
 }

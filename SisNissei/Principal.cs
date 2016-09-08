@@ -173,10 +173,6 @@ namespace SisNissei
             GrupoEtario.DefInstance.Show();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void inscripcionAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -194,6 +190,17 @@ namespace SisNissei
         {
             TipoInscripcionSocio.DefInstance.MdiParent = this;
             TipoInscripcionSocio.DefInstance.Show();
+        }
+
+        private void ambientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ambientes.DefInstance.MdiParent = this;
+            Ambientes.DefInstance.Show();
+        }
+
+        private void alquilerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
                
     }

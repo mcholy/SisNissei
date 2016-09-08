@@ -138,7 +138,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(71, 215);
-            this.txtDireccion.MaxLength = 7;
+            this.txtDireccion.MaxLength = 300;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(220, 20);
             this.txtDireccion.TabIndex = 17;
@@ -149,7 +149,7 @@
             this.txtCelular.MaxLength = 7;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(86, 20);
-            this.txtCelular.TabIndex = 16; 
+            this.txtCelular.TabIndex = 16;
             // 
             // cbSexo
             // 
@@ -178,6 +178,7 @@
             this.chkAlergia.TabIndex = 13;
             this.chkAlergia.Text = "Alergía";
             this.chkAlergia.UseVisualStyleBackColor = true;
+            this.chkAlergia.CheckedChanged += new System.EventHandler(this.chkAlergia_CheckedChanged);
             // 
             // label12
             // 

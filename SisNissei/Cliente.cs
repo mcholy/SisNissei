@@ -27,18 +27,10 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+            Skin.AplicarSkinDGV(dgvCliente);
         }
 
-        private void chkAlergia_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (chkAlergia.Checked)
-                txtAlergia.ReadOnly = false;
-            else
-                txtAlergia.ReadOnly = true;
-        }
-
-  
-
+      
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
@@ -94,8 +86,9 @@ namespace SisNissei
             item.Idapoderado = idApoderado;
             item.Fechanacimiento = DateTime.Parse(txtFechaNacimiento.Text);
             item.Iddistrito = Int32.Parse(cbDistrito.SelectedValue.ToString());
-            item.Celular = Int32.Parse(txtCelular.Text);
-            item.Telefono = Int32.Parse(txtTelefono.Text);
+            item.Celular = Int32.Parse(txtCelular.Text == "" ? "0": txtCelular.Text);
+
+            item.Telefono = Int32.Parse(txtTelefono.Text == "" ? "0" : txtTelefono.Text);
             item.Direccion = txtDireccion.Text;
             item.Alergia = txtAlergia.Text;
             item.Regmod = regmod;
@@ -139,14 +132,15 @@ namespace SisNissei
                 dgvCliente.Columns["paterno"].Visible = false;
                 dgvCliente.Columns["materno"].Visible = false;
                 dgvCliente.Columns["Idapoderado"].Visible = false;
+                dgvCliente.Columns["Sexo"].Visible = false;
                 dgvCliente.Columns["nombrecliente"].DisplayIndex = 0;
                 dgvCliente.Columns["nombrecliente"].HeaderText = "Nombre";
                 dgvCliente.Columns["dni"].DisplayIndex = 1;
                 dgvCliente.Columns["dni"].HeaderText = "DNI";
                 dgvCliente.Columns["nombreapoderado"].DisplayIndex = 2;
                 dgvCliente.Columns["nombreapoderado"].HeaderText = "Apoderado";
-                dgvCliente.Columns["sexo"].DisplayIndex = 3;
-                dgvCliente.Columns["sexo"].HeaderText = "Sexo";
+                dgvCliente.Columns["nombresexo"].DisplayIndex = 3;
+                dgvCliente.Columns["nombresexo"].HeaderText = "Sexo";
                 dgvCliente.Columns["direccion"].DisplayIndex = 4;
                 dgvCliente.Columns["direccion"].HeaderText = "Direccion";
                 dgvCliente.Columns["nombredistrito"].DisplayIndex = 5;
@@ -167,6 +161,17 @@ namespace SisNissei
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
+            txtApoderado.Text = string.Empty;
+            txtPaterno.Text = string.Empty;
+            txtMaterno.Text = string.Empty;
+            txtDNI.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtFechaNacimiento.Text = string.Empty;
+            cbSexo.SelectedValue = 0;
+            cbDistrito.SelectedValue = 0;
+            txtCelular.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtAlergia.Text = string.Empty;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -261,5 +266,13 @@ namespace SisNissei
             }
         }
         #endregion
+
+        private void chkAlergia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAlergia.Checked)
+                txtAlergia.ReadOnly = false;
+            else
+                txtAlergia.ReadOnly = true;
+        }
     }
 }

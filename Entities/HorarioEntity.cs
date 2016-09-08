@@ -68,6 +68,12 @@ namespace Entities
             get { return nombrecurso; }
             set { nombrecurso = value; }
         }
+        private int duracion;
 
+        public int Duracion
+        {
+            get { return duracion; }
+            set { duracion = value; }
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+            Skin.AplicarSkinDGV(dgvDistrito);
         }
         
         private void btnGuardar_Click(object sender, EventArgs e)

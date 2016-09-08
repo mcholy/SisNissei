@@ -25,6 +25,8 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
+            Skin.AplicarSkinDGV(dgvGrupoEtario);
+
         }
         private void CargarDetalle()
         {

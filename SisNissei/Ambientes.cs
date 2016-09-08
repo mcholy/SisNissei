@@ -12,31 +12,37 @@ using Models.Services;
 
 namespace SisNissei
 {
-    public partial class TipoInscripcionSocio : Form
+    public partial class Ambientes : Form
     {
         private Validacion itemValidacion = new Validacion();
-        private TipoInscripcionSocioEntity item = new TipoInscripcionSocioEntity();
-        private TipoInscripcionSocioService servicio = new TipoInscripcionSocioService();
+        private AmbienteEntity item = new AmbienteEntity();
+        private AmbienteService servicio = new AmbienteService();
         private int regmod = 0;
         private int idActual = 0;
-
-        public TipoInscripcionSocio()
+        public Ambientes()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
-
-            Skin.AplicarSkinDGV(dgvTipoInscripcionSocio);
+            Skin.AplicarSkinDGV(dgvAmbiente);
         }
+
+        private void ListarSexo()
+        {
+            cbTipoCliente.Items.Add("Publico");
+            cbTipoCliente.Items.Add("Socio");
+        }
+
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
             txtCosto.Text = string.Empty;
         }
+
         private void Guardar()
         {
             //item.idtipoemeplado = icbsexo.selectedvalue;
-             if (txtCosto.Text == string.Empty)
+            if (txtCosto.Text == string.Empty)
             {
                 MessageBox.Show("Campos solicitados vacios.");
             }
@@ -45,8 +51,9 @@ namespace SisNissei
                 item.Id = idActual;
                 item.Nombre = txtNombre.Text;
                 item.Costo = Double.Parse(txtCosto.Text);
+                item.Tipocliente = cbTipoCliente.Text == "Publico" ? false : true; 
                 item.Regmod = regmod;
-                TipoInscripcionSocioService servicio = new TipoInscripcionSocioService();
+                AmbienteService servicio = new AmbienteService();
                 int respuesta = servicio.Guardar(item);
                 if (respuesta == 1)
                 {
@@ -60,24 +67,27 @@ namespace SisNissei
                 CargarDetalle();
             }
         }
+
         private void CargarDetalle()
         {
-            dgvTipoInscripcionSocio.DataSource = servicio.Detalle();
-            if (dgvTipoInscripcionSocio.RowCount > 0)
+            dgvAmbiente.DataSource = servicio.Detalle();
+            if (dgvAmbiente.RowCount > 0)
             {
-                dgvTipoInscripcionSocio.Columns["id"].Visible = false;
-                dgvTipoInscripcionSocio.Columns["estado"].Visible = false;
-                dgvTipoInscripcionSocio.Columns["regmod"].Visible = false;
-                dgvTipoInscripcionSocio.Columns["fecharegistro"].Visible = false;
-                dgvTipoInscripcionSocio.Columns["nombre"].DisplayIndex = 0;
-                dgvTipoInscripcionSocio.Columns["nombre"].HeaderText = "Nombre";
-                dgvTipoInscripcionSocio.Columns["costo"].DisplayIndex = 1;
-                dgvTipoInscripcionSocio.Columns["costo"].HeaderText = "Costo";
+                dgvAmbiente.Columns["id"].Visible = false;
+                dgvAmbiente.Columns["estado"].Visible = false;
+                dgvAmbiente.Columns["regmod"].Visible = false;
+                dgvAmbiente.Columns["fecharegistro"].Visible = false;
+                dgvAmbiente.Columns["tipocliente"].Visible = false;
+                dgvAmbiente.Columns["nombre"].DisplayIndex = 0;
+                dgvAmbiente.Columns["nombre"].HeaderText = "Nombre";
+                dgvAmbiente.Columns["costo"].DisplayIndex = 1;
+                dgvAmbiente.Columns["costo"].HeaderText = "Costo";
+                dgvAmbiente.Columns["nombretipocliente"].DisplayIndex = 2;
             }
         }
         private void Eliminar()
         {
-            item.Id = Int32.Parse(dgvTipoInscripcionSocio.CurrentRow.Cells["id"].Value.ToString());
+            item.Id = Int32.Parse(dgvAmbiente.CurrentRow.Cells["id"].Value.ToString());
             int respuesta = servicio.Eliminar(item);
             if (respuesta == 1)
             {
@@ -88,24 +98,24 @@ namespace SisNissei
         }
         private void LlenarControles()
         {
-            idActual = Int32.Parse(dgvTipoInscripcionSocio.CurrentRow.Cells["id"].Value.ToString());
-            txtNombre.Text = dgvTipoInscripcionSocio.CurrentRow.Cells["nombre"].Value.ToString();
-            txtCosto.Text = dgvTipoInscripcionSocio.CurrentRow.Cells["costo"].Value.ToString();
+            idActual = Int32.Parse(dgvAmbiente.CurrentRow.Cells["id"].Value.ToString());
+            txtNombre.Text = dgvAmbiente.CurrentRow.Cells["nombre"].Value.ToString();
+            txtCosto.Text = dgvAmbiente.CurrentRow.Cells["costo"].Value.ToString();
         }
         private void TipoInscripcionSocio_Load(object sender, EventArgs e)
         {
-            dgvTipoInscripcionSocio.ClearSelection();
-            dgvTipoInscripcionSocio.CurrentRow.Selected = false;
+            dgvAmbiente.ClearSelection();
+            dgvAmbiente.CurrentRow.Selected = false;
             txtBuscar.Focus();
         }
         #region Singleton
-        private static TipoInscripcionSocio m_FormDefInstance;
-        public static TipoInscripcionSocio DefInstance
+        private static Ambientes m_FormDefInstance;
+        public static Ambientes DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new TipoInscripcionSocio();
+                    m_FormDefInstance = new Ambientes();
                 return m_FormDefInstance;
             }
             set
@@ -114,12 +124,18 @@ namespace SisNissei
             }
         }
         #endregion
+        private void Ambientes_Load(object sender, EventArgs e)
+        {
+            dgvAmbiente.ClearSelection();
+            dgvAmbiente.CurrentRow.Selected = false;
+            txtBuscar.Focus();
+        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvTipoInscripcionSocio.RowCount > 0)
+            if (dgvAmbiente.RowCount > 0)
             {
-                if (dgvTipoInscripcionSocio.CurrentRow.Selected == true)
+                if (dgvAmbiente.CurrentRow.Selected == true)
                 {
                     if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -136,9 +152,9 @@ namespace SisNissei
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dgvTipoInscripcionSocio.RowCount > 0)
+            if (dgvAmbiente.RowCount > 0)
             {
-                if (dgvTipoInscripcionSocio.CurrentRow.Selected == true)
+                if (dgvAmbiente.CurrentRow.Selected == true)
                 {
                     LlenarControles();
                     regmod = 1;

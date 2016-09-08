@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class SocioReporteFormulario
+    partial class AlumnoReporteFormulariocs
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rp_socio = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rp_alumno = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // rp_socio
+            // rp_alumno
             // 
-            this.rp_socio.ActiveViewIndex = -1;
-            this.rp_socio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rp_socio.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rp_socio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rp_socio.Location = new System.Drawing.Point(0, 0);
-            this.rp_socio.Name = "rp_socio";
-            this.rp_socio.Size = new System.Drawing.Size(818, 377);
-            this.rp_socio.TabIndex = 0;
+            this.rp_alumno.ActiveViewIndex = -1;
+            this.rp_alumno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rp_alumno.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rp_alumno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rp_alumno.Location = new System.Drawing.Point(0, 0);
+            this.rp_alumno.Name = "rp_alumno";
+            this.rp_alumno.Size = new System.Drawing.Size(860, 447);
+            this.rp_alumno.TabIndex = 0;
             // 
-            // SocioReporteFormulario
+            // AlumnoReporteFormulariocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 377);
-            this.Controls.Add(this.rp_socio);
-            this.Name = "SocioReporteFormulario";
-            this.Text = "SocioReporteFormulario";
-            this.Load += new System.EventHandler(this.SocioReporteFormulario_Load);
+            this.ClientSize = new System.Drawing.Size(860, 447);
+            this.Controls.Add(this.rp_alumno);
+            this.Name = "AlumnoReporteFormulariocs";
+            this.Text = "AlumnoReporteFormulariocs";
+            this.Load += new System.EventHandler(this.AlumnoReporteFormulariocs_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rp_socio;
-
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rp_alumno;
     }
 }

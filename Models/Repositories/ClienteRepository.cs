@@ -65,6 +65,7 @@ namespace Models.Repositories
                         item.Nombrecliente = reader["nombrecliente"].ToString();
                         item.Dni =Int32.Parse(reader["dni"].ToString());
                         item.Sexo=Boolean.Parse(reader["sexo"].ToString());
+                        item.Nombresexo = reader["nombresexo"].ToString();
                         item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
                         item.Fechanacimiento = DateTime.Parse(reader["fecharegistro"].ToString());

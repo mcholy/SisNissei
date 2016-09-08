@@ -47,6 +47,14 @@ namespace Entities
             set { sexo = value; }
         }
 
+        private string nombresexo;
+
+        public string Nombresexo
+        {
+            get { return nombresexo; }
+            set { nombresexo = value; }
+        }
+
         private string nombreapoderado;
 
         public string Nombreapoderado

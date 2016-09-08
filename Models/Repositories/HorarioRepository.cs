@@ -23,6 +23,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@idcurso", item.Idcurso);
                 cmd.Parameters.AddWithValue("@idgrupoetario", item.Idgrupoetario);
                 cmd.Parameters.AddWithValue("@fechainicio", item.Fechainicio);
+                cmd.Parameters.AddWithValue("@duracion", item.Duracion);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 resultado = new ResultadoEntity();
                 var reader = cmd.ExecuteReader();
@@ -80,6 +81,7 @@ namespace Models.Repositories
                         item.Nombrecurso = reader["nombrecurso"].ToString();
                         item.Idgrupoetario = Int32.Parse(reader["idgrupoetario"].ToString());
                         item.Nombregrupoetario = reader["nombregrupoetario"].ToString();
+                        item.Duracion = Int32.Parse(reader["duracion"].ToString());
                         item.Fechainicio = DateTime.Parse(reader["fechainicio"].ToString());
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         item.Estado = Boolean.Parse(reader["estado"].ToString());

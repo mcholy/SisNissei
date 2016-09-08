@@ -40,6 +40,8 @@ namespace SisNissei
             Skin.AplicarSkin(this);
             CargarDetalle();
             InsertarCodigo();
+            Skin.AplicarSkinDGV(dgvInscripcionAlumnoDetalle);
+            Skin.AplicarSkinDGV(dgvInscripcionAlumno);
         }
         private void ListarCursos()
         {
@@ -417,6 +419,21 @@ namespace SisNissei
         private void NuevoDetalle_Click(object sender, EventArgs e)
         {
             LimpiarDetalle();
+        }
+
+        private void btnFicha_Click(object sender, EventArgs e)
+        {
+            if (dgvInscripcionAlumno.CurrentRow.Selected == true)
+            {
+                AlumnoReporteFormulariocs objreporte = new AlumnoReporteFormulariocs();
+                idActual = Int32.Parse(dgvInscripcionAlumno.CurrentRow.Cells["id"].Value.ToString());
+                objreporte.id = idActual;
+                objreporte.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No hay ningún registro seleccionado");
+            }
         }
 
     }
