@@ -147,6 +147,12 @@
     <Compile Include="SocioReporteFormulario.Designer.cs">
       <DependentUpon>SocioReporteFormulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Template\AlquilerReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlquilerReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Template\AlumnoReporte.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -297,6 +303,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SocioReporteFormulario.resx">
       <DependentUpon>SocioReporteFormulario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\AlquilerReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AlquilerReporte.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\AlumnoReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

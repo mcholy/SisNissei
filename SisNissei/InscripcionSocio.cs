@@ -24,6 +24,8 @@ namespace SisNissei
         private string nombreConyugue = "";
         private string nombrePatrocinador = "";
         private int regmod = 0;
+        
+
         private InscripcionSocioEntity item = new InscripcionSocioEntity();
         private InscripcionSocioService servicio = new InscripcionSocioService();
         #endregion
@@ -31,6 +33,7 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            InsertarCodigo();
             CargarDetalle();
             Skin.AplicarSkinDGV(dgvInscripcionSocio);
         }
@@ -49,6 +52,10 @@ namespace SisNissei
             txtFamiliarItalia.Text = string.Empty;
             txtFamiliarOtros.Text = string.Empty;
         }
+        private void InsertarCodigo()
+        {
+            txtNombre.Text = new InscripcionSocioService().Codigo(item);
+        }
         private void Guardar()
         {
             item.Id = idActual;
@@ -58,12 +65,12 @@ namespace SisNissei
             item.Idpatrocinador = idPatrocinador;
             item.Trabajo = txtTrabajo.Text;
             item.Cargo = txtCargo.Text;
-            item.Hijosmayores = Int32.Parse(txtHijosMayores.Text);
-            item.Hijosmenores = Int32.Parse(txtHijosMenores.Text);
-            item.Familiarjapon = Int32.Parse(txtFamiliarJapon.Text);
-            item.Familiareeuu = Int32.Parse(txtFamiliarEeuu.Text);
-            item.Familiaritalia = Int32.Parse(txtFamiliarItalia.Text);
-            item.Familiarotros = Int32.Parse(txtFamiliarOtros.Text);
+            item.Hijosmayores = Int32.Parse(txtHijosMayores.Text == "" ? "0": txtHijosMayores.Text);
+            item.Hijosmenores = Int32.Parse(txtHijosMenores.Text == "" ? "0": txtHijosMenores.Text);
+            item.Familiarjapon = Int32.Parse(txtFamiliarJapon.Text == "" ? "0": txtFamiliarJapon.Text);
+            item.Familiareeuu = Int32.Parse(txtFamiliarEeuu.Text == "" ? "0": txtFamiliarEeuu.Text );
+            item.Familiaritalia = Int32.Parse(txtFamiliarItalia.Text == "" ? "0": txtFamiliarItalia.Text);
+            item.Familiarotros = Int32.Parse(txtFamiliarOtros.Text == "" ? "0": txtFamiliarOtros.Text);
             item.Regmod = regmod;
             InscripcionSocioService servicio = new InscripcionSocioService();
             int respuesta = servicio.Guardar(item);
@@ -75,8 +82,13 @@ namespace SisNissei
             {
                 MessageBox.Show("El registro se actualizó satisfactoriamente.");
             }
+            else if (respuesta == 3)
+            {
+                MessageBox.Show("El cliente ya se encuentra registrado como socio.");
+            }
             Limpiar();
             CargarDetalle();
+            InsertarCodigo();
         }
 
         private void Eliminar()

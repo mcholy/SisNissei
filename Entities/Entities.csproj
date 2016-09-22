@@ -43,9 +43,10 @@
     <Compile Include="AmbienteEntity.cs" />
     <Compile Include="BaseDetalleEntity.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="DetalleInscripcionAlquilerEntity.cs" />
     <Compile Include="DetalleInscripcionAlumnoEntity.cs" />
     <Compile Include="GrupoEtarioEntity.cs" />
-    <Compile Include="InscripcionAlquilerEntities.cs" />
+    <Compile Include="InscripcionAlquilerEntity.cs" />
     <Compile Include="InscripcionAlumnoEntity.cs" />
     <Compile Include="ResultadoEntity.cs" />
     <Compile Include="InscripcionSocioEntity.cs" />

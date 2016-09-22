@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbTipoInscripcionSocio = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtFamiliarOtros = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFamiliarItalia = new System.Windows.Forms.TextBox();
@@ -70,8 +72,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbTipoInscripcionSocio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -143,6 +143,24 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // cbTipoInscripcionSocio
+            // 
+            this.cbTipoInscripcionSocio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoInscripcionSocio.FormattingEnabled = true;
+            this.cbTipoInscripcionSocio.Location = new System.Drawing.Point(158, 253);
+            this.cbTipoInscripcionSocio.Name = "cbTipoInscripcionSocio";
+            this.cbTipoInscripcionSocio.Size = new System.Drawing.Size(133, 21);
+            this.cbTipoInscripcionSocio.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 256);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 13);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Tipo de Inscripcion :";
             // 
             // txtFamiliarOtros
             // 
@@ -257,6 +275,7 @@
             // 
             // txtPatrocinador
             // 
+            this.txtPatrocinador.Enabled = false;
             this.txtPatrocinador.Location = new System.Drawing.Point(91, 99);
             this.txtPatrocinador.MaxLength = 200;
             this.txtPatrocinador.Name = "txtPatrocinador";
@@ -287,6 +306,7 @@
             // 
             // txtConyugue
             // 
+            this.txtConyugue.Enabled = false;
             this.txtConyugue.Location = new System.Drawing.Point(91, 73);
             this.txtConyugue.MaxLength = 200;
             this.txtConyugue.Name = "txtConyugue";
@@ -317,6 +337,7 @@
             // 
             // txtCliente
             // 
+            this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(91, 47);
             this.txtCliente.MaxLength = 200;
             this.txtCliente.Name = "txtCliente";
@@ -372,6 +393,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(111, 19);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
@@ -526,24 +548,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 256);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 13);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "Tipo de Inscripcion :";
-            // 
-            // cbTipoInscripcionSocio
-            // 
-            this.cbTipoInscripcionSocio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoInscripcionSocio.FormattingEnabled = true;
-            this.cbTipoInscripcionSocio.Location = new System.Drawing.Point(158, 253);
-            this.cbTipoInscripcionSocio.Name = "cbTipoInscripcionSocio";
-            this.cbTipoInscripcionSocio.Size = new System.Drawing.Size(133, 21);
-            this.cbTipoInscripcionSocio.TabIndex = 7;
             // 
             // InscripcionSocio
             // 

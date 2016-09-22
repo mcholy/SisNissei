@@ -96,7 +96,7 @@
             // txtCosto
             // 
             this.txtCosto.Location = new System.Drawing.Point(135, 47);
-            this.txtCosto.MaxLength = 2;
+            this.txtCosto.MaxLength = 3;
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(94, 20);
             this.txtCosto.TabIndex = 4;

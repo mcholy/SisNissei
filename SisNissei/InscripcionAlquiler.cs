@@ -16,6 +16,11 @@ namespace SisNissei
     public partial class InscripcionAlquiler : Form
     {
         private Validacion ItemValidacion = new Validacion();
+        private InscripcionAlquilerEntity item = new InscripcionAlquilerEntity();
+ 
+
+        private DetalleInscripcionAlquilerEntity itemdetalle=new DetalleInscripcionAlquilerEntity();
+
 
 
         private int regmod = 0;
@@ -25,6 +30,7 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+        
          
         }
         private void Limpiar()
