@@ -69,6 +69,7 @@ namespace Models.Repositories
                         item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
                         item.Fechanacimiento = DateTime.Parse(reader["fecharegistro"].ToString());
+
                         item.Iddistrito = Int32.Parse(reader["iddistrito"].ToString());
                         item.Nombredistrito = reader["nombredistrito"].ToString();
                         item.Celular = Int32.Parse(reader["celular"].ToString());

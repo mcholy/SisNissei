@@ -41,6 +41,7 @@
             this.rp_socio.Name = "rp_socio";
             this.rp_socio.Size = new System.Drawing.Size(818, 377);
             this.rp_socio.TabIndex = 0;
+           
             // 
             // SocioReporteFormulario
             // 
@@ -57,7 +58,7 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rp_socio;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer rp_socio;
 
     }
 }

@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using SisNissei.Template;
 using Models.Services;
 using Entities;
+using System.Data.SqlClient;
+using Models;
+
 
 namespace SisNissei
 {
@@ -24,10 +27,12 @@ namespace SisNissei
         private string nombreConyugue = "";
         private string nombrePatrocinador = "";
         private int regmod = 0;
-        
+
 
         private InscripcionSocioEntity item = new InscripcionSocioEntity();
-        private InscripcionSocioService servicio = new InscripcionSocioService();
+        ReporteInscripcionSocioEntity item2 = new ReporteInscripcionSocioEntity();
+
+        InscripcionSocioService servicio = new InscripcionSocioService();
         #endregion
         public InscripcionSocio()
         {
@@ -65,12 +70,12 @@ namespace SisNissei
             item.Idpatrocinador = idPatrocinador;
             item.Trabajo = txtTrabajo.Text;
             item.Cargo = txtCargo.Text;
-            item.Hijosmayores = Int32.Parse(txtHijosMayores.Text == "" ? "0": txtHijosMayores.Text);
-            item.Hijosmenores = Int32.Parse(txtHijosMenores.Text == "" ? "0": txtHijosMenores.Text);
-            item.Familiarjapon = Int32.Parse(txtFamiliarJapon.Text == "" ? "0": txtFamiliarJapon.Text);
-            item.Familiareeuu = Int32.Parse(txtFamiliarEeuu.Text == "" ? "0": txtFamiliarEeuu.Text );
-            item.Familiaritalia = Int32.Parse(txtFamiliarItalia.Text == "" ? "0": txtFamiliarItalia.Text);
-            item.Familiarotros = Int32.Parse(txtFamiliarOtros.Text == "" ? "0": txtFamiliarOtros.Text);
+            item.Hijosmayores = Int32.Parse(txtHijosMayores.Text == "" ? "0" : txtHijosMayores.Text);
+            item.Hijosmenores = Int32.Parse(txtHijosMenores.Text == "" ? "0" : txtHijosMenores.Text);
+            item.Familiarjapon = Int32.Parse(txtFamiliarJapon.Text == "" ? "0" : txtFamiliarJapon.Text);
+            item.Familiareeuu = Int32.Parse(txtFamiliarEeuu.Text == "" ? "0" : txtFamiliarEeuu.Text);
+            item.Familiaritalia = Int32.Parse(txtFamiliarItalia.Text == "" ? "0" : txtFamiliarItalia.Text);
+            item.Familiarotros = Int32.Parse(txtFamiliarOtros.Text == "" ? "0" : txtFamiliarOtros.Text);
             item.Regmod = regmod;
             InscripcionSocioService servicio = new InscripcionSocioService();
             int respuesta = servicio.Guardar(item);
@@ -98,7 +103,7 @@ namespace SisNissei
             if (respuesta == 1)
             {
                 //Limpiar();
-                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                MessageBox.Show("El registro se Elimino satisfactoriamente.");
                 CargarDetalle();
             }
         }
@@ -261,23 +266,41 @@ namespace SisNissei
             }
         }
 
+
+
+
+        private void imprimir()
+        {
+            item2.Id = Int32.Parse(dgvInscripcionSocio.CurrentRow.Cells["id"].Value.ToString());
+
+            DatosSocio ds = servicio.ReporteSocio(item2);
+            SocioReporte rpt = new SocioReporte();
+            rpt.SetDataSource(ds);
+            SocioReporteFormulario frmReporte = new SocioReporteFormulario();
+            frmReporte.rp_socio.ReportSource = rpt;
+            frmReporte.ShowDialog();
+
+        }
+
+
+
         private void btnFicha_Click(object sender, EventArgs e)
         {
-            
             if (dgvInscripcionSocio.RowCount > 0)
             {
                 if (dgvInscripcionSocio.CurrentRow.Selected == true)
                 {
-                    SocioReporteFormulario objreporte = new SocioReporteFormulario();
-                    idActual = Int32.Parse(dgvInscripcionSocio.CurrentRow.Cells["id"].Value.ToString());
-                    objreporte.id = idActual;
-                    objreporte.ShowDialog();
+                    if (MessageBox.Show("¿Esta seguro de imprimir este registro?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        imprimir();
+                    }
                 }
                 else
-                {
-                    MessageBox.Show("No hay ningún registro seleccionado");
-                }
+
+                    MessageBox.Show("No hay ni un registro seleccionado.");
             }
         }
+
+
     }
 }

@@ -84,9 +84,30 @@ namespace Models.Repositories
             }
         }
 
-        public List<AmbienteEntity> Listar()
+        public List<AmbienteEntity> Listar(int idActual)
         {
-            return base.Listar("sis_Ambiente_Listar");
+            using (var conn=new SqlConnection (Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Ambiente_Listar";
+                cmd.Parameters.AddWithValue("@idActual", idActual);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<AmbienteEntity> lista = new List<AmbienteEntity>();
+                    while (reader.Read())
+                    {
+                        AmbienteEntity item = new AmbienteEntity();
+                        item.Id=Int32.Parse(reader["id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+
+                    }
+                    return lista;
+                }
+            }
+           
         }
     }
 }

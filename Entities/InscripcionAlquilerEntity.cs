@@ -45,16 +45,37 @@ namespace Entities
             get { return garantia; }
             set { garantia = value; }
         }
-        private DateTime fechainicioalquiler;
+        private DateTime horainicio;
 
-        public DateTime Fechainicioalquiler
+        public DateTime Horainicio
+        {
+            get { return horainicio; }
+            set { horainicio = value; }
+        }
+
+        
+
+        private DateTime horafin;
+
+        public DateTime Horafin
+        {
+            get { return horafin; }
+            set { horafin = value; }
+        }
+
+        
+
+        private string fechainicioalquiler;
+
+        public string Fechainicioalquiler
         {
             get { return fechainicioalquiler; }
             set { fechainicioalquiler = value; }
         }
-        private DateTime fechafinalquiler;
 
-        public DateTime Fechafinalquiler
+        private string fechafinalquiler;
+
+        public string Fechafinalquiler
         {
             get { return fechafinalquiler; }
             set { fechafinalquiler = value; }

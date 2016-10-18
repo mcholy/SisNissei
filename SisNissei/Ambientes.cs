@@ -23,11 +23,12 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
+            ListarTipoCliente();
             CargarDetalle();
             Skin.AplicarSkinDGV(dgvAmbiente);
         }
 
-        private void ListarSexo()
+        private void ListarTipoCliente()
         {
             cbTipoCliente.Items.Add("Publico");
             cbTipoCliente.Items.Add("Socio");

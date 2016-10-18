@@ -34,17 +34,11 @@
             this.btnGuardarDetalle = new System.Windows.Forms.Button();
             this.NuevoDetalle = new System.Windows.Forms.Button();
             this.EditarDetalle = new System.Windows.Forms.Button();
-            this.dgvInscripcionAlumnoDetalle = new System.Windows.Forms.DataGridView();
-            this.cbPeriodo = new System.Windows.Forms.ComboBox();
+            this.dgvInscripcionAlquilerDetalle = new System.Windows.Forms.DataGridView();
+            this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtHoraFin = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtHoraInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtFechaFin = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
@@ -61,20 +55,22 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
+            this.dgvInscripcionAlquiler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumnoDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlquilerDetalle)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlquiler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +92,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlumno);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlquiler);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(919, 424);
             this.splitContainer1.SplitterDistance = 345;
@@ -108,8 +104,8 @@
             this.groupBox3.Controls.Add(this.btnGuardarDetalle);
             this.groupBox3.Controls.Add(this.NuevoDetalle);
             this.groupBox3.Controls.Add(this.EditarDetalle);
-            this.groupBox3.Controls.Add(this.dgvInscripcionAlumnoDetalle);
-            this.groupBox3.Controls.Add(this.cbPeriodo);
+            this.groupBox3.Controls.Add(this.dgvInscripcionAlquilerDetalle);
+            this.groupBox3.Controls.Add(this.cbAmbiente);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(16, 215);
             this.groupBox3.Name = "groupBox3";
@@ -162,23 +158,23 @@
             this.EditarDetalle.TabIndex = 23;
             this.EditarDetalle.UseVisualStyleBackColor = false;
             // 
-            // dgvInscripcionAlumnoDetalle
+            // dgvInscripcionAlquilerDetalle
             // 
-            this.dgvInscripcionAlumnoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlumnoDetalle.Location = new System.Drawing.Point(6, 45);
-            this.dgvInscripcionAlumnoDetalle.Name = "dgvInscripcionAlumnoDetalle";
-            this.dgvInscripcionAlumnoDetalle.Size = new System.Drawing.Size(300, 113);
-            this.dgvInscripcionAlumnoDetalle.TabIndex = 2;
+            this.dgvInscripcionAlquilerDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionAlquilerDetalle.Location = new System.Drawing.Point(6, 45);
+            this.dgvInscripcionAlquilerDetalle.Name = "dgvInscripcionAlquilerDetalle";
+            this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 113);
+            this.dgvInscripcionAlquilerDetalle.TabIndex = 2;
             // 
-            // cbPeriodo
+            // cbAmbiente
             // 
-            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Location = new System.Drawing.Point(74, 16);
-            this.cbPeriodo.Name = "cbPeriodo";
-            this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
-            this.cbPeriodo.TabIndex = 20;
+            this.cbAmbiente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmbiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbAmbiente.FormattingEnabled = true;
+            this.cbAmbiente.Location = new System.Drawing.Point(74, 16);
+            this.cbAmbiente.Name = "cbAmbiente";
+            this.cbAmbiente.Size = new System.Drawing.Size(95, 21);
+            this.cbAmbiente.TabIndex = 20;
             // 
             // label10
             // 
@@ -191,13 +187,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtHoraFin);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtHoraInicio);
-            this.groupBox2.Controls.Add(this.txtFechaFin);
+            this.groupBox2.Controls.Add(this.dtpHoraFin);
+            this.groupBox2.Controls.Add(this.dtpHoraInicio);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txtFechaInicio);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtGarantia);
@@ -213,77 +205,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(196, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Hora Fin :";
-            // 
-            // txtHoraFin
-            // 
-            this.txtHoraFin.Location = new System.Drawing.Point(267, 103);
-            this.txtHoraFin.Mask = "00:00";
-            this.txtHoraFin.Name = "txtHoraFin";
-            this.txtHoraFin.Size = new System.Drawing.Size(39, 20);
-            this.txtHoraFin.TabIndex = 31;
-            this.txtHoraFin.ValidatingType = typeof(System.DateTime);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(196, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Hora Inicio :";
-            // 
-            // txtHoraInicio
-            // 
-            this.txtHoraInicio.Location = new System.Drawing.Point(267, 71);
-            this.txtHoraInicio.Mask = "00:00";
-            this.txtHoraInicio.Name = "txtHoraInicio";
-            this.txtHoraInicio.Size = new System.Drawing.Size(39, 20);
-            this.txtHoraInicio.TabIndex = 29;
-            this.txtHoraInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtFechaFin
-            // 
-            this.txtFechaFin.Location = new System.Drawing.Point(93, 103);
-            this.txtFechaFin.Mask = "00/00/0000";
-            this.txtFechaFin.Name = "txtFechaFin";
-            this.txtFechaFin.Size = new System.Drawing.Size(83, 20);
-            this.txtFechaFin.TabIndex = 28;
-            this.txtFechaFin.ValidatingType = typeof(System.DateTime);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 106);
+            this.label5.Location = new System.Drawing.Point(14, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Fecha Fin :";
-            // 
-            // txtFechaInicio
-            // 
-            this.txtFechaInicio.Location = new System.Drawing.Point(93, 71);
-            this.txtFechaInicio.Mask = "00/00/0000";
-            this.txtFechaInicio.Name = "txtFechaInicio";
-            this.txtFechaInicio.Size = new System.Drawing.Size(83, 20);
-            this.txtFechaInicio.TabIndex = 26;
-            this.txtFechaInicio.ValidatingType = typeof(System.DateTime);
+            this.label5.Text = "Fecha y Hora de Fin :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(14, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 24;
-            this.label4.Text = "Fecha Inicio :";
+            this.label4.Text = "Fecha y Hora Inicio :";
             // 
             // label3
             // 
@@ -299,7 +237,6 @@
             this.txtGarantia.Location = new System.Drawing.Point(74, 132);
             this.txtGarantia.MaxLength = 200;
             this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.ReadOnly = true;
             this.txtGarantia.Size = new System.Drawing.Size(83, 20);
             this.txtGarantia.TabIndex = 23;
             // 
@@ -331,6 +268,7 @@
             this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
             this.btnBuscarCliente.TabIndex = 13;
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // txtNombre
             // 
@@ -399,6 +337,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(36, 28);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
@@ -428,6 +367,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -439,13 +379,13 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
-            // dgvInscripcionAlumno
+            // dgvInscripcionAlquiler
             // 
-            this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
-            this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
-            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 339);
-            this.dgvInscripcionAlumno.TabIndex = 1;
+            this.dgvInscripcionAlquiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionAlquiler.Location = new System.Drawing.Point(9, 59);
+            this.dgvInscripcionAlquiler.Name = "dgvInscripcionAlquiler";
+            this.dgvInscripcionAlquiler.Size = new System.Drawing.Size(533, 339);
+            this.dgvInscripcionAlquiler.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -476,6 +416,23 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // dtpHoraInicio
+            // 
+            this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 74);
+            this.dtpHoraInicio.Name = "dtpHoraInicio";
+            this.dtpHoraInicio.Size = new System.Drawing.Size(111, 20);
+            this.dtpHoraInicio.TabIndex = 35;
+            
+            // 
+            // dtpHoraFin
+            // 
+            this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraFin.Location = new System.Drawing.Point(124, 99);
+            this.dtpHoraFin.Name = "dtpHoraFin";
+            this.dtpHoraFin.Size = new System.Drawing.Size(111, 20);
+            this.dtpHoraFin.TabIndex = 36;
+            // 
             // InscripcionAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,14 +448,14 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumnoDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlquilerDetalle)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlumno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcionAlquiler)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -513,8 +470,8 @@
         private System.Windows.Forms.Button btnGuardarDetalle;
         private System.Windows.Forms.Button NuevoDetalle;
         private System.Windows.Forms.Button EditarDetalle;
-        private System.Windows.Forms.DataGridView dgvInscripcionAlumnoDetalle;
-        private System.Windows.Forms.ComboBox cbPeriodo;
+        private System.Windows.Forms.DataGridView dgvInscripcionAlquilerDetalle;
+        private System.Windows.Forms.ComboBox cbAmbiente;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
@@ -532,17 +489,13 @@
         private System.Windows.Forms.ToolStripButton btnCancelar;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.DataGridView dgvInscripcionAlumno;
+        private System.Windows.Forms.DataGridView dgvInscripcionAlquiler;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox txtFechaInicio;
-        private System.Windows.Forms.MaskedTextBox txtFechaFin;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txtHoraFin;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtHoraInicio;
+        private System.Windows.Forms.DateTimePicker dtpHoraFin;
+        private System.Windows.Forms.DateTimePicker dtpHoraInicio;
     }
 }

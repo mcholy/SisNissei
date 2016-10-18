@@ -9,8 +9,9 @@ namespace Models.Services
 {
     public class InscripcionSocioService
     {
-        string respuesta;
+        private string respuesta;
         private InscripcionSocioRepository repositorio = new InscripcionSocioRepository();
+        private ReporteSocioRepository reporterepositorio = new ReporteSocioRepository();
         public int Guardar(InscripcionSocioEntity item)
         {
             respuesta = repositorio.Guardar(item);
@@ -31,6 +32,14 @@ namespace Models.Services
         public string Codigo(InscripcionSocioEntity item)
         {
             return new InscripcionSocioRepository().Codigo(item);
+        }
+
+        public DatosSocio ReporteSocio(ReporteInscripcionSocioEntity item2)
+        {
+
+            DatosSocio ds = reporterepositorio.ReporteSocio(item2);
+
+            return ds;
         }
     }
 }

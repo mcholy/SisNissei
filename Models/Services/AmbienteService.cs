@@ -30,9 +30,9 @@ namespace Models.Services
             return Int32.Parse(respuesta);
         }
 
-        public List<AmbienteEntity> Listar()
+        public List<AmbienteEntity> Listar(int idActual)
         {
-            return new AmbienteRepository().Listar();
+            return new AmbienteRepository().Listar(idActual);
         }
     }
 }

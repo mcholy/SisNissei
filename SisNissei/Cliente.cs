@@ -102,6 +102,10 @@ namespace SisNissei
             {
                 MessageBox.Show("El registro se actualizó satisfactoriamente.");
             }
+            else if (respuesta == 3)
+            {
+                MessageBox.Show("El DNI ingresado ya se encuentra registrado.");
+            }
             Limpiar();
             CargarDetalle();
         }
@@ -212,10 +216,15 @@ namespace SisNissei
         {
             idActual = Int32.Parse(dgvCliente.CurrentRow.Cells["id"].Value.ToString());
             idApoderado = Int32.Parse(dgvCliente.CurrentRow.Cells["idapoderado"].Value.ToString());
+            txtApoderado.Text = dgvCliente.CurrentRow.Cells["nombreapoderado"].Value.ToString();
             txtNombre.Text = dgvCliente.CurrentRow.Cells["nombre"].Value.ToString();
             txtPaterno.Text = dgvCliente.CurrentRow.Cells["paterno"].Value.ToString();
             txtMaterno.Text = dgvCliente.CurrentRow.Cells["materno"].Value.ToString();
             txtDNI.Text = dgvCliente.CurrentRow.Cells["dni"].Value.ToString();
+             cbDistrito.SelectedValue = Int32.Parse(dgvCliente.CurrentRow.Cells["iddistrito"].Value.ToString());
+             txtFechaNacimiento.Text = dgvCliente.CurrentRow.Cells["fechanacimiento"].Value.ToString();
+             cbSexo.SelectedItem= dgvCliente.CurrentRow.Cells["nombresexo"].Value.ToString();
+
             idDistrito = Int32.Parse(dgvCliente.CurrentRow.Cells["iddistrito"].Value.ToString());
             txtCelular.Text = dgvCliente.CurrentRow.Cells["celular"].Value.ToString();
             txtTelefono.Text = dgvCliente.CurrentRow.Cells["telefono"].Value.ToString();
@@ -273,6 +282,21 @@ namespace SisNissei
                 txtAlergia.ReadOnly = false;
             else
                 txtAlergia.ReadOnly = true;
+        }
+
+        private void txtDNI_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
+        }
+
+        private void txtCelular_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
+        }
+
+        private void txtTelefono_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
         }
     }
 }

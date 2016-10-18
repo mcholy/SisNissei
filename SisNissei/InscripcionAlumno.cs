@@ -34,26 +34,14 @@ namespace SisNissei
         private int regmoddetalle = 0;
         private string nombre = "";
 
-        public InscripcionAlumno()
+        public InscripcionAlumno()            
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
             InsertarCodigo();
-            Skin.AplicarSkinDGV(dgvInscripcionAlumnoDetalle);
             Skin.AplicarSkinDGV(dgvInscripcionAlumno);
         }
-        private void ListarCursos()
-        {
-            cbCurso.DisplayMember = "Nombre";
-            cbCurso.ValueMember = "Id";
-            cbCurso.DataSource = new CursoService().Listar();
-        }
-        private void InsertarCodigo()
-        {
-            txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
-        }
-
         #region Singleton
         private static InscripcionAlumno m_FormDefInstance;
         public static InscripcionAlumno DefInstance
@@ -69,8 +57,18 @@ namespace SisNissei
                 m_FormDefInstance = value;
             }
         }
-        #endregion
+        #endregion   
+        private void ListarCursos()
+        {
+            cbCurso.DisplayMember = "Nombre";
+            cbCurso.ValueMember = "Id";
+            cbCurso.DataSource = new CursoService().Listar();
+        }
 
+private void InsertarCodigo()
+        {
+            txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
+        }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             DialogCliente dialogCliente = new DialogCliente();
@@ -120,6 +118,10 @@ namespace SisNissei
             else if (respuesta == 2)
             {
                 MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            else if (respuesta == 3)
+            {
+                MessageBox.Show("El DNI ingresado ya se encuentra registrado.");
             }
             Limpiar();
             CargarDetalle();
@@ -275,6 +277,8 @@ namespace SisNissei
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
+
+
         {
             if (txtCliente.Text == "")
             {

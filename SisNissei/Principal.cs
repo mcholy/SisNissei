@@ -200,7 +200,8 @@ namespace SisNissei
 
         private void alquilerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            InscripcionAlquiler.DefInstance.MdiParent = this;
+            InscripcionAlquiler.DefInstance.Show();
         }
                
     }

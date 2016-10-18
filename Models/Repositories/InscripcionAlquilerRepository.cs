@@ -22,10 +22,11 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
-                cmd.Parameters.AddWithValue("@idempresa", item.Idempresa);
+                
                 cmd.Parameters.AddWithValue("@garantia", item.Garantia);
-                cmd.Parameters.AddWithValue("@fechainicioalquiler", item.Fechainicioalquiler);
-                cmd.Parameters.AddWithValue("@fechafinalquiler", item.Fechafinalquiler);
+               
+                cmd.Parameters.AddWithValue("@horainicio", item.Horainicio);
+                cmd.Parameters.AddWithValue("@horafin", item.Horafin);
 
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
@@ -97,9 +98,9 @@ namespace Models.Repositories
 
                         item.Garantia =Int32.Parse(reader["garantia"].ToString());
                         item.Nombreempresa = reader["nombreempresa"].ToString();
-                        item.Fechainicioalquiler = DateTime.Parse(reader["fechainicioalquiler"].ToString());
+                        item.Fechainicioalquiler = reader["fechainicioalquiler"].ToString();
 
-                        item.Fechafinalquiler = DateTime.Parse(reader["fechafinalquiler"].ToString());
+                        item.Fechafinalquiler = reader["fechafinalquiler"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
                     }
