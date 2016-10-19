@@ -23,21 +23,7 @@ namespace Entities
             set { nombrecliente = value; }
         }
 
-        private int idempresa;
-
-        public int Idempresa
-        {
-            get { return idempresa; }
-            set { idempresa = value; }
-        }
-
-        private string nombreempresa;
-
-        public string Nombreempresa
-        {
-            get { return nombreempresa; }
-            set { nombreempresa = value; }
-        }
+       
         private double garantia;
 
         public double Garantia

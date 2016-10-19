@@ -9,11 +9,7 @@ using System.Windows.Forms;
 using System.Resources;
 using SisNissei.Template;
 using System.Data.SqlClient;
-
-using SisNissei.Template;
 using Models.Services;
-using Entities;
-using Models;
 
 
 namespace SisNissei

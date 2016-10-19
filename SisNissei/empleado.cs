@@ -20,7 +20,7 @@ namespace SisNissei
         private EmpleadoService servicio = new EmpleadoService();
         private int regmod = 0;
         private int idActual = 0;
-        private int idtipoempleado = 0;
+       
          #endregion
         public Empleado()
         {

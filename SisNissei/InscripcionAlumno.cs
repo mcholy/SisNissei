@@ -32,7 +32,7 @@ namespace SisNissei
         private int idActualDetalle = 0;
         private int regmod = 0;
         private int regmoddetalle = 0;
-        private string nombre = "";
+       
 
         public InscripcionAlumno()            
         {

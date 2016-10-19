@@ -38,6 +38,8 @@
             this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -135,6 +135,7 @@
             this.btnGuardarDetalle.Size = new System.Drawing.Size(27, 23);
             this.btnGuardarDetalle.TabIndex = 25;
             this.btnGuardarDetalle.UseVisualStyleBackColor = false;
+            this.btnGuardarDetalle.Click += new System.EventHandler(this.btnGuardarDetalle_Click);
             // 
             // NuevoDetalle
             // 
@@ -204,6 +205,22 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // dtpHoraFin
+            // 
+            this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraFin.Location = new System.Drawing.Point(124, 99);
+            this.dtpHoraFin.Name = "dtpHoraFin";
+            this.dtpHoraFin.Size = new System.Drawing.Size(111, 20);
+            this.dtpHoraFin.TabIndex = 36;
+            // 
+            // dtpHoraInicio
+            // 
+            this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 74);
+            this.dtpHoraInicio.Name = "dtpHoraInicio";
+            this.dtpHoraInicio.Size = new System.Drawing.Size(111, 20);
+            this.dtpHoraInicio.TabIndex = 35;
             // 
             // label5
             // 
@@ -347,6 +364,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(36, 28);
             this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCancelar
             // 
@@ -415,23 +433,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // dtpHoraInicio
-            // 
-            this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 74);
-            this.dtpHoraInicio.Name = "dtpHoraInicio";
-            this.dtpHoraInicio.Size = new System.Drawing.Size(111, 20);
-            this.dtpHoraInicio.TabIndex = 35;
-            
-            // 
-            // dtpHoraFin
-            // 
-            this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraFin.Location = new System.Drawing.Point(124, 99);
-            this.dtpHoraFin.Name = "dtpHoraFin";
-            this.dtpHoraFin.Size = new System.Drawing.Size(111, 20);
-            this.dtpHoraFin.TabIndex = 36;
             // 
             // InscripcionAlquiler
             // 

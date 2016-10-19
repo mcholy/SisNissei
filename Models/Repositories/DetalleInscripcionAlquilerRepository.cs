@@ -21,9 +21,6 @@ namespace Models.Repositories
                 cmd.CommandText = "sis_DetalleInscripcionAlquiler_Guardar";
                 cmd.Parameters.AddWithValue("@id", itemdetalle.Id);
                 cmd.Parameters.AddWithValue("@idalquiler", itemdetalle.Idalquiler);
-                cmd.Parameters.AddWithValue("@idambientes", itemdetalle.Idambientes);
-                cmd.Parameters.AddWithValue("@costo", itemdetalle.Costos);
-
                 cmd.Parameters.AddWithValue("@regmoddetalle", itemdetalle.Regmoddetalle);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
