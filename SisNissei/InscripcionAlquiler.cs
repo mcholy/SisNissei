@@ -59,8 +59,11 @@ namespace SisNissei
             idCliente = 0;
             txtCliente.Text = string.Empty;
             txtGarantia.Text = string.Empty;
+            lblTotal.Text = string.Empty;
+            sumatoria = 0;
             dtpHoraFin.ResetText();
             dtpHoraInicio.ResetText();
+            LimpiarDetalle();
 
         }
         private void InsertarCodigo()
@@ -162,6 +165,7 @@ namespace SisNissei
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
+            CargarDetalleDetalle(idActual);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -189,14 +193,23 @@ namespace SisNissei
             dtpHoraFin.Value = DateTime.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["fechafinalquiler"].Value.ToString());
 
             txtNombre.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombre"].Value.ToString();
+            lblTotal.Text = string.Empty;
+            sumatoria = 0;
             ListarAmbientes(idCliente);
-            //CargarDetalleDetalle(idActual);
+            CargarDetalleDetalle(idActual);
         }
         private void LimpiarDetalle()
         {
             cbAmbiente.DataSource = new AmbienteService().Listar(idCliente);
+            lblTotal.Text = string.Empty;
+            sumatoria = 0;
         }
-        private void CargarDetalleDetalle(int idActual)
+
+        private double sumatoria = 0;
+       
+
+        private void CargarDetalleDetalle(int 
+            idActual)
         {
             dgvInscripcionAlquilerDetalle.DataSource = serviciodetalle.Detalle(idActual);
 
@@ -207,10 +220,28 @@ namespace SisNissei
                 dgvInscripcionAlquilerDetalle.Columns["regmoddetalle"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["idambientes"].Visible = false;
               dgvInscripcionAlquilerDetalle.Columns["id"].Visible = false;
+              dgvInscripcionAlquilerDetalle.Columns["idalquiler"].Visible = false;
 
                 dgvInscripcionAlquilerDetalle.ClearSelection();
+                foreach (DataGridViewRow row in dgvInscripcionAlquilerDetalle.Rows)
+                {
+                    sumatoria += Convert.ToDouble(row.Cells["Costos"].Value);
+                    lblTotal.Text = Convert.ToString(sumatoria);
+                }
             }
         }
+        private void EliminarDetalle()
+        {
+            itemdetalle.Id = Int32.Parse(dgvInscripcionAlquilerDetalle.CurrentRow.Cells["id"].Value.ToString());
+            int respuesta = serviciodetalle.Eliminar(itemdetalle);
+            if (respuesta == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                CargarDetalleDetalle(idActual);
+            }
+        }
+
         private void GuardarDetalle()
         {
             itemdetalle.Id = idActualDetalle;
@@ -244,7 +275,13 @@ namespace SisNissei
             else {
                 GuardarDetalle();
                 regmoddetalle = 0;
+
             }
+        }
+
+        private void btnEliminarDetalle_Click(object sender, EventArgs e)
+        {
+            EliminarDetalle();
         }
     }
 }

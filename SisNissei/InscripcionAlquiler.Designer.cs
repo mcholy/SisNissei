@@ -61,6 +61,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -124,6 +126,7 @@
             this.btnEliminarDetalle.Size = new System.Drawing.Size(27, 23);
             this.btnEliminarDetalle.TabIndex = 26;
             this.btnEliminarDetalle.UseVisualStyleBackColor = false;
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
             // 
             // btnGuardarDetalle
             // 
@@ -164,7 +167,7 @@
             this.dgvInscripcionAlquilerDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcionAlquilerDetalle.Location = new System.Drawing.Point(6, 45);
             this.dgvInscripcionAlquilerDetalle.Name = "dgvInscripcionAlquilerDetalle";
-            this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 113);
+            this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 117);
             this.dgvInscripcionAlquilerDetalle.TabIndex = 2;
             // 
             // cbAmbiente
@@ -188,6 +191,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblTotal);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dtpHoraFin);
             this.groupBox2.Controls.Add(this.dtpHoraInicio);
             this.groupBox2.Controls.Add(this.label5);
@@ -434,6 +439,23 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(197, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Total";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(235, 135);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 13);
+            this.lblTotal.TabIndex = 38;
+            // 
             // InscripcionAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,5 +520,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpHoraFin;
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label6;
     }
 }

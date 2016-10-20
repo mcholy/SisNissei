@@ -20,7 +20,8 @@ namespace Models.Repositories
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleInscripcionAlquiler_Guardar";
                 cmd.Parameters.AddWithValue("@id", itemdetalle.Id);
-                cmd.Parameters.AddWithValue("@idalquiler", itemdetalle.Idalquiler);
+                cmd.Parameters.AddWithValue("@idactual", itemdetalle.Idalquiler);
+                cmd.Parameters.AddWithValue("@idambiente", itemdetalle.Idambientes);
                 cmd.Parameters.AddWithValue("@regmoddetalle", itemdetalle.Regmoddetalle);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -73,11 +74,11 @@ namespace Models.Repositories
 
 
                         itemdetalle.Id = Int32.Parse(reader["Id"].ToString());
-                        itemdetalle.Idalquiler = Int32.Parse(reader["idalquiler"].ToString());
-                        itemdetalle.Idambientes = Int32.Parse(reader["idambientes"].ToString());
-                        itemdetalle.Costos = Double.Parse(reader["costos"].ToString());
+                     
+                      
+                        itemdetalle.Costos = Double.Parse(reader["costo"].ToString());
 
-                        itemdetalle.Nombreambientes = reader["nombreambientes"].ToString();
+                        itemdetalle.Nombreambientes = reader["nombreambiente"].ToString();
 
                         lista.Add(itemdetalle);
                     }
