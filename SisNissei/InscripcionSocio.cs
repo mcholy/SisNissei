@@ -207,9 +207,10 @@ namespace SisNissei
         private void InscripcionSocio_Load(object sender, EventArgs e)
         {
             dgvInscripcionSocio.ClearSelection();
-            dgvInscripcionSocio.CurrentRow.Selected = false;
             txtBuscar.Focus();
             ListarTipoInscripcionSocio();
+            //dgvInscripcionSocio.CurrentRow.Selected = false;
+    
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
