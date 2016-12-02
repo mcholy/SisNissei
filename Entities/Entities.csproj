@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmbienteDetalle.cs" />
+    <Compile Include="AmbienteDetalleEntity.cs" />
     <Compile Include="AmbienteEntity.cs" />
     <Compile Include="BaseDetalleEntity.cs" />
     <Compile Include="BaseEntity.cs" />

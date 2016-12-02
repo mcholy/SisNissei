@@ -56,6 +56,7 @@
       <DependentUpon>DatosSocio.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AmbienteDetalleRepository.cs" />
     <Compile Include="Repositories\AmbienteRepository.cs" />
     <Compile Include="Repositories\BaseDetalleRepository.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Repositories\TipoEmpleadoRepository.cs" />
     <Compile Include="Repositories\TipoInscripcionSocioRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
+    <Compile Include="Services\AmbienteDetalleService.cs" />
     <Compile Include="Services\AmbienteService.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\DetalleInscripcionAlquilerService.cs" />
