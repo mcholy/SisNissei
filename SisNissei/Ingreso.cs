@@ -17,7 +17,7 @@ namespace SisNissei
         }
 
         private void Ingreso_Load(object sender, EventArgs e)
-        {//
+        {////
 
         }
     }
