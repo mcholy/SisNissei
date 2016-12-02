@@ -105,5 +105,31 @@ namespace Models.Repositories
             }
            
         }
+
+
+        public List<AmbienteEntity> ListarenDetalle()
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_AmbienteenDetalle_Listar";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<AmbienteEntity> lista = new List<AmbienteEntity>();
+                    while (reader.Read())
+                    {
+                        AmbienteEntity item = new AmbienteEntity();
+                        item.Id = Int32.Parse(reader["id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+
+                    }
+                    return lista;
+                }
+            }
+
+        }
     }
 }

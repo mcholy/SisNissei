@@ -34,15 +34,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_Total = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGarantiaLocal = new System.Windows.Forms.TextBox();
+            this.txtLimpieza = new System.Windows.Forms.TextBox();
+            this.txtDerechoCorcho = new System.Windows.Forms.TextBox();
+            this.txtCosto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.cbTipoCliente = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.dgvAmbiente = new System.Windows.Forms.DataGridView();
+            this.dgvAmbienteDetalle = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbiente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbienteDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dgvAmbiente);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvAmbienteDetalle);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Size = new System.Drawing.Size(659, 289);
             this.splitContainer1.SplitterDistance = 306;
@@ -112,15 +112,15 @@
             // 
             this.groupBox2.Controls.Add(this.lbl_Total);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtGarantiaLocal);
+            this.groupBox2.Controls.Add(this.txtLimpieza);
+            this.groupBox2.Controls.Add(this.txtDerechoCorcho);
+            this.groupBox2.Controls.Add(this.txtCosto);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbAmbiente);
             this.groupBox2.Controls.Add(this.cbTipoCliente);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
@@ -148,33 +148,33 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Total :";
             // 
-            // textBox4
+            // txtGarantiaLocal
             // 
-            this.textBox4.Location = new System.Drawing.Point(145, 147);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 20);
-            this.textBox4.TabIndex = 15;
+            this.txtGarantiaLocal.Location = new System.Drawing.Point(145, 147);
+            this.txtGarantiaLocal.Name = "txtGarantiaLocal";
+            this.txtGarantiaLocal.Size = new System.Drawing.Size(125, 20);
+            this.txtGarantiaLocal.TabIndex = 15;
             // 
-            // textBox3
+            // txtLimpieza
             // 
-            this.textBox3.Location = new System.Drawing.Point(145, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtLimpieza.Location = new System.Drawing.Point(145, 124);
+            this.txtLimpieza.Name = "txtLimpieza";
+            this.txtLimpieza.Size = new System.Drawing.Size(125, 20);
+            this.txtLimpieza.TabIndex = 14;
             // 
-            // textBox2
+            // txtDerechoCorcho
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtDerechoCorcho.Location = new System.Drawing.Point(145, 102);
+            this.txtDerechoCorcho.Name = "txtDerechoCorcho";
+            this.txtDerechoCorcho.Size = new System.Drawing.Size(125, 20);
+            this.txtDerechoCorcho.TabIndex = 13;
             // 
-            // textBox1
+            // txtCosto
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtCosto.Location = new System.Drawing.Point(145, 78);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.Size = new System.Drawing.Size(125, 20);
+            this.txtCosto.TabIndex = 12;
             // 
             // label7
             // 
@@ -212,15 +212,15 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Costo :";
             // 
-            // comboBox1
+            // cbAmbiente
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbAmbiente.BackColor = System.Drawing.SystemColors.Window;
+            this.cbAmbiente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmbiente.FormattingEnabled = true;
+            this.cbAmbiente.Location = new System.Drawing.Point(123, 16);
+            this.cbAmbiente.Name = "cbAmbiente";
+            this.cbAmbiente.Size = new System.Drawing.Size(147, 21);
+            this.cbAmbiente.TabIndex = 7;
             // 
             // cbTipoCliente
             // 
@@ -310,6 +310,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 28);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -320,14 +321,16 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // dgvAmbiente
+            // dgvAmbienteDetalle
             // 
-            this.dgvAmbiente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAmbiente.Location = new System.Drawing.Point(9, 59);
-            this.dgvAmbiente.Name = "dgvAmbiente";
-            this.dgvAmbiente.Size = new System.Drawing.Size(327, 190);
-            this.dgvAmbiente.TabIndex = 0;
+            this.dgvAmbienteDetalle.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvAmbienteDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAmbienteDetalle.Location = new System.Drawing.Point(9, 59);
+            this.dgvAmbienteDetalle.Name = "dgvAmbienteDetalle";
+            this.dgvAmbienteDetalle.Size = new System.Drawing.Size(327, 217);
+            this.dgvAmbienteDetalle.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -376,7 +379,7 @@
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbiente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAmbienteDetalle)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -398,20 +401,20 @@
         private System.Windows.Forms.ToolStripButton btnModificar;
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.DataGridView dgvAmbiente;
+        private System.Windows.Forms.DataGridView dgvAmbienteDetalle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAmbiente;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGarantiaLocal;
+        private System.Windows.Forms.TextBox txtLimpieza;
+        private System.Windows.Forms.TextBox txtDerechoCorcho;
+        private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label lbl_Total;
     }
 }

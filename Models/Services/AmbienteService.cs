@@ -34,5 +34,9 @@ namespace Models.Services
         {
             return new AmbienteRepository().Listar(idActual);
         }
+        public List<AmbienteEntity> ListarenDetalle()
+        {
+            return new AmbienteRepository().ListarenDetalle();
+        }
     }
 }
