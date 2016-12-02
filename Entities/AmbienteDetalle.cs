@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Entities
 {
-    public class AmbienteEntity : BaseEntity
+    class AmbienteDetalle : BaseEntity
     {
-       
-      
     }
 }

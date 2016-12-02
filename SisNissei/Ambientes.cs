@@ -23,20 +23,17 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
-            ListarTipoCliente();
+
             CargarDetalle();
             Skin.AplicarSkinDGV(dgvAmbiente);
         }
 
-        private void ListarTipoCliente()
-        {
-            cbTipoCliente.Items.Add("Publico");
-            cbTipoCliente.Items.Add("Socio");
-        }
+
 
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
+            regmod = 0;
         
         }
 
@@ -45,8 +42,6 @@ namespace SisNissei
             //item.idtipoemeplado = icbsexo.selectedvalue;
                 item.Id = idActual;
                 item.Nombre = txtNombre.Text;
-             
-                item.Tipocliente = cbTipoCliente.Text == "Publico" ? false : true; 
                 item.Regmod = regmod;
                 AmbienteService servicio = new AmbienteService();
                 int respuesta = servicio.Guardar(item);
@@ -72,10 +67,8 @@ namespace SisNissei
                 dgvAmbiente.Columns["estado"].Visible = false;
                 dgvAmbiente.Columns["regmod"].Visible = false;
                 dgvAmbiente.Columns["fecharegistro"].Visible = false;
-                dgvAmbiente.Columns["tipocliente"].Visible = false;
                 dgvAmbiente.Columns["nombre"].DisplayIndex = 0;
                 dgvAmbiente.Columns["nombre"].HeaderText = "Nombre";
-                dgvAmbiente.Columns["nombretipocliente"].DisplayIndex = 2;
             }
         }
         private void Eliminar()
@@ -173,10 +166,6 @@ namespace SisNissei
             itemValidacion.SoloLetras(e);
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }

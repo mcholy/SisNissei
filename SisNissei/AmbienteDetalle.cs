@@ -16,9 +16,10 @@ namespace SisNissei
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void ListarTipoCliente()
         {
-
+            cbTipoCliente.Items.Add("Publico");
+            cbTipoCliente.Items.Add("Socio");
         }
     }
 }

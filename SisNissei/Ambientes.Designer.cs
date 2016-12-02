@@ -28,24 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnModificar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.dgvAmbiente = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbTipoCliente = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnModificar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAmbiente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -57,54 +55,12 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(36, 28);
-            this.btnCancelar.Text = "Cancelar";
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(6, 19);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(204, 20);
             this.txtBuscar.TabIndex = 1;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(36, 28);
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnModificar.Image = global::SisNissei.Properties.Resources.edit;
-            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(36, 28);
-            this.btnModificar.Text = "Editar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvAmbiente
             // 
@@ -113,16 +69,6 @@
             this.dgvAmbiente.Name = "dgvAmbiente";
             this.dgvAmbiente.Size = new System.Drawing.Size(260, 151);
             this.dgvAmbiente.TabIndex = 0;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = global::SisNissei.Properties.Resources._new;
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(36, 28);
-            this.btnNuevo.Text = "Nuevo";
             // 
             // groupBox1
             // 
@@ -135,21 +81,8 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscador";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbTipoCliente);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
@@ -158,26 +91,6 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
-            // 
-            // cbTipoCliente
-            // 
-            this.cbTipoCliente.BackColor = System.Drawing.SystemColors.Window;
-            this.cbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoCliente.FormattingEnabled = true;
-            this.cbTipoCliente.Location = new System.Drawing.Point(108, 51);
-            this.cbTipoCliente.Name = "cbTipoCliente";
-            this.cbTipoCliente.Size = new System.Drawing.Size(121, 21);
-            this.cbTipoCliente.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Tipo Cliente :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtNombre
             // 
@@ -260,6 +173,69 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNuevo.Image = global::SisNissei.Properties.Resources._new;
+            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(36, 28);
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnModificar.Image = global::SisNissei.Properties.Resources.edit;
+            this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(36, 28);
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(36, 28);
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(36, 28);
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEliminar.Image = global::SisNissei.Properties.Resources.delete;
+            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(36, 28);
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscar.Location = new System.Drawing.Point(216, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscar.TabIndex = 2;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // Ambientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,8 +280,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ComboBox cbTipoCliente;
-        private System.Windows.Forms.Label label4;
 
     }
 }
