@@ -105,6 +105,12 @@
     <Compile Include="DialogPatrocinador.Designer.cs">
       <DependentUpon>DialogPatrocinador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ingreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingreso.Designer.cs">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="InscripcionAlquiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     <EmbeddedResource Include="DialogPatrocinador.resx">
       <DependentUpon>DialogPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ingreso.resx">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InscripcionAlquiler.resx">
       <DependentUpon>InscripcionAlquiler.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +385,7 @@
     <Content Include="Resources\Key-Access.png" />
     <Content Include="Resources\Login-Door.png" />
     <Content Include="Resources\login.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\save.png" />
     <Content Include="Resources\SCCM.png" />
