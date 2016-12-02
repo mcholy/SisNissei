@@ -20,7 +20,8 @@ namespace SisNissei
         private AmbienteDetalleService servicio = new AmbienteDetalleService();
         private int regmod = 0;
         private int idActual = 0;
-
+      
+       
 
         public AmbienteDetalle()
         {
@@ -30,6 +31,7 @@ namespace SisNissei
             ListarAmbientes();
             ListarTipoCliente();
             CargarDetalle();
+
         }
         private void ListarAmbientes()
         {
@@ -86,7 +88,6 @@ namespace SisNissei
         private void Ambiente_Load(object sender, EventArgs e)
         {
             
-            lbl_Total.Text = txtCosto.Text + txtDerechoCorcho.Text + txtGarantiaLocal.Text + txtLimpieza.Text;
             dgvAmbienteDetalle.ClearSelection();
             dgvAmbienteDetalle.CurrentRow.Selected = false;
             txtBuscar.Focus();
