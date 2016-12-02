@@ -37,21 +37,15 @@ namespace SisNissei
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
-            txtCosto.Text = string.Empty;
+        
         }
 
         private void Guardar()
         {
             //item.idtipoemeplado = icbsexo.selectedvalue;
-            if (txtCosto.Text == string.Empty)
-            {
-                MessageBox.Show("Campos solicitados vacios.");
-            }
-            else
-            {
                 item.Id = idActual;
                 item.Nombre = txtNombre.Text;
-                item.Costo = Double.Parse(txtCosto.Text);
+             
                 item.Tipocliente = cbTipoCliente.Text == "Publico" ? false : true; 
                 item.Regmod = regmod;
                 AmbienteService servicio = new AmbienteService();
@@ -66,7 +60,7 @@ namespace SisNissei
                 }
                 Limpiar();
                 CargarDetalle();
-            }
+          
         }
 
         private void CargarDetalle()
@@ -81,8 +75,6 @@ namespace SisNissei
                 dgvAmbiente.Columns["tipocliente"].Visible = false;
                 dgvAmbiente.Columns["nombre"].DisplayIndex = 0;
                 dgvAmbiente.Columns["nombre"].HeaderText = "Nombre";
-                dgvAmbiente.Columns["costo"].DisplayIndex = 1;
-                dgvAmbiente.Columns["costo"].HeaderText = "Costo";
                 dgvAmbiente.Columns["nombretipocliente"].DisplayIndex = 2;
             }
         }
@@ -101,7 +93,6 @@ namespace SisNissei
         {
             idActual = Int32.Parse(dgvAmbiente.CurrentRow.Cells["id"].Value.ToString());
             txtNombre.Text = dgvAmbiente.CurrentRow.Cells["nombre"].Value.ToString();
-            txtCosto.Text = dgvAmbiente.CurrentRow.Cells["costo"].Value.ToString();
         }
         private void TipoInscripcionSocio_Load(object sender, EventArgs e)
         {
@@ -180,6 +171,11 @@ namespace SisNissei
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

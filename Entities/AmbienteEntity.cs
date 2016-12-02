@@ -7,13 +7,7 @@ namespace Entities
 {
     public class AmbienteEntity : BaseEntity
     {
-        private double costo;
-
-        public double Costo
-        {
-            get { return costo; }
-            set { costo = value; }
-        }
+       
         private bool tipocliente;
 
         public bool Tipocliente
