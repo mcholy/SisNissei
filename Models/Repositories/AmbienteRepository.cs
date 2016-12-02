@@ -21,7 +21,6 @@ namespace Models.Repositories
                 cmd.CommandText = "sis_Ambiente_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
-                cmd.Parameters.AddWithValue("@tipocliente", item.Tipocliente);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -51,7 +50,6 @@ namespace Models.Repositories
                         AmbienteEntity item = new AmbienteEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["Nombre"].ToString();
-                        item.Nombretipocliente = reader["nombretipocliente"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
                     }
