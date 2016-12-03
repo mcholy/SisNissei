@@ -70,6 +70,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ambienteDescripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -239,7 +240,8 @@
             // 
             this.ambientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ambientesToolStripMenuItem1,
-            this.ambienteDetalleToolStripMenuItem});
+            this.ambienteDetalleToolStripMenuItem,
+            this.ambienteDescripcionToolStripMenuItem});
             this.ambientesToolStripMenuItem.Name = "ambientesToolStripMenuItem";
             this.ambientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.ambientesToolStripMenuItem.Text = "Ambiente";
@@ -247,14 +249,14 @@
             // ambientesToolStripMenuItem1
             // 
             this.ambientesToolStripMenuItem1.Name = "ambientesToolStripMenuItem1";
-            this.ambientesToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.ambientesToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.ambientesToolStripMenuItem1.Text = "Ambientes";
             this.ambientesToolStripMenuItem1.Click += new System.EventHandler(this.ambientesToolStripMenuItem1_Click);
             // 
             // ambienteDetalleToolStripMenuItem
             // 
             this.ambienteDetalleToolStripMenuItem.Name = "ambienteDetalleToolStripMenuItem";
-            this.ambienteDetalleToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.ambienteDetalleToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.ambienteDetalleToolStripMenuItem.Text = "Ambiente Detalle";
             this.ambienteDetalleToolStripMenuItem.Click += new System.EventHandler(this.ambienteDetalleToolStripMenuItem_Click);
             // 
@@ -392,6 +394,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // ambienteDescripcionToolStripMenuItem
+            // 
+            this.ambienteDescripcionToolStripMenuItem.Name = "ambienteDescripcionToolStripMenuItem";
+            this.ambienteDescripcionToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.ambienteDescripcionToolStripMenuItem.Text = "Ambiente Descripcion";
+            this.ambienteDescripcionToolStripMenuItem.Click += new System.EventHandler(this.ambienteDescripcionToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,6 +462,7 @@
         private System.Windows.Forms.ToolStripMenuItem alquilerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ambientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ambienteDetalleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ambienteDescripcionToolStripMenuItem;
     }
 }
 

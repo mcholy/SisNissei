@@ -81,6 +81,12 @@
     <Compile Include="AlumnoReporteFormulariocs.Designer.cs">
       <DependentUpon>AlumnoReporteFormulariocs.cs</DependentUpon>
     </Compile>
+    <Compile Include="AmbienteDescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmbienteDescripcion.Designer.cs">
+      <DependentUpon>AmbienteDescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AmbienteDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <Compile Include="Template\Skin.cs" />
     <EmbeddedResource Include="AlumnoReporteFormulariocs.resx">
       <DependentUpon>AlumnoReporteFormulariocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmbienteDescripcion.resx">
+      <DependentUpon>AmbienteDescripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AmbienteDetalle.resx">
       <DependentUpon>AmbienteDetalle.cs</DependentUpon>

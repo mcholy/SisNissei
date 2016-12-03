@@ -45,28 +45,21 @@ namespace Entities
             get { return costo; }
             set { costo = value; }
         }
-        private int derechocorcho;
+        private int idAmbienteDescripcion;
 
-        public int Derechocorcho
+        public int IdAmbienteDescripcion
         {
-            get { return derechocorcho; }
-            set { derechocorcho = value; }
-        }
-        private int limpieza;
-
-        public int Limpieza
-        {
-            get { return limpieza; }
-            set { limpieza = value; }
-        }
-        private int garantia;
-
-        public int Garantia
-        {
-            get { return garantia; }
-            set { garantia = value; }
+            get { return idAmbienteDescripcion; }
+            set { idAmbienteDescripcion = value; }
         }
 
-        
+        private string nombreambientedescripcion;
+
+        public string Nombreambientedescripcion
+        {
+            get { return nombreambientedescripcion; }
+            set { nombreambientedescripcion = value; }
+        }
+
     }
 }

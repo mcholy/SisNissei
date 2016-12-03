@@ -9,21 +9,18 @@ using System.Data.SqlClient;
 
 namespace Models.Repositories
 {
-    public class AmbienteDetalleRepository :BaseRepository<AmbienteDetalleEntity>
+    public class AmbienteDescripcionRepository:BaseRepository<AmbienteDescripcionEntity>
     {
-        public string Guardar(AmbienteDetalleEntity item)
+        public string Guardar(AmbienteDescripcionEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_AmbienteDetalle_Guardar";
+                cmd.CommandText = "sis_AmbienteDescripcion_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
-                cmd.Parameters.AddWithValue("@idambiente", item.IdAmbiente);
-                cmd.Parameters.AddWithValue("@idambientedescripcion", item.IdAmbienteDescripcion);
-                cmd.Parameters.AddWithValue("@tipocliente", item.TipoCliente1);
-                cmd.Parameters.AddWithValue("@costo",item.Costo);
+                cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -34,32 +31,25 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
-
-        public List<AmbienteDetalleEntity> Detalle()
+        public List<AmbienteDescripcionEntity> Detalle()
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_AmbienteDetalle_Detalle";
+                cmd.CommandText = "sis_AmbienteDescripcion_Detalle";
                 //cmd.Parameters.AddWithValue("@valor",valor);
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    List<AmbienteDetalleEntity> lista = new List<AmbienteDetalleEntity>();
+                    List<AmbienteDescripcionEntity> lista = new List<AmbienteDescripcionEntity>();
 
                     while (reader.Read())
                     {
-                        AmbienteDetalleEntity item = new AmbienteDetalleEntity();
+                        AmbienteDescripcionEntity item = new AmbienteDescripcionEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
-                        item.IdAmbiente=Int32.Parse(reader["idambiente"].ToString());
-                        item.Nombreambiente = reader["nombreambiente"].ToString();
-                        item.IdAmbienteDescripcion = Int32.Parse(reader["idambientedescripcion"].ToString());
-                        item.Nombreambientedescripcion = reader["nombreambientedescripcion"].ToString();
-
-                        item.NombreTipoCliente1 = reader["NombreTipoCliente"].ToString();
-                        item.Costo = Int32.Parse(reader["costo"].ToString());
+                        item.Nombre = reader["Nombre"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
                     }
@@ -69,14 +59,14 @@ namespace Models.Repositories
             }
 
         }
-        public string Eliminar(AmbienteDetalleEntity item)
+        public string Eliminar(AmbienteDescripcionEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_AmbienteDetalle_Eliminar";
+                cmd.CommandText = "sis_AmbienteDescripcion_Eliminar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -86,6 +76,31 @@ namespace Models.Repositories
                 }
                 return respuesta;
             }
+        }
+
+        public List<AmbienteDescripcionEntity> Listar()
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_AmbienteDescripcion_Listar";
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<AmbienteDescripcionEntity> lista = new List<AmbienteDescripcionEntity>();
+                    while (reader.Read())
+                    {
+                        AmbienteDescripcionEntity item = new AmbienteDescripcionEntity();
+                        item.Id = Int32.Parse(reader["id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+
+                    }
+                    return lista;
+                }
+            }
+
         }
 
     }

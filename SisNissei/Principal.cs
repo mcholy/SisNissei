@@ -215,6 +215,12 @@ namespace SisNissei
             AmbienteDetalle.DefInstance.Show();
         
         }
+
+        private void ambienteDescripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmbienteDescripcion.DefInstance.MdiParent = this;
+            AmbienteDescripcion.DefInstance.Show();
+        }
                
     }
 }

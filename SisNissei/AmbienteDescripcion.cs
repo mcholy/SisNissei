@@ -12,67 +12,62 @@ using Models.Services;
 
 namespace SisNissei
 {
-    public partial class Ambientes : Form
+    public partial class AmbienteDescripcion : Form
     {
         private Validacion itemValidacion = new Validacion();
-        private AmbienteEntity item = new AmbienteEntity();
-        private AmbienteService servicio = new AmbienteService();
+        private AmbienteDescripcionEntity item = new AmbienteDescripcionEntity();
+        private AmbienteDescripcionService servicio = new AmbienteDescripcionService();
         private int regmod = 0;
         private int idActual = 0;
-        public Ambientes()
+        public AmbienteDescripcion()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
             CargarDetalle();
-            Skin.AplicarSkinDGV(dgvAmbiente);
+            Skin.AplicarSkinDGV(dgvAmbienteDescripcion);
         }
-
-
-
         private void Limpiar()
         {
             txtNombre.Text = string.Empty;
             regmod = 0;
-        
-        }
 
+        }
         private void Guardar()
         {
             //item.idtipoemeplado = icbsexo.selectedvalue;
-                item.Id = idActual;
-                item.Nombre = txtNombre.Text;
-                item.Regmod = regmod;
-                AmbienteService servicio = new AmbienteService();
-                int respuesta = servicio.Guardar(item);
-                if (respuesta == 1)
-                {
-                    MessageBox.Show("El registro se ingreso satisfactoriamente.");
-                }
-                else if (respuesta == 2)
-                {
-                    MessageBox.Show("El registro se actualizó satisfactoriamente.");
-                }
-                Limpiar();
-                CargarDetalle();
-          
-        }
+            item.Id = idActual;
+            item.Nombre = txtNombre.Text;
+            item.Regmod = regmod;
+            AmbienteDescripcionService servicio = new AmbienteDescripcionService();
+            int respuesta = servicio.Guardar(item);
+            if (respuesta == 1)
+            {
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+            }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            Limpiar();
+            CargarDetalle();
 
+        }
         private void CargarDetalle()
         {
-            dgvAmbiente.DataSource = servicio.Detalle();
-            if (dgvAmbiente.RowCount > 0)
+            dgvAmbienteDescripcion.DataSource = servicio.Detalle();
+            if (dgvAmbienteDescripcion.RowCount > 0)
             {
-                dgvAmbiente.Columns["id"].Visible = false;
-                dgvAmbiente.Columns["estado"].Visible = false;
-                dgvAmbiente.Columns["regmod"].Visible = false;
-                dgvAmbiente.Columns["fecharegistro"].Visible = false;
-                dgvAmbiente.Columns["nombre"].DisplayIndex = 0;
-                dgvAmbiente.Columns["nombre"].HeaderText = "Nombre";
+                dgvAmbienteDescripcion.Columns["id"].Visible = false;
+                dgvAmbienteDescripcion.Columns["estado"].Visible = false;
+                dgvAmbienteDescripcion.Columns["regmod"].Visible = false;
+                dgvAmbienteDescripcion.Columns["fecharegistro"].Visible = false;
+                dgvAmbienteDescripcion.Columns["nombre"].DisplayIndex = 0;
+                dgvAmbienteDescripcion.Columns["nombre"].HeaderText = "Nombre";
             }
         }
         private void Eliminar()
         {
-            item.Id = Int32.Parse(dgvAmbiente.CurrentRow.Cells["id"].Value.ToString());
+            item.Id = Int32.Parse(dgvAmbienteDescripcion.CurrentRow.Cells["id"].Value.ToString());
             int respuesta = servicio.Eliminar(item);
             if (respuesta == 1)
             {
@@ -81,20 +76,21 @@ namespace SisNissei
                 CargarDetalle();
             }
         }
+
         private void LlenarControles()
         {
-            idActual = Int32.Parse(dgvAmbiente.CurrentRow.Cells["id"].Value.ToString());
-            txtNombre.Text = dgvAmbiente.CurrentRow.Cells["nombre"].Value.ToString();
+            idActual = Int32.Parse(dgvAmbienteDescripcion.CurrentRow.Cells["id"].Value.ToString());
+            txtNombre.Text = dgvAmbienteDescripcion.CurrentRow.Cells["nombre"].Value.ToString();
         }
 
         #region Singleton
-        private static Ambientes m_FormDefInstance;
-        public static Ambientes DefInstance
+        private static AmbienteDescripcion m_FormDefInstance;
+        public static AmbienteDescripcion DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Ambientes();
+                    m_FormDefInstance = new AmbienteDescripcion();
                 return m_FormDefInstance;
             }
             set
@@ -103,18 +99,20 @@ namespace SisNissei
             }
         }
         #endregion
-        private void Ambientes_Load(object sender, EventArgs e)
+
+
+        private void AmbienteDescripcion_Load(object sender, EventArgs e)
         {
-            dgvAmbiente.ClearSelection();
-            dgvAmbiente.CurrentRow.Selected = false;
+            dgvAmbienteDescripcion.ClearSelection();
+            dgvAmbienteDescripcion.CurrentRow.Selected = false;
             txtBuscar.Focus();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvAmbiente.RowCount > 0)
+            if (dgvAmbienteDescripcion.RowCount > 0)
             {
-                if (dgvAmbiente.CurrentRow.Selected == true)
+                if (dgvAmbienteDescripcion.CurrentRow.Selected == true)
                 {
                     if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -131,9 +129,9 @@ namespace SisNissei
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dgvAmbiente.RowCount > 0)
+            if (dgvAmbienteDescripcion.RowCount > 0)
             {
-                if (dgvAmbiente.CurrentRow.Selected == true)
+                if (dgvAmbienteDescripcion.CurrentRow.Selected == true)
                 {
                     LlenarControles();
                     regmod = 1;
@@ -160,6 +158,6 @@ namespace SisNissei
             itemValidacion.SoloLetras(e);
         }
 
-
     }
+
 }
