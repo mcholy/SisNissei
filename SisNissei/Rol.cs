@@ -28,7 +28,7 @@ namespace SisNissei
             Skin.AplicarSkinDGV(dgvRol);
         }
 
-
+        //nothing
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();

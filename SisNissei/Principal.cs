@@ -192,16 +192,28 @@ namespace SisNissei
             TipoInscripcionSocio.DefInstance.Show();
         }
 
-        private void ambientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ambientes.DefInstance.MdiParent = this;
-            Ambientes.DefInstance.Show();
-        }
+
 
         private void alquilerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InscripcionAlquiler.DefInstance.MdiParent = this;
             InscripcionAlquiler.DefInstance.Show();
+        }
+
+        private void ambientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+                
+            Ambientes.DefInstance.MdiParent = this;
+            Ambientes.DefInstance.Show();
+        
+        }
+
+        private void ambienteDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                  
+            AmbienteDetalle.DefInstance.MdiParent = this;
+            AmbienteDetalle.DefInstance.Show();
+        
         }
                
     }

@@ -206,9 +206,9 @@ namespace SisNissei
         }
 
         private double sumatoria = 0;
-       
 
-        private void CargarDetalleDetalle(int 
+
+        private void CargarDetalleDetalle(int
             idActual)
         {
             dgvInscripcionAlquilerDetalle.DataSource = serviciodetalle.Detalle(idActual);
@@ -219,8 +219,8 @@ namespace SisNissei
                 dgvInscripcionAlquilerDetalle.Columns["estado"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["regmoddetalle"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["idambientes"].Visible = false;
-              dgvInscripcionAlquilerDetalle.Columns["id"].Visible = false;
-              dgvInscripcionAlquilerDetalle.Columns["idalquiler"].Visible = false;
+                dgvInscripcionAlquilerDetalle.Columns["id"].Visible = false;
+                dgvInscripcionAlquilerDetalle.Columns["idalquiler"].Visible = false;
 
                 dgvInscripcionAlquilerDetalle.ClearSelection();
                 foreach (DataGridViewRow row in dgvInscripcionAlquilerDetalle.Rows)
@@ -272,7 +272,8 @@ namespace SisNissei
             {
                 MessageBox.Show("Se debe seleccionar un registro de alquiler antes de guardar un ambiente a alquilar");
             }
-            else {
+            else
+            {
                 GuardarDetalle();
                 regmoddetalle = 0;
 
