@@ -66,8 +66,6 @@
             this.btnBuscarGarante = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAcuenta = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtVelatorioExtra = new System.Windows.Forms.TextBox();
             this.cbAmbienteDescripcion = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -118,9 +116,9 @@
             this.groupBox3.Controls.Add(this.dgvInscripcionAlquilerDetalle);
             this.groupBox3.Controls.Add(this.cbAmbiente);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(16, 236);
+            this.groupBox3.Location = new System.Drawing.Point(16, 217);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 195);
+            this.groupBox3.Size = new System.Drawing.Size(318, 214);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ambientes";
@@ -176,7 +174,7 @@
             this.dgvInscripcionAlquilerDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcionAlquilerDetalle.Location = new System.Drawing.Point(6, 72);
             this.dgvInscripcionAlquilerDetalle.Name = "dgvInscripcionAlquilerDetalle";
-            this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 117);
+            this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 136);
             this.dgvInscripcionAlquilerDetalle.TabIndex = 2;
             // 
             // cbAmbiente
@@ -188,6 +186,7 @@
             this.cbAmbiente.Name = "cbAmbiente";
             this.cbAmbiente.Size = new System.Drawing.Size(74, 21);
             this.cbAmbiente.TabIndex = 20;
+            this.cbAmbiente.SelectedIndexChanged += new System.EventHandler(this.cbAmbiente_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -200,8 +199,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtVelatorioExtra);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtAcuenta);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label3);
@@ -220,7 +217,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 188);
+            this.groupBox2.Size = new System.Drawing.Size(318, 169);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -499,22 +496,6 @@
             this.txtAcuenta.Size = new System.Drawing.Size(92, 20);
             this.txtAcuenta.TabIndex = 43;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 167);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 13);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Velatorio día extra :";
-            // 
-            // txtVelatorioExtra
-            // 
-            this.txtVelatorioExtra.Location = new System.Drawing.Point(116, 164);
-            this.txtVelatorioExtra.Name = "txtVelatorioExtra";
-            this.txtVelatorioExtra.Size = new System.Drawing.Size(92, 20);
-            this.txtVelatorioExtra.TabIndex = 45;
-            // 
             // cbAmbienteDescripcion
             // 
             this.cbAmbienteDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -598,8 +579,6 @@
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtVelatorioExtra;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAcuenta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;

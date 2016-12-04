@@ -29,5 +29,9 @@ namespace Models.Services
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
         }
+        public List<AmbienteDetalleEntity> Listar(int idambiente, int idactual)
+        {
+            return new AmbienteDetalleRepository().Listar(idambiente, idactual);
+        }
     }
 }

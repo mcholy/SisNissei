@@ -29,6 +29,7 @@ namespace SisNissei
         private int idActual = 0;
         private int idActualDetalle = 0;
         private int regmoddetalle = 0;
+        private int idAmbiente = 0;
         public InscripcionAlquiler()
         {
             InitializeComponent();
@@ -62,7 +63,6 @@ namespace SisNissei
             idGarante = 0;
             txtCliente.Text = string.Empty;
             txtAcuenta.Text = string.Empty;
-            txtVelatorioExtra.Text = string.Empty;
             lblTotal.Text = string.Empty;
             sumatoria = 0;
             dtpHoraFin.ResetText();
@@ -254,7 +254,8 @@ namespace SisNissei
         {
             itemdetalle.Id = idActualDetalle;
             itemdetalle.Idalquiler = idActual;
-            itemdetalle.Idambientes = Int32.Parse(cbAmbiente.SelectedValue.ToString());
+            itemdetalle.Idambientedescripcion = Int32.Parse(cbAmbienteDescripcion.SelectedValue.ToString());
+
             itemdetalle.Regmoddetalle = regmoddetalle;
             DetalleInscripcionAlquilerService serviciodetalle = new DetalleInscripcionAlquilerService();
             int respuesta = serviciodetalle.Guardar(itemdetalle);
@@ -306,6 +307,20 @@ namespace SisNissei
             }
             txtGarante.Text = nombreGarante;
             
+        }
+
+        private void cbAmbiente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idAmbiente = Int32.Parse(cbAmbiente.SelectedValue.ToString());
+            idActual = Int32.Parse(idActual.ToString());
+            ListarAmbienteDetalle(idAmbiente, idActual);
+            
+        }
+           private void ListarAmbienteDetalle(int idambiente, int idactual)
+        {
+            cbAmbienteDescripcion.DisplayMember = "Nombre";
+            cbAmbienteDescripcion.ValueMember = "Id";
+            cbAmbienteDescripcion.DataSource = new AmbienteDetalleService().Listar(idambiente, idactual);
         }
     }
 }
