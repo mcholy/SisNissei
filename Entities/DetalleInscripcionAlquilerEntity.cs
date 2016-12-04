@@ -21,12 +21,27 @@ namespace Entities
            get { return idambientes; }
            set { idambientes = value; }
        }
+      
        private string nombreambientes;
 
        public string Nombreambientes
        {
            get { return nombreambientes; }
            set { nombreambientes = value; }
+       }
+       private int idambientedescripcion;
+
+       public int Idambientedescripcion
+       {
+           get { return idambientedescripcion; }
+           set { idambientedescripcion = value; }
+       }
+       private string nombreambientedescripcion;
+
+       public string Nombreambientedescripcion
+       {
+           get { return nombreambientedescripcion; }
+           set { nombreambientedescripcion = value; }
        }
        private double costos;
 

@@ -318,7 +318,7 @@
             this.egresoToolStripMenuItem,
             this.ingresoToolStripMenuItem});
             this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
-            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.movimientoToolStripMenuItem.Text = "Movimiento";
             // 
             // egresoToolStripMenuItem
@@ -330,8 +330,9 @@
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresoToolStripMenuItem.Text = "Ingreso";
+            this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
             // 
             // alquilerToolStripMenuItem
             // 

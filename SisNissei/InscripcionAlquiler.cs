@@ -22,7 +22,9 @@ namespace SisNissei
         private DetalleInscripcionAlquilerEntity itemdetalle = new DetalleInscripcionAlquilerEntity();
 
         private string nombreCliente = "";
+        private string nombreGarante = "";
         private int idCliente = 0;
+        private int idGarante = 0;
         private int regmod = 0;
         private int idActual = 0;
         private int idActualDetalle = 0;
@@ -57,8 +59,10 @@ namespace SisNissei
             InsertarCodigo();
             idActual = 0;
             idCliente = 0;
+            idGarante = 0;
             txtCliente.Text = string.Empty;
-            txtGarantia.Text = string.Empty;
+            txtAcuenta.Text = string.Empty;
+            txtVelatorioExtra.Text = string.Empty;
             lblTotal.Text = string.Empty;
             sumatoria = 0;
             dtpHoraFin.ResetText();
@@ -89,7 +93,7 @@ namespace SisNissei
         {
             if (txtCliente.Text == "")
             {
-                MessageBox.Show("Se debe seleccionar al alumno antes de matricularlo");
+                MessageBox.Show("Se debe seleccionar al Cliente antes de guardar el alquiler");
             }
             else if (dtpHoraInicio.Value.Date > dtpHoraFin.Value.Date)
             {
@@ -107,9 +111,10 @@ namespace SisNissei
             item.Id = idActual;
             item.Nombre = txtNombre.Text;
             item.Idcliente = idCliente;
+            item.Idgarante = idGarante;
             item.Horainicio = DateTime.Parse(dtpHoraInicio.Value.ToString());
             item.Horafin = DateTime.Parse(dtpHoraFin.Value.ToString());
-            item.Garantia = double.Parse(txtGarantia.Text);
+            item.Acuenta = double.Parse(txtAcuenta.Text);
             item.Regmod = regmod;
             InscripcionAlquilerService servicio = new InscripcionAlquilerService();
             int respuesta = servicio.Guardar(item);
@@ -138,7 +143,7 @@ namespace SisNissei
                 dgvInscripcionAlquiler.Columns["id"].Visible = false;
                 dgvInscripcionAlquiler.Columns["estado"].Visible = false;
                 dgvInscripcionAlquiler.Columns["idcliente"].Visible = false;
-
+                dgvInscripcionAlquiler.Columns["idgarante"].Visible = false;
                 dgvInscripcionAlquiler.Columns["regmod"].Visible = false;
                 dgvInscripcionAlquiler.Columns["Horainicio"].Visible = false;
                 dgvInscripcionAlquiler.Columns["Horafin"].Visible = false;
@@ -187,8 +192,11 @@ namespace SisNissei
         {
             idActual = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["id"].Value.ToString());
             idCliente = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idcliente"].Value.ToString());
+            idGarante=Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idgarante"].Value.ToString());
+
             txtCliente.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombrecliente"].Value.ToString();
-            txtGarantia.Text = dgvInscripcionAlquiler.CurrentRow.Cells["garantia"].Value.ToString();
+            txtGarante.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombregarante"].Value.ToString();
+            txtAcuenta.Text = dgvInscripcionAlquiler.CurrentRow.Cells["acuenta"].Value.ToString();
             dtpHoraInicio.Value = DateTime.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["fechainicioalquiler"].Value.ToString());
             dtpHoraFin.Value = DateTime.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["fechafinalquiler"].Value.ToString());
 
@@ -283,6 +291,21 @@ namespace SisNissei
         private void btnEliminarDetalle_Click(object sender, EventArgs e)
         {
             EliminarDetalle();
+        }
+
+        private void btnBuscarGarante_Click(object sender, EventArgs e)
+        {
+            DialogCliente dialogCliente = new DialogCliente();
+            DialogResult resultado = dialogCliente.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                nombreGarante = dialogCliente.CargarNombre();
+                idGarante = dialogCliente.CargarId();
+
+            }
+            txtGarante.Text = nombreGarante;
+            
         }
     }
 }

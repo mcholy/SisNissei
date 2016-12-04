@@ -88,7 +88,6 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Ambiente_Listar";
-                cmd.Parameters.AddWithValue("@idActual", idActual);
                 using (var reader = cmd.ExecuteReader())
                 {
                     List<AmbienteEntity> lista = new List<AmbienteEntity>();

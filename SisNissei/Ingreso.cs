@@ -20,5 +20,21 @@ namespace SisNissei
         {////
 
         }
+        #region Singleton
+        private static Ingreso m_FormDefInstance;
+        public static Ingreso DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Ingreso();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
+        #endregion
     }
 }

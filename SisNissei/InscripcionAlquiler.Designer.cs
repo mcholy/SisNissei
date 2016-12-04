@@ -38,12 +38,12 @@
             this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
             this.dtpHoraInicio = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtGarantia = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -61,8 +61,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtGarante = new System.Windows.Forms.TextBox();
+            this.btnBuscarGarante = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAcuenta = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtVelatorioExtra = new System.Windows.Forms.TextBox();
+            this.cbAmbienteDescripcion = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -96,12 +103,14 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlquiler);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(919, 424);
+            this.splitContainer1.Size = new System.Drawing.Size(919, 467);
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 2;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbAmbienteDescripcion);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.btnEliminarDetalle);
             this.groupBox3.Controls.Add(this.btnGuardarDetalle);
             this.groupBox3.Controls.Add(this.NuevoDetalle);
@@ -109,9 +118,9 @@
             this.groupBox3.Controls.Add(this.dgvInscripcionAlquilerDetalle);
             this.groupBox3.Controls.Add(this.cbAmbiente);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(16, 215);
+            this.groupBox3.Location = new System.Drawing.Point(16, 236);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 168);
+            this.groupBox3.Size = new System.Drawing.Size(318, 195);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ambientes";
@@ -121,7 +130,7 @@
             this.btnEliminarDetalle.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarDetalle.Image = global::SisNissei.Properties.Resources.delete;
-            this.btnEliminarDetalle.Location = new System.Drawing.Point(208, 16);
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(50, 43);
             this.btnEliminarDetalle.Name = "btnEliminarDetalle";
             this.btnEliminarDetalle.Size = new System.Drawing.Size(27, 23);
             this.btnEliminarDetalle.TabIndex = 26;
@@ -133,7 +142,7 @@
             this.btnGuardarDetalle.BackColor = System.Drawing.Color.SteelBlue;
             this.btnGuardarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarDetalle.Image = global::SisNissei.Properties.Resources.save;
-            this.btnGuardarDetalle.Location = new System.Drawing.Point(175, 16);
+            this.btnGuardarDetalle.Location = new System.Drawing.Point(17, 43);
             this.btnGuardarDetalle.Name = "btnGuardarDetalle";
             this.btnGuardarDetalle.Size = new System.Drawing.Size(27, 23);
             this.btnGuardarDetalle.TabIndex = 25;
@@ -145,7 +154,7 @@
             this.NuevoDetalle.BackColor = System.Drawing.Color.SteelBlue;
             this.NuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NuevoDetalle.Image = global::SisNissei.Properties.Resources._new;
-            this.NuevoDetalle.Location = new System.Drawing.Point(275, 16);
+            this.NuevoDetalle.Location = new System.Drawing.Point(117, 43);
             this.NuevoDetalle.Name = "NuevoDetalle";
             this.NuevoDetalle.Size = new System.Drawing.Size(31, 23);
             this.NuevoDetalle.TabIndex = 24;
@@ -156,7 +165,7 @@
             this.EditarDetalle.BackColor = System.Drawing.Color.SteelBlue;
             this.EditarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditarDetalle.Image = global::SisNissei.Properties.Resources.edit;
-            this.EditarDetalle.Location = new System.Drawing.Point(241, 16);
+            this.EditarDetalle.Location = new System.Drawing.Point(83, 43);
             this.EditarDetalle.Name = "EditarDetalle";
             this.EditarDetalle.Size = new System.Drawing.Size(29, 23);
             this.EditarDetalle.TabIndex = 23;
@@ -165,7 +174,7 @@
             // dgvInscripcionAlquilerDetalle
             // 
             this.dgvInscripcionAlquilerDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlquilerDetalle.Location = new System.Drawing.Point(6, 45);
+            this.dgvInscripcionAlquilerDetalle.Location = new System.Drawing.Point(6, 72);
             this.dgvInscripcionAlquilerDetalle.Name = "dgvInscripcionAlquilerDetalle";
             this.dgvInscripcionAlquilerDetalle.Size = new System.Drawing.Size(300, 117);
             this.dgvInscripcionAlquilerDetalle.TabIndex = 2;
@@ -177,7 +186,7 @@
             this.cbAmbiente.FormattingEnabled = true;
             this.cbAmbiente.Location = new System.Drawing.Point(74, 16);
             this.cbAmbiente.Name = "cbAmbiente";
-            this.cbAmbiente.Size = new System.Drawing.Size(95, 21);
+            this.cbAmbiente.Size = new System.Drawing.Size(74, 21);
             this.cbAmbiente.TabIndex = 20;
             // 
             // label10
@@ -191,14 +200,19 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtVelatorioExtra);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtAcuenta);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtGarante);
+            this.groupBox2.Controls.Add(this.btnBuscarGarante);
             this.groupBox2.Controls.Add(this.lblTotal);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.dtpHoraFin);
             this.groupBox2.Controls.Add(this.dtpHoraInicio);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtGarantia);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtCliente);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
@@ -206,15 +220,32 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 167);
+            this.groupBox2.Size = new System.Drawing.Size(318, 188);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(242, 145);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 13);
+            this.lblTotal.TabIndex = 38;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(205, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Total";
+            // 
             // dtpHoraFin
             // 
             this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraFin.Location = new System.Drawing.Point(124, 99);
+            this.dtpHoraFin.Location = new System.Drawing.Point(124, 122);
             this.dtpHoraFin.Name = "dtpHoraFin";
             this.dtpHoraFin.Size = new System.Drawing.Size(111, 20);
             this.dtpHoraFin.TabIndex = 36;
@@ -222,7 +253,7 @@
             // dtpHoraInicio
             // 
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 74);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 97);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.Size = new System.Drawing.Size(111, 20);
             this.dtpHoraInicio.TabIndex = 35;
@@ -230,7 +261,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 102);
+            this.label5.Location = new System.Drawing.Point(14, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 27;
@@ -239,28 +270,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 74);
+            this.label4.Location = new System.Drawing.Point(14, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 24;
             this.label4.Text = "Fecha y Hora Inicio :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Garantia :";
-            // 
-            // txtGarantia
-            // 
-            this.txtGarantia.Location = new System.Drawing.Point(74, 132);
-            this.txtGarantia.MaxLength = 200;
-            this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.Size = new System.Drawing.Size(83, 20);
-            this.txtGarantia.TabIndex = 23;
             // 
             // label12
             // 
@@ -344,7 +358,7 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 391);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 434);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(343, 31);
             this.toolStrip1.TabIndex = 0;
@@ -439,28 +453,92 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(197, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Total";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Garante :";
             // 
-            // lblTotal
+            // txtGarante
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(235, 135);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(0, 13);
-            this.lblTotal.TabIndex = 38;
+            this.txtGarante.Location = new System.Drawing.Point(74, 74);
+            this.txtGarante.MaxLength = 200;
+            this.txtGarante.Name = "txtGarante";
+            this.txtGarante.ReadOnly = true;
+            this.txtGarante.Size = new System.Drawing.Size(191, 20);
+            this.txtGarante.TabIndex = 41;
+            // 
+            // btnBuscarGarante
+            // 
+            this.btnBuscarGarante.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarGarante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarGarante.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarGarante.Location = new System.Drawing.Point(275, 72);
+            this.btnBuscarGarante.Name = "btnBuscarGarante";
+            this.btnBuscarGarante.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarGarante.TabIndex = 40;
+            this.btnBuscarGarante.UseVisualStyleBackColor = false;
+            this.btnBuscarGarante.Click += new System.EventHandler(this.btnBuscarGarante_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 145);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "A cuenta :";
+            // 
+            // txtAcuenta
+            // 
+            this.txtAcuenta.Location = new System.Drawing.Point(77, 142);
+            this.txtAcuenta.Name = "txtAcuenta";
+            this.txtAcuenta.Size = new System.Drawing.Size(92, 20);
+            this.txtAcuenta.TabIndex = 43;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 167);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Velatorio día extra :";
+            // 
+            // txtVelatorioExtra
+            // 
+            this.txtVelatorioExtra.Location = new System.Drawing.Point(116, 164);
+            this.txtVelatorioExtra.Name = "txtVelatorioExtra";
+            this.txtVelatorioExtra.Size = new System.Drawing.Size(92, 20);
+            this.txtVelatorioExtra.TabIndex = 45;
+            // 
+            // cbAmbienteDescripcion
+            // 
+            this.cbAmbienteDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmbienteDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbAmbienteDescripcion.FormattingEnabled = true;
+            this.cbAmbienteDescripcion.Location = new System.Drawing.Point(219, 16);
+            this.cbAmbienteDescripcion.Name = "cbAmbienteDescripcion";
+            this.cbAmbienteDescripcion.Size = new System.Drawing.Size(87, 21);
+            this.cbAmbienteDescripcion.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(151, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Descripcion :";
             // 
             // InscripcionAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 424);
+            this.ClientSize = new System.Drawing.Size(919, 467);
             this.Controls.Add(this.splitContainer1);
             this.Name = "InscripcionAlquiler";
             this.Text = "InscripcionAlquiler";
@@ -497,8 +575,6 @@
         private System.Windows.Forms.ComboBox cbAmbiente;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtGarantia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnBuscarCliente;
@@ -522,5 +598,14 @@
         private System.Windows.Forms.DateTimePicker dtpHoraInicio;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtVelatorioExtra;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtAcuenta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtGarante;
+        private System.Windows.Forms.Button btnBuscarGarante;
+        private System.Windows.Forms.ComboBox cbAmbienteDescripcion;
+        private System.Windows.Forms.Label label9;
     }
 }

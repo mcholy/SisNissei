@@ -22,15 +22,29 @@ namespace Entities
             get { return nombrecliente; }
             set { nombrecliente = value; }
         }
+        private int idgarante;
 
-       
-        private double garantia;
-
-        public double Garantia
+        public int Idgarante
         {
-            get { return garantia; }
-            set { garantia = value; }
+            get { return idgarante; }
+            set { idgarante = value; }
         }
+        private string nombregarante;
+
+        public string Nombregarante
+        {
+            get { return nombregarante; }
+            set { nombregarante = value; }
+        }
+
+        private double acuenta;
+
+        public double Acuenta
+        {
+            get { return acuenta; }
+            set { acuenta = value; }
+        }
+       
         private DateTime horainicio;
 
         public DateTime Horainicio
