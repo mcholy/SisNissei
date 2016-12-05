@@ -81,6 +81,7 @@ namespace SisNissei
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            CargarDetalle();
         }
 
         

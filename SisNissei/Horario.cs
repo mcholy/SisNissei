@@ -125,6 +125,17 @@ namespace SisNissei
         {
             txtHorario.Text = string.Empty;
             txtduracion.Text = string.Empty;
+            regmod = 0;
+            idActual = 0;
+            cbCurso.SelectedValue = 0;
+            cbGrupoEtario.SelectedValue = 0;
+            chkLunes.Checked = false;
+            chkMartes.Checked = false;
+            chkMiercoles.Checked = false;
+            chkJueves.Checked = false;
+            chkViernes.Checked = false;
+            chkSabado.Checked = false;
+            chkDomingo.Checked = false;
             dgvDetalleHorario.Rows.Remove(dgvDetalleHorario.CurrentRow);
         }
 
@@ -139,8 +150,7 @@ namespace SisNissei
                 dgvHorario.Columns["idcurso"].Visible = false;
                 dgvHorario.Columns["idgrupoetario"].Visible = false;
                 dgvHorario.Columns["idhorario"].Visible = false;
-                dgvHorario.Columns["dia"].Visible = false;
-                
+                dgvHorario.Columns["dia"].Visible = false;                
                 dgvHorario.Columns["hora"].Visible = false;
                 dgvHorario.Columns["regmod"].Visible = false;
                 dgvHorario.Columns["fecharegistro"].Visible = false;
