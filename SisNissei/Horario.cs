@@ -152,8 +152,7 @@ namespace SisNissei
                 dgvHorario.Columns["idcurso"].Visible = false;
                 dgvHorario.Columns["idgrupoetario"].Visible = false;
                 dgvHorario.Columns["idhorario"].Visible = false;
-                dgvHorario.Columns["dia"].Visible = false;
-                
+                dgvHorario.Columns["dia"].Visible = false;                
                 dgvHorario.Columns["hora"].Visible = false;
                 dgvHorario.Columns["regmod"].Visible = false;
                 dgvHorario.Columns["fecharegistro"].Visible = false;

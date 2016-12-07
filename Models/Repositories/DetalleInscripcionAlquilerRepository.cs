@@ -79,6 +79,8 @@ namespace Models.Repositories
                         itemdetalle.Costos = Double.Parse(reader["costo"].ToString());
 
                         itemdetalle.Nombreambientes = reader["nombreambiente"].ToString();
+                        itemdetalle.Nombreambientedescripcion = reader
+                            ["nombreambientedescripcion"].ToString();
 
                         lista.Add(itemdetalle);
                     }

@@ -227,6 +227,7 @@ namespace SisNissei
                 dgvInscripcionAlquilerDetalle.Columns["estado"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["regmoddetalle"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["idambientes"].Visible = false;
+                dgvInscripcionAlquilerDetalle.Columns["idambientedescripcion"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["id"].Visible = false;
                 dgvInscripcionAlquilerDetalle.Columns["idalquiler"].Visible = false;
 
