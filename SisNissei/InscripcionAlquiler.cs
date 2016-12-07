@@ -86,7 +86,7 @@ namespace SisNissei
             dgvInscripcionAlquiler.ClearSelection();
             dgvInscripcionAlquiler.CurrentRow.Selected = false;
             dgvInscripcionAlquilerDetalle.ClearSelection();
-            dgvInscripcionAlquilerDetalle.CurrentRow.Selected = false;
+            //dgvInscripcionAlquilerDetalle.CurrentRow.Selected = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -56,9 +56,10 @@ namespace SisNissei
         //int miVariable = Int32 conversion a variable
         //    double var2 = Double.parse
 
-        private void CargarDetalle()
+        private void CargarDetalle(string filterNombre = "")
         {
-            dgvEmpresa.DataSource = servicio.Detalle();
+            //(BUSCAR) LINEA ACTUALIZADA
+            dgvEmpresa.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombre.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvEmpresa.RowCount > 0)
             {
                 dgvEmpresa.Columns["id"].Visible = false;
@@ -141,6 +142,14 @@ namespace SisNissei
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = string.Empty;
+            busqueda = txtBuscar.Text.Trim();
+            CargarDetalle(filterNombre: busqueda);
+        }
+
         #region Singleton
         private static Empresa m_FormDefInstance;
         public static Empresa DefInstance
@@ -157,5 +166,7 @@ namespace SisNissei
             }
         }
         #endregion
+
+
     }
 }
