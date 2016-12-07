@@ -45,7 +45,7 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleHorario_Guardar";
-                cmd.Parameters.AddWithValue("@id", item.IdHorario);
+                cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@idhorario", item.IdHorario);
                 cmd.Parameters.AddWithValue("@hora", item.Hora);
                 cmd.Parameters.AddWithValue("@dia", item.Dia);
@@ -133,6 +133,24 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Horario_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Respuesta = reader["respuesta"].ToString();
+                }
+                return resultado;
+            }
+        }
+        public ResultadoEntity EliminarDetalle(HorarioEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_DetalleHorario_Eliminar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 resultado = new ResultadoEntity();
                 var reader = cmd.ExecuteReader();

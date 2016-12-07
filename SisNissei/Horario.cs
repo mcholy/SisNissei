@@ -67,17 +67,19 @@ namespace SisNissei
 
         private void PasarDatosDGV()
         {
-            rowDetalle = new string[] { BuildingStringDays(), txtHorario.Text, TextoDias() };
+            rowDetalle = new string[] { BuildingStringDays(), txtHorario.Text, TextoDias(),"0" };
             dgvDetalleHorario.Rows.Add(rowDetalle);
         }
 
         private void CrearColumnasDGV()
         {
-            dgvDetalleHorario.ColumnCount = 3;
+            dgvDetalleHorario.ColumnCount = 4;
             dgvDetalleHorario.Columns[0].Name = "CODIGO";
             dgvDetalleHorario.Columns[0].Visible = false;
             dgvDetalleHorario.Columns[1].Name = "HORARIO";
             dgvDetalleHorario.Columns[2].Name = "DIA";
+            dgvDetalleHorario.Columns[3].Name = "ID";
+            //dgvDetalleHorario.Columns[3].Visible = false;
         }
 
 
@@ -125,6 +127,17 @@ namespace SisNissei
         {
             txtHorario.Text = string.Empty;
             txtduracion.Text = string.Empty;
+            cbCurso.SelectedValue = 0;
+            cbGrupoEtario.SelectedValue = 0;
+            regmod = 0;
+            idActual = 0;
+            chkLunes.Checked = false;
+            chkMartes.Checked = false;
+            chkMiercoles.Checked = false;
+            chkJueves.Checked = false;
+            chkViernes.Checked = false;
+            chkSabado.Checked = false;
+            chkDomingo.Checked = false;
             dgvDetalleHorario.Rows.Remove(dgvDetalleHorario.CurrentRow);
         }
 
@@ -177,8 +190,10 @@ namespace SisNissei
                 foreach (DataGridViewRow fila in dgvDetalleHorario.Rows)
                 {
                     //Accediendo por el nombre de la columna
+                    
                     item.Hora = fila.Cells["HORARIO"].Value.ToString();
                     item.Dia = fila.Cells["CODIGO"].Value.ToString();
+                    item.Id = Int32.Parse(fila.Cells["ID"].Value.ToString());
                     //Accediendo con el indice de la columna
                     //item.Hora=fila.Cells[1].Value.ToString();
                     resultado = servicio.GuardarDetalle(item);
@@ -271,12 +286,48 @@ namespace SisNissei
             foreach (HorarioEntity valor in lista)
             {
                 
-                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia) };
+                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia),valor.Id.ToString() };
                 dgvDetalleHorario.Rows.Add(rowDetalle);
                 dgvDetalleHorario.ClearSelection();
             }
             
         }
 
+        private void dgvDetalleHorario_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            if (dgvDetalleHorario.RowCount > 0)
+            {
+                if (dgvDetalleHorario.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Está seguro de eliminar este registro?", "SisNisei",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        EliminarDetalle();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado.");
+                }
+            }
+        }
+        private void EliminarDetalle()
+        {
+            item = new HorarioEntity();
+            item.Id = Int32.Parse(dgvDetalleHorario.CurrentRow.Cells["id"].Value.ToString());
+            resultado = new ResultadoEntity();
+            resultado = servicio.EliminarDetalle(item);
+            if (Int32.Parse(resultado.Respuesta) == 1)
+            {
+                //Limpiar();
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+                CargarDetalle();
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

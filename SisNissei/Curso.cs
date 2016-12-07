@@ -42,6 +42,9 @@ namespace SisNissei
             txtEmpleado.Text = string.Empty;
             txtInicial.Text = string.Empty;
             txtMensualidad.Text = string.Empty;
+            idActual = 0;
+            regmod = 0;
+
         }
         private void Guardar()
         {
@@ -185,5 +188,10 @@ namespace SisNissei
             }
         }
         #endregion
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

@@ -46,5 +46,11 @@ namespace Models.Services
         {
             return new HorarioRepository().Listar(idcurso);
         }
+        public ResultadoEntity EliminarDetalle(HorarioEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.EliminarDetalle(item);
+            return resultado;
+        }
     }
 }

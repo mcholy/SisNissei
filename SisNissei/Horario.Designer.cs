@@ -43,6 +43,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDetalleHorario = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtduracion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.btnHora = new System.Windows.Forms.Button();
@@ -60,8 +62,6 @@
             this.chkMiercoles = new System.Windows.Forms.CheckBox();
             this.chkMartes = new System.Windows.Forms.CheckBox();
             this.chkLunes = new System.Windows.Forms.CheckBox();
-            this.txtduracion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -181,6 +181,7 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(36, 28);
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // label2
             // 
@@ -237,6 +238,7 @@
             this.dgvDetalleHorario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleHorario.Size = new System.Drawing.Size(323, 110);
             this.dgvDetalleHorario.TabIndex = 2;
+            this.dgvDetalleHorario.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvDetalleHorario_UserDeletingRow);
             // 
             // groupBox2
             // 
@@ -258,6 +260,22 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Duración (Meses)";
+            // 
+            // txtduracion
+            // 
+            this.txtduracion.Location = new System.Drawing.Point(276, 88);
+            this.txtduracion.Name = "txtduracion";
+            this.txtduracion.Size = new System.Drawing.Size(43, 20);
+            this.txtduracion.TabIndex = 19;
             // 
             // label4
             // 
@@ -424,22 +442,6 @@
             this.chkLunes.TabIndex = 5;
             this.chkLunes.Text = "Lunes";
             this.chkLunes.UseVisualStyleBackColor = true;
-            // 
-            // txtduracion
-            // 
-            this.txtduracion.Location = new System.Drawing.Point(276, 88);
-            this.txtduracion.Name = "txtduracion";
-            this.txtduracion.Size = new System.Drawing.Size(43, 20);
-            this.txtduracion.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Duración (Meses)";
             // 
             // Horario
             // 
