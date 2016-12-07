@@ -32,9 +32,9 @@ namespace SisNissei
         private int idActualDetalle = 0;
         private int regmod = 0;
         private int regmoddetalle = 0;
-       
 
-        public InscripcionAlumno()            
+
+        public InscripcionAlumno()
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
@@ -57,7 +57,7 @@ namespace SisNissei
                 m_FormDefInstance = value;
             }
         }
-        #endregion   
+        #endregion
         private void ListarCursos()
         {
             cbCurso.DisplayMember = "Nombre";
@@ -65,7 +65,7 @@ namespace SisNissei
             cbCurso.DataSource = new CursoService().Listar();
         }
 
-private void InsertarCodigo()
+        private void InsertarCodigo()
         {
             txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
         }
@@ -200,6 +200,8 @@ private void InsertarCodigo()
                 dgvInscripcionAlumno.Columns["idcliente"].Visible = false;
                 dgvInscripcionAlumno.Columns["idapoderado"].Visible = false;
                 dgvInscripcionAlumno.Columns["regmod"].Visible = false;
+
+
                 dgvInscripcionAlumno.Columns["nombre"].DisplayIndex = 1;
                 dgvInscripcionAlumno.Columns["nombrecliente"].DisplayIndex = 2;
                 dgvInscripcionAlumno.ClearSelection();
@@ -219,6 +221,7 @@ private void InsertarCodigo()
                 dgvInscripcionAlumnoDetalle.Columns["idempresa"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["idperiodo"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["idhorario"].Visible = false;
+                dgvInscripcionAlumnoDetalle.Columns["fecharegistro"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["idinscripcionalumno"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["id"].Visible = false;
 
@@ -277,8 +280,6 @@ private void InsertarCodigo()
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-
-
         {
             if (txtCliente.Text == "")
             {
@@ -287,13 +288,16 @@ private void InsertarCodigo()
             else
             {
                 if (txtApoderado.Text == "")
-            {
-                MessageBox.Show("Se debe seleccionar al apoderado antes de matricular a un alumno");
-            }else{
-           
-                Guardar();
-                regmod = 0;
-            }}
+                {
+                    MessageBox.Show("Se debe seleccionar al apoderado antes de matricular a un alumno");
+                }
+                else
+                {
+
+                    Guardar();
+                    regmod = 0;
+                }
+            }
         }
         private void ListarHorarioEtario(int idcurso)
         {
@@ -335,25 +339,30 @@ private void InsertarCodigo()
 
         private void btnGuardarDetalle_Click(object sender, EventArgs e)
         {
-            if (Int32.Parse(idActual.ToString())==0)
-               {
+            if (Int32.Parse(idActual.ToString()) == 0)
+            {
                 MessageBox.Show("Se debe guardar el alumno antes de inscribirlo a un curso");
-              if (txtCliente.Text == "")
+                if (txtCliente.Text == "")
                 {
                     MessageBox.Show("Se debe seleccionar al alumno antes de inscribirlo a un curso");
-                          
+
                 }
             }
-            else {
+            else
+            {
 
                 if (cbCurso.SelectedIndex == 0)
                 {
                     MessageBox.Show("Debe seleccionarse un curso.");
-                }else{
+                }
+                else
+                {
                     if (txtEmpresa.Text == "")
                     {
                         MessageBox.Show("Debe seleccionarse una Empresa.");
-                    }else{
+                    }
+                    else
+                    {
                         if (cbPeriodo.SelectedIndex == 0)
                         {
                             MessageBox.Show("Debe seleccionarse un Periodo.");
@@ -365,7 +374,7 @@ private void InsertarCodigo()
                         }
                     }
                 }
-               
+
             }
 
 
@@ -394,7 +403,7 @@ private void InsertarCodigo()
                     MessageBox.Show("No hay ningún registro seleccionado");
                 }
             }
-           
+
         }
 
         private void btnEliminarDetalle_Click(object sender, EventArgs e)
@@ -425,18 +434,32 @@ private void InsertarCodigo()
             LimpiarDetalle();
         }
 
+        private void imprimir()
+        {
+            item2.Id = Int32.Parse(dgvInscripcionAlumno.CurrentRow.Cells["id"].Value.ToString());
+
+            DatosAlumno ds = servicio.ReporteSocio(item2);
+            SocioReporte rpt = new SocioReporte();
+            rpt.SetDataSource(ds);
+            SocioReporteFormulario frmReporte = new SocioReporteFormulario();
+            frmReporte.rp_socio.ReportSource = rpt;
+            frmReporte.ShowDialog();
+
+        }
         private void btnFicha_Click(object sender, EventArgs e)
         {
-            if (dgvInscripcionAlumno.CurrentRow.Selected == true)
+            if (dgvInscripcionAlumno.RowCount > 0)
             {
-                AlumnoReporteFormulariocs objreporte = new AlumnoReporteFormulariocs();
-                idActual = Int32.Parse(dgvInscripcionAlumno.CurrentRow.Cells["id"].Value.ToString());
-                objreporte.id = idActual;
-                objreporte.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No hay ningún registro seleccionado");
+                if (dgvInscripcionAlumno.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Esta seguro de imprimir este registro?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        imprimir();
+                    }
+                }
+                else
+
+                    MessageBox.Show("No hay ni un registro seleccionado.");
             }
         }
 

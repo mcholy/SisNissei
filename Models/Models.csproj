@@ -50,6 +50,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DatosAlumno.cs">
+      <DependentUpon>DatosAlumno.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatosAlumno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosAlumno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosSocio.cs">
+      <DependentUpon>DatosSocio.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DatosSocio.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +128,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DatosAlumno.xsc">
+      <DependentUpon>DatosAlumno.xsd</DependentUpon>
+    </None>
+    <None Include="DatosAlumno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosAlumno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosAlumno.xss">
+      <DependentUpon>DatosAlumno.xsd</DependentUpon>
+    </None>
     <None Include="DatosSocio.xsc">
       <DependentUpon>DatosSocio.xsd</DependentUpon>
     </None>

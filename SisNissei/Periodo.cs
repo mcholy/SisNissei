@@ -31,7 +31,7 @@ namespace SisNissei
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            itemValidacion.SoloLetras(e);
+          
         }
         private void CargarDetalle()
         {
