@@ -12,7 +12,7 @@
   <xs:element name="DatosAlumno" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosAlumno" msprop:Generator_UserDSName="DatosAlumno">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TablaAlumno" msprop:Generator_TableClassName="TablaAlumnoDataTable" msprop:Generator_TableVarName="tableTablaAlumno" msprop:Generator_TablePropName="TablaAlumno" msprop:Generator_RowDeletingName="TablaAlumnoRowDeleting" msprop:Generator_RowChangingName="TablaAlumnoRowChanging" msprop:Generator_RowEvHandlerName="TablaAlumnoRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaAlumnoRowDeleted" msprop:Generator_UserTableName="TablaAlumno" msprop:Generator_RowChangedName="TablaAlumnoRowChanged" msprop:Generator_RowEvArgName="TablaAlumnoRowChangeEvent" msprop:Generator_RowClassName="TablaAlumnoRow">
+        <xs:element name="TablaAlumno" msprop:Generator_TableClassName="TablaAlumnoDataTable" msprop:Generator_TableVarName="tableTablaAlumno" msprop:Generator_RowChangedName="TablaAlumnoRowChanged" msprop:Generator_TablePropName="TablaAlumno" msprop:Generator_RowDeletingName="TablaAlumnoRowDeleting" msprop:Generator_RowChangingName="TablaAlumnoRowChanging" msprop:Generator_RowEvHandlerName="TablaAlumnoRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaAlumnoRowDeleted" msprop:Generator_RowClassName="TablaAlumnoRow" msprop:Generator_UserTableName="TablaAlumno" msprop:Generator_RowEvArgName="TablaAlumnoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -29,6 +29,7 @@
               <xs:element name="empresa" msprop:Generator_ColumnVarNameInTable="columnempresa" msprop:Generator_ColumnPropNameInRow="empresa" msprop:Generator_ColumnPropNameInTable="empresaColumn" msprop:Generator_UserColumnName="empresa" type="xs:string" minOccurs="0" />
               <xs:element name="periodo" msprop:Generator_ColumnVarNameInTable="columnperiodo" msprop:Generator_ColumnPropNameInRow="periodo" msprop:Generator_ColumnPropNameInTable="periodoColumn" msprop:Generator_UserColumnName="periodo" type="xs:string" minOccurs="0" />
               <xs:element name="fechainscripcioncurso" msprop:Generator_ColumnVarNameInTable="columnfechainscripcioncurso" msprop:Generator_ColumnPropNameInRow="fechainscripcioncurso" msprop:Generator_ColumnPropNameInTable="fechainscripcioncursoColumn" msprop:Generator_UserColumnName="fechainscripcioncurso" type="xs:string" minOccurs="0" />
+              <xs:element name="fechadia" msprop:Generator_ColumnVarNameInTable="columnfechadia" msprop:Generator_ColumnPropNameInRow="fechadia" msprop:Generator_ColumnPropNameInTable="fechadiaColumn" msprop:Generator_UserColumnName="fechadia" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

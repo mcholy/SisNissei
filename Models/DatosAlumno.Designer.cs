@@ -307,6 +307,8 @@ namespace Models {
             
             private global::System.Data.DataColumn columnfechainscripcioncurso;
             
+            private global::System.Data.DataColumn columnfechadia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TablaAlumnoDataTable() {
@@ -454,6 +456,14 @@ namespace Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechadiaColumn {
+                get {
+                    return this.columnfechadia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +499,7 @@ namespace Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TablaAlumnoRow AddTablaAlumnoRow(string id, string nombre, string apellidocliente, string nombrecliente, string fechanacimiento, string distrito, string direccion, string dni, string nombreapoderado, string curso, string horario, string empresa, string periodo, string fechainscripcioncurso) {
+            public TablaAlumnoRow AddTablaAlumnoRow(string id, string nombre, string apellidocliente, string nombrecliente, string fechanacimiento, string distrito, string direccion, string dni, string nombreapoderado, string curso, string horario, string empresa, string periodo, string fechainscripcioncurso, string fechadia) {
                 TablaAlumnoRow rowTablaAlumnoRow = ((TablaAlumnoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -505,7 +515,8 @@ namespace Models {
                         horario,
                         empresa,
                         periodo,
-                        fechainscripcioncurso};
+                        fechainscripcioncurso,
+                        fechadia};
                 rowTablaAlumnoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTablaAlumnoRow);
                 return rowTablaAlumnoRow;
@@ -542,6 +553,7 @@ namespace Models {
                 this.columnempresa = base.Columns["empresa"];
                 this.columnperiodo = base.Columns["periodo"];
                 this.columnfechainscripcioncurso = base.Columns["fechainscripcioncurso"];
+                this.columnfechadia = base.Columns["fechadia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +587,8 @@ namespace Models {
                 base.Columns.Add(this.columnperiodo);
                 this.columnfechainscripcioncurso = new global::System.Data.DataColumn("fechainscripcioncurso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechainscripcioncurso);
+                this.columnfechadia = new global::System.Data.DataColumn("fechadia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechadia);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -942,6 +956,22 @@ namespace Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fechadia {
+                get {
+                    try {
+                        return ((string)(this[this.tableTablaAlumno.fechadiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechadia\' de la tabla \'TablaAlumno\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTablaAlumno.fechadiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tableTablaAlumno.idColumn);
             }
@@ -1106,6 +1136,18 @@ namespace Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetfechainscripcioncursoNull() {
                 this[this.tableTablaAlumno.fechainscripcioncursoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfechadiaNull() {
+                return this.IsNull(this.tableTablaAlumno.fechadiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfechadiaNull() {
+                this[this.tableTablaAlumno.fechadiaColumn] = global::System.Convert.DBNull;
             }
         }
         
