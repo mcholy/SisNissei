@@ -98,5 +98,20 @@ namespace Entities
             get { return periodo; }
             set { periodo = value; }
         }
+
+        private string fechaincripcioncurso;
+
+        public string Fechaincripcioncurso
+        {
+            get { return fechaincripcioncurso; }
+            set { fechaincripcioncurso = value; }
+        }
+        private string fechadia;
+
+        public string Fechadia
+        {
+            get { return fechadia; }
+            set { fechadia = value; }
+        }
     }
 }

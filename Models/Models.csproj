@@ -85,6 +85,7 @@
     <Compile Include="Repositories\InscripcionAlquilerRepository.cs" />
     <Compile Include="Repositories\InscripcionAlumnoRepository.cs" />
     <Compile Include="Repositories\InscripcionSocioRepository.cs" />
+    <Compile Include="Repositories\ReporteAlumnoRepository.cs" />
     <Compile Include="Repositories\ReporteSocioRepository.cs" />
     <Compile Include="Repositories\SocioReporte.cs" />
     <Compile Include="Repositories\TipoEgresoRepository.cs" />

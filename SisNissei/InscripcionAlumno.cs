@@ -9,16 +9,20 @@ using System.Windows.Forms;
 using SisNissei.Template;
 using Models.Services;
 using Entities;
+using System.Data.SqlClient;
+using Models;
 
 namespace SisNissei
 {
     public partial class InscripcionAlumno : Form
     {
+        #region Propiedades
         private Validacion itemValidacion = new Validacion();
         private InscripcionAlumnoEntity item = new InscripcionAlumnoEntity();
         private InscripcionAlumnoService servicio = new InscripcionAlumnoService();
         private DetalleInscripcionAlumnoEntity itemdetalle = new DetalleInscripcionAlumnoEntity();
         private DetalleInscripcionAlumnoService serviciodetalle = new DetalleInscripcionAlumnoService();
+        ReporteInscripcionAlumnoEntity item2 = new ReporteInscripcionAlumnoEntity();
         private int idCliente = 0;
         private int idApoderado = 0;
         private string nombreCliente = "";
@@ -32,7 +36,7 @@ namespace SisNissei
         private int idActualDetalle = 0;
         private int regmod = 0;
         private int regmoddetalle = 0;
-
+        #endregion
 
         public InscripcionAlumno()
         {
@@ -438,11 +442,11 @@ namespace SisNissei
         {
             item2.Id = Int32.Parse(dgvInscripcionAlumno.CurrentRow.Cells["id"].Value.ToString());
 
-            DatosAlumno ds = servicio.ReporteSocio(item2);
-            SocioReporte rpt = new SocioReporte();
-            rpt.SetDataSource(ds);
-            SocioReporteFormulario frmReporte = new SocioReporteFormulario();
-            frmReporte.rp_socio.ReportSource = rpt;
+            DatosAlumno da = servicio.ReporteAlumno(item2);
+            AlumnoReporte rpt = new AlumnoReporte();
+            rpt.SetDataSource(da);
+            AlumnoReporteFormulariocs frmReporte = new AlumnoReporteFormulariocs();
+            frmReporte.rp_alumno.ReportSource = rpt;
             frmReporte.ShowDialog();
 
         }

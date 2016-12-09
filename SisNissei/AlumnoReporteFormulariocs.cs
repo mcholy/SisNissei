@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Resources;
 using SisNissei.Template;
 using System.Data.SqlClient;
+using Models.Services;
 
 
 namespace SisNissei
@@ -23,9 +24,7 @@ namespace SisNissei
 
         private void AlumnoReporteFormulariocs_Load(object sender, EventArgs e)
         {
-            AlumnoReporte objReporte = new AlumnoReporte();
-            objReporte.SetParameterValue("@id", id);
-            rp_alumno.ReportSource = objReporte;
+
         }
     }
 }
