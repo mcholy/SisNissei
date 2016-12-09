@@ -17,12 +17,14 @@ namespace Models.Repositories
             using(var conn=new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
+              
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_InscripcionALumno_Reporte";
                 cmd.Parameters.AddWithValue("@id", item2.Id);
                 using (var reader = cmd.ExecuteReader())
                 {
+                  
                     ReporteInscripcionAlumnoEntity item = new ReporteInscripcionAlumnoEntity();
                     while (reader.Read())
                     {
@@ -40,10 +42,12 @@ namespace Models.Repositories
                         item.Periodo = reader["periodo"].ToString();
                         item.Fechaincripcioncurso = reader["fechainscripcioncurso"].ToString();
                         item.Fechadia = reader["fechadia"].ToString();
-                    }
-                    da.Tables["TablaAlumno"].Rows.Add(new Object[] {item.Id,item.Nombre,item.Apellidocliente,
+
+                        da.Tables["TablaAlumno"].Rows.Add(new Object[] {item.Id,item.Nombre,item.Apellidocliente,
                         item.Nombrecliente,item.Fechadenacimiento,item.Distrito1,item.Direccion,item.Dni,
                         item.Nombreapoderado,item.Curso,item.Horario,item.Empresa,item.Periodo,item.Fechaincripcioncurso,item.Fechadia});
+                    }
+                   
                 }
                 return da;
             }
