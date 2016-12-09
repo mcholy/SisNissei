@@ -57,6 +57,6 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rp_alumno;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer rp_alumno;
     }
 }
