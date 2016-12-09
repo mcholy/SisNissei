@@ -95,6 +95,7 @@ namespace Models.Repositories
                         item.Nombre = reader["Nombre"].ToString();
                         item.Idcliente = Int32.Parse(reader["idcliente"].ToString());
                         item.Nombrecliente = reader["nombrecliente"].ToString();
+                        item.Idgarante = Int32.Parse(reader["idgarante"].ToString());
                         item.Nombregarante = reader["nombregarante"].ToString();
                         item.Acuenta=double.Parse(reader["acuenta"].ToString());                        
                         item.Fechainicioalquiler = reader["fechahorainicio"].ToString();
