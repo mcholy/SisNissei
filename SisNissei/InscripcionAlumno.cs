@@ -238,9 +238,9 @@ namespace SisNissei
             ListarCursos();
             ListarPeriodos();
             dgvInscripcionAlumno.ClearSelection();
-            dgvInscripcionAlumno.CurrentRow.Selected = false;
             dgvInscripcionAlumnoDetalle.ClearSelection();
-            dgvInscripcionAlumnoDetalle.CurrentRow.Selected = false;
+            //Se mueve los RowSelect a un método llamado UnSelectDGV
+            UnSelectDGV();
             txtBuscar.Focus();
         }
         private void LlenarControles()
@@ -308,6 +308,18 @@ namespace SisNissei
             cbHorario.DisplayMember = "Nombre";
             cbHorario.ValueMember = "Id";
             cbHorario.DataSource = new HorarioService().Listar(idcurso);
+        }
+
+        private void UnSelectDGV()
+        {
+            if (dgvInscripcionAlumno.RowCount > 0)
+            {
+                dgvInscripcionAlumno.CurrentRow.Selected = false;
+            }
+            if (dgvInscripcionAlumnoDetalle.RowCount > 0)
+            {
+                dgvInscripcionAlumnoDetalle.CurrentRow.Selected = false;
+            }
         }
 
         private void cbCurso_SelectedIndexChanged(object sender, EventArgs e)
