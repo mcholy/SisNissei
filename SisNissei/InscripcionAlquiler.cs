@@ -62,9 +62,13 @@ namespace SisNissei
             idCliente = 0;
             idGarante = 0;
             txtCliente.Text = string.Empty;
+            txtGarante.Text = string.Empty;
+            txtTipoEvento.Text = string.Empty;
             txtAcuenta.Text = string.Empty;
             lblTotal.Text = string.Empty;
             sumatoria = 0;
+            regmod = 0;
+            CargarDetalleDetalle(idActual);
             dtpHoraFin.ResetText();
             dtpHoraInicio.ResetText();
             LimpiarDetalle();
@@ -115,6 +119,7 @@ namespace SisNissei
             item.Horainicio = DateTime.Parse(dtpHoraInicio.Value.ToString());
             item.Horafin = DateTime.Parse(dtpHoraFin.Value.ToString());
             item.Acuenta = double.Parse(txtAcuenta.Text);
+            item.Tipoevento = txtTipoEvento.Text;
             item.Regmod = regmod;
             InscripcionAlquilerService servicio = new InscripcionAlquilerService();
             int respuesta = servicio.Guardar(item);
@@ -193,7 +198,7 @@ namespace SisNissei
             idActual = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["id"].Value.ToString());
             idCliente = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idcliente"].Value.ToString());
             idGarante=Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idgarante"].Value.ToString());
-
+            txtTipoEvento.Text = dgvInscripcionAlquiler.CurrentRow.Cells["tipoevento"].Value.ToString();
             txtCliente.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombrecliente"].Value.ToString();
             txtGarante.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombregarante"].Value.ToString();
             txtAcuenta.Text = dgvInscripcionAlquiler.CurrentRow.Cells["acuenta"].Value.ToString();

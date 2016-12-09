@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbAmbienteDescripcion = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnEliminarDetalle = new System.Windows.Forms.Button();
             this.btnGuardarDetalle = new System.Windows.Forms.Button();
             this.NuevoDetalle = new System.Windows.Forms.Button();
@@ -38,6 +40,11 @@
             this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtAcuenta = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtGarante = new System.Windows.Forms.TextBox();
+            this.btnBuscarGarante = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpHoraFin = new System.Windows.Forms.DateTimePicker();
@@ -61,13 +68,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtGarante = new System.Windows.Forms.TextBox();
-            this.btnBuscarGarante = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtAcuenta = new System.Windows.Forms.TextBox();
-            this.cbAmbienteDescripcion = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTipoEvento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -101,7 +103,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlquiler);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(919, 467);
+            this.splitContainer1.Size = new System.Drawing.Size(919, 502);
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -116,12 +118,31 @@
             this.groupBox3.Controls.Add(this.dgvInscripcionAlquilerDetalle);
             this.groupBox3.Controls.Add(this.cbAmbiente);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(16, 217);
+            this.groupBox3.Location = new System.Drawing.Point(16, 246);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(318, 214);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ambientes";
+            // 
+            // cbAmbienteDescripcion
+            // 
+            this.cbAmbienteDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAmbienteDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbAmbienteDescripcion.FormattingEnabled = true;
+            this.cbAmbienteDescripcion.Location = new System.Drawing.Point(219, 16);
+            this.cbAmbienteDescripcion.Name = "cbAmbienteDescripcion";
+            this.cbAmbienteDescripcion.Size = new System.Drawing.Size(87, 21);
+            this.cbAmbienteDescripcion.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(151, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Descripcion :";
             // 
             // btnEliminarDetalle
             // 
@@ -199,6 +220,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtTipoEvento);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtAcuenta);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label3);
@@ -217,15 +240,61 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 169);
+            this.groupBox2.Size = new System.Drawing.Size(318, 198);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // txtAcuenta
+            // 
+            this.txtAcuenta.Location = new System.Drawing.Point(77, 170);
+            this.txtAcuenta.Name = "txtAcuenta";
+            this.txtAcuenta.Size = new System.Drawing.Size(92, 20);
+            this.txtAcuenta.TabIndex = 43;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "A cuenta :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Garante :";
+            // 
+            // txtGarante
+            // 
+            this.txtGarante.Location = new System.Drawing.Point(74, 74);
+            this.txtGarante.MaxLength = 200;
+            this.txtGarante.Name = "txtGarante";
+            this.txtGarante.ReadOnly = true;
+            this.txtGarante.Size = new System.Drawing.Size(191, 20);
+            this.txtGarante.TabIndex = 41;
+            // 
+            // btnBuscarGarante
+            // 
+            this.btnBuscarGarante.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarGarante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarGarante.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarGarante.Location = new System.Drawing.Point(275, 72);
+            this.btnBuscarGarante.Name = "btnBuscarGarante";
+            this.btnBuscarGarante.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarGarante.TabIndex = 40;
+            this.btnBuscarGarante.UseVisualStyleBackColor = false;
+            this.btnBuscarGarante.Click += new System.EventHandler(this.btnBuscarGarante_Click);
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(242, 145);
+            this.lblTotal.Location = new System.Drawing.Point(242, 173);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 13);
             this.lblTotal.TabIndex = 38;
@@ -233,7 +302,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(205, 145);
+            this.label6.Location = new System.Drawing.Point(205, 173);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 37;
@@ -242,7 +311,7 @@
             // dtpHoraFin
             // 
             this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraFin.Location = new System.Drawing.Point(124, 122);
+            this.dtpHoraFin.Location = new System.Drawing.Point(124, 150);
             this.dtpHoraFin.Name = "dtpHoraFin";
             this.dtpHoraFin.Size = new System.Drawing.Size(111, 20);
             this.dtpHoraFin.TabIndex = 36;
@@ -250,7 +319,7 @@
             // dtpHoraInicio
             // 
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 97);
+            this.dtpHoraInicio.Location = new System.Drawing.Point(124, 125);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
             this.dtpHoraInicio.Size = new System.Drawing.Size(111, 20);
             this.dtpHoraInicio.TabIndex = 35;
@@ -258,7 +327,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 125);
+            this.label5.Location = new System.Drawing.Point(14, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 27;
@@ -267,7 +336,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 102);
+            this.label4.Location = new System.Drawing.Point(14, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 24;
@@ -355,7 +424,7 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 434);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 469);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(343, 31);
             this.toolStrip1.TabIndex = 0;
@@ -418,7 +487,7 @@
             this.dgvInscripcionAlquiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcionAlquiler.Location = new System.Drawing.Point(9, 59);
             this.dgvInscripcionAlquiler.Name = "dgvInscripcionAlquiler";
-            this.dgvInscripcionAlquiler.Size = new System.Drawing.Size(533, 339);
+            this.dgvInscripcionAlquiler.Size = new System.Drawing.Size(548, 438);
             this.dgvInscripcionAlquiler.TabIndex = 1;
             // 
             // groupBox1
@@ -450,76 +519,27 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Garante :";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 103);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Tipo de Evento :";
             // 
-            // txtGarante
+            // txtTipoEvento
             // 
-            this.txtGarante.Location = new System.Drawing.Point(74, 74);
-            this.txtGarante.MaxLength = 200;
-            this.txtGarante.Name = "txtGarante";
-            this.txtGarante.ReadOnly = true;
-            this.txtGarante.Size = new System.Drawing.Size(191, 20);
-            this.txtGarante.TabIndex = 41;
-            // 
-            // btnBuscarGarante
-            // 
-            this.btnBuscarGarante.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarGarante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarGarante.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarGarante.Location = new System.Drawing.Point(275, 72);
-            this.btnBuscarGarante.Name = "btnBuscarGarante";
-            this.btnBuscarGarante.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarGarante.TabIndex = 40;
-            this.btnBuscarGarante.UseVisualStyleBackColor = false;
-            this.btnBuscarGarante.Click += new System.EventHandler(this.btnBuscarGarante_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 145);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "A cuenta :";
-            // 
-            // txtAcuenta
-            // 
-            this.txtAcuenta.Location = new System.Drawing.Point(77, 142);
-            this.txtAcuenta.Name = "txtAcuenta";
-            this.txtAcuenta.Size = new System.Drawing.Size(92, 20);
-            this.txtAcuenta.TabIndex = 43;
-            // 
-            // cbAmbienteDescripcion
-            // 
-            this.cbAmbienteDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAmbienteDescripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbAmbienteDescripcion.FormattingEnabled = true;
-            this.cbAmbienteDescripcion.Location = new System.Drawing.Point(219, 16);
-            this.cbAmbienteDescripcion.Name = "cbAmbienteDescripcion";
-            this.cbAmbienteDescripcion.Size = new System.Drawing.Size(87, 21);
-            this.cbAmbienteDescripcion.TabIndex = 28;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(151, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Descripcion :";
+            this.txtTipoEvento.Location = new System.Drawing.Point(100, 100);
+            this.txtTipoEvento.Name = "txtTipoEvento";
+            this.txtTipoEvento.Size = new System.Drawing.Size(206, 20);
+            this.txtTipoEvento.TabIndex = 45;
             // 
             // InscripcionAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 467);
+            this.ClientSize = new System.Drawing.Size(919, 502);
             this.Controls.Add(this.splitContainer1);
             this.Name = "InscripcionAlquiler";
             this.Text = "InscripcionAlquiler";
@@ -586,5 +606,7 @@
         private System.Windows.Forms.Button btnBuscarGarante;
         private System.Windows.Forms.ComboBox cbAmbienteDescripcion;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTipoEvento;
+        private System.Windows.Forms.Label label8;
     }
 }

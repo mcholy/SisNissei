@@ -81,7 +81,13 @@ namespace Entities
             set { fechafinalquiler = value; }
         }
 
+        private string tipoevento;
 
+        public string Tipoevento
+        {
+            get { return tipoevento; }
+            set { tipoevento = value; }
+        }
 
     }
 }

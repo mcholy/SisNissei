@@ -42,7 +42,6 @@ namespace Models.Repositories
                         item.Periodo = reader["periodo"].ToString();
                         item.Fechaincripcioncurso = reader["fechainscripcioncurso"].ToString();
                         item.Fechadia = reader["fechadia"].ToString();
-
                         da.Tables["TablaAlumno"].Rows.Add(new Object[] {item.Id,item.Nombre,item.Apellidocliente,
                         item.Nombrecliente,item.Fechadenacimiento,item.Distrito1,item.Direccion,item.Dni,
                         item.Nombreapoderado,item.Curso,item.Horario,item.Empresa,item.Periodo,item.Fechaincripcioncurso,item.Fechadia});
