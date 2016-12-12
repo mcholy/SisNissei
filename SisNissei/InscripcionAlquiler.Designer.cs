@@ -40,6 +40,8 @@
             this.cbAmbiente = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTipoEvento = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtAcuenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,8 +70,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTipoEvento = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -244,6 +245,22 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // txtTipoEvento
+            // 
+            this.txtTipoEvento.Location = new System.Drawing.Point(100, 100);
+            this.txtTipoEvento.Name = "txtTipoEvento";
+            this.txtTipoEvento.Size = new System.Drawing.Size(206, 20);
+            this.txtTipoEvento.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 103);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Tipo de Evento :";
             // 
             // txtAcuenta
             // 
@@ -423,7 +440,8 @@
             this.btnModificar,
             this.btnCancelar,
             this.btnGuardar,
-            this.btnEliminar});
+            this.btnEliminar,
+            this.btnImprimir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 469);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(343, 31);
@@ -519,21 +537,15 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // btnImprimir
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 103);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Tipo de Evento :";
-            // 
-            // txtTipoEvento
-            // 
-            this.txtTipoEvento.Location = new System.Drawing.Point(100, 100);
-            this.txtTipoEvento.Name = "txtTipoEvento";
-            this.txtTipoEvento.Size = new System.Drawing.Size(206, 20);
-            this.txtTipoEvento.TabIndex = 45;
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(36, 28);
+            this.btnImprimir.Text = "toolStripButton1";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // InscripcionAlquiler
             // 
@@ -608,5 +620,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTipoEvento;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStripButton btnImprimir;
     }
 }

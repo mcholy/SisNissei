@@ -197,7 +197,7 @@ namespace SisNissei
         {
             idActual = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["id"].Value.ToString());
             idCliente = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idcliente"].Value.ToString());
-            idGarante=Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idgarante"].Value.ToString());
+            idGarante = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idgarante"].Value.ToString());
             txtTipoEvento.Text = dgvInscripcionAlquiler.CurrentRow.Cells["tipoevento"].Value.ToString();
             txtCliente.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombrecliente"].Value.ToString();
             txtGarante.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombregarante"].Value.ToString();
@@ -312,7 +312,7 @@ namespace SisNissei
 
             }
             txtGarante.Text = nombreGarante;
-            
+
         }
 
         private void cbAmbiente_SelectedIndexChanged(object sender, EventArgs e)
@@ -320,13 +320,30 @@ namespace SisNissei
             idAmbiente = Int32.Parse(cbAmbiente.SelectedValue.ToString());
             idActual = Int32.Parse(idActual.ToString());
             ListarAmbienteDetalle(idAmbiente, idActual);
-            
+
         }
-           private void ListarAmbienteDetalle(int idambiente, int idactual)
+        private void ListarAmbienteDetalle(int idambiente, int idactual)
         {
             cbAmbienteDescripcion.DisplayMember = "Nombre";
             cbAmbienteDescripcion.ValueMember = "Id";
             cbAmbienteDescripcion.DataSource = new AmbienteDetalleService().Listar(idambiente, idactual);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvInscripcionAlquiler.RowCount > 0)
+            {
+                if (dgvInscripcionAlquiler.CurrentRow.Selected == true)
+                {
+                    if (MessageBox.Show("¿Esta seguro de imprimir este registro?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        //imprimir();
+                    }
+                }
+                else
+
+                    MessageBox.Show("No hay ni un registro seleccionado.");
+            }
         }
     }
 }
