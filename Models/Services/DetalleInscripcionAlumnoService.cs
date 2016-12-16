@@ -10,6 +10,7 @@ namespace Models.Services
     public class DetalleInscripcionAlumnoService
     {
         string respuesta;
+        string meses;
         private DetalleInscripcionAlumnoRepository repositorio = new DetalleInscripcionAlumnoRepository();
         public int Guardar(DetalleInscripcionAlumnoEntity itemdetalle)
         {
@@ -27,6 +28,12 @@ namespace Models.Services
         {
             respuesta = repositorio.Eliminar(itemdetalle);
             return Int32.Parse(respuesta);
+        }
+
+        public string Meses(DetalleInscripcionAlumnoEntity idhorario)
+        {
+            meses = repositorio.Meses(idhorario);
+            return meses;
         }
     }
 }

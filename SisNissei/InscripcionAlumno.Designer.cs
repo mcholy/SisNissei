@@ -61,11 +61,13 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnFicha = new System.Windows.Forms.ToolStripButton();
             this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnFicha = new System.Windows.Forms.ToolStripButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMeses = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,12 +101,14 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvInscripcionAlumno);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(896, 419);
+            this.splitContainer1.Size = new System.Drawing.Size(896, 461);
             this.splitContainer1.SplitterDistance = 337;
             this.splitContainer1.TabIndex = 1;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtMeses);
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.btnEliminarDetalle);
             this.groupBox3.Controls.Add(this.btnGuardarDetalle);
             this.groupBox3.Controls.Add(this.NuevoDetalle);
@@ -121,7 +125,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(16, 153);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 230);
+            this.groupBox3.Size = new System.Drawing.Size(312, 272);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Curso";
@@ -177,9 +181,9 @@
             // dgvInscripcionAlumnoDetalle
             // 
             this.dgvInscripcionAlumnoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlumnoDetalle.Location = new System.Drawing.Point(6, 102);
+            this.dgvInscripcionAlumnoDetalle.Location = new System.Drawing.Point(6, 104);
             this.dgvInscripcionAlumnoDetalle.Name = "dgvInscripcionAlumnoDetalle";
-            this.dgvInscripcionAlumnoDetalle.Size = new System.Drawing.Size(300, 115);
+            this.dgvInscripcionAlumnoDetalle.Size = new System.Drawing.Size(300, 162);
             this.dgvInscripcionAlumnoDetalle.TabIndex = 2;
             // 
             // cbPeriodo
@@ -195,11 +199,11 @@
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(74, 49);
+            this.txtEmpresa.Location = new System.Drawing.Point(175, 49);
             this.txtEmpresa.MaxLength = 200;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.ReadOnly = true;
-            this.txtEmpresa.Size = new System.Drawing.Size(191, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(90, 20);
             this.txtEmpresa.TabIndex = 19;
             // 
             // btnBuscarEmpresa
@@ -257,7 +261,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 52);
+            this.label14.Location = new System.Drawing.Point(115, 53);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 13);
             this.label14.TabIndex = 17;
@@ -402,7 +406,7 @@
             this.btnGuardar,
             this.btnEliminar,
             this.btnFicha});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 386);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 428);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
@@ -461,6 +465,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnFicha
+            // 
+            this.btnFicha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFicha.Image = global::SisNissei.Properties.Resources.imprimir;
+            this.btnFicha.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFicha.Name = "btnFicha";
+            this.btnFicha.Size = new System.Drawing.Size(36, 28);
+            this.btnFicha.Text = "Imprimir Ficha";
+            this.btnFicha.Click += new System.EventHandler(this.btnFicha_Click);
+            // 
             // dgvInscripcionAlumno
             // 
             this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -498,22 +512,28 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // btnFicha
+            // label4
             // 
-            this.btnFicha.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFicha.Image = global::SisNissei.Properties.Resources.imprimir;
-            this.btnFicha.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnFicha.Name = "btnFicha";
-            this.btnFicha.Size = new System.Drawing.Size(36, 28);
-            this.btnFicha.Text = "Imprimir Ficha";
-            this.btnFicha.Click += new System.EventHandler(this.btnFicha_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Meses :";
+            // 
+            // txtMeses
+            // 
+            this.txtMeses.Location = new System.Drawing.Point(64, 49);
+            this.txtMeses.Name = "txtMeses";
+            this.txtMeses.Size = new System.Drawing.Size(45, 20);
+            this.txtMeses.TabIndex = 28;
             // 
             // InscripcionAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(896, 419);
+            this.ClientSize = new System.Drawing.Size(896, 461);
             this.Controls.Add(this.splitContainer1);
             this.KeyPreview = true;
             this.Name = "InscripcionAlumno";
@@ -580,6 +600,8 @@
         private System.Windows.Forms.Button btnEliminarDetalle;
         private System.Windows.Forms.Button btnGuardarDetalle;
         private System.Windows.Forms.ToolStripButton btnFicha;
+        private System.Windows.Forms.TextBox txtMeses;
+        private System.Windows.Forms.Label label4;
 
     }
 }

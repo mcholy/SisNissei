@@ -24,6 +24,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@idhorario", itemdetalle.Idhorario);
                 cmd.Parameters.AddWithValue("@idempresa", itemdetalle.Idempresa);
                 cmd.Parameters.AddWithValue("@idperiodo", itemdetalle.Idperiodo);
+                cmd.Parameters.AddWithValue("@meses", itemdetalle.Meses);
                 cmd.Parameters.AddWithValue("@regmoddetalle", itemdetalle.Regmoddetalle);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -89,6 +90,29 @@ namespace Models.Repositories
                 }
 
             }
+        }
+
+        public string Meses(DetalleInscripcionAlumnoEntity itemdetalle)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.CommandText = "sis_DetalleInscripcionAlumno_Meses";
+
+                cmd.Parameters.AddWithValue("@horario", itemdetalle.Idhorario);
+                string meses="";
+               var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                {
+
+                    meses = reader["duracion"].ToString();
+                }
+                return meses;
+            }
+
         }
     }
 }

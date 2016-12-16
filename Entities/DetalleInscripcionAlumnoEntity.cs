@@ -86,6 +86,14 @@ namespace Entities
             get { return idinscripcionalumno; }
             set { idinscripcionalumno = value; }
         }
+        private int meses;
+
+        public int Meses
+        {
+            get { return meses; }
+            set { meses = value; }
+        }
+
         
     }
 }

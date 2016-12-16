@@ -139,6 +139,7 @@ namespace SisNissei
             itemdetalle.Idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             itemdetalle.Idhorario = Int32.Parse(cbHorario.SelectedValue.ToString());
             itemdetalle.Idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
+            itemdetalle.Meses = Int32.Parse(txtMeses.Text);
             itemdetalle.Regmoddetalle = regmoddetalle;
             DetalleInscripcionAlumnoService serviciodetalle = new DetalleInscripcionAlumnoService();
             int respuesta = serviciodetalle.Guardar(itemdetalle);
@@ -309,6 +310,16 @@ namespace SisNissei
             cbHorario.ValueMember = "Id";
             cbHorario.DataSource = new HorarioService().Listar(idcurso);
         }
+        private void Meses(int idhorario)
+        {
+            itemdetalle.Idhorario = Int32.Parse(cbHorario.SelectedValue.ToString());
+
+            DetalleInscripcionAlumnoService serviciodetalle = new DetalleInscripcionAlumnoService();
+            string meses = serviciodetalle.Meses(itemdetalle);
+            txtMeses.Text = meses;
+                    
+
+        }
 
         private void UnSelectDGV()
         {
@@ -327,6 +338,7 @@ namespace SisNissei
             idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             ListarHorarioEtario(idCurso);
         }
+
 
         private void btnBuscarApoderado_Click(object sender, EventArgs e)
         {
@@ -350,7 +362,7 @@ namespace SisNissei
         private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
         {
             idHorario = Int32.Parse(cbHorario.SelectedValue.ToString());
-
+            Meses(idHorario);
         }
 
         private void btnGuardarDetalle_Click(object sender, EventArgs e)
