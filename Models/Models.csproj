@@ -50,6 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DatosAlquiler.cs">
+      <DependentUpon>DatosAlquiler.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatosAlquiler.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosAlquiler.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatosAlumno.cs">
       <DependentUpon>DatosAlumno.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -85,6 +94,7 @@
     <Compile Include="Repositories\InscripcionAlquilerRepository.cs" />
     <Compile Include="Repositories\InscripcionAlumnoRepository.cs" />
     <Compile Include="Repositories\InscripcionSocioRepository.cs" />
+    <Compile Include="Repositories\ReporteAlquilerRepository.cs" />
     <Compile Include="Repositories\ReporteAlumnoRepository.cs" />
     <Compile Include="Repositories\ReporteSocioRepository.cs" />
     <Compile Include="Repositories\SocioReporte.cs" />
@@ -129,6 +139,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DatosAlquiler.xsc">
+      <DependentUpon>DatosAlquiler.xsd</DependentUpon>
+    </None>
+    <None Include="DatosAlquiler.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosAlquiler.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosAlquiler.xss">
+      <DependentUpon>DatosAlquiler.xsd</DependentUpon>
+    </None>
     <None Include="DatosAlumno.xsc">
       <DependentUpon>DatosAlumno.xsd</DependentUpon>
     </None>

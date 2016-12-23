@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using SisNissei.Template;
 using Entities;
 using Models.Services;
+using Entities;
+using System.Data.SqlClient;
+using Models;
 
 
 namespace SisNissei
@@ -17,6 +20,7 @@ namespace SisNissei
     {
         private Validacion ItemValidacion = new Validacion();
         private InscripcionAlquilerEntity item = new InscripcionAlquilerEntity();
+        ReporteInscripcionAlquilerEntity item2 = new ReporteInscripcionAlquilerEntity();
         private InscripcionAlquilerService servicio = new InscripcionAlquilerService();
         private DetalleInscripcionAlquilerService serviciodetalle = new DetalleInscripcionAlquilerService();
         private DetalleInscripcionAlquilerEntity itemdetalle = new DetalleInscripcionAlquilerEntity();
@@ -122,19 +126,19 @@ namespace SisNissei
             item.Tipoevento = txtTipoEvento.Text;
             item.Regmod = regmod;
             InscripcionAlquilerService servicio = new InscripcionAlquilerService();
-            int respuesta = servicio.Guardar(item);
-            if (respuesta == 1)
-            {
-                MessageBox.Show("El registro se ingreso satisfactoriamente.");
-            }
-            else if (respuesta == 2)
-            {
-                MessageBox.Show("El registro se actualizó satisfactoriamente.");
-            }
-            else if (respuesta == 3)
-            {
-                MessageBox.Show("La Hora ingresada ya esta ocupada.");
-            }
+            //int respuesta = servicio.Guardar(item);
+            //if (respuesta == 1)
+            //{
+            //    MessageBox.Show("El registro se ingreso satisfactoriamente.");
+            //}
+            //else if (respuesta == 2)
+            //{
+            //    MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            //}
+            //else if (respuesta == 3)
+            //{
+            //    MessageBox.Show("La Hora ingresada ya esta ocupada.");
+            //}
             Limpiar();
             CargarDetalle();
         }
@@ -328,7 +332,18 @@ namespace SisNissei
             cbAmbienteDescripcion.ValueMember = "Id";
             cbAmbienteDescripcion.DataSource = new AmbienteDetalleService().Listar(idambiente, idactual);
         }
+        private void imprimir()
+        {
+            item2.Id = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["id"].Value.ToString());
 
+            DatosAlquiler dal = servicio.ReporteAlquiler(item2);
+            AlquilerReporte rpt = new AlquilerReporte();
+            rpt.SetDataSource(dal);
+            AlquilerReporteFormulario frmReporte = new AlquilerReporteFormulario();
+            frmReporte.rp_Alquiler.ReportSource = rpt;
+            frmReporte.ShowDialog();
+
+        }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             if (dgvInscripcionAlquiler.RowCount > 0)
@@ -337,7 +352,7 @@ namespace SisNissei
                 {
                     if (MessageBox.Show("¿Esta seguro de imprimir este registro?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        //imprimir();
+                        imprimir();
                     }
                 }
                 else

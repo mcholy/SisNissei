@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rpt_Alquiler = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rp_Alquiler = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // rpt_Alquiler
+            // rp_Alquiler
             // 
-            this.rpt_Alquiler.ActiveViewIndex = -1;
-            this.rpt_Alquiler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rpt_Alquiler.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rpt_Alquiler.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rpt_Alquiler.Location = new System.Drawing.Point(0, 0);
-            this.rpt_Alquiler.Name = "rpt_Alquiler";
-            this.rpt_Alquiler.Size = new System.Drawing.Size(953, 699);
-            this.rpt_Alquiler.TabIndex = 0;
+            this.rp_Alquiler.ActiveViewIndex = -1;
+            this.rp_Alquiler.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rp_Alquiler.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rp_Alquiler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rp_Alquiler.Location = new System.Drawing.Point(0, 0);
+            this.rp_Alquiler.Name = "rp_Alquiler";
+            this.rp_Alquiler.Size = new System.Drawing.Size(953, 699);
+            this.rp_Alquiler.TabIndex = 0;
             // 
             // AlquilerReporteFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 699);
-            this.Controls.Add(this.rpt_Alquiler);
+            this.Controls.Add(this.rp_Alquiler);
             this.Name = "AlquilerReporteFormulario";
             this.Text = "AlquilerReporteFormulario";
             this.Load += new System.EventHandler(this.AlquilerReporteFormulario_Load);
@@ -57,7 +57,7 @@
 
         #endregion
 
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer rpt_Alquiler;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer rp_Alquiler;
 
     }
 }
