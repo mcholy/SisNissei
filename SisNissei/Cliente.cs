@@ -298,5 +298,20 @@ namespace SisNissei
         {
             itemValidacion.SoloNumeros(e);
         }
+
+        private void txtNombre_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
+        }
+
+        private void txtPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
+        }
+
+        private void txtMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloLetras(e);
+        }
     }
 }

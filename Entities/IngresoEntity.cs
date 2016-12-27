@@ -7,27 +7,44 @@ namespace Entities
 {
     public class IngresoEntity : BaseEntity
     {
-        private int idusuario;
+        private string nombreusuario;
 
-        public int Idusuario
+        public string Nombreusuario
         {
-            get { return idusuario; }
-            set { idusuario = value; }
+            get { return nombreusuario; }
+            set { nombreusuario = value; }
         }
-        private int idinscripcion;
+        private int dni;
 
-        public int Idinscripcion
+        public int Dni
         {
-            get { return idinscripcion; }
-            set { idinscripcion = value; }
+            get { return dni; }
+            set { dni = value; }
         }
-        private int idempresa;
+        private string direccion;
 
-        public int Idempresa
+        public string Direccion
         {
-            get { return idempresa; }
-            set { idempresa = value; }
+            get { return direccion; }
+            set { direccion = value; }
         }
+        private int idcliente;
+
+        public int Idcliente
+        {
+            get { return idcliente; }
+            set { idcliente = value; }
+        }
+
+
+        private int idtipoingreso;
+
+        public int Idtipoingreso
+        {
+            get { return idtipoingreso; }
+            set { idtipoingreso = value; }
+        }
+
         private bool tipocomprobante;
 
         public bool Tipocomprobante

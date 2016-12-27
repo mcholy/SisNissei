@@ -35,19 +35,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPagoPendiente = new System.Windows.Forms.Button();
+            this.cbTipoIngreso = new System.Windows.Forms.ComboBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPagosPendientes = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
@@ -55,16 +59,12 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagosPendientes)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,26 +135,26 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "EN CONCEPTO DE:";
             // 
-            // textBox1
+            // txtNombreCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(468, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtNombreCliente.Location = new System.Drawing.Point(129, 13);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(468, 20);
+            this.txtNombreCliente.TabIndex = 9;
             // 
-            // textBox2
+            // txtDni
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtDni.Location = new System.Drawing.Point(129, 37);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(237, 20);
+            this.txtDni.TabIndex = 10;
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(511, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtDireccion.Location = new System.Drawing.Point(129, 62);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(511, 20);
+            this.txtDireccion.TabIndex = 12;
             // 
             // label7
             // 
@@ -176,6 +176,13 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(76, 37);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(163, 20);
+            this.textBox3.TabIndex = 16;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -188,8 +195,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.btnPagoPendiente);
+            this.groupBox2.Controls.Add(this.cbTipoIngreso);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
@@ -197,14 +204,44 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.txtNombreCliente);
+            this.groupBox2.Controls.Add(this.txtDni);
             this.groupBox2.Location = new System.Drawing.Point(21, 107);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(653, 118);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
+            // 
+            // btnPagoPendiente
+            // 
+            this.btnPagoPendiente.Location = new System.Drawing.Point(485, 89);
+            this.btnPagoPendiente.Name = "btnPagoPendiente";
+            this.btnPagoPendiente.Size = new System.Drawing.Size(155, 23);
+            this.btnPagoPendiente.TabIndex = 19;
+            this.btnPagoPendiente.Text = "Buscar Pago Pendiente";
+            this.btnPagoPendiente.UseVisualStyleBackColor = true;
+            this.btnPagoPendiente.Click += new System.EventHandler(this.btnPagoPendiente_Click);
+            // 
+            // cbTipoIngreso
+            // 
+            this.cbTipoIngreso.FormattingEnabled = true;
+            this.cbTipoIngreso.Location = new System.Drawing.Point(129, 91);
+            this.cbTipoIngreso.Name = "cbTipoIngreso";
+            this.cbTipoIngreso.Size = new System.Drawing.Size(151, 21);
+            this.cbTipoIngreso.TabIndex = 18;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(609, 12);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarCliente.TabIndex = 17;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // label3
             // 
@@ -259,13 +296,13 @@
             this.radioButton1.Text = "RECIBO";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPagosPendientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 231);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(777, 225);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvPagosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagosPendientes.Location = new System.Drawing.Point(21, 231);
+            this.dgvPagosPendientes.Name = "dgvPagosPendientes";
+            this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 225);
+            this.dgvPagosPendientes.TabIndex = 17;
             // 
             // toolStrip1
             // 
@@ -344,50 +381,15 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "TOTAL: S/.";
             // 
-            // label11
+            // lblTotal
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(743, 468);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 29);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "0.00";
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(609, 12);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarCliente.TabIndex = 17;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(129, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 21);
-            this.comboBox1.TabIndex = 18;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(485, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Buscar Pago Pendiente";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(76, 37);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 16;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(743, 468);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(55, 29);
+            this.lblTotal.TabIndex = 19;
+            this.lblTotal.Text = "0.00";
             // 
             // Ingreso
             // 
@@ -395,7 +397,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(814, 552);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox3);
@@ -404,7 +406,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvPagosPendientes);
             this.Name = "Ingreso";
             this.Text = "Ingreso";
             this.Load += new System.EventHandler(this.Ingreso_Load);
@@ -415,7 +417,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagosPendientes)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -432,9 +434,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
@@ -444,7 +446,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPagosPendientes;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevo;
         private System.Windows.Forms.ToolStripButton btnModificar;
@@ -452,10 +454,10 @@
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnPagoPendiente;
+        private System.Windows.Forms.ComboBox cbTipoIngreso;
         private System.Windows.Forms.Button btnBuscarCliente;
     }
 }

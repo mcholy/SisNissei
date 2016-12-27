@@ -55,6 +55,7 @@
     <Compile Include="ReporteInscripcionSocioEntity.cs" />
     <Compile Include="ResultadoEntity.cs" />
     <Compile Include="InscripcionSocioEntity.cs" />
+    <Compile Include="TipoIngresoEntity.cs" />
     <Compile Include="TipoInscripcionSocioEntity.cs" />
     <Compile Include="UsuarioEntity.cs" />
     <Compile Include="IngresoEntity.cs" />
