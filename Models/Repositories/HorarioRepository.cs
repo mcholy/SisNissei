@@ -37,6 +37,7 @@ namespace Models.Repositories
                 return resultado;
             }
         }
+
         public ResultadoEntity GuardarDetalle(HorarioEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))

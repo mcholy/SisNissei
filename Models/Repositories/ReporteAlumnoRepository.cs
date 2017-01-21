@@ -28,6 +28,7 @@ namespace Models.Repositories
                     ReporteInscripcionAlumnoEntity item = new ReporteInscripcionAlumnoEntity();
                     while (reader.Read())
                     {
+
                         item.Id = int.Parse(reader["id"].ToString());
                         item.Nombre = reader["nombre"].ToString();
                         item.Apellidocliente = reader["apellidocliente"].ToString();
