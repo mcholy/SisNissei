@@ -68,7 +68,7 @@ namespace Models.Repositories
                         item.Nombresexo = reader["nombresexo"].ToString();
                         item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
-                        item.Fechanacimiento = DateTime.Parse(reader["fechanacimiento"].ToString());
+                        item.Fechanacimiento = DateTime.Parse(reader["fecharegistro"].ToString());
 
                         item.Iddistrito = Int32.Parse(reader["iddistrito"].ToString());
                         item.Nombredistrito = reader["nombredistrito"].ToString();
@@ -80,7 +80,7 @@ namespace Models.Repositories
                                               
                     }
                     return lista;
-                +}
+                }
 
             }
 

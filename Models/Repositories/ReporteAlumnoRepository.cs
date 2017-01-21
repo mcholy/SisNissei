@@ -28,7 +28,6 @@ namespace Models.Repositories
                     ReporteInscripcionAlumnoEntity item = new ReporteInscripcionAlumnoEntity();
                     while (reader.Read())
                     {
-
                         item.Id = int.Parse(reader["id"].ToString());
                         item.Nombre = reader["nombre"].ToString();
                         item.Apellidocliente = reader["apellidocliente"].ToString();
@@ -40,7 +39,6 @@ namespace Models.Repositories
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
                         item.Curso = reader["curso"].ToString();
                         item.Empresa = reader["empresa"].ToString();
-                        item.Horario = reader["horario"].ToString();
                         item.Periodo = reader["periodo"].ToString();
                         item.Fechaincripcioncurso = reader["fechainscripcioncurso"].ToString();
                         item.Fechadia = reader["fechadia"].ToString();
@@ -50,7 +48,6 @@ namespace Models.Repositories
                     }
                    
                 }
-
                 return da;
             }
         
