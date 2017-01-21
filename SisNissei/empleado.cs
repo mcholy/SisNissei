@@ -42,6 +42,8 @@ namespace SisNissei
             txtTelefono.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             cbTipoEmpleado.DataSource = new TipoEmpleadoService().Listar();
+            regmod = 0;
+            idActual = 0;
         }
 
 

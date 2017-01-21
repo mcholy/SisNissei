@@ -34,6 +34,8 @@ namespace SisNissei
             txtNombre.Text = string.Empty;
             txtPorcentajeMatricula.Text = string.Empty;
             txtPorcentajeMensual.Text = string.Empty;
+            idActual = 0;
+            regmod = 0;
         }
         private void Guardar()
         {
@@ -100,7 +102,7 @@ namespace SisNissei
             int respuesta = servicio.Eliminar(item);
             if (respuesta == 1)
             {
-                //Limpiar();
+                Limpiar();
                 MessageBox.Show("El registro se elimino satisfactoriamente.");
                 CargarDetalle();
             }
