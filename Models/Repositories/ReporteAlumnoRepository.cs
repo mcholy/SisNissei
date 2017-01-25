@@ -39,7 +39,6 @@ namespace Models.Repositories
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
                         item.Curso = reader["curso"].ToString();
                         item.Empresa = reader["empresa"].ToString();
-                        item.Horario = reader["horario"].ToString();
                         item.Periodo = reader["periodo"].ToString();
                         item.Fechaincripcioncurso = reader["fechainscripcioncurso"].ToString();
                         item.Fechadia = reader["fechadia"].ToString();
@@ -49,7 +48,6 @@ namespace Models.Repositories
                     }
                    
                 }
-
                 return da;
             }
         

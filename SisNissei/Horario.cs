@@ -195,14 +195,6 @@ namespace SisNissei
                     item.Id = Int32.Parse(fila.Cells["ID"].Value.ToString());
                     //Accediendo con el indice de la columna
                     //item.Hora=fila.Cells[1].Value.ToString();
-                    if (regmod == 0)
-                    {
-                        item.IdHorario = resultado.Id;
-                    }
-                    else
-                    {
-                        item.IdHorario = idActual;
-                    }
                     resultado = servicio.GuardarDetalle(item);
                 }
 
@@ -293,7 +285,7 @@ namespace SisNissei
             foreach (HorarioEntity valor in lista)
             {
                 
-                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia),valor.IdHorario.ToString() };
+                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia),valor.Id.ToString() };
                 dgvDetalleHorario.Rows.Add(rowDetalle);
                 dgvDetalleHorario.ClearSelection();
             }

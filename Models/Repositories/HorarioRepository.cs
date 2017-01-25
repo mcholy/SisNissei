@@ -37,7 +37,6 @@ namespace Models.Repositories
                 return resultado;
             }
         }
-
         public ResultadoEntity GuardarDetalle(HorarioEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -47,7 +46,7 @@ namespace Models.Repositories
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleHorario_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
-                cmd.Parameters.AddWithValue("@idhorario", item.IdHorario);
+                cmd.Parameters.AddWithValue("@idhorario", resultado.Id);
                 cmd.Parameters.AddWithValue("@hora", item.Hora);
                 cmd.Parameters.AddWithValue("@dia", item.Dia);
                 //cmd.Parameters.AddWithValue("@regmod", item.Regmod);
@@ -112,7 +111,7 @@ namespace Models.Repositories
                     while (reader.Read())
                     {
                         HorarioEntity item = new HorarioEntity();
-                        item.IdHorario= Int32.Parse(reader["id"].ToString());
+                        item.IdHorario= Int32.Parse(reader["Id"].ToString());
                         item.Dia = reader["dia"].ToString();
                         item.Hora = reader["hora"].ToString();
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
