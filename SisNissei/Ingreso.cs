@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Models.Services;
 using Entities;
 using Models;
+using SisNissei.Template;
+using System.Data.SqlClient;
 
 namespace SisNissei
 {
@@ -20,15 +22,19 @@ namespace SisNissei
         private int idCliente = 0;
         private int nropago = 0;
         private int idTipoIngreso = 0;
+        private int idCurso = 0;
         private IngresoService servicio = new IngresoService();
         public Ingreso()
         {
+            
             InitializeComponent();
+            InsertarCodigo();
         }
 
         private void Ingreso_Load(object sender, EventArgs e)
         {
             ListarTipoIngreso();
+            Skin.AplicarSkinDGV(dgvPagosPendientes);
         }
         #region Singleton
         private static Ingreso m_FormDefInstance;
@@ -61,12 +67,17 @@ namespace SisNissei
             {
                 DatosFac(idCliente);
             }
+            nropago = 0;
+        }
+        private void InsertarCodigo()
+        {
+            //txtNombre.Text
+
+            txtNombre.Text = new IngresoService().Codigo(item);
         }
         private void DatosFac(int idcliente)
         {
             item.Idcliente = idcliente;
-
-          
             string direccion = servicio.DatosFacDir(item);
             string dni = servicio.DatosFacDni(item);
             txtDireccion.Text = direccion;
@@ -78,6 +89,16 @@ namespace SisNissei
             cbTipoIngreso.DisplayMember = "Nombre";
             cbTipoIngreso.ValueMember = "Id";
             cbTipoIngreso.DataSource = new IngresoService().ListarTipoIngreso();
+        }
+        private void limpiar()
+        {
+            nropago = 0;
+            idCliente = 0;
+            idTipoIngreso = 0;
+            txtNombreCliente.Text = string.Empty;
+            txtDni.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtNombre.Text = string.Empty;
         }
         private void total()
         {
@@ -95,33 +116,60 @@ namespace SisNissei
         private void btnPagoPendiente_Click(object sender, EventArgs e)
         {
             idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+            idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             if (idCliente > 0)
             {
-                CargarPagopendiente(idCliente, idTipoIngreso);
+                CargarPagopendiente(idCliente, idTipoIngreso,idCurso);
                 total();
             }
         }
 
 
-        private void CargarPagopendiente(int idCliente, int idTipoIngreso)
+        private void CargarPagopendiente(int idCliente, int idTipoIngreso,int idCurso)
         {
             nropago = nropago + 1;
-        dgvPagosPendientes.DataSource=servicio.PagosPendientes(idCliente, idTipoIngreso,nropago);
-        if (dgvPagosPendientes.RowCount > 0)
-        {
-            dgvPagosPendientes.Columns["estado"].Visible = false;
-            dgvPagosPendientes.Columns["nombreusuario"].Visible = false;
-            dgvPagosPendientes.Columns["dni"].Visible = false;
-            dgvPagosPendientes.Columns["direccion"].Visible = false;
-            dgvPagosPendientes.Columns["idcliente"].Visible = false;
-            dgvPagosPendientes.Columns["idtipoingreso"].Visible = false;
-            dgvPagosPendientes.Columns["tipocomprobante"].Visible = false;
-            dgvPagosPendientes.Columns["numerocomprobante"].Visible = false;
-            dgvPagosPendientes.Columns["id"].Visible = false;
-            dgvPagosPendientes.Columns["fecharegistro"].Visible = false;
-            dgvPagosPendientes.Columns["regmod"].Visible = false;
-            dgvPagosPendientes.ClearSelection();
+            dgvPagosPendientes.DataSource = servicio.PagosPendientes(idCliente, idTipoIngreso, nropago,idCurso);
+            if (dgvPagosPendientes.RowCount > 0)
+            {
+                dgvPagosPendientes.Columns["estado"].Visible = false;
+                dgvPagosPendientes.Columns["nombreusuario"].Visible = false;
+                dgvPagosPendientes.Columns["dni"].Visible = false;
+                dgvPagosPendientes.Columns["direccion"].Visible = false;
+                dgvPagosPendientes.Columns["idcliente"].Visible = false;
+                dgvPagosPendientes.Columns["idtipoingreso"].Visible = false;
+                dgvPagosPendientes.Columns["tipocomprobante"].Visible = false;
+                dgvPagosPendientes.Columns["numerocomprobante"].Visible = false;
+                dgvPagosPendientes.Columns["id"].Visible = false;
+                dgvPagosPendientes.Columns["fecharegistro"].Visible = false;
+                dgvPagosPendientes.Columns["regmod"].Visible = false;
+                dgvPagosPendientes.ClearSelection();
+            }
         }
+        private void ListarPagoPendiente(int idCliente)
+        {
+            cbCurso.DisplayMember = "Nombre";
+            cbCurso.ValueMember = "Id";
+            cbCurso.DataSource = new CursoService().ListarPagoPendiente(idCliente);
+        }
+        private void cbTipoIngreso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idTipoIngreso=Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+            if (idTipoIngreso == 2)
+            {
+                ListarPagoPendiente(idCliente);
+                lblCurso.Visible = true;
+                cbCurso.Visible = true;
+            }
+            else
+            {
+                lblCurso.Visible = false;
+                cbCurso.Visible = false;
+            }
+        }
+
+        private void cbCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nropago = 0;
         }
 
     }

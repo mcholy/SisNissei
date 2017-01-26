@@ -30,6 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMeses = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnEliminarDetalle = new System.Windows.Forms.Button();
             this.btnGuardarDetalle = new System.Windows.Forms.Button();
             this.NuevoDetalle = new System.Windows.Forms.Button();
@@ -66,8 +68,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMeses = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -129,6 +129,22 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Curso";
+            // 
+            // txtMeses
+            // 
+            this.txtMeses.Location = new System.Drawing.Point(64, 49);
+            this.txtMeses.Name = "txtMeses";
+            this.txtMeses.Size = new System.Drawing.Size(45, 20);
+            this.txtMeses.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Meses :";
             // 
             // btnEliminarDetalle
             // 
@@ -511,22 +527,6 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Meses :";
-            // 
-            // txtMeses
-            // 
-            this.txtMeses.Location = new System.Drawing.Point(64, 49);
-            this.txtMeses.Name = "txtMeses";
-            this.txtMeses.Size = new System.Drawing.Size(45, 20);
-            this.txtMeses.TabIndex = 28;
             // 
             // InscripcionAlumno
             // 

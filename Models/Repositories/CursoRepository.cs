@@ -91,5 +91,34 @@ namespace Models.Repositories
         {
             return base.Listar("sis_Curso_Listar");
         }
+
+        public List<CursoEntity> ListarPagoPendiente(int idcliente)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_CursoPendiente_Listar";
+                cmd.Parameters.AddWithValue("@idcliente", idcliente);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<CursoEntity> lista = new List<CursoEntity>();
+
+                    while (reader.Read())
+                    {
+                        CursoEntity item = new CursoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+
+        }
+
     }
 }

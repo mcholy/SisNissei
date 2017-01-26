@@ -40,9 +40,11 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.cbCurso = new System.Windows.Forms.ComboBox();
             this.btnPagoPendiente = new System.Windows.Forms.Button();
             this.cbTipoIngreso = new System.Windows.Forms.ComboBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -168,7 +170,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(545, 12);
             this.groupBox1.Name = "groupBox1";
@@ -176,12 +178,15 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // textBox3
+            // txtNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 37);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 20);
-            this.textBox3.TabIndex = 16;
+            this.txtNombre.Location = new System.Drawing.Point(75, 34);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.TabIndex = 20;
+            this.txtNombre.Text = " ";
             // 
             // label8
             // 
@@ -195,6 +200,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblCurso);
+            this.groupBox2.Controls.Add(this.cbCurso);
             this.groupBox2.Controls.Add(this.btnPagoPendiente);
             this.groupBox2.Controls.Add(this.cbTipoIngreso);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
@@ -213,6 +220,25 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurso.Location = new System.Drawing.Point(312, 94);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(47, 13);
+            this.lblCurso.TabIndex = 21;
+            this.lblCurso.Text = "Curso :";
+            // 
+            // cbCurso
+            // 
+            this.cbCurso.FormattingEnabled = true;
+            this.cbCurso.Location = new System.Drawing.Point(376, 91);
+            this.cbCurso.Name = "cbCurso";
+            this.cbCurso.Size = new System.Drawing.Size(103, 21);
+            this.cbCurso.TabIndex = 20;
+            this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged);
+            // 
             // btnPagoPendiente
             // 
             this.btnPagoPendiente.Location = new System.Drawing.Point(485, 89);
@@ -230,6 +256,7 @@
             this.cbTipoIngreso.Name = "cbTipoIngreso";
             this.cbTipoIngreso.Size = new System.Drawing.Size(151, 21);
             this.cbTipoIngreso.TabIndex = 18;
+            this.cbTipoIngreso.SelectedIndexChanged += new System.EventHandler(this.cbTipoIngreso_SelectedIndexChanged);
             // 
             // btnBuscarCliente
             // 
@@ -290,10 +317,10 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(10, 49);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 17);
+            this.radioButton1.Size = new System.Drawing.Size(67, 17);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "RECIBO";
+            this.radioButton1.Text = "BOLETA";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dgvPagosPendientes
@@ -455,9 +482,11 @@
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnPagoPendiente;
         private System.Windows.Forms.ComboBox cbTipoIngreso;
         private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.Label lblCurso;
+        private System.Windows.Forms.ComboBox cbCurso;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }

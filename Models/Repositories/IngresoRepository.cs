@@ -59,8 +59,25 @@ namespace Models.Repositories
         {
             return base.Listar("sis_TipoIngreso");
         }
+        public string Codigo(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Ingreso_Codigo";
 
-        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago)
+                string codigo = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    codigo = reader["Codigo"].ToString();
+                }
+                return codigo;
+            }
+        }
+        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago,int idCurso)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
@@ -83,6 +100,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@idcliente", idCliente);
                 cmd.Parameters.AddWithValue("@idtipoingreso", idTipoIngreso);
                 cmd.Parameters.AddWithValue("@nropago", nropago);
+                cmd.Parameters.AddWithValue("@idcurso", idCurso);
                 //cmd.Parameters.AddWithValue("@valor",valor);
                 using (var reader = cmd.ExecuteReader())
                 {

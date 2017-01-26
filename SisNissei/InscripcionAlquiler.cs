@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using SisNissei.Template;
 using Entities;
 using Models.Services;
-using Entities;
 using System.Data.SqlClient;
 using Models;
 

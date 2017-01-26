@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Models.Repositories;
 using Entities;
-
+using Models.Repositories;
 namespace Models.Services
 {
     public class IngresoService
@@ -27,10 +26,16 @@ namespace Models.Services
         {
             return new IngresoRepository().ListarTipoIngreso();
         }
-        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago)
+        public string Codigo(IngresoEntity item)
         {
 
-            return new IngresoRepository().PagosPendientes(idCliente, idTipoIngreso, nropago);
+            return new IngresoRepository().Codigo(item);
+            
+        }
+        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago,int idCurso)
+        {
+
+            return new IngresoRepository().PagosPendientes(idCliente, idTipoIngreso, nropago,idCurso);
         }
 
     }

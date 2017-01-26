@@ -34,5 +34,9 @@ namespace Models.Services
         {
             return new CursoRepository().Listar();
         }
+        public List<CursoEntity> ListarPagoPendiente(int idcliente)
+        {
+            return new CursoRepository().ListarPagoPendiente(idcliente);
+        }
     }
 }
