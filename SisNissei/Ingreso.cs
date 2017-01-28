@@ -71,7 +71,7 @@ namespace SisNissei
         }
         private void InsertarCodigo()
         {
-            //txtNombre.Text
+            
 
             txtNombre.Text = new IngresoService().Codigo(item);
         }
