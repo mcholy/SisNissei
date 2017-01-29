@@ -88,6 +88,7 @@ namespace SisNissei
         {
             cbTipoIngreso.DisplayMember = "Nombre";
             cbTipoIngreso.ValueMember = "Id";
+
             cbTipoIngreso.DataSource = new IngresoService().ListarTipoIngreso();
         }
         private void limpiar()
