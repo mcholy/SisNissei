@@ -162,6 +162,7 @@ namespace SisNissei
                 cbCurso.Visible = true;
             }
             else
+
             {
                 lblCurso.Visible = false;
                 cbCurso.Visible = false;
