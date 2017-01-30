@@ -183,6 +183,11 @@
       <DependentUpon>AlumnoReporte.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Template\BoletaReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoletaReporte.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Template\SocioReporte.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +352,10 @@
     <EmbeddedResource Include="Template\AlumnoReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AlumnoReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\BoletaReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BoletaReporte.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\SocioReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

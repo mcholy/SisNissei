@@ -17,12 +17,13 @@ namespace SisNissei
     public partial class Ingreso : Form
     {
         private IngresoEntity item = new IngresoEntity();
-
+        private ResultadoEntity resultado;
         private string nombreCliente = "";
         private int idCliente = 0;
         private int nropago = 0;
         private int idTipoIngreso = 0;
         private int idCurso = 0;
+        private int idActual = 0;
         private IngresoService servicio = new IngresoService();
         public Ingreso()
         {
@@ -88,7 +89,6 @@ namespace SisNissei
         {
             cbTipoIngreso.DisplayMember = "Nombre";
             cbTipoIngreso.ValueMember = "Id";
-
             cbTipoIngreso.DataSource = new IngresoService().ListarTipoIngreso();
         }
         private void limpiar()
@@ -99,7 +99,12 @@ namespace SisNissei
             txtNombreCliente.Text = string.Empty;
             txtDni.Text = string.Empty;
             txtDireccion.Text = string.Empty;
-            txtNombre.Text = string.Empty;
+            txtNombre.Text = string.Empty;  
+            idCliente=0;
+            cbCurso.SelectedValue = 0;
+            cbTipoIngreso.SelectedValue = 0;
+            nropago = 0;
+
         }
         private void total()
         {
@@ -116,6 +121,7 @@ namespace SisNissei
         }
         private void btnPagoPendiente_Click(object sender, EventArgs e)
         {
+            nropago = nropago + 1;
             idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
             idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             if (idCliente > 0)
@@ -128,7 +134,7 @@ namespace SisNissei
 
         private void CargarPagopendiente(int idCliente, int idTipoIngreso,int idCurso)
         {
-            nropago = nropago + 1;
+            
             dgvPagosPendientes.DataSource = servicio.PagosPendientes(idCliente, idTipoIngreso, nropago,idCurso);
             if (dgvPagosPendientes.RowCount > 0)
             {
@@ -139,8 +145,7 @@ namespace SisNissei
                 dgvPagosPendientes.Columns["idcliente"].Visible = false;
                 dgvPagosPendientes.Columns["idtipoingreso"].Visible = false;
                 dgvPagosPendientes.Columns["tipocomprobante"].Visible = false;
-                dgvPagosPendientes.Columns["numerocomprobante"].Visible = false;
-                dgvPagosPendientes.Columns["id"].Visible = false;
+
                 dgvPagosPendientes.Columns["fecharegistro"].Visible = false;
                 dgvPagosPendientes.Columns["regmod"].Visible = false;
                 dgvPagosPendientes.ClearSelection();
@@ -162,7 +167,6 @@ namespace SisNissei
                 cbCurso.Visible = true;
             }
             else
-
             {
                 lblCurso.Visible = false;
                 cbCurso.Visible = false;
@@ -174,5 +178,48 @@ namespace SisNissei
             nropago = 0;
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Guardar();
+        }
+        private void Guardar()
+        {
+            resultado = new ResultadoEntity();
+            item = new IngresoEntity();
+            if (dgvPagosPendientes.RowCount > 0)
+            {
+
+                item.Idcliente = idCliente;
+                item.Nombre = txtNombre.Text;
+                item.Tipocomprobante = rdbBoleta.Checked ? 1 : 2;
+                item.Monto = Double.Parse(lblTotal.Text.ToString());
+                resultado = servicio.Guardar(item);
+                item = new IngresoEntity();
+                item.Idfactura = resultado.Id;
+                foreach (DataGridViewRow fila in dgvPagosPendientes.Rows)
+                {
+                    //Accediendo por el nombre de la columna
+
+                    item.Id = Int32.Parse(fila.Cells["ID"].Value.ToString());
+                    item.Nombre = fila.Cells["Nombre"].Value.ToString();
+                    //Accediendo con el indice de la columna
+                    //item.Hora=fila.Cells[1].Value.ToString();
+                    resultado = servicio.GuardarDetalle(item);
+                }
+
+                if (Int32.Parse(resultado.Respuesta) == 1)
+                {
+                    MessageBox.Show("Se registro el pago correctamente.");
+                }
+                else if (Int32.Parse(resultado.Respuesta) == 2)
+                {
+                    MessageBox.Show("El registro se actualizó satisfactoriamente.");
+                }
+                nropago = 0;
+                CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
+                limpiar();
+                InsertarCodigo();
+            }
+        }
     }
 }

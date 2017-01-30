@@ -51,8 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdbfactura = new System.Windows.Forms.RadioButton();
+            this.rdbBoleta = new System.Windows.Forms.RadioButton();
             this.dgvPagosPendientes = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
@@ -283,8 +283,8 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.rdbfactura);
+            this.groupBox3.Controls.Add(this.rdbBoleta);
             this.groupBox3.Location = new System.Drawing.Point(699, 107);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(99, 118);
@@ -301,33 +301,34 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "TIPO :";
             // 
-            // radioButton2
+            // rdbfactura
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(10, 72);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "FACTURA";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbfactura.AutoSize = true;
+            this.rdbfactura.Location = new System.Drawing.Point(10, 72);
+            this.rdbfactura.Name = "rdbfactura";
+            this.rdbfactura.Size = new System.Drawing.Size(75, 17);
+            this.rdbfactura.TabIndex = 1;
+            this.rdbfactura.Text = "FACTURA";
+            this.rdbfactura.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdbBoleta
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(10, 49);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BOLETA";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbBoleta.AutoSize = true;
+            this.rdbBoleta.Checked = true;
+            this.rdbBoleta.Location = new System.Drawing.Point(10, 49);
+            this.rdbBoleta.Name = "rdbBoleta";
+            this.rdbBoleta.Size = new System.Drawing.Size(67, 17);
+            this.rdbBoleta.TabIndex = 0;
+            this.rdbBoleta.TabStop = true;
+            this.rdbBoleta.Text = "BOLETA";
+            this.rdbBoleta.UseVisualStyleBackColor = true;
             // 
             // dgvPagosPendientes
             // 
             this.dgvPagosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagosPendientes.Location = new System.Drawing.Point(21, 231);
             this.dgvPagosPendientes.Name = "dgvPagosPendientes";
+            this.dgvPagosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 225);
             this.dgvPagosPendientes.TabIndex = 17;
             // 
@@ -387,6 +388,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 42);
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -471,8 +473,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbfactura;
+        private System.Windows.Forms.RadioButton rdbBoleta;
         private System.Windows.Forms.DataGridView dgvPagosPendientes;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnNuevo;

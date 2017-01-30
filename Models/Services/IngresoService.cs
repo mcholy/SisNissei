@@ -11,6 +11,7 @@ namespace Models.Services
         string respuesta;
         string direccion;
         string dni;
+        private ResultadoEntity resultado;
         IngresoRepository repositorio = new IngresoRepository();
         public string DatosFacDir(IngresoEntity idcliente)
         {
@@ -37,6 +38,21 @@ namespace Models.Services
 
             return new IngresoRepository().PagosPendientes(idCliente, idTipoIngreso, nropago,idCurso);
         }
+        public ResultadoEntity Guardar(IngresoEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.Guardar(item);
 
+            return resultado;
+        }
+
+        public ResultadoEntity GuardarDetalle(IngresoEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.GuardarDetalle(item);
+
+            return resultado;
+
+        }
     }
 }

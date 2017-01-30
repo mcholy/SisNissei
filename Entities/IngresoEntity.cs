@@ -45,20 +45,22 @@ namespace Entities
             set { idtipoingreso = value; }
         }
 
-        private bool tipocomprobante;
+        private int tipocomprobante;
 
-        public bool Tipocomprobante
+        public int Tipocomprobante
         {
             get { return tipocomprobante; }
             set { tipocomprobante = value; }
         }
-        private int numerocomprobante;
 
-        public int Numerocomprobante
+        private int idfactura;
+
+        public int Idfactura
         {
-            get { return numerocomprobante; }
-            set { numerocomprobante = value; }
+            get { return idfactura; }
+            set { idfactura = value; }
         }
+     
         private double monto;
 
         public double Monto

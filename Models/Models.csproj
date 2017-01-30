@@ -68,6 +68,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosAlumno.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatosIngreso.cs">
+      <DependentUpon>DatosIngreso.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatosIngreso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosIngreso.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DatosSocio.cs">
       <DependentUpon>DatosSocio.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -164,6 +173,17 @@
     </None>
     <None Include="DatosAlumno.xss">
       <DependentUpon>DatosAlumno.xsd</DependentUpon>
+    </None>
+    <None Include="DatosIngreso.xsc">
+      <DependentUpon>DatosIngreso.xsd</DependentUpon>
+    </None>
+    <None Include="DatosIngreso.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosIngreso.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosIngreso.xss">
+      <DependentUpon>DatosIngreso.xsd</DependentUpon>
     </None>
     <None Include="DatosSocio.xsc">
       <DependentUpon>DatosSocio.xsd</DependentUpon>

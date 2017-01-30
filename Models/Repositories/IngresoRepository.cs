@@ -11,6 +11,7 @@ namespace Models.Repositories
 {
     public class IngresoRepository:BaseRepository<IngresoEntity>
     {
+        private ResultadoEntity resultado;
         public string DatosFacDir(IngresoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -121,6 +122,51 @@ namespace Models.Repositories
 
             }
         }
+        public ResultadoEntity Guardar(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Ingreso_Guardar";
+                cmd.Parameters.AddWithValue("@idcliente", item.Idcliente);
+                cmd.Parameters.AddWithValue("@nombrerecibo", item.Nombre);
+                cmd.Parameters.AddWithValue("@tipocomprobante", item.Tipocomprobante);
+                cmd.Parameters.AddWithValue("@montototal", item.Monto);
+             
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Id = Int32.Parse(reader["Id"].ToString());
+                    resultado.Respuesta = reader["respuesta"].ToString();
 
+
+                }
+                return resultado;
+            }
+        }
+        public ResultadoEntity GuardarDetalle(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_IngresoDetalle_Guardar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                cmd.Parameters.AddWithValue("@idregistro", item.Idfactura);
+                cmd.Parameters.AddWithValue("@nombreoperaciondetalle", item.Nombre);
+                //cmd.Parameters.AddWithValue("@regmod", item.Regmod);
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Respuesta = reader["respuesta"].ToString();
+                }
+                return resultado;
+            }
+        }
     }
 }
