@@ -105,6 +105,12 @@
     <Compile Include="Ambientes.Designer.cs">
       <DependentUpon>Ambientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoletaReporteFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoletaReporteFormulario.Designer.cs">
+      <DependentUpon>BoletaReporteFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BoletaReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Template\SocioReporte.cs">
       <AutoGen>True</AutoGen>
@@ -290,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ambientes.resx">
       <DependentUpon>Ambientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoletaReporteFormulario.resx">
+      <DependentUpon>BoletaReporteFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>

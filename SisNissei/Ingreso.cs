@@ -12,11 +12,13 @@ using Models;
 using SisNissei.Template;
 using System.Data.SqlClient;
 
+
 namespace SisNissei
 {
     public partial class Ingreso : Form
     {
         private IngresoEntity item = new IngresoEntity();
+        ReporteIngresoEntity item2 = new ReporteIngresoEntity();
         private ResultadoEntity resultado;
         private string nombreCliente = "";
         private int idCliente = 0;
@@ -27,7 +29,7 @@ namespace SisNissei
         private IngresoService servicio = new IngresoService();
         public Ingreso()
         {
-            
+
             InitializeComponent();
             InsertarCodigo();
         }
@@ -56,6 +58,8 @@ namespace SisNissei
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
+            limpiar();
+            InsertarCodigo();
             DialogCliente DialogCliente = new DialogCliente();
             DialogResult resultado = DialogCliente.ShowDialog();
             if (resultado == DialogResult.OK)
@@ -72,8 +76,6 @@ namespace SisNissei
         }
         private void InsertarCodigo()
         {
-            
-
             txtNombre.Text = new IngresoService().Codigo(item);
         }
         private void DatosFac(int idcliente)
@@ -99,11 +101,12 @@ namespace SisNissei
             txtNombreCliente.Text = string.Empty;
             txtDni.Text = string.Empty;
             txtDireccion.Text = string.Empty;
-            txtNombre.Text = string.Empty;  
-            idCliente=0;
+            txtNombre.Text = string.Empty;
+            idCliente = 0;
             cbCurso.SelectedValue = 0;
             cbTipoIngreso.SelectedValue = 0;
             nropago = 0;
+            lblTotal.Text = string.Empty;
 
         }
         private void total()
@@ -121,21 +124,27 @@ namespace SisNissei
         }
         private void btnPagoPendiente_Click(object sender, EventArgs e)
         {
-            nropago = nropago + 1;
-            idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
-            idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             if (idCliente > 0)
             {
-                CargarPagopendiente(idCliente, idTipoIngreso,idCurso);
+                nropago = nropago + 1;
+                idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+                idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+
+
+                CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
                 total();
+            }
+            else
+            {
+                MessageBox.Show("Se debe de elegir a un cliente para buscar su pago");
             }
         }
 
 
-        private void CargarPagopendiente(int idCliente, int idTipoIngreso,int idCurso)
+        private void CargarPagopendiente(int idCliente, int idTipoIngreso, int idCurso)
         {
-            
-            dgvPagosPendientes.DataSource = servicio.PagosPendientes(idCliente, idTipoIngreso, nropago,idCurso);
+
+            dgvPagosPendientes.DataSource = servicio.PagosPendientes(idCliente, idTipoIngreso, nropago, idCurso);
             if (dgvPagosPendientes.RowCount > 0)
             {
                 dgvPagosPendientes.Columns["estado"].Visible = false;
@@ -145,9 +154,10 @@ namespace SisNissei
                 dgvPagosPendientes.Columns["idcliente"].Visible = false;
                 dgvPagosPendientes.Columns["idtipoingreso"].Visible = false;
                 dgvPagosPendientes.Columns["tipocomprobante"].Visible = false;
-
+                dgvPagosPendientes.Columns["id"].Visible = false;
                 dgvPagosPendientes.Columns["fecharegistro"].Visible = false;
                 dgvPagosPendientes.Columns["regmod"].Visible = false;
+                dgvPagosPendientes.Columns["idfactura"].Visible = false;
                 dgvPagosPendientes.ClearSelection();
             }
         }
@@ -159,7 +169,7 @@ namespace SisNissei
         }
         private void cbTipoIngreso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            idTipoIngreso=Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+            idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
             if (idTipoIngreso == 2)
             {
                 ListarPagoPendiente(idCliente);
@@ -177,10 +187,22 @@ namespace SisNissei
         {
             nropago = 0;
         }
+        private void imprimirboleta()
+        {
+            item2.Id = item.Idfactura;
 
+            DatosIngreso dai = servicio.ReporteIngreso(item2);
+            BoletaReporte rpt = new BoletaReporte();
+            rpt.SetDataSource(dai);
+            BoletaReporteFormulario frmReporte = new BoletaReporteFormulario();
+            frmReporte.rp_Boleta.ReportSource = rpt;
+            frmReporte.ShowDialog();
+
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             this.Guardar();
+
         }
         private void Guardar()
         {
@@ -196,6 +218,7 @@ namespace SisNissei
                 resultado = servicio.Guardar(item);
                 item = new IngresoEntity();
                 item.Idfactura = resultado.Id;
+
                 foreach (DataGridViewRow fila in dgvPagosPendientes.Rows)
                 {
                     //Accediendo por el nombre de la columna
@@ -215,10 +238,30 @@ namespace SisNissei
                 {
                     MessageBox.Show("El registro se actualizó satisfactoriamente.");
                 }
+                imprimirboleta();
                 nropago = 0;
                 CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
                 limpiar();
                 InsertarCodigo();
+            }
+        }
+
+        private void dgvPagosPendientes_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (nropago == 0)
+            {
+
+            }
+            else
+            {
+                nropago = nropago - 1;
+                CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
+                total();
             }
         }
     }

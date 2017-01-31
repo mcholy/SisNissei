@@ -62,6 +62,7 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.label10 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -200,6 +201,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lblCurso);
             this.groupBox2.Controls.Add(this.cbCurso);
             this.groupBox2.Controls.Add(this.btnPagoPendiente);
@@ -243,7 +245,7 @@
             // 
             this.btnPagoPendiente.Location = new System.Drawing.Point(485, 89);
             this.btnPagoPendiente.Name = "btnPagoPendiente";
-            this.btnPagoPendiente.Size = new System.Drawing.Size(155, 23);
+            this.btnPagoPendiente.Size = new System.Drawing.Size(122, 23);
             this.btnPagoPendiente.TabIndex = 19;
             this.btnPagoPendiente.Text = "Buscar Pago Pendiente";
             this.btnPagoPendiente.UseVisualStyleBackColor = true;
@@ -331,6 +333,7 @@
             this.dgvPagosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 225);
             this.dgvPagosPendientes.TabIndex = 17;
+            this.dgvPagosPendientes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvPagosPendientes_UserDeletingRow);
             // 
             // toolStrip1
             // 
@@ -420,6 +423,16 @@
             this.lblTotal.TabIndex = 19;
             this.lblTotal.Text = "0.00";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(614, 91);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Ingreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,5 +503,6 @@
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.ComboBox cbCurso;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Button button1;
     }
 }

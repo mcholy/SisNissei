@@ -12,7 +12,8 @@ namespace Models.Services
         string direccion;
         string dni;
         private ResultadoEntity resultado;
-        IngresoRepository repositorio = new IngresoRepository();
+        private IngresoRepository repositorio = new IngresoRepository();
+        private ReporteIngresoRepository reporterepositorio = new ReporteIngresoRepository();
         public string DatosFacDir(IngresoEntity idcliente)
         {
             direccion = repositorio.DatosFacDir(idcliente);
@@ -53,6 +54,11 @@ namespace Models.Services
 
             return resultado;
 
+        }
+        public DatosIngreso ReporteIngreso(ReporteIngresoEntity item2)
+        {
+            DatosIngreso dai = reporterepositorio.ReporteIngreso(item2);
+            return dai;
         }
     }
 }
