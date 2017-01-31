@@ -491,6 +491,25 @@ namespace SisNissei
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = string.Empty;
+            busqueda = txtBuscar.Text.Trim();
+            CargarDetalle(filterNombre: busqueda);
+        }
+        private void CargarDetalle(string filterNombre = "")
+        {
+            //(BUSCAR) LINEA ACTUALIZADA
+            dgvInscripcionAlumno.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombre.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+            if (dgvInscripcionAlumno.RowCount > 0)
+            {
+                dgvInscripcionAlumno.Columns["id"].Visible = false;
+                dgvInscripcionAlumno.Columns["estado"].Visible = false;
+                dgvInscripcionAlumno.Columns["regmod"].Visible = false;
+                dgvInscripcionAlumno.Columns["fecharegistro"].Visible = false;
+                dgvInscripcionAlumno.Columns["nombre"].DisplayIndex = 0;
+            }
+        }
     }
 
 

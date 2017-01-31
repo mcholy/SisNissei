@@ -22,6 +22,7 @@ namespace SisNissei
             InitializeComponent();
             Skin.AplicarSkinDialog(this);
             CargarDetalle();
+            Skin.AplicarSkinDGV(dgvCliente);
 
         }
         public string CargarNombre()
@@ -43,6 +44,26 @@ namespace SisNissei
             {
                 dgvCliente.Columns["id"].Visible = false;
                 dgvCliente.Columns["estado"].Visible = false;
+                dgvCliente.Columns["regmod"].Visible = false;
+                dgvCliente.Columns["fecharegistro"].Visible = false;
+                dgvCliente.Columns["alergia"].Visible = false;
+                dgvCliente.Columns["direccion"].Visible = false;
+                dgvCliente.Columns["celular"].Visible = false;
+                dgvCliente.Columns["telefono"].Visible = false;
+                dgvCliente.Columns["fechanacimiento"].Visible = false;
+                dgvCliente.Columns["Iddistrito"].Visible = false;
+                dgvCliente.Columns["idapoderado"].Visible = false;
+                dgvCliente.Columns["nombredistrito"].Visible = false;
+                dgvCliente.Columns["nombreapoderado"].Visible = false;
+                dgvCliente.Columns["nombresexo"].Visible = false;
+                dgvCliente.Columns["sexo"].Visible = false;
+                dgvCliente.Columns["materno"].Visible = false;
+                dgvCliente.Columns["paterno"].Visible = false;
+                dgvCliente.Columns["nombre"].Visible = false;
+
+
+
+
                 dgvCliente.Columns["nombre"].DisplayIndex = 0;
                 dgvCliente.Columns["paterno"].DisplayIndex = 1;
                 dgvCliente.Columns["materno"].DisplayIndex = 2;
@@ -63,6 +84,25 @@ namespace SisNissei
             this.Close();
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = string.Empty;
+            busqueda = txtBuscar.Text.Trim();
+            CargarDetalle(filterNombre: busqueda );
+        }
+        private void CargarDetalle(string filterNombre = "")
+        {
+            //(BUSCAR) LINEA ACTUALIZADA
+            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+            if (dgvCliente.RowCount > 0)
+            {
+                dgvCliente.Columns["id"].Visible = false;
+                dgvCliente.Columns["nombre"].DisplayIndex = 0;
+                dgvCliente.Columns["estado"].Visible = false;
+                dgvCliente.Columns["regmod"].Visible = false;
+                dgvCliente.Columns["fecharegistro"].Visible = false;
+            }
+        }
         
     }
 }

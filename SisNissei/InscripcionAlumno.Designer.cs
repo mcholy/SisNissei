@@ -32,14 +32,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtMeses = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnEliminarDetalle = new System.Windows.Forms.Button();
-            this.btnGuardarDetalle = new System.Windows.Forms.Button();
-            this.NuevoDetalle = new System.Windows.Forms.Button();
-            this.EditarDetalle = new System.Windows.Forms.Button();
             this.dgvInscripcionAlumnoDetalle = new System.Windows.Forms.DataGridView();
             this.cbPeriodo = new System.Windows.Forms.ComboBox();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbHorario = new System.Windows.Forms.ComboBox();
@@ -49,24 +44,29 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtApoderado = new System.Windows.Forms.TextBox();
-            this.btnBuscarApoderado = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnEliminarDetalle = new System.Windows.Forms.Button();
+            this.btnGuardarDetalle = new System.Windows.Forms.Button();
+            this.NuevoDetalle = new System.Windows.Forms.Button();
+            this.EditarDetalle = new System.Windows.Forms.Button();
+            this.btnBuscarEmpresa = new System.Windows.Forms.Button();
+            this.btnBuscarApoderado = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.ToolStripButton();
             this.btnModificar = new System.Windows.Forms.ToolStripButton();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.btnFicha = new System.Windows.Forms.ToolStripButton();
-            this.dgvInscripcionAlumno = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -146,54 +146,6 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Meses :";
             // 
-            // btnEliminarDetalle
-            // 
-            this.btnEliminarDetalle.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarDetalle.Image = global::SisNissei.Properties.Resources.delete;
-            this.btnEliminarDetalle.Location = new System.Drawing.Point(208, 75);
-            this.btnEliminarDetalle.Name = "btnEliminarDetalle";
-            this.btnEliminarDetalle.Size = new System.Drawing.Size(27, 23);
-            this.btnEliminarDetalle.TabIndex = 26;
-            this.btnEliminarDetalle.UseVisualStyleBackColor = false;
-            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
-            // 
-            // btnGuardarDetalle
-            // 
-            this.btnGuardarDetalle.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnGuardarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarDetalle.Image = global::SisNissei.Properties.Resources.save;
-            this.btnGuardarDetalle.Location = new System.Drawing.Point(175, 75);
-            this.btnGuardarDetalle.Name = "btnGuardarDetalle";
-            this.btnGuardarDetalle.Size = new System.Drawing.Size(27, 23);
-            this.btnGuardarDetalle.TabIndex = 25;
-            this.btnGuardarDetalle.UseVisualStyleBackColor = false;
-            this.btnGuardarDetalle.Click += new System.EventHandler(this.btnGuardarDetalle_Click);
-            // 
-            // NuevoDetalle
-            // 
-            this.NuevoDetalle.BackColor = System.Drawing.Color.SteelBlue;
-            this.NuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NuevoDetalle.Image = global::SisNissei.Properties.Resources._new;
-            this.NuevoDetalle.Location = new System.Drawing.Point(275, 75);
-            this.NuevoDetalle.Name = "NuevoDetalle";
-            this.NuevoDetalle.Size = new System.Drawing.Size(31, 23);
-            this.NuevoDetalle.TabIndex = 24;
-            this.NuevoDetalle.UseVisualStyleBackColor = false;
-            this.NuevoDetalle.Click += new System.EventHandler(this.NuevoDetalle_Click);
-            // 
-            // EditarDetalle
-            // 
-            this.EditarDetalle.BackColor = System.Drawing.Color.SteelBlue;
-            this.EditarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditarDetalle.Image = global::SisNissei.Properties.Resources.edit;
-            this.EditarDetalle.Location = new System.Drawing.Point(241, 75);
-            this.EditarDetalle.Name = "EditarDetalle";
-            this.EditarDetalle.Size = new System.Drawing.Size(29, 23);
-            this.EditarDetalle.TabIndex = 23;
-            this.EditarDetalle.UseVisualStyleBackColor = false;
-            this.EditarDetalle.Click += new System.EventHandler(this.EditarDetalle_Click);
-            // 
             // dgvInscripcionAlumnoDetalle
             // 
             this.dgvInscripcionAlumnoDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -221,18 +173,6 @@
             this.txtEmpresa.ReadOnly = true;
             this.txtEmpresa.Size = new System.Drawing.Size(90, 20);
             this.txtEmpresa.TabIndex = 19;
-            // 
-            // btnBuscarEmpresa
-            // 
-            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpresa.Location = new System.Drawing.Point(275, 49);
-            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
-            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 20);
-            this.btnBuscarEmpresa.TabIndex = 18;
-            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
-            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
             // 
             // cbCurso
             // 
@@ -327,18 +267,6 @@
             this.txtApoderado.Size = new System.Drawing.Size(159, 20);
             this.txtApoderado.TabIndex = 23;
             // 
-            // btnBuscarApoderado
-            // 
-            this.btnBuscarApoderado.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarApoderado.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarApoderado.Location = new System.Drawing.Point(260, 69);
-            this.btnBuscarApoderado.Name = "btnBuscarApoderado";
-            this.btnBuscarApoderado.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarApoderado.TabIndex = 22;
-            this.btnBuscarApoderado.UseVisualStyleBackColor = false;
-            this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -356,18 +284,6 @@
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(159, 20);
             this.txtCliente.TabIndex = 14;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 43);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarCliente.TabIndex = 13;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // txtNombre
             // 
@@ -427,6 +343,116 @@
             this.toolStrip1.Size = new System.Drawing.Size(335, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "tsCliente";
+            // 
+            // dgvInscripcionAlumno
+            // 
+            this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
+            this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
+            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 339);
+            this.dgvInscripcionAlumno.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtBuscar);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Location = new System.Drawing.Point(16, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(526, 47);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscador";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
+            this.txtBuscar.TabIndex = 1;
+            // 
+            // btnEliminarDetalle
+            // 
+            this.btnEliminarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDetalle.Image = global::SisNissei.Properties.Resources.delete;
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(208, 75);
+            this.btnEliminarDetalle.Name = "btnEliminarDetalle";
+            this.btnEliminarDetalle.Size = new System.Drawing.Size(27, 23);
+            this.btnEliminarDetalle.TabIndex = 26;
+            this.btnEliminarDetalle.UseVisualStyleBackColor = false;
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.btnEliminarDetalle_Click);
+            // 
+            // btnGuardarDetalle
+            // 
+            this.btnGuardarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGuardarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarDetalle.Image = global::SisNissei.Properties.Resources.save;
+            this.btnGuardarDetalle.Location = new System.Drawing.Point(175, 75);
+            this.btnGuardarDetalle.Name = "btnGuardarDetalle";
+            this.btnGuardarDetalle.Size = new System.Drawing.Size(27, 23);
+            this.btnGuardarDetalle.TabIndex = 25;
+            this.btnGuardarDetalle.UseVisualStyleBackColor = false;
+            this.btnGuardarDetalle.Click += new System.EventHandler(this.btnGuardarDetalle_Click);
+            // 
+            // NuevoDetalle
+            // 
+            this.NuevoDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.NuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoDetalle.Image = global::SisNissei.Properties.Resources._new;
+            this.NuevoDetalle.Location = new System.Drawing.Point(275, 75);
+            this.NuevoDetalle.Name = "NuevoDetalle";
+            this.NuevoDetalle.Size = new System.Drawing.Size(31, 23);
+            this.NuevoDetalle.TabIndex = 24;
+            this.NuevoDetalle.UseVisualStyleBackColor = false;
+            this.NuevoDetalle.Click += new System.EventHandler(this.NuevoDetalle_Click);
+            // 
+            // EditarDetalle
+            // 
+            this.EditarDetalle.BackColor = System.Drawing.Color.SteelBlue;
+            this.EditarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditarDetalle.Image = global::SisNissei.Properties.Resources.edit;
+            this.EditarDetalle.Location = new System.Drawing.Point(241, 75);
+            this.EditarDetalle.Name = "EditarDetalle";
+            this.EditarDetalle.Size = new System.Drawing.Size(29, 23);
+            this.EditarDetalle.TabIndex = 23;
+            this.EditarDetalle.UseVisualStyleBackColor = false;
+            this.EditarDetalle.Click += new System.EventHandler(this.EditarDetalle_Click);
+            // 
+            // btnBuscarEmpresa
+            // 
+            this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarEmpresa.Location = new System.Drawing.Point(275, 49);
+            this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
+            this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 20);
+            this.btnBuscarEmpresa.TabIndex = 18;
+            this.btnBuscarEmpresa.UseVisualStyleBackColor = false;
+            this.btnBuscarEmpresa.Click += new System.EventHandler(this.btnBuscarEmpresa_Click);
+            // 
+            // btnBuscarApoderado
+            // 
+            this.btnBuscarApoderado.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarApoderado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarApoderado.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarApoderado.Location = new System.Drawing.Point(260, 69);
+            this.btnBuscarApoderado.Name = "btnBuscarApoderado";
+            this.btnBuscarApoderado.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarApoderado.TabIndex = 22;
+            this.btnBuscarApoderado.UseVisualStyleBackColor = false;
+            this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(260, 43);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarCliente.TabIndex = 13;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // btnNuevo
             // 
@@ -491,32 +517,6 @@
             this.btnFicha.Text = "Imprimir Ficha";
             this.btnFicha.Click += new System.EventHandler(this.btnFicha_Click);
             // 
-            // dgvInscripcionAlumno
-            // 
-            this.dgvInscripcionAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInscripcionAlumno.Location = new System.Drawing.Point(9, 59);
-            this.dgvInscripcionAlumno.Name = "dgvInscripcionAlumno";
-            this.dgvInscripcionAlumno.Size = new System.Drawing.Size(533, 339);
-            this.dgvInscripcionAlumno.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtBuscar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(16, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(526, 47);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscador";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(6, 19);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(477, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
@@ -527,6 +527,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // InscripcionAlumno
             // 
