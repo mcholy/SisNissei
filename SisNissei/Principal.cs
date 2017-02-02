@@ -227,6 +227,12 @@ namespace SisNissei
             Ingreso.DefInstance.MdiParent = this;
             Ingreso.DefInstance.Show();
         }
+
+        private void ingresoMantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoMantenimiento.DefInstance.MdiParent = this;
+            IngresoMantenimiento.DefInstance.Show();
+        }
                
     }
 }

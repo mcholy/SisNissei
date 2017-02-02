@@ -129,6 +129,12 @@
     <Compile Include="Ingreso.Designer.cs">
       <DependentUpon>Ingreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoMantenimiento.Designer.cs">
+      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="InscripcionAlquiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoMantenimiento.resx">
+      <DependentUpon>IngresoMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InscripcionAlquiler.resx">
       <DependentUpon>InscripcionAlquiler.cs</DependentUpon>

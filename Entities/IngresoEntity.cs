@@ -52,7 +52,13 @@ namespace Entities
             get { return tipocomprobante; }
             set { tipocomprobante = value; }
         }
+        private string nombrerecibo;
 
+        public string Nombrerecibo
+        {
+            get { return nombrerecibo; }
+            set { nombrerecibo = value; }
+        }
         private int idfactura;
 
         public int Idfactura

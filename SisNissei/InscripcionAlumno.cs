@@ -500,7 +500,7 @@ namespace SisNissei
         private void CargarDetalle(string filterNombre = "")
         {
             //(BUSCAR) LINEA ACTUALIZADA
-            dgvInscripcionAlumno.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombre.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+            dgvInscripcionAlumno.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvInscripcionAlumno.RowCount > 0)
             {
                 dgvInscripcionAlumno.Columns["id"].Visible = false;

@@ -147,6 +147,8 @@ namespace Models.Repositories
                 return resultado;
             }
         }
+
+
         public ResultadoEntity GuardarDetalle(IngresoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -166,6 +168,58 @@ namespace Models.Repositories
                     resultado.Respuesta = reader["respuesta"].ToString();
                 }
                 return resultado;
+            }
+        }
+
+        public List<IngresoEntity> Detalle()
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Ingreso_Listar";
+                //cmd.Parameters.AddWithValue("@valor",valor);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<IngresoEntity> lista = new List<IngresoEntity>();
+
+                    while (reader.Read())
+                    {
+                        IngresoEntity item = new IngresoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombreusuario = reader["nombrecliente"].ToString();
+                        item.Nombrerecibo = reader["nombrerecibo"].ToString();
+                        item.Nombre = reader["nombreoperaciondetalle"].ToString();
+                        item.Monto = Double.Parse(reader["montototal"].ToString());
+                        item.Fecharegistro =DateTime.Parse(reader["fecharegistro"].ToString());
+                        lista.Add(item);
+
+                    }
+                    return lista;
+                }
+
+            }
+
+        }
+
+        public string Eliminar(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_Ingreso_Eliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                string respuesta = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    respuesta = reader["respuesta"].ToString();
+                }
+                return respuesta;
             }
         }
     }

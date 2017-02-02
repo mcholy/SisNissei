@@ -28,6 +28,11 @@ namespace Models.Services
         {
             return new IngresoRepository().ListarTipoIngreso();
         }
+        public int Eliminar(IngresoEntity item)
+        {
+            respuesta = repositorio.Eliminar(item);
+            return Int32.Parse(respuesta);
+        }
         public string Codigo(IngresoEntity item)
         {
 
@@ -59,6 +64,10 @@ namespace Models.Services
         {
             DatosIngreso dai = reporterepositorio.ReporteIngreso(item2);
             return dai;
+        }
+        public List<IngresoEntity> Detalle()
+        {
+            return new IngresoRepository().Detalle();
         }
     }
 }
