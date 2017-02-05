@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 
 namespace SisNissei
 {
+
     public partial class IngresoMantenimiento : Form
     {
         private IngresoEntity item = new IngresoEntity();
