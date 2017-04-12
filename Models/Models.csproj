@@ -95,6 +95,7 @@
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\DetalleInscripcionAlquilerRepository.cs" />
     <Compile Include="Repositories\DetalleInscripcionAlumnoRepository.cs" />
+    <Compile Include="Repositories\EgresoRepository.cs" />
     <Compile Include="Repositories\GrupoEtarioRepository.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\EmpleadoRepository.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\DetalleInscripcionAlquilerService.cs" />
     <Compile Include="Services\DetalleInscripcionAlumnoService.cs" />
+    <Compile Include="Services\EgresoService.cs" />
     <Compile Include="Services\GrupoEtarioService.cs" />
     <Compile Include="Services\CursoService.cs" />
     <Compile Include="Services\EmpleadoService.cs" />

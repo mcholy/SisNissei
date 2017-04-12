@@ -233,6 +233,18 @@ namespace SisNissei
             IngresoMantenimiento.DefInstance.MdiParent = this;
             IngresoMantenimiento.DefInstance.Show();
         }
+
+        private void tipoEgresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoEgreso.DefInstance.MdiParent = this;
+            TipoEgreso.DefInstance.Show();
+        }
+
+        private void egresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Egresos.DefInstance.MdiParent = this;
+            Egresos.DefInstance.Show();
+        }
                
     }
 }

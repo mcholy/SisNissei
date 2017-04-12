@@ -28,5 +28,9 @@ namespace Models.Services
              respuesta = repositorio.Eliminar(item);
              return Int32.Parse(respuesta);
          }
+         public List<TipoEgresoEntity> ListarTipoPago()
+         {
+             return new TipoEgresoRepository().ListarTipoPago();
+         }
     }
 }

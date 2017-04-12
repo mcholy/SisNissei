@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rolEnSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,16 +65,13 @@
             this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alquilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.resumenBalanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ingresoMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,22 @@
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel.Text = "Estado";
             // 
             // toolStripButton1
             // 
@@ -212,8 +228,9 @@
             // tipoEgresoToolStripMenuItem
             // 
             this.tipoEgresoToolStripMenuItem.Name = "tipoEgresoToolStripMenuItem";
-            this.tipoEgresoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.tipoEgresoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tipoEgresoToolStripMenuItem.Text = "TipoEgreso";
+            this.tipoEgresoToolStripMenuItem.Click += new System.EventHandler(this.tipoEgresoToolStripMenuItem_Click);
             // 
             // periodoDeMatriculaToolStripMenuItem
             // 
@@ -335,6 +352,7 @@
             this.egresoToolStripMenuItem.Name = "egresoToolStripMenuItem";
             this.egresoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.egresoToolStripMenuItem.Text = "Egreso";
+            this.egresoToolStripMenuItem.Click += new System.EventHandler(this.egresoToolStripMenuItem_Click);
             // 
             // ingresoToolStripMenuItem
             // 
@@ -342,6 +360,13 @@
             this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ingresoToolStripMenuItem.Text = "Ingreso";
             this.ingresoToolStripMenuItem.Click += new System.EventHandler(this.ingresoToolStripMenuItem_Click);
+            // 
+            // ingresoMantenimientoToolStripMenuItem
+            // 
+            this.ingresoMantenimientoToolStripMenuItem.Name = "ingresoMantenimientoToolStripMenuItem";
+            this.ingresoMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.ingresoMantenimientoToolStripMenuItem.Text = "Ingreso Mantenimiento";
+            this.ingresoMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.ingresoMantenimientoToolStripMenuItem_Click);
             // 
             // alquilerToolStripMenuItem
             // 
@@ -387,29 +412,6 @@
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.sociosToolStripMenuItem.Text = "Socios";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabel.Text = "Estado";
-            // 
-            // ingresoMantenimientoToolStripMenuItem
-            // 
-            this.ingresoMantenimientoToolStripMenuItem.Name = "ingresoMantenimientoToolStripMenuItem";
-            this.ingresoMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.ingresoMantenimientoToolStripMenuItem.Text = "Ingreso Mantenimiento";
-            this.ingresoMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.ingresoMantenimientoToolStripMenuItem_Click);
             // 
             // Principal
             // 

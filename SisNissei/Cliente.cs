@@ -120,10 +120,10 @@ namespace SisNissei
                 CargarDetalle();
             }
         }
-        private void CargarDetalle()
+        private void CargarDetalle(string filterNombre = "")
         {
-            dgvCliente.DataSource = servicio.Detalle();
-
+            
+            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvCliente.RowCount > 0)
             {
                 dgvCliente.Columns["id"].Visible = false;
@@ -244,8 +244,21 @@ namespace SisNissei
 
             }
             txtApoderado.Text = nombreApoderado;
+            DatosApo(idApoderado);
         }
 
+
+        private void DatosApo(int idApoderado)
+        {
+            item.Idapoderado = idApoderado;
+            string direccion = servicio.DatosApoDir(item);
+            string telefono = servicio.DatosApoTel(item);
+            string celular = servicio.DatosApoCel(item);
+            txtDireccion.Text = direccion;
+            txtCelular.Text = celular;
+            txtTelefono.Text = telefono;
+
+        }
         private void Cliente_Load(object sender, EventArgs e)
         {
             ListarDistritos();
@@ -312,6 +325,13 @@ namespace SisNissei
         private void txtMaterno_KeyPress(object sender, KeyPressEventArgs e)
         {
             itemValidacion.SoloLetras(e);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string busqueda = string.Empty;
+            busqueda = txtBuscar.Text.Trim();
+            CargarDetalle(filterNombre: busqueda);
         }
     }
 }

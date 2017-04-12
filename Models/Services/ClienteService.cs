@@ -10,6 +10,9 @@ namespace Models.Services
     public class ClienteService
     {
         #region Propiedades
+        string direccion;
+        string telefono;
+        string celular;
         private string respuesta;
         private ClienteRepository repositorio = new ClienteRepository();
         #endregion
@@ -28,6 +31,21 @@ namespace Models.Services
         {
             respuesta = repositorio.Eliminar(item);
             return Int32.Parse(respuesta);
+        }
+        public string DatosApoDir(ClienteEntity idApoderado)
+        {
+            direccion = repositorio.DatosApoDir(idApoderado);
+            return direccion;
+        }
+        public string DatosApoTel(ClienteEntity idApoderado)
+        {
+            telefono = repositorio.DatosApoTel(idApoderado);
+            return telefono;
+        }
+        public string DatosApoCel(ClienteEntity idApoderado)
+        {
+            celular = repositorio.DatosApoCel(idApoderado);
+            return celular;
         }
     }
 }

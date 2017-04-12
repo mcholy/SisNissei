@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
-using System.Data;
 using Entities;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace Models.Repositories
 {
-    class TipoEgresoRepository : BaseRepository<TipoEgresoEntity>
+    public class EgresoRepository:BaseRepository<EgresoEntity>
     {
-        public string Guardar(TipoEgresoEntity item)
+        public string Guardar(EgresoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_TipoEgreso_Guardar";
+                cmd.CommandText = "sis_Egreso_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
+                cmd.Parameters.AddWithValue("@idtipoegreso", item.Idtipoegreso);
+                cmd.Parameters.AddWithValue("@idempleado", item.Idempleado);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@detalle", item.Detalle);
+                cmd.Parameters.AddWithValue("@monto", item.Monto);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -31,27 +35,32 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
-        public List<TipoEgresoEntity> Detalle()
+        public List<EgresoEntity> Detalle()
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_TipoEgreso_Detalle";
+                cmd.CommandText = "sis_Egreso_Detalle";
                 //cmd.Parameters.AddWithValue("@valor",valor);
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    List<TipoEgresoEntity> lista = new List<TipoEgresoEntity>();
+                    List<EgresoEntity> lista = new List<EgresoEntity>();
 
                     while (reader.Read())
                     {
-                        TipoEgresoEntity item = new TipoEgresoEntity();
+                        EgresoEntity item = new EgresoEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["Nombre"].ToString();
+                        item.Idempleado = Int32.Parse(reader["idempleado"].ToString());
+                        item.Nombreempleado = reader["nombreempleado"].ToString();
+                        item.Idtipoegreso = Int32.Parse(reader["idtipoegreso"].ToString());
+                        item.Tipoegreso =reader["tipoegreso"].ToString();
+                        item.Detalle = reader["detalle"].ToString();
+                        item.Monto = Double.Parse(reader["monto"].ToString());
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
-                        item.Estado = Boolean.Parse(reader["estado"].ToString());
                         lista.Add(item);
                     }
                     return lista;
@@ -60,14 +69,15 @@ namespace Models.Repositories
             }
 
         }
-        public string Eliminar(TipoEgresoEntity item)
+
+        public string Eliminar(EgresoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
             {
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_TipoEgreso_Eliminar";
+                cmd.CommandText = "sis_Egreso_Eliminar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -77,33 +87,6 @@ namespace Models.Repositories
                 }
                 return respuesta;
             }
-        }
-
-        public List<TipoEgresoEntity> ListarTipoPago()
-        {
-            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
-            using (var cmd = conn.CreateCommand())
-            {
-                conn.Open();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "sis_TipoEgreso_Listar";
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    List<TipoEgresoEntity> lista = new List<TipoEgresoEntity>();
-
-                    while (reader.Read())
-                    {
-                        TipoEgresoEntity item = new TipoEgresoEntity();
-                        item.Id = Int32.Parse(reader["Id"].ToString());
-                        item.Nombre = reader["nombre"].ToString();
-                        lista.Add(item);
-                    }
-                    return lista;
-                }
-
-            }
-
         }
     }
 }

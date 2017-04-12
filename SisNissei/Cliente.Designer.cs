@@ -141,7 +141,7 @@
             this.txtDireccion.MaxLength = 300;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(220, 20);
-            this.txtDireccion.TabIndex = 17;
+            this.txtDireccion.TabIndex = 13;
             // 
             // txtCelular
             // 
@@ -149,7 +149,7 @@
             this.txtCelular.MaxLength = 9;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(86, 20);
-            this.txtCelular.TabIndex = 16;
+            this.txtCelular.TabIndex = 11;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress_1);
             // 
             // cbSexo
@@ -159,7 +159,7 @@
             this.cbSexo.Location = new System.Drawing.Point(191, 97);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(100, 21);
-            this.cbSexo.TabIndex = 15;
+            this.cbSexo.TabIndex = 7;
             // 
             // txtAlergia
             // 
@@ -206,7 +206,7 @@
             this.txtTelefono.MaxLength = 7;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(86, 20);
-            this.txtTelefono.TabIndex = 11;
+            this.txtTelefono.TabIndex = 12;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress_1);
             // 
             // label10
@@ -224,7 +224,7 @@
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(78, 20);
-            this.txtFechaNacimiento.TabIndex = 8;
+            this.txtFechaNacimiento.TabIndex = 9;
             this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // label9
@@ -262,7 +262,7 @@
             this.btnBuscarApoderado.Location = new System.Drawing.Point(260, 122);
             this.btnBuscarApoderado.Name = "btnBuscarApoderado";
             this.btnBuscarApoderado.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarApoderado.TabIndex = 2;
+            this.btnBuscarApoderado.TabIndex = 8;
             this.btnBuscarApoderado.UseVisualStyleBackColor = false;
             this.btnBuscarApoderado.Click += new System.EventHandler(this.btnBuscarApoderado_Click);
             // 
@@ -282,7 +282,7 @@
             this.cbDistrito.Location = new System.Drawing.Point(205, 151);
             this.cbDistrito.Name = "cbDistrito";
             this.cbDistrito.Size = new System.Drawing.Size(86, 21);
-            this.cbDistrito.TabIndex = 9;
+            this.cbDistrito.TabIndex = 10;
             // 
             // label6
             // 
@@ -299,7 +299,7 @@
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(81, 20);
-            this.txtDNI.TabIndex = 5;
+            this.txtDNI.TabIndex = 6;
             this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress_1);
             // 
             // label5
@@ -317,7 +317,7 @@
             this.txtMaterno.MaxLength = 50;
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtMaterno.TabIndex = 4;
+            this.txtMaterno.TabIndex = 5;
             this.txtMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaterno_KeyPress);
             // 
             // label4
@@ -335,7 +335,7 @@
             this.txtPaterno.MaxLength = 50;
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(200, 20);
-            this.txtPaterno.TabIndex = 3;
+            this.txtPaterno.TabIndex = 4;
             this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // label3
@@ -353,7 +353,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 20);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 3;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress_1);
             // 
             // label1
@@ -491,8 +491,9 @@
             this.btnBuscar.Location = new System.Drawing.Point(489, 16);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Cliente
             // 

@@ -68,7 +68,7 @@ namespace Models.Repositories
                         item.Nombresexo = reader["nombresexo"].ToString();
                         item.Idapoderado = Int32.Parse(reader["idapoderado"].ToString());
                         item.Nombreapoderado = reader["nombreapoderado"].ToString();
-                        item.Fechanacimiento = DateTime.Parse(reader["fecharegistro"].ToString());
+                        item.Fechanacimiento = DateTime.Parse(reader["fechanacimiento"].ToString());
 
                         item.Iddistrito = Int32.Parse(reader["iddistrito"].ToString());
                         item.Nombredistrito = reader["nombredistrito"].ToString();
@@ -86,6 +86,76 @@ namespace Models.Repositories
 
         }
 
+        public string DatosApoDir(ClienteEntity item)
+        { 
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.CommandText = "sis_Cliente_DatosApo";
+
+                cmd.Parameters.AddWithValue("@id_Apoderado", item.Idapoderado);
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    item.Direccion = reader["direccion"].ToString();
+
+                }
+                return item.Direccion; 
+            }
+           }
+
+        public string DatosApoTel(ClienteEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.CommandText = "sis_Cliente_DatosApo";
+
+                cmd.Parameters.AddWithValue("@id_Apoderado", item.Idapoderado);
+                string Telefono = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                    Telefono = reader["telefono"].ToString();
+
+                }
+                return Telefono;
+            }
+            
+        
+        }
+        public string DatosApoCel(ClienteEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.CommandText = "sis_Cliente_DatosApo";
+
+                cmd.Parameters.AddWithValue("@id_Apoderado", item.Idapoderado);
+                string Celular = "";
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                   Celular = reader["celular"].ToString();
+
+                }
+                return Celular;
+            }
+
+
+        }
 
         public string Eliminar(ClienteEntity item)
         {

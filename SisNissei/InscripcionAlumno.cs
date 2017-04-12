@@ -161,6 +161,11 @@ namespace SisNissei
             txtCliente.Text = string.Empty;
             txtApoderado.Text = string.Empty;
             txtNombre.Text = string.Empty;
+            regmod = 0;
+            regmoddetalle = 0;
+            idActual = 0;
+            idCliente = 0;
+            idApoderado = 0;
             InsertarCodigo();
         }
         private void LimpiarDetalle()

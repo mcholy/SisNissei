@@ -14,6 +14,14 @@ namespace Entities
             get { return idempleado; }
             set { idempleado = value; }
         }
+        private string nombreempleado;
+
+        public string Nombreempleado
+        {
+            get { return nombreempleado; }
+            set { nombreempleado = value; }
+        }
+
         private int idusuario;
 
         public int Idusuario
@@ -28,12 +36,28 @@ namespace Entities
             get { return idtipoegreso; }
             set { idtipoegreso = value; }
         }
-        private double monto;
 
+        private string tipoegreso;
+
+        public string Tipoegreso
+        {
+            get { return tipoegreso; }
+            set { tipoegreso = value; }
+        }
+
+        private double monto;
+        
         public double Monto
         {
             get { return monto; }
             set { monto = value; }
+        }
+        private string detalle;
+
+        public string Detalle
+        {
+            get { return detalle; }
+            set { detalle = value; }
         }
     }
 }
