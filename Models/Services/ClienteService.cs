@@ -22,9 +22,9 @@ namespace Models.Services
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
-        public List<ClienteEntity> Detalle()
+        public List<ClienteEntity> Detalle(int idtipoingreso)
         {
-            return new ClienteRepository().Detalle();
+            return new ClienteRepository().Detalle(idtipoingreso);
         }
 
         public int Eliminar(ClienteEntity item)

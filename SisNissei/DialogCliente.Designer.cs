@@ -97,6 +97,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "DialogCliente";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.DialogCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

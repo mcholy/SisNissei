@@ -125,19 +125,19 @@ namespace SisNissei
             item.Tipoevento = txtTipoEvento.Text;
             item.Regmod = regmod;
             InscripcionAlquilerService servicio = new InscripcionAlquilerService();
-            //int respuesta = servicio.Guardar(item);
-            //if (respuesta == 1)
-            //{
-            //    MessageBox.Show("El registro se ingreso satisfactoriamente.");
-            //}
-            //else if (respuesta == 2)
-            //{
-            //    MessageBox.Show("El registro se actualizó satisfactoriamente.");
-            //}
-            //else if (respuesta == 3)
-            //{
-            //    MessageBox.Show("La Hora ingresada ya esta ocupada.");
-            //}
+            int respuesta = servicio.Guardar(item);
+            if (respuesta == 1)
+            {
+                MessageBox.Show("El registro se ingreso satisfactoriamente.");
+            }
+            else if (respuesta == 2)
+            {
+                MessageBox.Show("El registro se actualizó satisfactoriamente.");
+            }
+            else if (respuesta == 3)
+            {
+                MessageBox.Show("La Hora ingresada ya esta ocupada.");
+            }
             Limpiar();
             CargarDetalle();
         }

@@ -34,7 +34,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnEliminarDetalle = new System.Windows.Forms.Button();
             this.btnGuardarDetalle = new System.Windows.Forms.Button();
-            this.NuevoDetalle = new System.Windows.Forms.Button();
             this.EditarDetalle = new System.Windows.Forms.Button();
             this.dgvInscripcionAlquilerDetalle = new System.Windows.Forms.DataGridView();
             this.cbAmbiente = new System.Windows.Forms.ComboBox();
@@ -66,11 +65,11 @@
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.dgvInscripcionAlquiler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,7 +113,6 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.btnEliminarDetalle);
             this.groupBox3.Controls.Add(this.btnGuardarDetalle);
-            this.groupBox3.Controls.Add(this.NuevoDetalle);
             this.groupBox3.Controls.Add(this.EditarDetalle);
             this.groupBox3.Controls.Add(this.dgvInscripcionAlquilerDetalle);
             this.groupBox3.Controls.Add(this.cbAmbiente);
@@ -168,17 +166,6 @@
             this.btnGuardarDetalle.TabIndex = 25;
             this.btnGuardarDetalle.UseVisualStyleBackColor = false;
             this.btnGuardarDetalle.Click += new System.EventHandler(this.btnGuardarDetalle_Click);
-            // 
-            // NuevoDetalle
-            // 
-            this.NuevoDetalle.BackColor = System.Drawing.Color.SteelBlue;
-            this.NuevoDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NuevoDetalle.Image = global::SisNissei.Properties.Resources._new;
-            this.NuevoDetalle.Location = new System.Drawing.Point(117, 43);
-            this.NuevoDetalle.Name = "NuevoDetalle";
-            this.NuevoDetalle.Size = new System.Drawing.Size(31, 23);
-            this.NuevoDetalle.TabIndex = 24;
-            this.NuevoDetalle.UseVisualStyleBackColor = false;
             // 
             // EditarDetalle
             // 
@@ -500,6 +487,16 @@
             this.btnEliminar.Size = new System.Drawing.Size(36, 28);
             this.btnEliminar.Text = "Eliminar";
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(36, 28);
+            this.btnImprimir.Text = "toolStripButton1";
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // dgvInscripcionAlquiler
             // 
             this.dgvInscripcionAlquiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -537,16 +534,6 @@
             this.btnBuscar.TabIndex = 0;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(36, 28);
-            this.btnImprimir.Text = "toolStripButton1";
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // InscripcionAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,7 +569,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnEliminarDetalle;
         private System.Windows.Forms.Button btnGuardarDetalle;
-        private System.Windows.Forms.Button NuevoDetalle;
         private System.Windows.Forms.Button EditarDetalle;
         private System.Windows.Forms.DataGridView dgvInscripcionAlquilerDetalle;
         private System.Windows.Forms.ComboBox cbAmbiente;

@@ -43,6 +43,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.btnPagoPendiente = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.label10 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -109,7 +109,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 16);
+            this.label4.Location = new System.Drawing.Point(251, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 15);
             this.label4.TabIndex = 6;
@@ -129,7 +129,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 91);
+            this.label6.Location = new System.Drawing.Point(16, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 15);
             this.label6.TabIndex = 8;
@@ -137,9 +137,9 @@
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(129, 13);
+            this.txtNombreCliente.Location = new System.Drawing.Point(315, 13);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(468, 20);
+            this.txtNombreCliente.Size = new System.Drawing.Size(282, 20);
             this.txtNombreCliente.TabIndex = 9;
             // 
             // txtDni
@@ -219,6 +219,16 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(614, 91);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
@@ -251,9 +261,9 @@
             // cbTipoIngreso
             // 
             this.cbTipoIngreso.FormattingEnabled = true;
-            this.cbTipoIngreso.Location = new System.Drawing.Point(129, 91);
+            this.cbTipoIngreso.Location = new System.Drawing.Point(128, 13);
             this.cbTipoIngreso.Name = "cbTipoIngreso";
-            this.cbTipoIngreso.Size = new System.Drawing.Size(151, 21);
+            this.cbTipoIngreso.Size = new System.Drawing.Size(117, 21);
             this.cbTipoIngreso.TabIndex = 18;
             this.cbTipoIngreso.SelectedIndexChanged += new System.EventHandler(this.cbTipoIngreso_SelectedIndexChanged);
             // 
@@ -387,16 +397,6 @@
             this.lblTotal.Size = new System.Drawing.Size(55, 29);
             this.lblTotal.TabIndex = 19;
             this.lblTotal.Text = "0.00";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(614, 91);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Ingreso
             // 

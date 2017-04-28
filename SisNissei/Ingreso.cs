@@ -27,6 +27,7 @@ namespace SisNissei
         private int idCurso = 0;
         private int idActual = 0;
         private IngresoService servicio = new IngresoService();
+        DialogCliente servicio2 = new DialogCliente();
         public Ingreso()
         {
 
@@ -58,14 +59,17 @@ namespace SisNissei
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            limpiar();
+           
             InsertarCodigo();
-            DialogCliente DialogCliente = new DialogCliente();
+            idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+
+            DialogCliente DialogCliente = new DialogCliente(idTipoIngreso);
             DialogResult resultado = DialogCliente.ShowDialog();
             if (resultado == DialogResult.OK)
             {
                 nombreCliente = DialogCliente.CargarNombre();
                 idCliente = DialogCliente.CargarId();
+
             }
             txtNombreCliente.Text = nombreCliente;
             if (idCliente > 0)

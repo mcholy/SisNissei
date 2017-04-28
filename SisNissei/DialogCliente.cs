@@ -15,6 +15,7 @@ namespace SisNissei
     {
         private string _Cliente = "";
         private int _id = 0;
+        private int _idtipoingreso=0;
         ClienteService servicio = new ClienteService();
 
         public DialogCliente()
@@ -24,6 +25,16 @@ namespace SisNissei
             CargarDetalle();
             Skin.AplicarSkinDGV(dgvCliente);
 
+        }
+
+        public DialogCliente(int idtipoingreso)
+        {
+            InitializeComponent();
+            Skin.AplicarSkinDialog(this);
+            idtipoingreso = _idtipoingreso;
+            CargarDetalle();
+            Skin.AplicarSkinDGV(dgvCliente);
+           
         }
         public string CargarNombre()
         {
@@ -35,11 +46,9 @@ namespace SisNissei
             return _id;
         }
 
-        
-
         private void CargarDetalle()
         {
-            dgvCliente.DataSource = servicio.Detalle();
+            dgvCliente.DataSource = servicio.Detalle(_idtipoingreso);
             if (dgvCliente.RowCount > 0)
             {
                 dgvCliente.Columns["id"].Visible = false;
@@ -93,7 +102,7 @@ namespace SisNissei
         private void CargarDetalle(string filterNombre = "")
         {
             //(BUSCAR) LINEA ACTUALIZADA
-            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle(_idtipoingreso) : servicio.Detalle(_idtipoingreso).Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvCliente.RowCount > 0)
             {
                 dgvCliente.Columns["id"].Visible = false;
@@ -102,6 +111,11 @@ namespace SisNissei
                 dgvCliente.Columns["regmod"].Visible = false;
                 dgvCliente.Columns["fecharegistro"].Visible = false;
             }
+        }
+
+        private void DialogCliente_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

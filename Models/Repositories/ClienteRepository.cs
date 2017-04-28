@@ -41,7 +41,7 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
-        public List<ClienteEntity> Detalle()
+        public List<ClienteEntity> Detalle(int idtipoingreso)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
@@ -49,7 +49,7 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Cliente_Detalle";
-                //cmd.Parameters.AddWithValue("@valor",valor);
+                cmd.Parameters.AddWithValue("@PagoPendiente", idtipoingreso);
 
                 using (var reader = cmd.ExecuteReader())
                 {

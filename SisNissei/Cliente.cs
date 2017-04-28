@@ -22,6 +22,7 @@ namespace SisNissei
         private int idActual = 0;
         private int idApoderado = 0;
         private string nombreApoderado = "";
+        private int idtipoingreso = 0;
         public Cliente()
         {
             InitializeComponent();
@@ -122,8 +123,8 @@ namespace SisNissei
         }
         private void CargarDetalle(string filterNombre = "")
         {
-            
-            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+
+            dgvCliente.DataSource = filterNombre == "" ? servicio.Detalle(idtipoingreso) : servicio.Detalle(idtipoingreso).Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvCliente.RowCount > 0)
             {
                 dgvCliente.Columns["id"].Visible = false;
