@@ -245,6 +245,12 @@ namespace SisNissei
             Egresos.DefInstance.MdiParent = this;
             Egresos.DefInstance.Show();
         }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Listado_de_Alumnos.DefInstance.MdiParent = this;
+            Listado_de_Alumnos.DefInstance.Show();
+        }
                
     }
 }

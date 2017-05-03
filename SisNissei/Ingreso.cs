@@ -27,7 +27,7 @@ namespace SisNissei
         private int idCurso = 0;
         private int idActual = 0;
         private IngresoService servicio = new IngresoService();
-        DialogCliente servicio2 = new DialogCliente();
+
         public Ingreso()
         {
 
@@ -77,6 +77,17 @@ namespace SisNissei
                 DatosFac(idCliente);
             }
             nropago = 0;
+            if (idTipoIngreso == 2)
+            {
+                ListarPagoPendiente(idCliente);
+                lblCurso.Visible = true;
+                cbCurso.Visible = true;
+            }
+            else
+            {
+                lblCurso.Visible = false;
+                cbCurso.Visible = false;
+            }
         }
         private void InsertarCodigo()
         {

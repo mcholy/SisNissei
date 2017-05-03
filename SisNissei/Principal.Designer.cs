@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rolEnSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +69,9 @@
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -88,22 +88,6 @@
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
-            this.toolStripStatusLabel.Text = "Estado";
             // 
             // toolStripButton1
             // 
@@ -228,7 +212,7 @@
             // tipoEgresoToolStripMenuItem
             // 
             this.tipoEgresoToolStripMenuItem.Name = "tipoEgresoToolStripMenuItem";
-            this.tipoEgresoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tipoEgresoToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.tipoEgresoToolStripMenuItem.Text = "TipoEgreso";
             this.tipoEgresoToolStripMenuItem.Click += new System.EventHandler(this.tipoEgresoToolStripMenuItem_Click);
             // 
@@ -303,14 +287,14 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // empresaToolStripMenuItem
             // 
             this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.empresaToolStripMenuItem.Text = "Empresa";
             this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
             // 
@@ -320,7 +304,7 @@
             this.inscripcionSocioToolStripMenuItem,
             this.inscripcionAlumnoToolStripMenuItem});
             this.inscripciónToolStripMenuItem.Name = "inscripciónToolStripMenuItem";
-            this.inscripciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inscripciónToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.inscripciónToolStripMenuItem.Text = "Inscripción";
             // 
             // inscripcionSocioToolStripMenuItem
@@ -344,7 +328,7 @@
             this.ingresoToolStripMenuItem,
             this.ingresoMantenimientoToolStripMenuItem});
             this.movimientoToolStripMenuItem.Name = "movimientoToolStripMenuItem";
-            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.movimientoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.movimientoToolStripMenuItem.Text = "Movimiento";
             // 
             // egresoToolStripMenuItem
@@ -371,7 +355,7 @@
             // alquilerToolStripMenuItem
             // 
             this.alquilerToolStripMenuItem.Name = "alquilerToolStripMenuItem";
-            this.alquilerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alquilerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.alquilerToolStripMenuItem.Text = "Alquiler";
             this.alquilerToolStripMenuItem.Click += new System.EventHandler(this.alquilerToolStripMenuItem_Click);
             // 
@@ -400,6 +384,7 @@
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
             this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
+            this.alumnosToolStripMenuItem.Click += new System.EventHandler(this.alumnosToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
@@ -412,6 +397,22 @@
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.sociosToolStripMenuItem.Text = "Socios";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel.Text = "Estado";
             // 
             // Principal
             // 

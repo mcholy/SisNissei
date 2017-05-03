@@ -153,7 +153,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(129, 62);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(511, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(206, 20);
             this.txtDireccion.TabIndex = 12;
             // 
             // label7
@@ -215,13 +215,13 @@
             this.groupBox2.Controls.Add(this.txtDni);
             this.groupBox2.Location = new System.Drawing.Point(21, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(653, 118);
+            this.groupBox2.Size = new System.Drawing.Size(653, 98);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(614, 91);
+            this.button1.Location = new System.Drawing.Point(614, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 23);
             this.button1.TabIndex = 22;
@@ -233,7 +233,7 @@
             // 
             this.lblCurso.AutoSize = true;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurso.Location = new System.Drawing.Point(312, 94);
+            this.lblCurso.Location = new System.Drawing.Point(341, 65);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(47, 13);
             this.lblCurso.TabIndex = 21;
@@ -242,7 +242,7 @@
             // cbCurso
             // 
             this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(376, 91);
+            this.cbCurso.Location = new System.Drawing.Point(405, 62);
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(103, 21);
             this.cbCurso.TabIndex = 20;
@@ -250,9 +250,9 @@
             // 
             // btnPagoPendiente
             // 
-            this.btnPagoPendiente.Location = new System.Drawing.Point(485, 89);
+            this.btnPagoPendiente.Location = new System.Drawing.Point(524, 60);
             this.btnPagoPendiente.Name = "btnPagoPendiente";
-            this.btnPagoPendiente.Size = new System.Drawing.Size(122, 23);
+            this.btnPagoPendiente.Size = new System.Drawing.Size(83, 23);
             this.btnPagoPendiente.TabIndex = 19;
             this.btnPagoPendiente.Text = "Buscar Pago Pendiente";
             this.btnPagoPendiente.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@
             this.groupBox3.Controls.Add(this.rdbBoleta);
             this.groupBox3.Location = new System.Drawing.Point(699, 107);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(99, 118);
+            this.groupBox3.Size = new System.Drawing.Size(99, 98);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             // 
@@ -335,10 +335,10 @@
             // dgvPagosPendientes
             // 
             this.dgvPagosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagosPendientes.Location = new System.Drawing.Point(21, 231);
+            this.dgvPagosPendientes.Location = new System.Drawing.Point(21, 211);
             this.dgvPagosPendientes.Name = "dgvPagosPendientes";
             this.dgvPagosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 225);
+            this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 245);
             this.dgvPagosPendientes.TabIndex = 17;
             this.dgvPagosPendientes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvPagosPendientes_UserDeletingRow);
             // 

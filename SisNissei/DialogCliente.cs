@@ -31,8 +31,8 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkinDialog(this);
-            idtipoingreso = _idtipoingreso;
-            CargarDetalle();
+            _idtipoingreso = idtipoingreso;
+            CargarDetalle(_idtipoingreso);
             Skin.AplicarSkinDGV(dgvCliente);
            
         }
@@ -46,7 +46,7 @@ namespace SisNissei
             return _id;
         }
 
-        private void CargarDetalle()
+        private void CargarDetalle(int _idtipoingreso)
         {
             dgvCliente.DataSource = servicio.Detalle(_idtipoingreso);
             if (dgvCliente.RowCount > 0)

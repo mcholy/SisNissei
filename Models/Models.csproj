@@ -107,6 +107,7 @@
     <Compile Include="Repositories\InscripcionSocioRepository.cs" />
     <Compile Include="Repositories\ReporteAlquilerRepository.cs" />
     <Compile Include="Repositories\ReporteAlumnoRepository.cs" />
+    <Compile Include="Repositories\ReporteAlumnosRepository.cs" />
     <Compile Include="Repositories\ReporteIngresoRepository.cs" />
     <Compile Include="Repositories\ReporteSocioRepository.cs" />
     <Compile Include="Repositories\SocioReporte.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Services\InscripcionAlumnoService.cs" />
     <Compile Include="Services\InscripcionSocioService.cs" />
     <Compile Include="Services\PeriodoService.cs" />
+    <Compile Include="Services\ReporteAlumnosService.cs" />
     <Compile Include="Services\RolService.cs" />
     <Compile Include="Services\DistritoService.cs" />
     <Compile Include="Services\TipoEgresoService.cs" />
