@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
-using Models.Services;
 using SisNissei.Template;
 using Entities;
+using Models.Services;
+using System.Data.SqlClient;
+using Models;
+
 
 namespace SisNissei
 {
@@ -150,6 +152,77 @@ namespace SisNissei
             idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
             idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
             CargarDetalle();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            mes = cbMesPago.Text;
+            switch (mes)
+            {
+                case "Ninguno":
+                    mespago = 0;
+                    break;
+                case "Enero":
+                    mespago = 1;
+                    break;
+                case "Febrero":
+                    mespago = 2;
+                    break;
+                case "Marzo":
+                    mespago = 3;
+                    break;
+                case "Abril":
+                    mespago = 4;
+                    break;
+                case "Mayo":
+                    mespago = 5;
+                    break;
+                case "Junio":
+                    mespago = 6;
+                    break;
+                case "Julio":
+                    mespago = 7;
+                    break;
+                case "Agosto":
+                    mespago = 8;
+                    break;
+                case "Septiembre":
+                    mespago = 9;
+                    break;
+                case "Octubre":
+                    mespago = 10;
+                    break;
+                case "Noviembre":
+                    mespago = 11;
+                    break;
+                case "Diciembre":
+                    mespago = 12;
+                    break;
+            }
+            idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+            idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
+            if (dgvListadoAlumnos.RowCount > 0)
+            {
+                
+                    if (MessageBox.Show("¿Esta seguro de imprimir este listado?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        imprimir();
+                    }
+               
+            }
+        }
+        private void imprimir()
+        {
+            item.Idcurso = idcurso;
+            item.Idperiodo = idperiodo;
+            item.Mespago = mespago;
+            DatosReporteAlumnos dra= servicio.Reporte(item);
+            ReporteAlumnosReporte rpt = new ReporteAlumnosReporte();
+            rpt.SetDataSource(dra);
+            ReporteAlumnosFormulario frmReporte = new ReporteAlumnosFormulario();
+            frmReporte.rpReporteAlumnos.ReportSource = rpt;
+            frmReporte.ShowDialog();
+
         }
     }
 }

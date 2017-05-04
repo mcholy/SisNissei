@@ -1,6 +1,6 @@
 ﻿namespace SisNissei
 {
-    partial class Listado_de_Alumnos
+    partial class PagoProfesores
     {
         /// <summary>
         /// Required designer variable.
@@ -39,13 +39,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvListadoAlumnos = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.dgvListadoPago = new System.Windows.Forms.DataGridView();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPago)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,10 +61,10 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtNombreCliente);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(21, 12);
+            this.groupBox2.Location = new System.Drawing.Point(21, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(740, 84);
-            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             // 
             // btnListar
@@ -91,7 +91,6 @@
             this.cbMesPago.Name = "cbMesPago";
             this.cbMesPago.Size = new System.Drawing.Size(125, 21);
             this.cbMesPago.TabIndex = 24;
-            this.cbMesPago.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -167,34 +166,23 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "CLIENTE :";
             // 
-            // dgvListadoAlumnos
+            // dgvListadoPago
             // 
-            this.dgvListadoAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoAlumnos.Location = new System.Drawing.Point(21, 102);
-            this.dgvListadoAlumnos.Name = "dgvListadoAlumnos";
-            this.dgvListadoAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoAlumnos.Size = new System.Drawing.Size(740, 328);
-            this.dgvListadoAlumnos.TabIndex = 27;
+            this.dgvListadoPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoPago.Location = new System.Drawing.Point(21, 96);
+            this.dgvListadoPago.Name = "dgvListadoPago";
+            this.dgvListadoPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListadoPago.Size = new System.Drawing.Size(740, 328);
+            this.dgvListadoPago.TabIndex = 30;
             // 
-            // btnGuardar
+            // btnImprimir
             // 
-            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
-            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(36, 42);
-            this.btnGuardar.Text = "Guardar";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(36, 42);
-            this.btnCancelar.Text = "Cancelar";
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(36, 42);
+            this.btnImprimir.Text = "toolStripButton1";
             // 
             // toolStrip1
             // 
@@ -206,36 +194,46 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnImprimir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 445);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 439);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 45);
-            this.toolStrip1.TabIndex = 28;
+            this.toolStrip1.Size = new System.Drawing.Size(779, 45);
+            this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "tsCliente";
             // 
-            // btnImprimir
+            // btnCancelar
             // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(36, 42);
-            this.btnImprimir.Text = "toolStripButton1";
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnCancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelar.Image = global::SisNissei.Properties.Resources.cancel;
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(36, 42);
+            this.btnCancelar.Text = "Cancelar";
             // 
-            // Listado_de_Alumnos
+            // btnGuardar
+            // 
+            this.btnGuardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGuardar.Image = global::SisNissei.Properties.Resources.save;
+            this.btnGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(36, 42);
+            this.btnGuardar.Text = "Guardar";
+            // 
+            // PagoProfesores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 490);
+            this.ClientSize = new System.Drawing.Size(779, 484);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dgvListadoAlumnos);
+            this.Controls.Add(this.dgvListadoPago);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "Listado_de_Alumnos";
-            this.Text = "Listado_de_Alumnos";
-            this.Load += new System.EventHandler(this.Listado_de_Alumnos_Load);
+            this.Name = "PagoProfesores";
+            this.Text = "PagoProfesores";
+            this.Load += new System.EventHandler(this.PagoProfesores_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPago)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -245,20 +243,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.ComboBox cbMesPago;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.ComboBox cbCurso;
         private System.Windows.Forms.ComboBox cbPeriodo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombreCliente;
-        private System.Windows.Forms.DataGridView dgvListadoAlumnos;
-        private System.Windows.Forms.ToolStripButton btnGuardar;
-        private System.Windows.Forms.ToolStripButton btnCancelar;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvListadoPago;
         private System.Windows.Forms.ToolStripButton btnImprimir;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.ToolStripButton btnGuardar;
     }
 }

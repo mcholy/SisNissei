@@ -16,14 +16,14 @@ namespace SisNissei.Template {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class AlquilerReporte : ReportClass {
+    public class ReporteAlumnosReporte : ReportClass {
         
-        public AlquilerReporte() {
+        public ReporteAlumnosReporte() {
         }
         
         public override string ResourceName {
             get {
-                return "AlquilerReporte.rpt";
+                return "ReporteAlumnosReporte.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SisNissei.Template {
         
         public override string FullResourceName {
             get {
-                return "SisNissei.Template.AlquilerReporte.rpt";
+                return "SisNissei.Template.ReporteAlumnosReporte.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SisNissei.Template {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedAlquilerReporte : Component, ICachedReport {
+    public class CachedReporteAlumnosReporte : Component, ICachedReport {
         
-        public CachedAlquilerReporte() {
+        public CachedReporteAlumnosReporte() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SisNissei.Template {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            AlquilerReporte rpt = new AlquilerReporte();
+            ReporteAlumnosReporte rpt = new ReporteAlumnosReporte();
             rpt.Site = this.Site;
             return rpt;
         }

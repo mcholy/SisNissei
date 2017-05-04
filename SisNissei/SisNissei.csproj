@@ -183,11 +183,23 @@
     <Compile Include="Horario.Designer.cs">
       <DependentUpon>Horario.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoProfesores.Designer.cs">
+      <DependentUpon>PagoProfesores.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteAlumnos.Designer.cs">
       <DependentUpon>ReporteAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAlumnosFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAlumnosFormulario.Designer.cs">
+      <DependentUpon>ReporteAlumnosFormulario.cs</DependentUpon>
     </Compile>
     <Compile Include="SocioReporteFormulario.cs">
       <SubType>Form</SubType>
@@ -211,6 +223,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BoletaReporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\ReporteAlumnosReporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAlumnosReporte.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Template\SocioReporte.cs">
@@ -370,6 +388,9 @@
     <EmbeddedResource Include="Horario.resx">
       <DependentUpon>Horario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PagoProfesores.resx">
+      <DependentUpon>PagoProfesores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteAlumnos.resx">
       <DependentUpon>ReporteAlumnos.cs</DependentUpon>
     </EmbeddedResource>
@@ -378,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAlumnosFormulario.resx">
+      <DependentUpon>ReporteAlumnosFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SocioReporteFormulario.resx">
       <DependentUpon>SocioReporteFormulario.cs</DependentUpon>
@@ -393,6 +417,10 @@
     <EmbeddedResource Include="Template\BoletaReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BoletaReporte.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\ReporteAlumnosReporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAlumnosReporte.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\SocioReporte.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

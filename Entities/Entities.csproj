@@ -50,6 +50,7 @@
     <Compile Include="GrupoEtarioEntity.cs" />
     <Compile Include="InscripcionAlquilerEntity.cs" />
     <Compile Include="InscripcionAlumnoEntity.cs" />
+    <Compile Include="PagoProfesoresEntity.cs" />
     <Compile Include="ReporteAlumnosEntity.cs" />
     <Compile Include="ReporteIngresoEntity.cs" />
     <Compile Include="ReporteInscripcionAlquilerEntity.cs" />

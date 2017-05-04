@@ -151,6 +151,7 @@ namespace SisNissei
             {
                 MessageBox.Show("El registro se actualizó satisfactoriamente.");
             }
+
             LimpiarDetalle();
             CargarDetalleDetalle(idActual);
         }

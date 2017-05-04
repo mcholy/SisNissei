@@ -251,6 +251,12 @@ namespace SisNissei
             Listado_de_Alumnos.DefInstance.MdiParent = this;
             Listado_de_Alumnos.DefInstance.Show();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PagoProfesores.DefInstance.MdiParent = this;
+            PagoProfesores.DefInstance.Show();
+        }
                
     }
 }
