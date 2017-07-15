@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnListar = new System.Windows.Forms.Button();
             this.cbMesPago = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCurso = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.cbPeriodo = new System.Windows.Forms.ComboBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvListadoPago = new System.Windows.Forms.DataGridView();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
+            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoPago)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -66,23 +66,6 @@
             this.groupBox2.Size = new System.Drawing.Size(740, 84);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
-            // 
-            // btnListar
-            // 
-            this.btnListar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnListar.Image = global::SisNissei.Properties.Resources.search;
-            this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListar.Location = new System.Drawing.Point(636, 18);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(84, 23);
-            this.btnListar.TabIndex = 25;
-            this.btnListar.Text = "Listar";
-            this.btnListar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnListar.UseVisualStyleBackColor = false;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // cbMesPago
             // 
@@ -128,17 +111,6 @@
             this.cbPeriodo.Size = new System.Drawing.Size(133, 21);
             this.cbPeriodo.TabIndex = 18;
             // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(689, 54);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarCliente.TabIndex = 17;
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -174,15 +146,8 @@
             this.dgvListadoPago.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoPago.Size = new System.Drawing.Size(740, 328);
             this.dgvListadoPago.TabIndex = 30;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Image = global::SisNissei.Properties.Resources.imprimir;
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(36, 42);
-            this.btnImprimir.Text = "toolStripButton1";
+         
+            this.dgvListadoPago.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoPago_CellDoubleClick);
             // 
             // toolStrip1
             // 
@@ -199,6 +164,34 @@
             this.toolStrip1.Size = new System.Drawing.Size(779, 45);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "tsCliente";
+            // 
+            // btnListar
+            // 
+            this.btnListar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnListar.Image = global::SisNissei.Properties.Resources.search;
+            this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListar.Location = new System.Drawing.Point(636, 18);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(84, 23);
+            this.btnListar.TabIndex = 25;
+            this.btnListar.Text = "Listar";
+            this.btnListar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(689, 54);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarCliente.TabIndex = 17;
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
@@ -219,6 +212,15 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(36, 42);
             this.btnGuardar.Text = "Guardar";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImprimir.Image = global::SisNissei.Properties.Resources.Check_02;
+            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(36, 42);
+            this.btnImprimir.Text = "toolStripButton1";
             // 
             // PagoProfesores
             // 

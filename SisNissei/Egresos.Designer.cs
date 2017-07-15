@@ -113,7 +113,7 @@
             // txtDetalle
             // 
             this.txtDetalle.Location = new System.Drawing.Point(110, 95);
-            this.txtDetalle.MaxLength = 30;
+            this.txtDetalle.MaxLength = 0;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(196, 20);
             this.txtDetalle.TabIndex = 2;

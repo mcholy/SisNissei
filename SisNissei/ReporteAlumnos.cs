@@ -26,8 +26,7 @@ namespace SisNissei
         public Listado_de_Alumnos()
         {
             InitializeComponent();
-            Skin.AplicarSkin(this);
-            
+            Skin.AplicarSkin(this);            
             Skin.AplicarSkinDGV(dgvListadoAlumnos);
             CargarDetalle();
 

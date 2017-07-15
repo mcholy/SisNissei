@@ -99,7 +99,8 @@ namespace SisNissei
             txtRecibo.Text = string.Empty;
             txtDetalle.Text = string.Empty;
             txtMonto.Text = string.Empty;
-
+            idActual = 0;
+            regmod = 0;
 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -109,7 +110,7 @@ namespace SisNissei
         private void CargarDetalle(string filterNombre = "")
         {
 
-            dgvEgreso.DataSource = filterNombre == "" ? servicio.Detalle() : servicio.Detalle().Where(x => x.Detalle.ToUpper().Contains(filterNombre.ToUpper())).ToList();
+            dgvEgreso.DataSource = filterNombre == "" ? servicio.Detalle(0) : servicio.Detalle(0).Where(x => x.Detalle.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvEgreso.RowCount > 0)
             {
                 dgvEgreso.Columns["id"].Visible = false;
@@ -189,11 +190,12 @@ namespace SisNissei
 
         private void Egresos_Load(object sender, EventArgs e)
         {
-            ListarTipoEgreso();
             CargarDetalle();
-            dgvEgreso.ClearSelection();
-            dgvEgreso.CurrentRow.Selected = false;
+            ListarTipoEgreso();
             txtBuscar.Focus();
+
+
+
         }
     }
 }

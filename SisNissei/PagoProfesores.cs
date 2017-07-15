@@ -153,5 +153,31 @@ namespace SisNissei
             idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
             CargarDetalle();
         }
+
+
+
+        private void PagarProfesor()
+        {
+
+           
+            item.Id = Int32.Parse(dgvListadoPago.CurrentRow.Cells["id"].Value.ToString());
+            item.Nombre = dgvListadoPago.CurrentRow.Cells["nombre"].Value.ToString();
+            item.Montopagar = dgvListadoPago.CurrentRow.Cells["montopagar"].Value.ToString();
+            PagoProfesor DialogPago = new PagoProfesor(item.Id,item.Nombre,item.Montopagar);
+            DialogPago.ShowDialog();
+            CargarDetalle();
+        }
+
+        private void dgvListadoPago_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvListadoPago.CurrentRow.Selected == true)
+            {
+                if (MessageBox.Show("¿Esta seguro de Procesar este Pago?", "SisNisei", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    PagarProfesor();
+                }
+            }
+        }
+
     }
 }

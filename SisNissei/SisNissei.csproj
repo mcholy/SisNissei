@@ -183,6 +183,12 @@
     <Compile Include="Horario.Designer.cs">
       <DependentUpon>Horario.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoProfesor.Designer.cs">
+      <DependentUpon>PagoProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagoProfesores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Horario.resx">
       <DependentUpon>Horario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoProfesor.resx">
+      <DependentUpon>PagoProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagoProfesores.resx">
       <DependentUpon>PagoProfesores.cs</DependentUpon>

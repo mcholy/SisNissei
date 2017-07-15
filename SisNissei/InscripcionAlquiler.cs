@@ -37,10 +37,12 @@ namespace SisNissei
         {
             InitializeComponent();
             Skin.AplicarSkin(this);
-            InsertarCodigo();
+            
+            InsertarCodigo();                     
             Skin.AplicarSkinDGV(dgvInscripcionAlquiler);
             Skin.AplicarSkinDGV(dgvInscripcionAlquilerDetalle);
             CargarDetalle();
+            
         }
         #region Singleton
         private static InscripcionAlquiler m_FormDefInstance;
@@ -91,8 +93,9 @@ namespace SisNissei
         private void InscripcionAlquiler_Load(object sender, EventArgs e)
         {
             dgvInscripcionAlquiler.ClearSelection();
-            dgvInscripcionAlquiler.CurrentRow.Selected = false;
             dgvInscripcionAlquilerDetalle.ClearSelection();
+            dgvInscripcionAlquiler.CurrentRow.Selected = false;
+
             //dgvInscripcionAlquilerDetalle.CurrentRow.Selected = false;
         }
 

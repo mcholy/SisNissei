@@ -19,9 +19,9 @@ namespace Models.Services
             respuesta = repositorio.Guardar(item);
             return Int32.Parse(respuesta);
         }
-        public List<EgresoEntity> Detalle()
+        public List<EgresoEntity> Detalle(int idtipoegreso)
         {
-            return new EgresoRepository().Detalle();
+            return new EgresoRepository().Detalle(idtipoegreso);
         }
 
         public int Eliminar(EgresoEntity item)

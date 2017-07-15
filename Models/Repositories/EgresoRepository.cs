@@ -35,7 +35,7 @@ namespace Models.Repositories
                 return respuesta;
             }
         }
-        public List<EgresoEntity> Detalle()
+        public List<EgresoEntity> Detalle(int idtipoegreso)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
@@ -43,7 +43,7 @@ namespace Models.Repositories
                 conn.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Egreso_Detalle";
-                //cmd.Parameters.AddWithValue("@valor",valor);
+                cmd.Parameters.AddWithValue("@idtipoegreso", idtipoegreso);
 
                 using (var reader = cmd.ExecuteReader())
                 {
