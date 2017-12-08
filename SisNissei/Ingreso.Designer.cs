@@ -340,6 +340,7 @@
             this.dgvPagosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagosPendientes.Size = new System.Drawing.Size(777, 245);
             this.dgvPagosPendientes.TabIndex = 17;
+            this.dgvPagosPendientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagosPendientes_CellDoubleClick);
             this.dgvPagosPendientes.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvPagosPendientes_UserDeletingRow);
             // 
             // toolStrip1

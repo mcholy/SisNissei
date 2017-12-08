@@ -13,5 +13,12 @@ namespace Entities
             get { return respuesta; }
             set { respuesta = value; }
         }
+        private int id_res;
+
+        public int Id_res
+        {
+            get { return id_res; }
+            set { id_res = value; }
+        }
     }
 }

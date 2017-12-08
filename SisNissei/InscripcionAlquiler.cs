@@ -67,9 +67,7 @@ namespace SisNissei
             idCliente = 0;
             idGarante = 0;
             txtCliente.Text = string.Empty;
-            txtGarante.Text = string.Empty;
-            txtTipoEvento.Text = string.Empty;
-            txtAcuenta.Text = string.Empty;
+            txtTipoEvento.Text = string.Empty;           
             lblTotal.Text = string.Empty;
             sumatoria = 0;
             regmod = 0;
@@ -95,8 +93,20 @@ namespace SisNissei
             dgvInscripcionAlquiler.ClearSelection();
             dgvInscripcionAlquilerDetalle.ClearSelection();
             dgvInscripcionAlquiler.CurrentRow.Selected = false;
-
+            group3();
             //dgvInscripcionAlquilerDetalle.CurrentRow.Selected = false;
+        }
+
+        private void group3()
+        { 
+         if (idActual == 0)
+            {
+                groupBox3.Visible = false;
+            }
+            else 
+            {
+                groupBox3.Visible = true;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -114,6 +124,7 @@ namespace SisNissei
 
                 Guardar();
                 regmod = 0;
+                group3();
             }
         }
         private void Guardar()
@@ -123,8 +134,7 @@ namespace SisNissei
             item.Idcliente = idCliente;
             item.Idgarante = idGarante;
             item.Horainicio = DateTime.Parse(dtpHoraInicio.Value.ToString());
-            item.Horafin = DateTime.Parse(dtpHoraFin.Value.ToString());
-            item.Acuenta = double.Parse(txtAcuenta.Text);
+            item.Horafin = DateTime.Parse(dtpHoraFin.Value.ToString());           
             item.Tipoevento = txtTipoEvento.Text;
             item.Regmod = regmod;
             InscripcionAlquilerService servicio = new InscripcionAlquilerService();
@@ -182,6 +192,7 @@ namespace SisNissei
         {
             Limpiar();
             CargarDetalleDetalle(idActual);
+            group3();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -192,6 +203,7 @@ namespace SisNissei
                 {
                     LlenarControles();
                     regmod = 1;
+                    group3();
                 }
                 else
                 {
@@ -206,8 +218,7 @@ namespace SisNissei
             idGarante = Int32.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["idgarante"].Value.ToString());
             txtTipoEvento.Text = dgvInscripcionAlquiler.CurrentRow.Cells["tipoevento"].Value.ToString();
             txtCliente.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombrecliente"].Value.ToString();
-            txtGarante.Text = dgvInscripcionAlquiler.CurrentRow.Cells["nombregarante"].Value.ToString();
-            txtAcuenta.Text = dgvInscripcionAlquiler.CurrentRow.Cells["acuenta"].Value.ToString();
+            
             dtpHoraInicio.Value = DateTime.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["fechainicioalquiler"].Value.ToString());
             dtpHoraFin.Value = DateTime.Parse(dgvInscripcionAlquiler.CurrentRow.Cells["fechafinalquiler"].Value.ToString());
 
@@ -267,7 +278,7 @@ namespace SisNissei
             itemdetalle.Id = idActualDetalle;
             itemdetalle.Idalquiler = idActual;
             itemdetalle.Idambientedescripcion = Int32.Parse(cbAmbienteDescripcion.SelectedValue.ToString());
-
+            itemdetalle.Cant = Int32.Parse(txtCant.Text.ToString());
             itemdetalle.Regmoddetalle = regmoddetalle;
             DetalleInscripcionAlquilerService serviciodetalle = new DetalleInscripcionAlquilerService();
             int respuesta = serviciodetalle.Guardar(itemdetalle);
@@ -317,7 +328,7 @@ namespace SisNissei
                 idGarante = dialogCliente.CargarId();
 
             }
-            txtGarante.Text = nombreGarante;
+           
 
         }
 

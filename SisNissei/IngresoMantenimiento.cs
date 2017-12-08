@@ -20,7 +20,7 @@ namespace SisNissei
         private IngresoEntity item = new IngresoEntity();
         ReporteIngresoEntity item2 = new ReporteIngresoEntity();
         private IngresoService servicio = new IngresoService();
-        private int idActual = 0;
+     
         public IngresoMantenimiento()
         {
             InitializeComponent();

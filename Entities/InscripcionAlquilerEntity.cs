@@ -37,13 +37,6 @@ namespace Entities
             set { nombregarante = value; }
         }
 
-        private double acuenta;
-
-        public double Acuenta
-        {
-            get { return acuenta; }
-            set { acuenta = value; }
-        }
        
         private DateTime horainicio;
 

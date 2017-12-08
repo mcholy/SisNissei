@@ -28,18 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtRecibo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDetalle = new System.Windows.Forms.TextBox();
-            this.cbTipoEgreso = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEmpleado = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvEgreso = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +41,20 @@
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox2.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtRecibo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDetalle = new System.Windows.Forms.TextBox();
+            this.cbTipoEgreso = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmpleado = new System.Windows.Forms.TextBox();
+            this.btnBuscarEmpleado = new System.Windows.Forms.Button();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgreso)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -62,126 +63,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txtRecibo);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtDetalle);
-            this.groupBox2.Controls.Add(this.cbTipoEgreso);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtEmpleado);
-            this.groupBox2.Controls.Add(this.btnBuscarEmpleado);
-            this.groupBox2.Controls.Add(this.txtMonto);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(16, 42);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 185);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Nro. Recibo :";
-            // 
-            // txtRecibo
-            // 
-            this.txtRecibo.Location = new System.Drawing.Point(110, 69);
-            this.txtRecibo.MaxLength = 7;
-            this.txtRecibo.Name = "txtRecibo";
-            this.txtRecibo.Size = new System.Drawing.Size(196, 20);
-            this.txtRecibo.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Tipo de Egreso :";
-            // 
-            // txtDetalle
-            // 
-            this.txtDetalle.Location = new System.Drawing.Point(110, 95);
-            this.txtDetalle.MaxLength = 0;
-            this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(196, 20);
-            this.txtDetalle.TabIndex = 2;
-            // 
-            // cbTipoEgreso
-            // 
-            this.cbTipoEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoEgreso.FormattingEnabled = true;
-            this.cbTipoEgreso.Location = new System.Drawing.Point(110, 14);
-            this.cbTipoEgreso.Name = "cbTipoEgreso";
-            this.cbTipoEgreso.Size = new System.Drawing.Size(196, 21);
-            this.cbTipoEgreso.TabIndex = 11;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Empleado :";
-            // 
-            // txtEmpleado
-            // 
-            this.txtEmpleado.Location = new System.Drawing.Point(110, 43);
-            this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.ReadOnly = true;
-            this.txtEmpleado.Size = new System.Drawing.Size(159, 20);
-            this.txtEmpleado.TabIndex = 0;
-            // 
-            // btnBuscarEmpleado
-            // 
-            this.btnBuscarEmpleado.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnBuscarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEmpleado.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpleado.Location = new System.Drawing.Point(275, 40);
-            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
-            this.btnBuscarEmpleado.Size = new System.Drawing.Size(31, 23);
-            this.btnBuscarEmpleado.TabIndex = 3;
-            this.btnBuscarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
-            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(110, 121);
-            this.txtMonto.MaxLength = 7;
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(90, 20);
-            this.txtMonto.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 124);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Monto :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Detalle :";
             // 
             // dgvEgreso
             // 
@@ -337,6 +220,146 @@
             this.splitContainer1.SplitterDistance = 342;
             this.splitContainer1.TabIndex = 3;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtProveedor);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtRecibo);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtDetalle);
+            this.groupBox2.Controls.Add(this.cbTipoEgreso);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtEmpleado);
+            this.groupBox2.Controls.Add(this.btnBuscarEmpleado);
+            this.groupBox2.Controls.Add(this.txtMonto);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(16, 42);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(313, 185);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos";
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Location = new System.Drawing.Point(107, 69);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(200, 20);
+            this.txtProveedor.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 98);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Nro. Recibo :";
+            // 
+            // txtRecibo
+            // 
+            this.txtRecibo.Location = new System.Drawing.Point(107, 95);
+            this.txtRecibo.MaxLength = 20;
+            this.txtRecibo.Name = "txtRecibo";
+            this.txtRecibo.Size = new System.Drawing.Size(196, 20);
+            this.txtRecibo.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Proveedor :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Tipo de Egreso :";
+            // 
+            // txtDetalle
+            // 
+            this.txtDetalle.Location = new System.Drawing.Point(107, 124);
+            this.txtDetalle.MaxLength = 0;
+            this.txtDetalle.Name = "txtDetalle";
+            this.txtDetalle.Size = new System.Drawing.Size(196, 20);
+            this.txtDetalle.TabIndex = 2;
+            // 
+            // cbTipoEgreso
+            // 
+            this.cbTipoEgreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoEgreso.FormattingEnabled = true;
+            this.cbTipoEgreso.Location = new System.Drawing.Point(110, 14);
+            this.cbTipoEgreso.Name = "cbTipoEgreso";
+            this.cbTipoEgreso.Size = new System.Drawing.Size(196, 21);
+            this.cbTipoEgreso.TabIndex = 11;
+            this.cbTipoEgreso.SelectedIndexChanged += new System.EventHandler(this.cbTipoEgreso_SelectedIndexChanged);
+            this.cbTipoEgreso.SelectedValueChanged += new System.EventHandler(this.cbTipoEgreso_SelectedValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Empleado :";
+            // 
+            // txtEmpleado
+            // 
+            this.txtEmpleado.Location = new System.Drawing.Point(110, 43);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.ReadOnly = true;
+            this.txtEmpleado.Size = new System.Drawing.Size(159, 20);
+            this.txtEmpleado.TabIndex = 0;
+            // 
+            // btnBuscarEmpleado
+            // 
+            this.btnBuscarEmpleado.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEmpleado.Image = global::SisNissei.Properties.Resources.search;
+            this.btnBuscarEmpleado.Location = new System.Drawing.Point(275, 40);
+            this.btnBuscarEmpleado.Name = "btnBuscarEmpleado";
+            this.btnBuscarEmpleado.Size = new System.Drawing.Size(31, 23);
+            this.btnBuscarEmpleado.TabIndex = 3;
+            this.btnBuscarEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarEmpleado.UseVisualStyleBackColor = false;
+            this.btnBuscarEmpleado.Click += new System.EventHandler(this.btnBuscarEmpleado_Click);
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(107, 147);
+            this.txtMonto.MaxLength = 7;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(90, 20);
+            this.txtMonto.TabIndex = 4;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Monto :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Detalle :";
+            // 
             // Egresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,8 +369,6 @@
             this.Name = "Egresos";
             this.Text = "Egresos";
             this.Load += new System.EventHandler(this.Egresos_Load);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgreso)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -359,20 +380,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtEmpleado;
-        private System.Windows.Forms.Button btnBuscarEmpleado;
-        private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDetalle;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvEgreso;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
@@ -386,9 +401,19 @@
         private System.Windows.Forms.ToolStripButton btnGuardar;
         private System.Windows.Forms.ToolStripButton btnEliminar;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox cbTipoEgreso;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtRecibo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDetalle;
+        private System.Windows.Forms.ComboBox cbTipoEgreso;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtEmpleado;
+        private System.Windows.Forms.Button btnBuscarEmpleado;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }

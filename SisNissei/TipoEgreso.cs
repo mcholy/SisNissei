@@ -53,6 +53,7 @@ namespace SisNissei
         {
             idActual = Int32.Parse(dgvTipoEgreso.CurrentRow.Cells["id"].Value.ToString());
             txtNombre.Text = dgvTipoEgreso.CurrentRow.Cells["nombre"].Value.ToString();
+            chkProvedor.Checked=bool.Parse(dgvTipoEgreso.CurrentRow.Cells["proveedor"].Value.ToString());
 
         }
         private void Limpiar()
@@ -63,6 +64,7 @@ namespace SisNissei
         {
             item.Id = idActual;
             item.Nombre = txtNombre.Text;
+            item.Proveedor = chkProvedor.Checked ;
             item.Regmod = regmod;
             TipoEgresoService servicio = new TipoEgresoService();
             int respuesta = servicio.Guardar(item);

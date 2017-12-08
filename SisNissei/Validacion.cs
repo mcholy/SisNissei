@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Threading;
+using System.Globalization;
 namespace SisNissei
 {
     class Validacion
@@ -39,6 +40,8 @@ namespace SisNissei
         {
             try
             {
+               
+
                 if (Char.IsNumber(e.KeyChar))
                 {
                     e.Handled = false;
@@ -47,9 +50,10 @@ namespace SisNissei
                 {
                     e.Handled = false;
                 }
-                else if (Char.IsSeparator(e.KeyChar))
+                
+                else if (Char.IsPunctuation(e.KeyChar))
                 {
-                    e.Handled = false;
+                e.Handled = false;
                 }
                 else
                 {
@@ -62,6 +66,32 @@ namespace SisNissei
             }
 
         }
+        public void SoloDecimal(KeyPressEventArgs e)
+        {
 
+            //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
+
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+
+            bool IsDec = false;            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
+
+        }
+        public void Puntuacion()
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("es-MX");
+            // Sets the UI culture to French (France)
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-MX");
+
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Models.Repositories
                 cmd.CommandText = "sis_TipoEgreso_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                cmd.Parameters.AddWithValue("@proveedor", item.Proveedor);
                 cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();
@@ -50,6 +51,7 @@ namespace Models.Repositories
                         TipoEgresoEntity item = new TipoEgresoEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["Nombre"].ToString();
+                        item.Proveedor = bool.Parse(reader["proveedor"].ToString());
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         item.Estado = Boolean.Parse(reader["estado"].ToString());
                         lista.Add(item);

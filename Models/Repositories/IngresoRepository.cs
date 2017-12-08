@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Models.Repositories
 {
-    public class IngresoRepository:BaseRepository<IngresoEntity>
+    public class IngresoRepository : BaseRepository<IngresoEntity>
     {
         private ResultadoEntity resultado;
         public string DatosFacDir(IngresoEntity item)
@@ -78,7 +78,7 @@ namespace Models.Repositories
                 return codigo;
             }
         }
-        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago,int idCurso)
+        public List<IngresoEntity> PagosPendientes(int idCliente, int idTipoIngreso, int nropago, int idCurso)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
@@ -88,14 +88,14 @@ namespace Models.Repositories
                 switch (idTipoIngreso)
                 {
                     case 1:
-                    cmd.CommandText = "sis_IngresoPagosPendientesSocio";
-                    break;
+                        cmd.CommandText = "sis_IngresoPagosPendientesSocio";
+                        break;
                     case 2:
-                    cmd.CommandText = "sis_IngresoPagosPendientesAlumno";
-                    break;
+                        cmd.CommandText = "sis_IngresoPagosPendientesAlumno";
+                        break;
                     case 3:
-                    cmd.CommandText = "sis_IngresoPagosPendientesAlquiler";
-                    break;
+                        cmd.CommandText = "sis_IngresoPagosPendientesAlquiler";
+                        break;
                 }
 
                 cmd.Parameters.AddWithValue("@idcliente", idCliente);
@@ -114,7 +114,7 @@ namespace Models.Repositories
 
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["nombre"].ToString();
-                        item.Monto =Double.Parse(reader["montopagar"].ToString());
+                        item.Monto = Double.Parse(reader["montopagar"].ToString());
                         lista.Add(item);
                     }
                     return lista;
@@ -134,7 +134,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@nombrerecibo", item.Nombre);
                 cmd.Parameters.AddWithValue("@tipocomprobante", item.Tipocomprobante);
                 cmd.Parameters.AddWithValue("@montototal", item.Monto);
-             
+
                 resultado = new ResultadoEntity();
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -171,6 +171,74 @@ namespace Models.Repositories
             }
         }
 
+        public ResultadoEntity GuadarPagoPendiente(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_PagoPendienteGuarda";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                cmd.Parameters.AddWithValue("@monto", item.Monto);
+                cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Respuesta = reader["respuesta"].ToString();
+                }
+                return resultado;
+            }
+
+
+        }
+        public ResultadoEntity GuardarAdelanto(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_AdelantoGuarda";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                cmd.Parameters.AddWithValue("@monto", item.Monto);
+                cmd.Parameters.AddWithValue("@nombre", item.Nombre);
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Id = Int32.Parse(reader["Id"].ToString());
+                    resultado.Respuesta = reader["respuesta"].ToString();
+                }
+                return resultado;
+            }
+
+
+        }
+        public ResultadoEntity EliminarPagoPendiente(IngresoEntity item)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_PagoPendienteEliminar";
+                cmd.Parameters.AddWithValue("@id", item.Id);
+                resultado = new ResultadoEntity();
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    resultado.Respuesta = reader["respuesta"].ToString();
+                }
+                return resultado;
+            }
+
+
+        }
+
+
+
         public List<IngresoEntity> Detalle()
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -193,7 +261,7 @@ namespace Models.Repositories
                         item.Nombrerecibo = reader["nombrerecibo"].ToString();
                         item.Nombre = reader["nombreoperaciondetalle"].ToString();
                         item.Monto = Double.Parse(reader["montototal"].ToString());
-                        item.Fecharegistro =DateTime.Parse(reader["fecharegistro"].ToString());
+                        item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
 
                     }

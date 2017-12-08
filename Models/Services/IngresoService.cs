@@ -60,6 +60,28 @@ namespace Models.Services
             return resultado;
 
         }
+
+        public ResultadoEntity GuardarPagoPendiente(IngresoEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.GuadarPagoPendiente(item);
+            return resultado;
+        }
+
+        public ResultadoEntity GuardarAdelanto(IngresoEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.GuardarAdelanto(item);
+            return resultado;
+        }
+
+        public ResultadoEntity EliminarPagoPendiente(IngresoEntity item)
+        {
+            resultado = new ResultadoEntity();
+            resultado = repositorio.EliminarPagoPendiente(item);
+            return resultado;
+        
+        }
         public DatosIngreso ReporteIngreso(ReporteIngresoEntity item2)
         {
             DatosIngreso dai = reporterepositorio.ReporteIngreso(item2);

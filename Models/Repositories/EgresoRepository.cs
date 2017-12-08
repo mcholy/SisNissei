@@ -7,10 +7,12 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
 
+
 namespace Models.Repositories
 {
     public class EgresoRepository:BaseRepository<EgresoEntity>
     {
+
         public string Guardar(EgresoEntity item)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
@@ -22,6 +24,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@id", item.Id);
                 cmd.Parameters.AddWithValue("@idtipoegreso", item.Idtipoegreso);
                 cmd.Parameters.AddWithValue("@idempleado", item.Idempleado);
+                cmd.Parameters.AddWithValue("@proveedor", item.Proveedor);
                 cmd.Parameters.AddWithValue("@nombre", item.Nombre);
                 cmd.Parameters.AddWithValue("@detalle", item.Detalle);
                 cmd.Parameters.AddWithValue("@monto", item.Monto);
@@ -56,10 +59,11 @@ namespace Models.Repositories
                         item.Nombre = reader["Nombre"].ToString();
                         item.Idempleado = Int32.Parse(reader["idempleado"].ToString());
                         item.Nombreempleado = reader["nombreempleado"].ToString();
+                        item.Proveedor = reader["proveedor"].ToString();
                         item.Idtipoegreso = Int32.Parse(reader["idtipoegreso"].ToString());
                         item.Tipoegreso =reader["tipoegreso"].ToString();
                         item.Detalle = reader["detalle"].ToString();
-                        item.Monto = Double.Parse(reader["monto"].ToString());
+                        item.Monto = Decimal.Parse(reader["monto"].ToString());
                         item.Fecharegistro = DateTime.Parse(reader["fecharegistro"].ToString());
                         lista.Add(item);
                     }

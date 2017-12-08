@@ -48,7 +48,7 @@ namespace SisNissei
             item.Idempleado = _id_Empleado;
             item.Idtipoegreso = 8;
             item.Detalle = txtDetalle.Text;
-            item.Monto = Double.Parse(txtMonto.Text);
+            item.Monto = Decimal.Parse(txtMonto.Text);
             item.Regmod = regmod;
             EgresoService servicio = new EgresoService();
             int respuesta = servicio.Guardar(item);

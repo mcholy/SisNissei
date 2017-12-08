@@ -41,6 +41,7 @@ namespace SisNissei
         public InscripcionAlumno()
         {
             InitializeComponent();
+            group3();
             Skin.AplicarSkin(this);
             CargarDetalle();
             InsertarCodigo();
@@ -72,6 +73,17 @@ namespace SisNissei
         private void InsertarCodigo()
         {
             txtNombre.Text = new InscripcionAlumnoService().Codigo(item);
+        }
+        private void group3()
+        {
+            if (regmod == 0)
+            {
+                groupBox3.Visible = false;
+            }
+            else
+            {
+                groupBox3.Visible = true;
+            }
         }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -281,6 +293,7 @@ namespace SisNissei
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         Eliminar();
+                        group3();
                     }
                 }
                 else
@@ -307,6 +320,7 @@ namespace SisNissei
 
                     Guardar();
                     regmod = 0;
+                    group3();
                 }
             }
         }
@@ -421,6 +435,7 @@ namespace SisNissei
             LimpiarDetalle();
             CargarDetalle();
             CargarDetalleDetalle(0);
+            group3();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -431,6 +446,7 @@ namespace SisNissei
                 {
                     LlenarControles();
                     regmod = 1;
+                    group3();
                 }
                 else
                 {

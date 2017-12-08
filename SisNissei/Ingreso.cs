@@ -17,6 +17,7 @@ namespace SisNissei
 {
     public partial class Ingreso : Form
     {
+
         private IngresoEntity item = new IngresoEntity();
         ReporteIngresoEntity item2 = new ReporteIngresoEntity();
         private ResultadoEntity resultado;
@@ -25,12 +26,13 @@ namespace SisNissei
         private int nropago = 0;
         private int idTipoIngreso = 0;
         private int idCurso = 0;
-        private int idActual = 0;
         private IngresoService servicio = new IngresoService();
-
+        private int idpagopendiente = 0;
+        private string nombrepagopendiente = "";
+        private string montopagopendiente = "";
         public Ingreso()
         {
-
+           
             InitializeComponent();
             InsertarCodigo();
         }
@@ -59,7 +61,7 @@ namespace SisNissei
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-           
+
             InsertarCodigo();
             idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
 
@@ -141,13 +143,25 @@ namespace SisNissei
         {
             if (idCliente > 0)
             {
-                nropago = nropago + 1;
-                idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
-                idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+                switch (idTipoIngreso)
+                {
+                    case 2:
+                        nropago = nropago + 1;
+                        idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+                        idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+                        CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
+                        total();
+                        break;
+                    case 3:
+                        nropago = nropago + 1;
+                        idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+                        CargarPagopendiente(idCliente, idTipoIngreso, 0);
+                        total();
+                        break;
+                }
 
 
-                CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
-                total();
+
             }
             else
             {
@@ -277,6 +291,46 @@ namespace SisNissei
                 nropago = nropago - 1;
                 CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
                 total();
+            }
+        }
+
+        private void dgvPagosPendientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvPagosPendientes.RowCount > 0)
+            {
+                if (dgvPagosPendientes.CurrentRow.Selected == true)
+                {
+
+                    idpagopendiente = Int32.Parse(dgvPagosPendientes.CurrentRow.Cells["id"].Value.ToString());
+                    nombrepagopendiente = dgvPagosPendientes.CurrentRow.Cells["nombre"].Value.ToString();
+                    montopagopendiente = dgvPagosPendientes.CurrentRow.Cells["monto"].Value.ToString();
+                    DialogPagopendiente DialogPagopendiente = new DialogPagopendiente(idpagopendiente,nombrepagopendiente,montopagopendiente);
+                    DialogResult resultado = DialogPagopendiente.ShowDialog();
+                    if (resultado == DialogResult.OK)
+                    {
+
+                        switch (idTipoIngreso)
+                        {
+                            case 2:
+                                
+                                idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+                                idCurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+                                CargarPagopendiente(idCliente, idTipoIngreso, idCurso);
+                                total();
+                                break;
+                            case 3:
+                                idTipoIngreso = Int32.Parse(cbTipoIngreso.SelectedValue.ToString());
+                                CargarPagopendiente(idCliente, idTipoIngreso, 0);
+                                total();
+                                break;
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningún registro seleccionado");
+                }
             }
         }
     }

@@ -44,6 +44,7 @@
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.chkProvedor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoEgreso)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -204,11 +205,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkProvedor);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 42);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(214, 59);
+            this.groupBox2.Size = new System.Drawing.Size(214, 85);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -235,6 +237,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(511, 221);
             this.splitContainer1.SplitterDistance = 239;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // chkProvedor
+            // 
+            this.chkProvedor.AutoSize = true;
+            this.chkProvedor.Location = new System.Drawing.Point(68, 53);
+            this.chkProvedor.Name = "chkProvedor";
+            this.chkProvedor.Size = new System.Drawing.Size(113, 17);
+            this.chkProvedor.TabIndex = 5;
+            this.chkProvedor.Text = "Mostrar Proveedor";
+            this.chkProvedor.UseVisualStyleBackColor = true;
             // 
             // TipoEgreso
             // 
@@ -279,5 +291,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.CheckBox chkProvedor;
     }
 }

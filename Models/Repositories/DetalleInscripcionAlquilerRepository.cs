@@ -22,6 +22,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@id", itemdetalle.Id);
                 cmd.Parameters.AddWithValue("@idactual", itemdetalle.Idalquiler);
                 cmd.Parameters.AddWithValue("@idambientedetalle", itemdetalle.Idambientedescripcion);
+                cmd.Parameters.AddWithValue("@cant", itemdetalle.Cant);
                 cmd.Parameters.AddWithValue("@regmoddetalle", itemdetalle.Regmoddetalle);
                 string respuesta = "";
                 var reader = cmd.ExecuteReader();

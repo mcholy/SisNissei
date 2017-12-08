@@ -36,6 +36,13 @@ namespace Entities
             get { return idtipoegreso; }
             set { idtipoegreso = value; }
         }
+        private string proveedor;
+
+        public string Proveedor
+        {
+            get { return proveedor; }
+            set { proveedor = value; }
+        }
 
         private string tipoegreso;
 
@@ -45,13 +52,17 @@ namespace Entities
             set { tipoegreso = value; }
         }
 
-        private double monto;
-        
-        public double Monto
+        private decimal monto;
+
+        public decimal Monto
         {
             get { return monto; }
             set { monto = value; }
         }
+
+        
+        
+       
         private string detalle;
 
         public string Detalle

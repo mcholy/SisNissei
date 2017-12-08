@@ -177,6 +177,9 @@ namespace SisNissei
             txtCelular.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtAlergia.Text = string.Empty;
+            idApoderado = 0;
+            idActual = 0;
+            regmod = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -279,7 +282,7 @@ namespace SisNissei
         {
             get
             {
-                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+              
                     m_FormDefInstance = new Cliente();
                 return m_FormDefInstance;
             }

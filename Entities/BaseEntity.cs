@@ -7,6 +7,7 @@ namespace Entities
 {
     public class BaseEntity
     {
+      
         private int id;
         private bool estado;
         private string nombre;
@@ -46,4 +47,6 @@ namespace Entities
         }
 
     }
+
+
 }

@@ -25,11 +25,13 @@ namespace SisNissei
         #endregion
         public Egresos()
         {
+            itemValidacion.Puntuacion();
             InitializeComponent();
             Skin.AplicarSkin(this);
             Skin.AplicarSkinDGV(dgvEgreso);
         }
-
+        
+        
         private void ListarTipoEgreso()
         {
             cbTipoEgreso.DisplayMember = "Nombre";
@@ -72,9 +74,10 @@ namespace SisNissei
             item.Id = idActual;
             item.Nombre = txtRecibo.Text;
             item.Idempleado = idEmpleado;
+            item.Proveedor = txtProveedor.Text;
             item.Idtipoegreso = Int32.Parse(cbTipoEgreso.SelectedValue.ToString());
             item.Detalle = txtDetalle.Text;
-            item.Monto = Double.Parse(txtMonto.Text);
+            item.Monto = Decimal.Parse(txtMonto.Text);
             item.Regmod = regmod;
             EgresoService servicio = new EgresoService();
             int respuesta = servicio.Guardar(item);
@@ -99,6 +102,7 @@ namespace SisNissei
             txtRecibo.Text = string.Empty;
             txtDetalle.Text = string.Empty;
             txtMonto.Text = string.Empty;
+            txtProveedor.Text = string.Empty;
             idActual = 0;
             regmod = 0;
 
@@ -152,6 +156,7 @@ namespace SisNissei
             idEmpleado = Int32.Parse(dgvEgreso.CurrentRow.Cells["idempleado"].Value.ToString());
             txtEmpleado.Text = dgvEgreso.CurrentRow.Cells["nombreempleado"].Value.ToString();
             cbTipoEgreso.SelectedValue = Int32.Parse(dgvEgreso.CurrentRow.Cells["idtipoegreso"].Value.ToString());
+            txtProveedor.Text = dgvEgreso.CurrentRow.Cells["proveedor"].Value.ToString();
             txtRecibo.Text = dgvEgreso.CurrentRow.Cells["nombre"].Value.ToString();
             txtDetalle.Text = dgvEgreso.CurrentRow.Cells["detalle"].Value.ToString();
             txtMonto.Text = dgvEgreso.CurrentRow.Cells["monto"].Value.ToString();
@@ -196,6 +201,27 @@ namespace SisNissei
 
 
 
+        }
+
+        private void cbTipoEgreso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipoEgreso.Text == "0")
+            {
+                txtEmpleado.Visible = false;
+            }
+        }
+
+        private void cbTipoEgreso_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbTipoEgreso.ValueMember == "0")
+            {
+                txtEmpleado.Visible = false;
+            }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            itemValidacion.SoloNumeros(e);
         }
     }
 }

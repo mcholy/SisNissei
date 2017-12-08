@@ -117,6 +117,12 @@
     <Compile Include="DialogEmpresa.Designer.cs">
       <DependentUpon>DialogEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="DialogPagopendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPagopendiente.Designer.cs">
+      <DependentUpon>DialogPagopendiente.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogPatrocinador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="DialogEmpresa.resx">
       <DependentUpon>DialogEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DialogPagopendiente.resx">
+      <DependentUpon>DialogPagopendiente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogPatrocinador.resx">
       <DependentUpon>DialogPatrocinador.cs</DependentUpon>
     </EmbeddedResource>
@@ -481,6 +490,7 @@
     <Content Include="Resources\Check-02.png" />
     <Content Include="Resources\clean.png" />
     <Content Include="Resources\delete.png" />
+    <None Include="Resources\dollar-account-currency-money--512.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\imprimir.png" />
     <Content Include="Resources\Key-Access.png" />

@@ -50,6 +50,13 @@ namespace Entities
            get { return costos; }
            set { costos = value; }
        }
+       private int cant;
+
+       public int Cant
+       {
+           get { return cant; }
+           set { cant = value; }
+       }
 
     }
 }

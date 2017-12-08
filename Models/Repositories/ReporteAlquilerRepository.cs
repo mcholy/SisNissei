@@ -50,11 +50,11 @@ namespace Models.Repositories
                         item.Garantiaporambiente = reader["garantia"].ToString();
                         item.Derechocorcho = reader["derechocorcho"].ToString();
                         item.Derecholimpieza = reader["limpieza"].ToString();
-                        item.Acuenta = reader["acuenta"].ToString();
+                        
                         item.Saldo = reader["saldo"].ToString();
                         dal.Tables["TablaAlquiler"].Rows.Add(new Object[] { item.Id, item.Fechadia, item.Nombre, item.Nombrecompleto, 
                         item.Dni,item.Direccion,item.Telefono,item.Celular,item.Ambiente,item.Inicioalquilerdia,item.Inicioalquilerhora,item.Finalalquilerdia,item.Finalalquilerhora,item.Nombregarante,
-                        item.Dnigarante,item.Tipoevento,item.Salonactos,item.Campodeportivo,item.Garantiaporambiente,item.Derechocorcho,item.Derecholimpieza,item.Acuenta,item.Saldo});
+                        item.Dnigarante,item.Tipoevento,item.Salonactos,item.Campodeportivo,item.Garantiaporambiente,item.Derechocorcho,item.Derecholimpieza,item.Saldo});
                     }
 
                 }
