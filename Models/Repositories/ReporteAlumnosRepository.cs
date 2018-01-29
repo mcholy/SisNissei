@@ -20,7 +20,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@mes", item.Mespago);
                 cmd.Parameters.AddWithValue("@idcurso", item.Idcurso);
                 cmd.Parameters.AddWithValue("@idperiodo", item.Idperiodo);
-
+                cmd.Parameters.AddWithValue("@idgrupoetario", item.Idgrupoetario);
                 using (var reader = cmd.ExecuteReader())
                 {
                     List<ReporteAlumnosEntity> lista = new List<ReporteAlumnosEntity>();
@@ -30,6 +30,7 @@ namespace Models.Repositories
                         ReporteAlumnosEntity item2 = new ReporteAlumnosEntity();
                         item2.Nombrecliente = reader["nombrecliente"].ToString();
                         item2.Curso = reader["Curso"].ToString();
+                        item2.Grupoetario = reader["GrupoEtario"].ToString();
                         item2.Periodo = reader["Periodo"].ToString();
                         item2.Iniciocurso = reader["iniciocurso"].ToString();
                         item2.Pagoporcancelar = Int32.Parse(reader["pagoporcancelar"].ToString());
@@ -59,6 +60,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@mes", item.Mespago);
                 cmd.Parameters.AddWithValue("@idcurso", item.Idcurso);
                 cmd.Parameters.AddWithValue("@idperiodo", item.Idperiodo);
+                cmd.Parameters.AddWithValue("@idgrupoetario", item.Idgrupoetario);
                 using (var reader = cmd.ExecuteReader())
                 {
 
@@ -67,13 +69,14 @@ namespace Models.Repositories
                     {
                         item2.Nombrecliente = reader["nombrecliente"].ToString();
                         item2.Curso = reader["Curso"].ToString();
+                        item2.Grupoetario = reader["Grupoetario"].ToString();
                         item2.Periodo = reader["Periodo"].ToString();
-                        item2.Iniciocurso = reader["iniciocurso"].ToString();
+                       
                         item2.Pagoporcancelar = Int32.Parse(reader["pagoporcancelar"].ToString());
                         item2.Pagorealziado = Int32.Parse(reader["pagorealizado"].ToString());
                         item2.Totalpagoshacer = Int32.Parse(reader["totalpagoshacer"].ToString());
                         item2.Estadopago = reader["estadopago"].ToString();
-                        dra.Tables["TablaReporteAlumnos"].Rows.Add(new Object[] { item2.Nombrecliente,item2.Curso,item2.Periodo,item2.Iniciocurso,item2.Pagoporcancelar,item2.Pagorealziado,item2.Totalpagoshacer,item2.Estadopago});
+                        dra.Tables["TablaReporteAlumnos"].Rows.Add(new Object[] { item2.Nombrecliente,item2.Curso,item2.Grupoetario,item2.Periodo,item2.Pagoporcancelar,item2.Pagorealziado,item2.Totalpagoshacer,item2.Estadopago});
                     }
 
                 }

@@ -9,7 +9,7 @@ namespace Models.Services
 {
     public class ReporteAlumnosService
     {
-        private string respuesta;
+       
         private ReporteAlumnosRepository repositorio = new ReporteAlumnosRepository();
         public List<ReporteAlumnosEntity> Detalle(ReporteAlumnosEntity item)
         {

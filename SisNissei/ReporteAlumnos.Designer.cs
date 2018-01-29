@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.cbMesPago = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +53,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cbHorario);
             this.groupBox2.Controls.Add(this.btnListar);
             this.groupBox2.Controls.Add(this.cbMesPago);
             this.groupBox2.Controls.Add(this.label1);
@@ -63,9 +67,29 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(21, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(740, 84);
+            this.groupBox2.Size = new System.Drawing.Size(740, 117);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(243, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Horario :";
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.DisplayMember = "Ningun";
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Location = new System.Drawing.Point(332, 53);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(125, 21);
+            this.cbHorario.TabIndex = 26;
+            this.cbHorario.ValueMember = "Ninguno";
             // 
             // btnListar
             // 
@@ -75,9 +99,9 @@
             this.btnListar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnListar.Image = global::SisNissei.Properties.Resources.search;
             this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListar.Location = new System.Drawing.Point(636, 18);
+            this.btnListar.Location = new System.Drawing.Point(615, 23);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(84, 23);
+            this.btnListar.Size = new System.Drawing.Size(105, 38);
             this.btnListar.TabIndex = 25;
             this.btnListar.Text = "Listar";
             this.btnListar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -87,7 +111,7 @@
             // cbMesPago
             // 
             this.cbMesPago.FormattingEnabled = true;
-            this.cbMesPago.Location = new System.Drawing.Point(306, 20);
+            this.cbMesPago.Location = new System.Drawing.Point(332, 21);
             this.cbMesPago.Name = "cbMesPago";
             this.cbMesPago.Size = new System.Drawing.Size(125, 21);
             this.cbMesPago.TabIndex = 24;
@@ -97,7 +121,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 22);
+            this.label1.Location = new System.Drawing.Point(243, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 15);
             this.label1.TabIndex = 23;
@@ -107,7 +131,7 @@
             // 
             this.lblCurso.AutoSize = true;
             this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurso.Location = new System.Drawing.Point(451, 23);
+            this.lblCurso.Location = new System.Drawing.Point(25, 58);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(47, 13);
             this.lblCurso.TabIndex = 21;
@@ -116,10 +140,11 @@
             // cbCurso
             // 
             this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(504, 19);
+            this.cbCurso.Location = new System.Drawing.Point(78, 53);
             this.cbCurso.Name = "cbCurso";
-            this.cbCurso.Size = new System.Drawing.Size(126, 21);
+            this.cbCurso.Size = new System.Drawing.Size(133, 21);
             this.cbCurso.TabIndex = 20;
+            this.cbCurso.SelectedIndexChanged += new System.EventHandler(this.cbCurso_SelectedIndexChanged_1);
             // 
             // cbPeriodo
             // 
@@ -128,13 +153,14 @@
             this.cbPeriodo.Name = "cbPeriodo";
             this.cbPeriodo.Size = new System.Drawing.Size(133, 21);
             this.cbPeriodo.TabIndex = 18;
+            this.cbPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbPeriodo_SelectedIndexChanged);
             // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(689, 54);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(689, 80);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(31, 23);
             this.btnBuscarCliente.TabIndex = 17;
@@ -152,7 +178,7 @@
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(78, 56);
+            this.txtNombreCliente.Location = new System.Drawing.Point(78, 82);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(605, 20);
             this.txtNombreCliente.TabIndex = 9;
@@ -161,7 +187,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 58);
+            this.label4.Location = new System.Drawing.Point(15, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 15);
             this.label4.TabIndex = 6;
@@ -170,7 +196,7 @@
             // dgvListadoAlumnos
             // 
             this.dgvListadoAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoAlumnos.Location = new System.Drawing.Point(21, 102);
+            this.dgvListadoAlumnos.Location = new System.Drawing.Point(21, 143);
             this.dgvListadoAlumnos.Name = "dgvListadoAlumnos";
             this.dgvListadoAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoAlumnos.Size = new System.Drawing.Size(740, 328);
@@ -206,9 +232,9 @@
             this.btnCancelar,
             this.btnGuardar,
             this.btnImprimir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 445);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 541);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(786, 45);
+            this.toolStrip1.Size = new System.Drawing.Size(799, 45);
             this.toolStrip1.TabIndex = 28;
             this.toolStrip1.Text = "tsCliente";
             // 
@@ -226,7 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 490);
+            this.ClientSize = new System.Drawing.Size(799, 586);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvListadoAlumnos);
             this.Controls.Add(this.toolStrip1);
@@ -260,5 +286,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.ToolStripButton btnImprimir;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbHorario;
     }
 }

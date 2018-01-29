@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Models.Repositories
 {
-    public class CursoRepository:BaseRepository<CursoEntity>
+    public class CursoRepository : BaseRepository<CursoEntity>
     {
         public string Guardar(CursoEntity item)
         {
@@ -119,6 +119,31 @@ namespace Models.Repositories
             }
 
         }
+        public List<CursoEntity> Listarinscripcion(int idperiodo)
+        {
+            using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
+            using (var cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sis_CursoInscripcion_Listar";
+                cmd.Parameters.AddWithValue("@idperiodo", idperiodo);
 
+                using (var reader = cmd.ExecuteReader())
+                {
+                    List<CursoEntity> lista = new List<CursoEntity>();
+
+                    while (reader.Read())
+                    {
+                        CursoEntity item = new CursoEntity();
+                        item.Id = Int32.Parse(reader["Id"].ToString());
+                        item.Nombre = reader["nombre"].ToString();
+                        lista.Add(item);
+                    }
+                    return lista;
+                }
+
+            }
+        }
     }
 }

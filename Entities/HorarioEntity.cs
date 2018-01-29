@@ -75,5 +75,14 @@ namespace Entities
             get { return duracion; }
             set { duracion = value; }
         }
+        private int idperiodo;
+
+        public int Idperiodo
+        {
+            get { return idperiodo; }
+            set { idperiodo = value; }
+        }
+
+        
     }
 }

@@ -24,7 +24,7 @@ namespace Models.Repositories
                 cmd.Parameters.AddWithValue("@idgrupoetario", item.Idgrupoetario);
                 cmd.Parameters.AddWithValue("@fechainicio", item.Fechainicio);
                 cmd.Parameters.AddWithValue("@duracion", item.Duracion);
-                cmd.Parameters.AddWithValue("@regmod", item.Regmod);
+                cmd.Parameters.AddWithValue("@idperiodo", item.Idperiodo); cmd.Parameters.AddWithValue("@regmod", item.Regmod);
                 resultado = new ResultadoEntity();
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -46,7 +46,7 @@ namespace Models.Repositories
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_DetalleHorario_Guardar";
                 cmd.Parameters.AddWithValue("@id", item.Id);
-                cmd.Parameters.AddWithValue("@idhorario", resultado.Id);
+                cmd.Parameters.AddWithValue("@idhorario", item.IdHorario);
                 cmd.Parameters.AddWithValue("@hora", item.Hora);
                 cmd.Parameters.AddWithValue("@dia", item.Dia);
                 //cmd.Parameters.AddWithValue("@regmod", item.Regmod);
@@ -59,7 +59,7 @@ namespace Models.Repositories
                 return resultado;
             }
         }
-        public List<HorarioEntity> Detalle()
+        public List<HorarioEntity> Detalle(int idPeriodoFiltro)
         {
             using (var conn = new SqlConnection(Models.Global_Variables.Connection.getCadenaConexion()))
             using (var cmd = conn.CreateCommand())
@@ -68,7 +68,7 @@ namespace Models.Repositories
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sis_Horario_Detalle";
                 //cmd.Parameters.AddWithValue("@valor",valor);
-
+                cmd.Parameters.AddWithValue("@idPeriodo", idPeriodoFiltro);
                 using (var reader = cmd.ExecuteReader())
                 {
                     List<HorarioEntity> lista = new List<HorarioEntity>();
@@ -174,14 +174,16 @@ namespace Models.Repositories
                 using (var reader = cmd.ExecuteReader())
                 {
                     List<HorarioEntity> lista = new List<HorarioEntity>();
-
+                    lista.Add(new HorarioEntity() { Id = 0, Nombre = "NINGUNO" });
                     while (reader.Read())
                     {
                         HorarioEntity item = new HorarioEntity();
                         item.Id = Int32.Parse(reader["Id"].ToString());
                         item.Nombre = reader["nombre"].ToString();
                         lista.Add(item);
+                        
                     }
+                    
                     return lista;
                 }
 

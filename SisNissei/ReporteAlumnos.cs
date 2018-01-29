@@ -21,8 +21,11 @@ namespace SisNissei
         private ReporteAlumnosService servicio = new ReporteAlumnosService();
         private int idcurso = 0;
         private int idperiodo = 0;
+        private int idgrupoetario = 0;
+      
         private string mes = "";
         private int mespago = 0;
+       
         public Listado_de_Alumnos()
         {
             InitializeComponent();
@@ -54,9 +57,10 @@ namespace SisNissei
         }
         private void ListarCursos()
         {
+            idperiodo = Int32.Parse(cbPeriodo.SelectedIndex.ToString());
             cbCurso.DisplayMember = "Nombre";
             cbCurso.ValueMember = "Id";
-            cbCurso.DataSource = new CursoService().Listar();
+            cbCurso.DataSource = new CursoService().Listarinscripcion(idperiodo);
         }
         private void ListarPeriodos()
         {
@@ -64,12 +68,18 @@ namespace SisNissei
             cbPeriodo.ValueMember = "Id";
             cbPeriodo.DataSource = new PeriodoService().Listar();
         }
-
+        private void ListaGrupoEtario()
+        {
+            cbHorario.DisplayMember = "Nombre";
+            cbHorario.ValueMember = "Id";
+            cbHorario.DataSource = new GrupoEtarioService().Listar();
+        }
         private void Listado_de_Alumnos_Load(object sender, EventArgs e)
         {
             ListarMes();
             ListarCursos();
             ListarPeriodos();
+            ListaGrupoEtario();
         }
 
         private void CargarDetalle(string filterNombre = "")
@@ -77,6 +87,7 @@ namespace SisNissei
            
             item.Idcurso = idcurso;           
             item.Idperiodo = idperiodo;
+            item.Idgrupoetario = idgrupoetario;
             item.Mespago = mespago;
             dgvListadoAlumnos.DataSource = filterNombre == "" ? servicio.Detalle(item) : servicio.Detalle(item).Where(x => x.Nombrecliente.ToUpper().Contains(filterNombre.ToUpper())).ToList();
             if (dgvListadoAlumnos.RowCount > 0)
@@ -84,6 +95,7 @@ namespace SisNissei
                 dgvListadoAlumnos.Columns["idcurso"].Visible = false;
                 dgvListadoAlumnos.Columns["idperiodo"].Visible = false;
                 dgvListadoAlumnos.Columns["mespago"].Visible = false;
+                dgvListadoAlumnos.Columns["idgrupoetario"].Visible = false;
             }
         }
         #region Singleton
@@ -149,6 +161,8 @@ namespace SisNissei
                     break;
             }
             idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+
+          idgrupoetario = Int32.Parse(cbHorario.SelectedValue.ToString()); 
             idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
             CargarDetalle();
         }
@@ -199,6 +213,7 @@ namespace SisNissei
                     break;
             }
             idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+            idgrupoetario = Int32.Parse(cbHorario.SelectedValue.ToString()); 
             idperiodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
             if (dgvListadoAlumnos.RowCount > 0)
             {
@@ -214,6 +229,7 @@ namespace SisNissei
         {
             item.Idcurso = idcurso;
             item.Idperiodo = idperiodo;
+            item.Idgrupoetario = idgrupoetario;
             item.Mespago = mespago;
             DatosReporteAlumnos dra= servicio.Reporte(item);
             ReporteAlumnosReporte rpt = new ReporteAlumnosReporte();
@@ -222,6 +238,26 @@ namespace SisNissei
             frmReporte.rpReporteAlumnos.ReportSource = rpt;
             frmReporte.ShowDialog();
 
+        }
+
+      
+        private void ListarHorarioEtario(int idcurso)
+        {
+            cbHorario.DisplayMember = "Nombre";
+            cbHorario.ValueMember = "Id";
+            cbHorario.DataSource = new HorarioService().Listar(idcurso);
+        }
+
+        private void cbCurso_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+          
+            idcurso = Int32.Parse(cbCurso.SelectedValue.ToString());
+            ListarHorarioEtario(idcurso);
+        }
+
+        private void cbPeriodo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListarCursos();
         }
     }
 }

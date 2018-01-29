@@ -179,5 +179,15 @@ namespace SisNissei
             }
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

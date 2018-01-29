@@ -84,6 +84,7 @@ namespace Models.Repositories
                         itemdetalle.Idempresa=Int32.Parse(reader["idempresa"].ToString());
                         itemdetalle.Nombreperiodo = reader["nombreperiodo"].ToString();
                         itemdetalle.Idperiodo=Int32.Parse(reader["idperiodo"].ToString());
+                        itemdetalle.Meses = Int32.Parse(reader["meses"].ToString());
                         lista.Add(itemdetalle);
                     }
                     return lista;

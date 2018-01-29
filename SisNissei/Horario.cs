@@ -20,6 +20,7 @@ namespace SisNissei
         private string[] rowDetalle;
         private int regmod = 0;
         private int idActual = 0;
+        private int idPeriodoFiltro = 0;
         public Horario()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace SisNissei
 
         private void Horario_Load(object sender, EventArgs e)
         {
+            ListarPeriodos();
             ListarCursos();
             ListarGruposEtarios();
             CrearColumnasDGV();
@@ -51,7 +53,16 @@ namespace SisNissei
             }
         }
         #endregion
-
+        private void ListarPeriodos()
+        {
+            cbPeriodo.DisplayMember = "Nombre";
+            cbPeriodo.ValueMember = "Id";
+            cbPeriodo.DataSource = new PeriodoService().Listar
+();
+            cbPeriodo2.DisplayMember = "Nombre";
+            cbPeriodo2.ValueMember = "Id";
+            cbPeriodo2.DataSource = new PeriodoService().Listar();
+        }
         private void ListarCursos()
         {
             cbCurso.DisplayMember = "Nombre";
@@ -138,12 +149,13 @@ namespace SisNissei
             chkViernes.Checked = false;
             chkSabado.Checked = false;
             chkDomingo.Checked = false;
-            dgvDetalleHorario.Rows.Remove(dgvDetalleHorario.CurrentRow);
+            dgvDetalleHorario.Rows.Clear();
         }
 
         private void CargarDetalle()
         {
-            dgvHorario.DataSource = servicio.Detalle();
+            idPeriodoFiltro = Int32.Parse(cbPeriodo2.SelectedValue.ToString());
+            dgvHorario.DataSource = servicio.Detalle(idPeriodoFiltro);
 
             if (dgvHorario.RowCount > 0)
             {
@@ -182,6 +194,7 @@ namespace SisNissei
                 item.Idgrupoetario = Int32.Parse(cbGrupoEtario.SelectedIndex.ToString());
                 item.Fechainicio = DateTime.Parse(dtpFechaInicio.Text);
                 item.Duracion = Int32.Parse(txtduracion.Text);
+                item.Idperiodo = int.Parse(cbPeriodo.SelectedIndex.ToString());
                 item.Regmod = regmod;
                 resultado = servicio.Guardar(item);
                 item = new HorarioEntity();
@@ -275,6 +288,7 @@ namespace SisNissei
             cbGrupoEtario.SelectedValue = Int32.Parse(dgvHorario.CurrentRow.Cells["idgrupoetario"].Value.ToString());
             dtpFechaInicio.Value = DateTime.Parse(dgvHorario.CurrentRow.Cells["fechainicio"].Value.ToString());
             txtduracion.Text=dgvHorario.CurrentRow.Cells["duracion"].Value.ToString();
+          
             CargarDetalleHorario_Detalle(idActual);
         }
 
@@ -285,7 +299,7 @@ namespace SisNissei
             foreach (HorarioEntity valor in lista)
             {
                 
-                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia),valor.Id.ToString() };
+                rowDetalle = new string[] { valor.Dia, valor.Hora, LlenarDia(valor.Dia),valor.IdHorario.ToString() };
                 dgvDetalleHorario.Rows.Add(rowDetalle);
                 dgvDetalleHorario.ClearSelection();
             }
@@ -328,5 +342,17 @@ namespace SisNissei
         {
             Limpiar();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPeriodo2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarDetalle();
+        }
+
+       
     }
 }

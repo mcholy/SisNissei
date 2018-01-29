@@ -65,9 +65,10 @@ namespace SisNissei
         #endregion
         private void ListarCursos()
         {
+            idPeriodo = Int32.Parse(cbPeriodo.SelectedIndex.ToString());
             cbCurso.DisplayMember = "Nombre";
             cbCurso.ValueMember = "Id";
-            cbCurso.DataSource = new CursoService().Listar();
+            cbCurso.DataSource = new CursoService().Listarinscripcion(idPeriodo);
         }
 
         private void InsertarCodigo()
@@ -187,6 +188,8 @@ namespace SisNissei
             cbHorario.DataSource = new HorarioService().Listar(0);
             cbCurso.DataSource = new CursoService().Listar();
             cbPeriodo.DataSource = new PeriodoService().Listar();
+            txtMeses.Text = string.Empty;
+            idEmpresa = 0;
         }
 
         private void Eliminar()
@@ -247,14 +250,14 @@ namespace SisNissei
                 dgvInscripcionAlumnoDetalle.Columns["fecharegistro"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["idinscripcionalumno"].Visible = false;
                 dgvInscripcionAlumnoDetalle.Columns["id"].Visible = false;
-
+              
                 dgvInscripcionAlumnoDetalle.ClearSelection();
             }
         }
 
         private void InscripcionAlumno_Load(object sender, EventArgs e)
         {
-            ListarCursos();
+            
             ListarPeriodos();
             dgvInscripcionAlumno.ClearSelection();
             dgvInscripcionAlumnoDetalle.ClearSelection();
@@ -275,11 +278,12 @@ namespace SisNissei
         private void LlenarControlesDetalle()
         {
             idActualDetalle = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["id"].Value.ToString());
-            cbCurso.SelectedValue = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idcurso"].Value.ToString());
-            cbHorario.SelectedValue = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idhorario"].Value.ToString());
             cbPeriodo.SelectedValue = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idperiodo"].Value.ToString());
+            cbCurso.SelectedValue = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idcurso"].Value.ToString());
+            cbHorario.SelectedValue = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idhorario"].Value.ToString());           
             idEmpresa = Int32.Parse(dgvInscripcionAlumnoDetalle.CurrentRow.Cells["idempresa"].Value.ToString());
             txtEmpresa.Text = dgvInscripcionAlumnoDetalle.CurrentRow.Cells["nombreempresa"].Value.ToString();
+            txtMeses.Text = dgvInscripcionAlumnoDetalle.CurrentRow.Cells["meses"].Value.ToString();
 
         }
 
@@ -377,6 +381,7 @@ namespace SisNissei
         private void cbPeriodo_SelectedIndexChanged(object sender, EventArgs e)
         {
             idPeriodo = Int32.Parse(cbPeriodo.SelectedValue.ToString());
+            ListarCursos();
         }
 
         private void cbHorario_SelectedIndexChanged(object sender, EventArgs e)
@@ -387,6 +392,7 @@ namespace SisNissei
 
         private void btnGuardarDetalle_Click(object sender, EventArgs e)
         {
+           
             if (Int32.Parse(idActual.ToString()) == 0)
             {
                 MessageBox.Show("Se debe guardar el alumno antes de inscribirlo a un curso");
@@ -398,11 +404,10 @@ namespace SisNissei
             }
             else
             {
-
-                if (cbCurso.SelectedIndex == 0)
-                {
-                    MessageBox.Show("Debe seleccionarse un curso.");
-                }
+                 if (cbPeriodo.SelectedIndex == 0)
+                        {
+                            MessageBox.Show("Debe seleccionarse un Periodo.");
+                        }
                 else
                 {
                     if (txtEmpresa.Text == "")
@@ -411,15 +416,11 @@ namespace SisNissei
                     }
                     else
                     {
-                        if (cbPeriodo.SelectedIndex == 0)
-                        {
-                            MessageBox.Show("Debe seleccionarse un Periodo.");
-                        }
-                        else
-                        {
+                        
+                        
                             GuardarDetalle();
                             regmoddetalle = 0;
-                        }
+                        
                     }
                 }
 
@@ -445,6 +446,7 @@ namespace SisNissei
                 if (dgvInscripcionAlumno.CurrentRow.Selected == true)
                 {
                     LlenarControles();
+                    LimpiarDetalle();
                     regmod = 1;
                     group3();
                 }

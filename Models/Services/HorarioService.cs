@@ -27,9 +27,9 @@ namespace Models.Services
             return resultado;
 
         }
-        public List<HorarioEntity> Detalle()
+        public List<HorarioEntity> Detalle(int idPeriodoFiltro)
         {
-            return new HorarioRepository().Detalle();
+            return new HorarioRepository().Detalle(idPeriodoFiltro);
         }
 
         public List<HorarioEntity> DetalleHorario_Detalle(int id)

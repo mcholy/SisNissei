@@ -21,6 +21,20 @@ namespace Entities
             get { return curso; }
             set { curso = value; }
         }
+        private string grupoetario;
+
+        public string Grupoetario
+        {
+            get { return grupoetario; }
+            set { grupoetario = value; }
+        }
+        private int idgrupoetario;
+
+        public int Idgrupoetario
+        {
+            get { return idgrupoetario; }
+            set { idgrupoetario = value; }
+        }
         private int idcurso;
 
         public int Idcurso
@@ -84,6 +98,7 @@ namespace Entities
             get { return mespago; }
             set { mespago = value; }
         }
+       
 
     }
 }

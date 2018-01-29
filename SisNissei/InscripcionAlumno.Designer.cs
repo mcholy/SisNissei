@@ -132,7 +132,7 @@
             // 
             // txtMeses
             // 
-            this.txtMeses.Location = new System.Drawing.Point(64, 49);
+            this.txtMeses.Location = new System.Drawing.Point(60, 76);
             this.txtMeses.Name = "txtMeses";
             this.txtMeses.Size = new System.Drawing.Size(45, 20);
             this.txtMeses.TabIndex = 28;
@@ -140,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 53);
+            this.label4.Location = new System.Drawing.Point(9, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 27;
@@ -207,7 +207,7 @@
             this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Location = new System.Drawing.Point(74, 75);
+            this.cbPeriodo.Location = new System.Drawing.Point(64, 20);
             this.cbPeriodo.Name = "cbPeriodo";
             this.cbPeriodo.Size = new System.Drawing.Size(95, 21);
             this.cbPeriodo.TabIndex = 20;
@@ -215,11 +215,11 @@
             // 
             // txtEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(175, 49);
+            this.txtEmpresa.Location = new System.Drawing.Point(197, 47);
             this.txtEmpresa.MaxLength = 200;
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.ReadOnly = true;
-            this.txtEmpresa.Size = new System.Drawing.Size(90, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(63, 20);
             this.txtEmpresa.TabIndex = 19;
             // 
             // btnBuscarEmpresa
@@ -227,7 +227,7 @@
             this.btnBuscarEmpresa.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBuscarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEmpresa.Image = global::SisNissei.Properties.Resources.search;
-            this.btnBuscarEmpresa.Location = new System.Drawing.Point(275, 49);
+            this.btnBuscarEmpresa.Location = new System.Drawing.Point(270, 47);
             this.btnBuscarEmpresa.Name = "btnBuscarEmpresa";
             this.btnBuscarEmpresa.Size = new System.Drawing.Size(31, 20);
             this.btnBuscarEmpresa.TabIndex = 18;
@@ -239,7 +239,7 @@
             this.cbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCurso.FormattingEnabled = true;
-            this.cbCurso.Location = new System.Drawing.Point(59, 22);
+            this.cbCurso.Location = new System.Drawing.Point(211, 19);
             this.cbCurso.Name = "cbCurso";
             this.cbCurso.Size = new System.Drawing.Size(90, 21);
             this.cbCurso.TabIndex = 6;
@@ -248,7 +248,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(149, 26);
+            this.label13.Location = new System.Drawing.Point(9, 52);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 13);
             this.label13.TabIndex = 15;
@@ -259,16 +259,16 @@
             this.cbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Location = new System.Drawing.Point(196, 22);
+            this.cbHorario.Location = new System.Drawing.Point(53, 47);
             this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(110, 21);
+            this.cbHorario.Size = new System.Drawing.Size(77, 21);
             this.cbHorario.TabIndex = 16;
             this.cbHorario.SelectedIndexChanged += new System.EventHandler(this.cbHorario_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 26);
+            this.label6.Location = new System.Drawing.Point(165, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 0;
@@ -277,7 +277,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(115, 53);
+            this.label14.Location = new System.Drawing.Point(137, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 13);
             this.label14.TabIndex = 17;
@@ -286,7 +286,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 78);
+            this.label10.Location = new System.Drawing.Point(9, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 0;

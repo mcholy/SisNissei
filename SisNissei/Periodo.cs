@@ -39,7 +39,7 @@ namespace SisNissei
             if (dgvPeriodo.RowCount > 0)
             {
                 dgvPeriodo.Columns["id"].Visible = false;
-                dgvPeriodo.Columns["estado"].Visible = false;
+               
                 dgvPeriodo.Columns["regmod"].Visible = false;
                 dgvPeriodo.Columns["fecharegistro"].Visible = false;
             }

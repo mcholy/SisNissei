@@ -9,7 +9,7 @@ namespace Models.Services
 {
     public class PagoProfesoresService
     {
-        private string respuesta;
+       
         private PagoProfesoresRepository repositorio = new PagoProfesoresRepository();
         public List<PagoProfesoresEntity> Detalle(PagoProfesoresEntity item)
         {

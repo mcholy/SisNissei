@@ -29,10 +29,17 @@ namespace Models.Repositories
                     while (reader.Read())
                     {
                         PagoProfesoresEntity item2 = new PagoProfesoresEntity();
-                        item2.Id= Int32.Parse(reader["id"].ToString());
-                        item2.Nombre = reader["nombreempleado"].ToString();
-                        item2.Periodo = reader["Periodo"].ToString();
-                        item2.Montopagar = reader["pagar"].ToString();
+                        item2.Id = Int32.Parse(reader["Id"].ToString());
+                        item2.Curso = reader["curso"].ToString();
+                        item2.Idempleado = Int32.Parse(reader["idempleado"].ToString());
+                        item2.Nombre = reader["empleado"].ToString();
+                        item2.Pagarxmatricula = reader["pagar_x_matricula"].ToString();
+                        item2.Ingresxmatricula = reader["ingreso_x_matricula"].ToString();
+                        item2.Pagarxmensualidad = reader["pagar_x_mensualidad"].ToString();
+                        item2.Ingresoxmensualidad = reader["ingreso_x_mensualidad"].ToString();
+                        item2.Totalingreso = reader["Total_ingreso"].ToString();
+
+                        item2.Montopagar = reader["Total_Pagar"].ToString();
                         lista.Add(item2);
 
                     }

@@ -7,19 +7,20 @@ namespace Entities
 {
     public class PagoProfesoresEntity:BaseEntity
     {
-        private string periodo;
+        private int idempleado;
 
-        public string Periodo
+        public int Idempleado
         {
-            get { return periodo; }
-            set { periodo = value; }
+            get { return idempleado; }
+            set { idempleado = value; }
         }
-        private string montopagar;
 
-        public string Montopagar
+        private string curso;
+
+        public string Curso
         {
-            get { return montopagar; }
-            set { montopagar = value; }
+            get { return curso; }
+            set { curso = value; }
         }
         private int idcurso;
 
@@ -28,6 +29,8 @@ namespace Entities
             get { return idcurso; }
             set { idcurso = value; }
         }
+       
+        
         private int idperiodo;
 
         public int Idperiodo
@@ -43,5 +46,48 @@ namespace Entities
             set { mespago = value; }
         }
 
+        private string pagarxmatricula;
+
+        public string Pagarxmatricula
+        {
+            get { return pagarxmatricula; }
+            set { pagarxmatricula = value; }
+        }
+        private string ingresxmatricula;
+
+        public string Ingresxmatricula
+        {
+            get { return ingresxmatricula; }
+            set { ingresxmatricula = value; }
+        }
+        private string pagarxmensualidad;
+
+        public string Pagarxmensualidad
+        {
+            get { return pagarxmensualidad; }
+            set { pagarxmensualidad = value; }
+        }
+        private string ingresoxmensualidad;
+
+        public string Ingresoxmensualidad
+        {
+            get { return ingresoxmensualidad; }
+            set { ingresoxmensualidad = value; }
+        }
+        private string totalingreso;
+
+        public string Totalingreso
+        {
+            get { return totalingreso; }
+            set { totalingreso = value; }
+        }
+
+        private string montopagar;
+
+        public string Montopagar
+        {
+            get { return montopagar; }
+            set { montopagar = value; }
+        }
     }
 }
